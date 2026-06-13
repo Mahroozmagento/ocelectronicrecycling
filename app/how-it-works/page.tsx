@@ -56,7 +56,7 @@ export default function HowItWorksPage() {
           <AnimateIn from="up" delay={0.1}>
             <div style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 60px' }}>
               <span className="overline">What We Guarantee</span>
-              <h2 className="section-title">Every Time, Without Exception</h2>
+              <h2 className="section-title" style={{ color: 'var(--c-white)' }}>Every Time, Without Exception</h2>
             </div>
           </AnimateIn>
           <StaggerGroup className="svc-features">
