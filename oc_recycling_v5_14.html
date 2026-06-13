@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OC Electronic Recycling — Orange County E-Waste &amp; ITAD</title>
+<meta name="description" content="Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup. Call (949) 345-0285.">
+<link rel="canonical" href="https://ocelectronicrecycling.com">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"OC Electronic Recycling","telephone":"(949) 345-0285","address":{"@type":"PostalAddress","addressLocality":"Orange County","addressRegion":"CA","addressCountry":"US"},"url":"https://ocelectronicrecycling.com"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- FONT OPTIONS — comment out 2, keep 1 active -->
+
+<!-- OPTION A: Urbanist — clean, modern, friendly. Great for service brands. -->
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- OPTION B: Raleway — elegant, premium, distinctive letterforms -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"> -->
+
+<!-- OPTION C: Manrope — technical, precise, trusted. Used by top tech companies -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#070d1a;--navy2:#0d1528;--green:#00e676;--cyan:#00d4e8;
+  --blue:#2979ff;--red:#f44336;--amber:#f59e0b;--white:#ffffff;
+  --light:#f4f6fa;--muted:#8899aa;--border:rgba(255,255,255,0.07);
+  /* OPTION A active — change both lines to switch font */
+  --font-head:'Urbanist',sans-serif;   /* A=Urbanist  B=Raleway     C=Manrope        */
+  --font-body:'Inter',sans-serif;      /* A=Inter     B=Nunito Sans  C=Plus Jakarta Sans */
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--navy);color:var(--white);overflow-x:hidden;cursor:none}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+#cursor-dot{position:fixed;width:8px;height:8px;background:var(--green);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%)}
+#cursor-ring{position:fixed;width:36px;height:36px;border:2px solid rgba(0,230,118,.45);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s}
+.cursor-grow #cursor-ring{width:60px;height:60px;border-color:var(--green)}
+#mouse-glow{position:fixed;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,230,118,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%)}
+.preheader{background:var(--green);color:var(--navy);font-family:var(--font-head);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-align:center;padding:7px 20px;position:relative;z-index:200}
+.preheader a{color:var(--navy);font-weight:800}
+.site-header{position:sticky;top:0;z-index:190;background:rgba(7,13,26,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-family:var(--font-head);font-weight:800;font-size:1.2rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.logo span{color:var(--green)}
+.main-nav{display:flex;align-items:center;gap:6px}
+.main-nav a{font-size:.85rem;font-weight:600;padding:7px 13px;border-radius:7px;color:#b0c4d8;transition:color .2s,background .2s;cursor:pointer}
+.main-nav a:hover,.main-nav a.active{color:var(--white);background:rgba(255,255,255,0.07)}
+.main-nav a.active{color:var(--green)}
+.hdr-cta{display:flex;align-items:center;gap:12px}
+.hdr-phone{font-family:var(--font-head);font-weight:700;font-size:.85rem;color:var(--green);letter-spacing:.02em}
+.btn-primary{background:var(--green);color:var(--navy);font-family:var(--font-head);font-weight:700;font-size:.82rem;padding:9px 18px;border-radius:8px;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;letter-spacing:.02em}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,230,118,.35)}
+.btn-outline{background:transparent;border:2px solid rgba(255,255,255,0.2);color:var(--white);font-family:var(--font-head);font-weight:700;font-size:.82rem;padding:11px 22px;border-radius:8px;cursor:pointer;transition:border-color .2s,color .2s}
+.btn-outline:hover{border-color:var(--green);color:var(--green)}
+.btn-large{padding:14px 32px;font-size:.95rem;border-radius:10px}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px}
+.mobile-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:300;flex-direction:column;padding:80px 30px 40px;gap:8px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-family:var(--font-head);font-weight:700;font-size:1.4rem;padding:14px 0;border-bottom:1px solid var(--border);color:#b0c4d8;cursor:pointer}
+.mobile-nav a:hover{color:var(--green)}
+.mobile-nav-close{position:absolute;top:22px;right:22px;font-size:1.8rem;background:none;border:none;color:var(--white);cursor:pointer}
+.mobile-phone-big{font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--green);margin-top:20px}
+.mobile-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:280;background:rgba(7,13,26,0.97);backdrop-filter:blur(20px);border-top:1px solid var(--border);padding:8px 0 max(8px,env(safe-area-inset-bottom))}
+.mbn-inner{display:flex;justify-content:space-around;align-items:center}
+.mbn-item{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.6rem;font-weight:600;color:var(--muted);padding:4px 8px;cursor:pointer;position:relative;transition:color .2s}
+.mbn-item.active{color:var(--green)}
+.mbn-icon{font-size:1.25rem;line-height:1}
+.mbn-dot{position:absolute;top:2px;right:8px;width:7px;height:7px;background:var(--red);border-radius:50%;border:2px solid var(--navy);animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+/* old rule removed */
+.section-dark{background:var(--navy)}.section-dark2{background:var(--navy2)}
+.section-light{background:var(--light);color:var(--navy)}
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+.overline{font-family:var(--font-head);font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:block}
+h1,h2,h3,h4{font-family:var(--font-head);line-height:1.1}
+h2.section-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.02em;position:relative;display:inline-block;margin-bottom:16px}
+h2.section-title::after{content:'';position:absolute;bottom:-6px;left:0;width:56px;height:3px;background:var(--green);border-radius:2px}
+.section-light h2.section-title::after{background:var(--blue)}
+#hero{min-height:calc(100vh - 100px);display:grid;grid-template-columns:55% 45%;position:relative;overflow:hidden}
+.hero-left{background:var(--navy);display:flex;flex-direction:column;justify-content:center;padding:80px 60px 80px 80px;position:relative;z-index:2;overflow:hidden}
+.hero-bracket{font-family:var(--font-head);font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.hero-bracket::before{content:'[';color:var(--green);font-size:1rem}
+.hero-bracket::after{content:']';color:var(--green);font-size:1rem}
+h1.hero-h1{font-size:clamp(2.8rem,5vw,5rem);font-weight:900;letter-spacing:-.045em;line-height:.93;margin-bottom:32px}
+h1.hero-h1 em{font-style:normal;color:var(--green)}
+.hero-sub{font-size:1.05rem;color:#8899aa;line-height:1.65;max-width:480px;margin-bottom:40px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+.hero-stats{display:flex;gap:32px}
+.hero-stat-num{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--green);line-height:1}
+.hero-stat-label{font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.05em;margin-top:4px}
+.hero-right{position:relative;overflow:visible;background:var(--navy2);clip-path:none}
+.hero-r-img{width:100%;height:100%;object-fit:cover;opacity:.65}
+.hero-r-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy2) 0%,#0a1535 60%,#07080f 100%);font-family:var(--font-head);color:var(--muted);font-size:.85rem;flex-direction:column;gap:12px;min-height:500px}
+.hero-r-ph .ph-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border:1px dashed rgba(255,255,255,0.15);padding:8px 20px;border-radius:6px}
+.hero-float-card{position:absolute;background:rgba(7,13,26,0.92);backdrop-filter:blur(12px);border:1px solid rgba(0,230,118,0.25);border-radius:12px;padding:14px 18px;min-width:170px}
+.hero-float-card.card-tl{top:40px;left:30px;z-index:10}
+.hero-float-card.card-br{bottom:40px;right:30px;z-index:10}
+.hfc-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:6px}
+.hfc-value{font-family:var(--font-head);font-weight:800;font-size:1.15rem;color:var(--green)}
+.hero-scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-arrow{width:20px;height:20px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);animation:scrollBounce 1.8s ease-in-out infinite}
+@keyframes scrollBounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(5px)}}
+.trust-band{background:var(--light);padding:0 0 70px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.trust-card{background:#fff;border-radius:14px;padding:28px 24px;border:1px solid #e2e8f0;transition:box-shadow .2s,transform .2s}
+.trust-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+.trust-number{font-family:var(--font-head);font-size:2.8rem;font-weight:900;color:var(--blue);line-height:1}
+.trust-label{font-size:.88rem;color:#4a5568;font-weight:600;margin-top:6px}
+#scroll-anim{background:var(--navy2);padding:100px 0;overflow:hidden}
+.scroll-anim-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.scroll-step{padding:28px 0 28px 24px;border-left:2px solid rgba(255,255,255,0.08);cursor:pointer;transition:border-color .3s}
+.scroll-step.active{border-left-color:var(--green);padding-left:30px}
+.scroll-step-num{font-family:var(--font-head);font-size:.7rem;font-weight:800;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
+.scroll-step.active .scroll-step-num{color:var(--green)}
+.scroll-step-title{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:8px;color:#8899aa}
+.scroll-step.active .scroll-step-title{color:var(--white)}
+.scroll-step-desc{font-size:.88rem;color:var(--muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s;opacity:0}
+.scroll-step.active .scroll-step-desc{max-height:120px;opacity:1}
+.laptop-stage{position:relative;width:400px;height:300px;margin:0 auto}
+.lp-body{background:linear-gradient(135deg,#1a2840,#243352);border-radius:12px 12px 4px 4px;width:320px;height:200px;position:absolute;left:40px;top:40px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lp-screen{width:280px;height:160px;background:#000;border-radius:8px;position:absolute;left:20px;top:20px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lp-base{width:380px;height:20px;background:linear-gradient(135deg,#1a2840,#1e2f4a);border-radius:4px 4px 8px 8px;position:absolute;left:10px;bottom:10px}
+.stage-part{position:absolute;border-radius:6px;font-family:var(--font-head);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;letter-spacing:.06em;transition:all .7s cubic-bezier(.23,1,.32,1)}
+.part-ram{background:rgba(0,230,118,.15);border:1px solid rgba(0,230,118,.5);color:var(--green);width:80px;height:20px;bottom:80px;left:80px}
+.part-hdd{background:rgba(41,121,255,.15);border:1px solid rgba(41,121,255,.5);color:var(--blue);width:90px;height:22px;bottom:80px;right:60px}
+.part-ssd{background:rgba(0,212,232,.15);border:1px solid rgba(0,212,232,.5);color:var(--cyan);width:70px;height:16px;bottom:60px;left:100px}
+.part-battery{background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.5);color:var(--amber);width:100px;height:24px;bottom:56px;right:40px}
+.part-board{background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);color:#ff8a80;width:160px;height:40px;bottom:30px;left:60px}
+#services{padding:100px 0;background:var(--light)}
+.services-intro{max-width:560px;margin-bottom:60px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{background:#fff;border-radius:16px;padding:32px 28px;border:1px solid #e2e8f0;transition:all .25s;position:relative;overflow:hidden;cursor:pointer}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.1);transform:translateY(-6px)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card.red-accent::before{background:var(--red)}
+.svc-card.amber-accent::before{background:var(--amber)}
+.svc-card.blue-accent::before{background:var(--blue)}
+.svc-card.cyan-accent::before{background:var(--cyan)}
+.svc-icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#e8f5e9,#f1f8e9);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.svc-icon.red-bg{background:linear-gradient(135deg,#ffeaea,#ffe0e0)}
+.svc-icon.amber-bg{background:linear-gradient(135deg,#fff8e1,#fff3cd)}
+.svc-icon.blue-bg{background:linear-gradient(135deg,#e3f2fd,#e8eaf6)}
+.svc-icon.cyan-bg{background:linear-gradient(135deg,#e0f7fa,#e0f7f7)}
+.svc-card h3{font-family:var(--font-head);font-size:1.05rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.svc-card p{font-size:.88rem;color:#4a5568;line-height:1.65}
+.svc-link{font-family:var(--font-head);font-size:.8rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px;margin-top:16px;transition:gap .2s}
+.svc-link:hover{gap:8px}
+#data-destruction{background:var(--navy);padding:100px 0;position:relative;overflow:hidden}
+#data-destruction::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(244,67,54,0.08),transparent 65%);pointer-events:none}
+.dd-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.dd-badge-row{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.dd-badge{font-family:var(--font-head);font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:6px 14px;border-radius:20px;border:1px solid;display:inline-flex;align-items:center;gap:6px}
+.dd-badge.nist{border-color:rgba(244,67,54,.4);color:#ff8a80;background:rgba(244,67,54,.08)}
+.dd-badge.dod{border-color:rgba(245,158,11,.4);color:var(--amber);background:rgba(245,158,11,.08)}
+.dd-badge.ca{border-color:rgba(0,230,118,.4);color:var(--green);background:rgba(0,230,118,.08)}
+.shred-visual{background:rgba(244,67,54,0.06);border:1px solid rgba(244,67,54,0.2);border-radius:16px;padding:32px}
+.shred-bar-track{height:8px;background:rgba(255,255,255,.05);border-radius:4px;overflow:hidden;margin-bottom:8px}
+.shred-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--red),#ff6b6b);animation:shredFill 2.5s ease-in-out infinite alternate}
+@keyframes shredFill{from{width:30%}to{width:100%}}
+.cert-list{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.cert-item{display:flex;align-items:flex-start;gap:12px;font-size:.88rem;color:#8899aa;line-height:1.5}
+.cert-check{width:20px;height:20px;border-radius:50%;background:rgba(244,67,54,.15);border:1px solid rgba(244,67,54,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.6rem;color:var(--red);margin-top:2px}
+.amber-urgent{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:20px 24px;margin-top:24px;display:flex;align-items:center;gap:16px}
+.amber-urgent-icon{font-size:1.8rem;flex-shrink:0}
+.amber-urgent-text{font-size:.85rem;color:#f59e0b;font-weight:600;line-height:1.5}
+.amber-urgent-text strong{color:var(--white)}
+#environmental{background:var(--navy2);padding:100px 0}
+.env-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
+.env-stat{text-align:center;padding:32px 20px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--border);transition:background .2s}
+.env-stat:hover{background:rgba(0,230,118,.05)}
+.env-num{font-family:var(--font-head);font-size:2.4rem;font-weight:900;color:var(--green);line-height:1}
+.env-unit{font-size:1rem;color:var(--muted)}
+.env-label{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.4}
+.env-icon{font-size:2rem;margin-bottom:12px}
+#testimonials{background:var(--navy);padding:100px 0}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:60px}
+.testi-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:16px;padding:32px 28px;transition:border-color .2s}
+.testi-card:hover{border-color:rgba(0,230,118,.25)}
+.testi-stars{color:var(--amber);font-size:1rem;margin-bottom:16px;letter-spacing:2px}
+.testi-text{font-size:.92rem;color:#b0c4d8;line-height:1.7;font-style:italic;margin-bottom:20px}
+.testi-name{font-family:var(--font-head);font-weight:700;font-size:.88rem}
+.testi-role{font-size:.75rem;color:var(--muted)}
+#resources{padding:100px 0}
+.resource-grid{display:grid;grid-template-columns:2fr 1fr;gap:40px;margin-top:48px}
+.resource-main{display:flex;flex-direction:column;gap:24px}
+.resource-card{background:#fff;border-radius:14px;padding:28px;border:1px solid #e2e8f0;display:flex;gap:20px;cursor:pointer;transition:box-shadow .2s}
+.resource-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.resource-thumb{width:80px;height:80px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.resource-thumb.green-bg{background:#e8f5e9}
+.resource-thumb.blue-bg{background:#e3f2fd}
+.resource-thumb.red-bg{background:#ffeaea}
+.resource-meta{font-size:.75rem;color:var(--muted);font-weight:600;margin-bottom:8px}
+.resource-card h3{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:8px}
+.resource-card p{font-size:.85rem;color:#4a5568;line-height:1.6}
+.resource-sidebar{display:flex;flex-direction:column;gap:20px}
+.sidebar-widget{background:#fff;border-radius:14px;padding:24px;border:1px solid #e2e8f0}
+.sidebar-widget h4{font-family:var(--font-head);font-weight:800;font-size:.92rem;color:var(--navy);margin-bottom:16px}
+.stats-bar-item{margin-bottom:14px}
+.stats-bar-label{font-size:.78rem;color:#4a5568;font-weight:600;margin-bottom:5px;display:flex;justify-content:space-between}
+.stats-bar-track{height:7px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.stats-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.download-list{display:flex;flex-direction:column;gap:10px}
+.download-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;background:#f8faff;cursor:pointer;transition:background .2s}
+.download-item:hover{background:#eef2ff}
+.dl-info{font-size:.78rem;font-weight:600;color:var(--navy)}
+.dl-size{font-size:.68rem;color:var(--muted)}
+.blog-hero{background:var(--navy);padding:60px 0}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0}
+.blog-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;cursor:pointer;transition:box-shadow .25s,transform .25s}
+.blog-card:hover{box-shadow:0 16px 50px rgba(0,0,0,.1);transform:translateY(-4px)}
+.blog-thumb{height:180px;background:linear-gradient(135deg,#e3f2fd,#e8eaf6);display:flex;align-items:center;justify-content:center;font-size:2.5rem;position:relative}
+.blog-tag{position:absolute;top:12px;left:12px;font-family:var(--font-head);font-size:.65rem;font-weight:800;letter-spacing:.08em;padding:4px 10px;border-radius:20px;text-transform:uppercase}
+.tag-tech{background:#e3f2fd;color:#1565c0}
+.tag-security{background:#ffeaea;color:#c62828}
+.tag-recycling{background:#e8f5e9;color:#2e7d32}
+.tag-compliance{background:#ede7f6;color:#4527a0}
+.tag-sustainability{background:#fff8e1;color:#e65100}
+.tag-itad{background:#fff3e0;color:#bf360c}
+.blog-body{padding:20px}
+.blog-date{font-size:.72rem;color:var(--muted);font-weight:600;margin-bottom:8px}
+.blog-card h3{font-family:var(--font-head);font-weight:800;font-size:1rem;color:var(--navy);line-height:1.3;margin-bottom:10px}
+.blog-card p{font-size:.82rem;color:#4a5568;line-height:1.6}
+.blog-read{font-family:var(--font-head);font-size:.78rem;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:4px;margin-top:12px}
+.reading-bar{position:fixed;top:70px;left:0;right:0;height:3px;background:rgba(0,0,0,.08);z-index:180}
+.reading-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));width:0%}
+.article-hero{background:var(--navy);padding:60px 0}
+.article-inner{display:grid;grid-template-columns:1fr 280px;gap:48px;padding:60px 0;align-items:start}
+.article-content h2{font-family:var(--font-head);font-size:1.6rem;font-weight:800;margin:40px 0 16px;position:relative;padding-bottom:10px;color:#111827}
+.article-content h2::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background:var(--green)}
+.article-content h3{font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--blue);border-left:3px solid var(--blue);padding-left:10px;margin:28px 0 12px}
+.article-content p{font-size:.95rem;color:#374151;line-height:1.8;margin-bottom:20px}
+.article-content ul{list-style:none;margin:0 0 20px}
+.article-content ul li{font-size:.92rem;color:#374151;padding:6px 0 6px 20px;position:relative}
+.article-content ul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:700}
+.article-badges{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.article-toc{background:#fff;border-radius:12px;padding:24px;border:1px solid #e2e8f0;position:sticky;top:90px}
+.toc-title{font-family:var(--font-head);font-weight:800;font-size:.88rem;color:var(--navy);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #e2e8f0}
+.toc-link{display:block;font-size:.8rem;color:#4a5568;padding:5px 0 5px 10px;border-left:2px solid transparent;transition:color .2s,border-color .2s;cursor:pointer}
+.toc-link:hover{color:var(--blue);border-left-color:var(--blue)}
+.author-box{background:#fff;border-radius:14px;padding:28px;border:1px solid #e2e8f0;display:flex;gap:20px;align-items:flex-start;margin-top:40px}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.author-name{font-family:var(--font-head);font-weight:800;font-size:.95rem;color:var(--navy)}
+.author-bio{font-size:.82rem;color:#4a5568;line-height:1.6;margin-top:4px}
+.faq-section{margin-top:48px}
+.faq-item{border:1px solid #e2e8f0;border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{font-family:var(--font-head);font-weight:700;font-size:.92rem;color:var(--navy);padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#fff}
+.faq-icon{color:var(--blue);transition:transform .3s}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s}
+.faq-a.open{max-height:300px;padding:0 20px 18px}
+.faq-a p{font-size:.88rem;color:#4a5568;line-height:1.65}
+.share-row{display:flex;gap:10px;margin-top:32px;align-items:center}
+.share-label{font-family:var(--font-head);font-weight:700;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.share-btn{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.9rem;border:none}
+.share-btn.tw{background:#1da1f2;color:#fff}
+.share-btn.li{background:#0077b5;color:#fff}
+.share-btn.em{background:#ea4335;color:#fff}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.related-card{background:#fff;border-radius:10px;padding:20px;border:1px solid #e2e8f0;cursor:pointer;transition:box-shadow .2s}
+.related-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.07)}
+.related-card h4{font-family:var(--font-head);font-weight:700;font-size:.88rem;color:var(--navy);line-height:1.3}
+.about-hero{background:var(--navy);padding:80px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:80px 0;align-items:center}
+.mission-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:60px 0}
+.mission-card{background:#fff;border-radius:14px;padding:28px;border:1px solid #e2e8f0}
+.mission-icon{font-size:1.6rem;margin-bottom:12px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:60px 0}
+.contact-form{background:#fff;border-radius:16px;padding:36px;border:1.5px solid var(--green);box-shadow:0 0 0 4px rgba(0,230,118,0.07)}
+.contact-form h3{font-family:var(--font-head);font-weight:800;font-size:1.2rem;color:var(--navy);margin-bottom:24px}
+.form-group{margin-bottom:18px}
+.form-group label{font-family:var(--font-head);font-weight:700;font-size:.78rem;color:#374151;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px}
+.form-control{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:8px;font-family:var(--font-body);font-size:.88rem;color:var(--navy);outline:none;transition:border-color .2s;background:#fff}
+.form-control:focus{border-color:var(--blue)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+textarea.form-control{resize:vertical;min-height:120px}
+.drop-zone{border:2px dashed #d1d5db;border-radius:12px;padding:32px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:18px}
+.drop-zone.drag-over{border-color:var(--blue);background:#f0f4ff}
+.drop-icon{font-size:2rem;margin-bottom:10px}
+.drop-text{font-size:.85rem;color:#4a5568;font-weight:500}
+.drop-hint{font-size:.75rem;color:var(--muted);margin-top:4px}
+.file-list{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.file-pill{background:#e3f2fd;border-radius:6px;padding:6px 12px;font-size:.78rem;color:var(--navy);display:flex;align-items:center;justify-content:space-between}
+.file-pill-remove{cursor:pointer;color:var(--red);font-weight:700;background:none;border:none;font-size:1rem}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-info-card{background:#fff;border-radius:14px;padding:24px;border:1px solid #e2e8f0}
+.ci-icon{font-size:1.4rem;margin-bottom:8px}
+.ci-label{font-family:var(--font-head);font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px}
+.ci-value{font-family:var(--font-head);font-weight:800;font-size:1.05rem;color:var(--navy)}
+.ci-value a{color:var(--blue)}
+.map-placeholder{background:linear-gradient(135deg,#e3f2fd,#e8f5e9);border-radius:14px;height:200px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#4a5568;font-weight:600}
+.svc-inner-hero{background:var(--navy);padding:80px 0;position:relative;overflow:hidden}
+.svc-inner-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(41,121,255,.1),transparent 60%);pointer-events:none}
+.svc-features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:80px 0}
+.svc-feature-card{background:#fff;border-radius:14px;padding:28px;border:1px solid #e2e8f0}
+.svc-feature-card h3{font-family:var(--font-head);font-weight:800;color:var(--navy);margin-bottom:10px}
+.svc-feature-card p{font-size:.88rem;color:#4a5568;line-height:1.65}
+.cta-section{background:var(--navy2);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,230,118,.08),transparent 70%);pointer-events:none}
+.cta-section h2{font-size:clamp(2rem,4.5vw,3.5rem);font-weight:900;letter-spacing:-.03em;margin-bottom:16px}
+.cta-section p{color:var(--muted);font-size:1rem;margin-bottom:40px}
+.cta-phone{font-family:var(--font-head);font-size:2rem;font-weight:900;color:var(--green);margin-bottom:32px;display:block;letter-spacing:-.02em}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.site-footer{background:#040810;border-top:1px solid rgba(255,255,255,.06);padding:60px 0 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-logo{font-family:var(--font-head);font-weight:800;font-size:1.15rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.footer-desc{font-size:.85rem;color:var(--muted);line-height:1.65;max-width:280px;margin-bottom:20px}
+.footer-phone{font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--green)}
+.footer-col h4{font-family:var(--font-head);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{font-size:.85rem;color:#6b7f99;transition:color .2s;cursor:pointer}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.78rem;color:#445566}
+.footer-credits{display:flex;gap:16px}
+.footer-credits a{font-size:.78rem;color:#445566;transition:color .2s}
+.footer-credits a:hover{color:var(--muted)}
+.marquee-wrap{background:var(--green);padding:12px 0;overflow:hidden}
+.marquee-track{display:flex;white-space:nowrap;animation:marqueeScroll 30s linear infinite}
+.marquee-item{font-family:var(--font-head);font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);padding:0 32px;display:inline-flex;align-items:center;gap:12px}
+.marquee-sep{color:rgba(7,13,26,.3)}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+#ecobot-btn{position:fixed;bottom:90px;right:24px;width:52px;height:52px;background:var(--green);border-radius:50%;border:none;cursor:pointer;z-index:250;display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:0 8px 24px rgba(0,230,118,.4);transition:transform .2s}
+#ecobot-btn:hover{transform:scale(1.1)}
+#ecobot-window{display:none;position:fixed;bottom:160px;right:24px;width:320px;height:420px;background:var(--navy2);border:1px solid rgba(0,230,118,.2);border-radius:16px;flex-direction:column;z-index:249;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+#ecobot-window.open{display:flex}
+.eco-head{background:rgba(0,230,118,.1);padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+.eco-avatar{width:32px;height:32px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.eco-name{font-family:var(--font-head);font-weight:800;font-size:.88rem}
+.eco-status{font-size:.7rem;color:var(--green)}
+.eco-close{margin-left:auto;background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer}
+.eco-messages{flex:1;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.eco-msg{max-width:85%;font-size:.82rem;line-height:1.5;padding:10px 14px;border-radius:12px}
+.eco-msg.bot{background:rgba(255,255,255,.06);color:#b0c4d8;align-self:flex-start;border-radius:4px 12px 12px 12px}
+.eco-msg.user{background:var(--green);color:var(--navy);align-self:flex-end;font-weight:600;border-radius:12px 12px 4px 12px}
+.eco-input-row{display:flex;padding:12px;gap:8px;border-top:1px solid var(--border)}
+.eco-input{flex:1;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:#fff;font-size:.82rem;outline:none;font-family:var(--font-body)}
+.eco-send{background:var(--green);border:none;border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--navy);font-size:.9rem}
+.hiw-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+.hiw-timeline::before{content:'';position:absolute;top:30px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));z-index:0}
+.hiw-step{position:relative;text-align:center;padding:0 16px}
+.hiw-num{width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-head);font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1;border:3px solid var(--blue);transition:background .3s,border-color .3s}
+.hiw-step:hover .hiw-num{background:var(--blue)}
+.hiw-step h3{font-family:var(--font-head);font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:8px}
+.hiw-step p{font-size:.82rem;color:#4a5568;line-height:1.6}
+.reveal{opacity:1;transform:none}
+.reveal.visible{opacity:1;transform:none}
+.reveal-left{opacity:1;transform:none}
+.reveal-left.visible{opacity:1;transform:none}
+.reveal-right{opacity:1;transform:none}
+.reveal-right.visible{opacity:1;transform:none}
+@media(max-width:1024px){
+  .trust-grid,.env-grid,.svc-grid,.testi-grid,.footer-grid{grid-template-columns:repeat(2,1fr)}
+  .hiw-timeline::before{display:none}
+  .hero-left{padding:60px 40px}
+  #hero{grid-template-columns:1.2fr 1fr}
+  .dd-inner,.about-grid,.contact-grid,.article-inner,.resource-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .main-nav{display:none}
+  .hdr-cta .btn-primary{display:none}
+  .hdr-phone{display:none}
+  .hamburger{display:flex}
+  .mobile-bottom-nav{display:block}
+  .site-header{padding:0 16px}
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{display:none}
+  .hero-left{padding:60px 24px}
+  .container{padding:0 20px}
+  .trust-grid,.env-grid,.svc-grid,.testi-grid,.svc-features,.mission-cards,.related-grid,.footer-grid{grid-template-columns:1fr}
+  .hiw-timeline{grid-template-columns:1fr 1fr}
+  #ecobot-btn{bottom:80px}
+  body{padding-bottom:64px}
+  .blog-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  h1.hero-h1{font-size:2.4rem}
+  .hiw-timeline{grid-template-columns:1fr}
+  .cta-phone{font-size:1.4rem}
+  #ecobot-window{width:calc(100vw - 20px);right:10px;bottom:150px}
+}
+/* === ADDITIONAL MOBILE FIXES === */
+@media(max-width:768px){
+  .svc-grid{grid-template-columns:1fr}
+  .dd-inner{grid-template-columns:1fr;gap:40px}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .contact-grid{grid-template-columns:1fr}
+  .article-inner{grid-template-columns:1fr}
+  .resource-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
+  .mission-cards{grid-template-columns:1fr}
+  .svc-features{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .env-grid{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn-primary,.hero-actions .btn-outline{width:100%;text-align:center}
+  .scroll-anim-inner{grid-template-columns:1fr}
+  .laptop-stage{display:none}
+  section,#scroll-anim,#environmental,#testimonials,.cta-section,#data-destruction{padding:60px 0}
+  .trust-band{padding:40px 0}
+  #services{padding:60px 0}
+  .container{padding:0 16px}
+  .hero-left{padding:48px 16px}
+  .svc-inner-hero{padding:48px 0}
+  .about-hero,.blog-hero,.article-hero{padding:48px 0}
+  .hiw-timeline::before{display:none}
+  .hiw-timeline{grid-template-columns:1fr 1fr;gap:24px}
+  h2.section-title{font-size:1.8rem}
+  .cta-section h2{font-size:1.8rem}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center}
+  .footer-credits{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+  .env-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .hiw-timeline{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .dd-badge-row{flex-wrap:wrap}
+}
+
+/* === SECTION SAFETY: prevent collapsed sections === */
+.trust-band,.trust-band .trust-grid{min-height:unset}
+.trust-card{min-height:100px;display:block}
+.env-stat{min-height:120px;display:block}
+.testi-card{min-height:160px;display:block}
+.svc-card{min-height:180px;display:block}
+section{display:block}
+.section-dark,.section-dark2,.section-light{display:block}
+/* pages controlled by display only */
+/* Fix mobile header */
+@media(max-width:768px){
+  .hdr-cta{gap:8px}
+  .logo{font-size:1rem}
+  .logo-icon{width:28px;height:28px;font-size:.85rem}
+  .site-header{height:60px;padding:0 12px}
+}
+
+/* ── PAGE SWITCHING ──────────────────────────── */
+.page { display: none; }
+.page.is-active { display: block; }
+/* ── CURSOR ──────────────────────────────────── */
+body { cursor: none; }
+#cur-dot {
+  position: fixed; z-index: 99999;
+  width: 8px; height: 8px;
+  background: #00e676; border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  top: -40px; left: -40px;
+  mix-blend-mode: normal;
+}
+#cur-ring {
+  position: fixed; z-index: 99998;
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(0,230,118,.6);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  transition: width .18s ease, height .18s ease, border-color .18s ease;
+  top: -40px; left: -40px;
+}
+/* Hide cursor elements on touch devices */
+@media (hover: none) {
+  #cur-dot, #cur-ring, #cur-glow { display: none !important; }
+  body { cursor: auto !important; }
+}
+#cur-glow {
+  position: fixed; z-index: 0;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,230,118,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%,-50%);
+  top: 50%; left: 50%;
+  transition: top .08s linear, left .08s linear;
+}
+
+/* ── IMAGE PLACEHOLDERS ────────────────────────────────── */
+.img-placeholder {
+  position: relative;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(41,121,255,0.04) 0px,
+    rgba(41,121,255,0.04) 10px,
+    rgba(41,121,255,0.07) 10px,
+    rgba(41,121,255,0.07) 20px
+  );
+  border: 2px dashed rgba(41,121,255,0.35);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 180px;
+  text-align: center;
+  padding: 24px;
+}
+.section-dark .img-placeholder,
+.section-dark2 .img-placeholder {
+  border-color: rgba(0,230,118,0.3);
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0,230,118,0.03) 0px, rgba(0,230,118,0.03) 10px,
+    rgba(0,230,118,0.06) 10px, rgba(0,230,118,0.06) 20px
+  );
+}
+.img-placeholder::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -11px; left: 16px;
+  background: #2979ff;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+.img-placeholder .ph-icon { font-size: 2.8rem; }
+.img-placeholder .ph-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: .92rem;
+  color: #2979ff;
+}
+.section-dark .img-placeholder .ph-title,
+.section-dark2 .img-placeholder .ph-title { color: #00e676; }
+.img-placeholder .ph-sub {
+  font-size: .75rem;
+  color: #4a5568;
+  max-width: 320px;
+  line-height: 1.5;
+}
+.section-dark .img-placeholder .ph-sub,
+.section-dark2 .img-placeholder .ph-sub { color: #8899aa; }
+.img-placeholder .ph-spec {
+  font-size: .68rem;
+  font-weight: 700;
+  color: #2979ff;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  background: rgba(41,121,255,.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-top: 4px;
+}
+
+/* Facility banner — full width strip */
+.img-placeholder-banner {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 0;
+  border-top: none;
+}
+
+/* Testimonial headshot placeholder */
+.testi-avatar {
+  width: 48px; height: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  padding: 0;
+  gap: 0;
+  background: rgba(255,255,255,.06);
+  border: 2px dashed rgba(0,230,118,.4);
+}
+.testi-avatar::before { display: none; }
+
+/* Blog card thumbnails — enhanced */
+.blog-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.blog-thumb::after {
+  content: '📸 Add cover image';
+  position: absolute;
+  bottom: 8px; right: 8px;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: .6rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+
+/* ── HEADING POLISH ─────────────────────────────────────── */
+h1,h2,h3,h4,h5 { font-family: var(--font-head); }
+h1.hero-h1 { letter-spacing: -0.045em; line-height: 0.93; }
+h2.section-title { letter-spacing: -0.03em; }
+.overline { font-family: var(--font-head); letter-spacing: 0.2em; }
+.logo { font-family: var(--font-head); font-weight: 900; }
+.btn-primary, .btn-outline { font-family: var(--font-head); letter-spacing: 0.03em; }
+.hdr-phone { font-family: var(--font-head); }
+.trust-number { font-size: 3rem; letter-spacing: -0.04em; }
+.hero-stat-num { font-size: 2rem; letter-spacing: -0.03em; }
+.cta-phone { letter-spacing: -0.03em; }
+.testi-name { font-family: var(--font-head); font-weight: 700; }
+.footer-phone { font-family: var(--font-head); }
+.mobile-phone-big { font-family: var(--font-head); }
+
+
+/* ── FORCE HEADING COLORS IN LIGHT SECTIONS ────────────── */
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section-light h4 { color: var(--navy); }
+.article-content h2,
+.article-content h3,
+.article-content h4 { color: #111827; }
+.faq-q { color: var(--navy) !important; }
+/* Fix amber-urgent text visibility */
+.amber-urgent { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); }
+.amber-urgent-text { color: #92400e !important; }
+.amber-urgent-text strong { color: #78350f !important; }
+/* on dark sections keep amber text visible */
+.section-dark .amber-urgent-text,
+#data-destruction .amber-urgent-text { color: var(--amber) !important; }
+.section-dark .amber-urgent-text strong,
+#data-destruction .amber-urgent-text strong { color: #fff !important; }
+
+
+/* ══ ENTRANCE ANIMATIONS ════════════════════════════════════ */
+@keyframes fadeUp   { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:none; } }
+@keyframes fadeLeft { from { opacity:0; transform:translateX(-32px); } to { opacity:1; transform:none; } }
+@keyframes fadeRight{ from { opacity:0; transform:translateX(32px); } to { opacity:1; transform:none; } }
+@keyframes scaleIn  { from { opacity:0; transform:scale(.92); } to { opacity:1; transform:scale(1); } }
+@keyframes slideDown{ from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:none; } }
+@keyframes glowPulse{ 0%,100%{box-shadow:0 0 0 0 rgba(0,230,118,0)} 50%{box-shadow:0 0 32px 8px rgba(0,230,118,.18)} }
+
+/* Hero entrance — triggers on .pg-loaded class added by JS */
+#pg-home.pg-loaded .hero-bracket    { animation: slideDown .55s cubic-bezier(.23,1,.32,1) .05s both; }
+#pg-home.pg-loaded h1.hero-h1       { animation: fadeUp    .7s  cubic-bezier(.23,1,.32,1) .15s both; }
+#pg-home.pg-loaded .hero-sub        { animation: fadeUp    .7s  cubic-bezier(.23,1,.32,1) .28s both; }
+#pg-home.pg-loaded .hero-actions    { animation: fadeUp    .65s cubic-bezier(.23,1,.32,1) .4s  both; }
+#pg-home.pg-loaded .hero-stats      { animation: fadeUp    .65s cubic-bezier(.23,1,.32,1) .52s both; }
+#pg-home.pg-loaded .hero-right      { animation: fadeRight .8s  cubic-bezier(.23,1,.32,1) .1s  both; }
+#pg-home.pg-loaded .hero-float-card.card-tl { animation: scaleIn .6s cubic-bezier(.23,1,.32,1) .55s both; }
+#pg-home.pg-loaded .hero-float-card.card-br { animation: scaleIn .6s cubic-bezier(.23,1,.32,1) .7s  both; }
+
+/* Page transition — any page when it becomes active */
+.page.is-active .svc-card          { animation: fadeUp   .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 80ms + 50ms) both; }
+.page.is-active .trust-card        { animation: scaleIn  .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 80ms + 50ms) both; }
+.page.is-active .testi-card        { animation: fadeUp   .55s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 90ms + 50ms) both; }
+.page.is-active .env-stat          { animation: fadeUp   .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 70ms + 50ms) both; }
+.page.is-active .blog-card         { animation: scaleIn  .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 80ms + 50ms) both; }
+.page.is-active .svc-feature-card  { animation: fadeUp   .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 80ms + 50ms) both; }
+.page.is-active .mission-card      { animation: fadeUp   .5s cubic-bezier(.23,1,.32,1) calc(var(--i,0) * 80ms + 50ms) both; }
+
+/* Marquee glow */
+.marquee-wrap { position:relative; }
+
+/* Scroll-triggered fade for sections */
+.sect-anim { opacity:0; transform:translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.sect-anim.in-view { opacity:1; transform:none; }
+
+/* Green glow on CTA button */
+.btn-primary { animation: glowPulse 3s ease-in-out infinite; }
+.btn-primary:hover { animation: none; }
+
+/* Number counter shine */
+.trust-number, .hero-stat-num { position:relative; }
+
+/* Floating cards gentle bob */
+@keyframes cardBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+/* float cards bob AFTER entrance animation completes */
+#pg-home.pg-loaded .hero-float-card.card-tl { animation: scaleIn .6s cubic-bezier(.23,1,.32,1) .55s both, cardBob 4s ease-in-out 1.5s infinite; }
+#pg-home.pg-loaded .hero-float-card.card-br { animation: scaleIn .6s cubic-bezier(.23,1,.32,1) .7s  both, cardBob 4s ease-in-out 2.5s infinite; }
+
+/* Preheader slide in */
+.preheader { animation: slideDown .4s cubic-bezier(.23,1,.32,1) both; }
+
+/* Header slide in */
+.site-header { animation: slideDown .5s cubic-bezier(.23,1,.32,1) .1s both; }
+
+/* Service card hover lift + glow */
+.svc-card:hover { transform: translateY(-8px) !important; box-shadow: 0 24px 60px rgba(0,0,0,.13) !important; }
+.svc-card.red-accent:hover { box-shadow: 0 20px 50px rgba(244,67,54,.15) !important; }
+
+/* Blog card hover */
+.blog-card:hover { transform: translateY(-6px) scale(1.01) !important; }
+
+/* Shred bar stagger */
+.shred-bar-fill:nth-child(1){animation-delay:.0s}
+.shred-bar-fill:nth-child(2){animation-delay:.3s}
+.shred-bar-fill:nth-child(3){animation-delay:.6s}
+.shred-bar-fill:nth-child(4){animation-delay:.9s}
+
+
+/* ── TRUST BAND SPACING FIX ─────────────────────────────── */
+.trust-band > .container {
+  padding-top: 64px;
+  padding-bottom: 0;
+}
+.trust-band .img-placeholder-banner {
+  margin-bottom: 0;
+}
+/* Section title spacing in light sections */
+.section-light .overline {
+  display: block;
+  margin-bottom: 10px;
+  padding-top: 0;
+}
+
+
+/* ══ SECTION SPACING OVERHAUL ═══════════════════════════════ */
+/* More breathing room between all sections */
+#scroll-anim         { padding: 110px 0; }
+#services            { padding: 110px 0; }
+#data-destruction    { padding: 110px 0; }
+#environmental       { padding: 110px 0; }
+#testimonials        { padding: 110px 0; }
+.cta-section         { padding: 120px 0; }
+.trust-band          { padding: 0 0 90px; }
+.trust-band > .container { padding-top: 80px; }
+.svc-inner-hero      { padding: 90px 0; }
+.about-hero, .blog-hero, .article-hero { padding: 80px 0; }
+
+/* Section intro — more space before the grid */
+.services-intro      { margin-bottom: 72px; }
+.svc-grid            { gap: 24px; }
+.trust-grid          { margin-top: 60px; }
+.env-grid            { margin-top: 72px; }
+.testi-grid          { margin-top: 72px; }
+
+/* More space between section-title and body text */
+h2.section-title     { margin-bottom: 20px; }
+h2.section-title + p { margin-top: 0; }
+
+/* Marquee gets its own clean separation */
+.marquee-wrap        { margin: 0; border-top: none; border-bottom: none; }
+
+/* Padding inside cards */
+.trust-card          { padding: 32px 28px; }
+.env-stat            { padding: 36px 24px; }
+.testi-card          { padding: 36px 32px; }
+.svc-card            { padding: 36px 32px; }
+
+/* Footer spacing */
+.site-footer         { padding: 80px 0 40px; }
+.footer-grid         { margin-bottom: 60px; }
+
+@media(max-width:768px){
+  #scroll-anim,#services,#data-destruction,
+  #environmental,#testimonials { padding: 72px 0; }
+  .cta-section { padding: 80px 0; }
+  .trust-band  { padding: 0 0 60px; }
+  .trust-band > .container { padding-top: 56px; }
+}
+
+
+/* ── HERO LEFT PANEL — subtle grid overlay ─────────────── */
+.hero-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,230,118,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,230,118,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-left > * { position: relative; z-index: 1; }
+
+/* Hero right — diagonal stripe texture */
+.hero-r-ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    rgba(41,121,255,0.03) 0px,
+    rgba(41,121,255,0.03) 2px,
+    transparent 2px,
+    transparent 28px
+  );
+  pointer-events: none;
+}
+
+/* Glow behind hero heading */
+.hero-left::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(0,230,118,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER — slightly taller, cleaner ──────────────────── */
+.site-header {
+  height: 72px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* ── NAV LINKS — bolder active state ────────────────────── */
+.main-nav .nav-link.is-active {
+  color: var(--green) !important;
+  background: rgba(0,230,118,0.08);
+}
+
+/* ── OVERLINE — refined ──────────────────────────────────── */
+.overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.overline::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+
+/* ── Facility banner label on dark background ─────────── */
+.img-placeholder-banner::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--font-head);
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  z-index: 10;
+}
+/* spacing between facility banner and trust band heading */
+.trust-band > .container {
+  padding-top: 72px !important;
+}
+
+</style>
+</head>
+<body>
+
+<!-- CURSOR ELEMENTS -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<div id="cur-glow"></div>
+
+<!-- PREHEADER -->
+<div class="preheader">🌿 Orange County&#39;s #1 Certified E-Waste Recycler &amp; ITAD Provider &nbsp;|&nbsp; Call Now: <a href="tel:9493450285">(949) 345-0285</a></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo"><div class="logo-icon">♻</div>OC Electronic<span>&nbsp;Recycling</span></div>
+  <nav class="main-nav">
+    <a class="nav-link is-active" data-target="home" id="nl-home">Home</a>
+    <a class="nav-link" data-target="services-page" id="nl-services-page">Services</a>
+    <a class="nav-link" data-target="how-page" id="nl-how-page">How It Works</a>
+    <a class="nav-link" data-target="resources-page" id="nl-resources-page">Resources</a>
+    <a class="nav-link" data-target="blog-page" id="nl-blog-page">Blog</a>
+    <a class="nav-link" data-target="about-page" id="nl-about-page">About</a>
+    <a class="nav-link" data-target="contact-page" id="nl-contact-page">Contact</a>
+  </nav>
+  <div class="hdr-cta">
+    <a href="tel:9493450285" class="hdr-phone">&#9990; (949) 345-0285</a>
+    <button class="btn-primary" data-target="contact-page">Get a Quote</button>
+    <button class="hamburger" id="ham-btn"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- MOBILE NAV DRAWER -->
+<nav class="mobile-nav" id="mob-nav">
+  <button class="mobile-nav-close" id="mob-close">&#10005;</button>
+  <a class="nav-link" data-target="home" data-close="1">Home</a>
+  <a class="nav-link" data-target="services-page" data-close="1">Services</a>
+  <a class="nav-link" data-target="how-page" data-close="1">How It Works</a>
+  <a class="nav-link" data-target="resources-page" data-close="1">Resources</a>
+  <a class="nav-link" data-target="blog-page" data-close="1">Blog</a>
+  <a class="nav-link" data-target="about-page" data-close="1">About</a>
+  <a class="nav-link" data-target="contact-page" data-close="1">Contact</a>
+  <div class="mobile-phone-big">&#9990; (949) 345-0285</div>
+</nav>
+
+<!-- ═══ PAGES ══════════════════════════════════════════════ -->
+
+<div id="pg-home" class="page is-active" style="display:block">
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-bracket">Orange County — Est. 2024</div>
+    <h1 class="hero-h1">We Recycle<br><em>Electronics.</em><br>You Stay Clean.</h1>
+    <p class="hero-sub">Certified data destruction, ITAD services, and responsible e-waste recycling for businesses and residents across Orange County, California.</p>
+    <div class="hero-actions">
+      <button class="btn-primary btn-large" onclick="showPage('contact-page')">Schedule Pickup</button>
+      <a href="tel:9493450285" class="btn-outline btn-large">☎ (949) 345-0285</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num" data-count="500">0</div><div class="hero-stat-label">Tons Diverted / Year</div></div>
+      <div><div class="hero-stat-num" data-count="100">0</div><div class="hero-stat-label">% Data Verified</div></div>
+      <div><div class="hero-stat-num" data-count="2500">0</div><div class="hero-stat-label">Clients Served</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-r-ph">
+      <div style="font-size:3rem;margin-bottom:12px">📸</div>
+      <div style="font-family:var(--font-head);font-weight:700;font-size:.85rem;color:#00e676;letter-spacing:.08em;margin-bottom:6px">YOUR FACILITY PHOTO</div>
+      <div style="font-size:.75rem;color:#8899aa;text-align:center;max-width:200px;line-height:1.6">Replace this div with:<br><code style="color:#00d4e8;font-size:.7rem">&lt;img src="hero.jpg" class="hero-r-img"&gt;</code></div>
+      <div style="margin-top:14px;font-size:.68rem;color:#445566;border:1px dashed rgba(255,255,255,.1);padding:6px 14px;border-radius:20px;letter-spacing:.06em">900 × 1100 px · JPG/WebP</div>
+    </div>
+    <div class="hero-float-card card-tl"><div class="hfc-label">Certified Process</div><div class="hfc-value">NIST 800-88 ✓</div></div>
+    <div class="hero-float-card card-br"><div class="hfc-label">CA DTSC Compliant</div><div class="hfc-value">Always ✓</div></div>
+  </div>
+  <div class="hero-scroll-hint"><span>Scroll</span><div class="scroll-arrow"></div></div>
+</section>
+
+<div class="marquee-wrap"><div class="marquee-track">
+  <span class="marquee-item">E-Waste Recycling <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Certified Data Destruction <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">IT Asset Disposition <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Business Pickup <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">NIST 800-88 Compliant <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Orange County CA <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Hard Drive Shredding <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Server Decommission <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">E-Waste Recycling <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Certified Data Destruction <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">IT Asset Disposition <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Business Pickup <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">NIST 800-88 Compliant <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Orange County CA <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Hard Drive Shredding <span class="marquee-sep">✦</span></span>
+  <span class="marquee-item">Server Decommission <span class="marquee-sep">✦</span></span>
+</div></div>
+
+<div style="background:var(--light);padding:0 0 60px 0">
+  <!-- ★ FACILITY PHOTO: Replace the div below with:
+       <img src="facility.jpg" style="width:100%;height:260px;object-fit:cover;display:block">
+  -->
+  <div class="img-placeholder img-placeholder-banner" data-label="FACILITY OVERVIEW"
+       style="width:100%;height:260px;min-height:260px;border-radius:0;border-left:none;border-right:none;border-top:none;border-bottom:2px dashed rgba(41,121,255,.25);background:linear-gradient(135deg,#0d1528 0%,#111f3a 50%,#0a1535 100%);position:relative;overflow:hidden;gap:14px">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(0,230,118,.025) 0px,rgba(0,230,118,.025) 1px,transparent 1px,transparent 38px);pointer-events:none"></div>
+    <div style="font-size:3rem;position:relative;z-index:1;filter:grayscale(.2)">🏭</div>
+    <div style="font-family:var(--font-head);font-weight:800;font-size:1rem;color:#00e676;letter-spacing:.06em;position:relative;z-index:1">FACILITY / OPERATION PHOTO</div>
+    <div style="font-size:.78rem;color:#8899aa;text-align:center;max-width:360px;line-height:1.7;position:relative;z-index:1">Wide shot of your recycling floor or team in action<br>
+      <span style="color:#445566;font-size:.7rem">Replace with: &lt;img src="facility.jpg" style="width:100%;height:260px;object-fit:cover"&gt; · 1400 × 520 px</span>
+    </div>
+  </div>
+</div>
+<section class="trust-band section-light">
+  <div class="container">
+    <span class="overline" style="color:var(--blue)">Why OC Trusts Us</span>
+    <h2 class="section-title" style="color:var(--navy)">The Numbers Speak</h2>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="trust-number" data-count="500">0</div><div class="trust-label">Tons Recycled Annually</div></div>
+      <div class="trust-card"><div class="trust-number" data-count="2500">0</div><div class="trust-label">Businesses Served</div></div>
+      <div class="trust-card"><div class="trust-number" data-count="100">0</div><div class="trust-label">% Data Verified Destroyed</div></div>
+      <div class="trust-card"><div class="trust-number" data-count="48">0</div><div class="trust-label">Hour Certificate Turnaround</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="scroll-anim" class="section-dark2">
+  <div class="container">
+    <div class="scroll-anim-inner sect-anim">
+      <div class="-left">
+        <span class="overline">The Process</span>
+        <h2 class="section-title" style="margin-bottom:36px">What Happens to Your Devices</h2>
+        <div class="scroll-step active" onclick="setStep(0)">
+          <div class="scroll-step-num">01 — Collection</div>
+          <div class="scroll-step-title">We Pick Up Your Equipment</div>
+          <div class="scroll-step-desc">Our certified technicians arrive at your location with secure, sealed containers. Laptops, desktops, servers, phones — all collected with full chain-of-custody documentation.</div>
+        </div>
+        <div class="scroll-step" onclick="setStep(1)">
+          <div class="scroll-step-num">02 — Inventory</div>
+          <div class="scroll-step-title">Every Asset is Logged</div>
+          <div class="scroll-step-desc">Serial numbers, asset tags, and condition assessments captured for every device. You receive a complete manifest before anything is processed.</div>
+        </div>
+        <div class="scroll-step" onclick="setStep(2)">
+          <div class="scroll-step-num">03 — Data Wipe</div>
+          <div class="scroll-step-title">Hard Drives Wiped or Shredded</div>
+          <div class="scroll-step-desc">NIST 800-88 compliant overwrites or physical shredding — your choice. Every drive receives a certificate of data destruction with audit trail.</div>
+        </div>
+        <div class="scroll-step" onclick="setStep(3)">
+          <div class="scroll-step-num">04 — Disassembly</div>
+          <div class="scroll-step-title">Devices Are Dismantled</div>
+          <div class="scroll-step-desc">RAM, SSDs, batteries, motherboards, and screens are separated by material type. Zero landfill — every component routed to the correct downstream recycler.</div>
+        </div>
+        <div class="scroll-step" onclick="setStep(4)">
+          <div class="scroll-step-num">05 — Material Recovery</div>
+          <div class="scroll-step-title">Raw Materials Recovered</div>
+          <div class="scroll-step-desc">Gold, copper, aluminum, and rare earth elements recovered and returned to manufacturing — reducing the need for environmentally destructive mining.</div>
+        </div>
+        <div class="scroll-step" onclick="setStep(5)">
+          <div class="scroll-step-num">06 — Certificate</div>
+          <div class="scroll-step-title">You Get Documentation</div>
+          <div class="scroll-step-desc">A full recycling certificate with asset manifest, destruction confirmation, and weight totals delivered to your inbox — ready for audits or compliance.</div>
+        </div>
+      </div>
+      <div class="-right" style="display:flex;align-items:center;justify-content:center">
+        <div class="laptop-stage" id="laptopStage">
+          <!-- ★ SWAP: Replace divs with <img class="stage-part" src="/images/laptop/base.png"> etc -->
+          <div class="lp-body" id="lpBody">
+            <div class="lp-screen" id="lpScreen">
+              <div id="screenContent" style="text-align:center;font-family:var(--font-head);color:#00e676;font-size:.68rem;font-weight:700;padding:12px;line-height:1.7">⬜ Laptop Collected<br>Chain of custody starts here</div>
+            </div>
+            <div class="stage-part part-ram" id="partRam">RAM</div>
+            <div class="stage-part part-hdd" id="partHdd">HDD</div>
+            <div class="stage-part part-ssd" id="partSsd">SSD</div>
+            <div class="stage-part part-battery" id="partBattery">BATTERY</div>
+            <div class="stage-part part-board" id="partBoard">MOTHERBOARD</div>
+          </div>
+          <div class="lp-base"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section-light">
+  <div class="container">
+    <div class="services-intro sect-anim">
+      <span class="overline" style="color:var(--blue)">What We Offer</span>
+      <h2 class="section-title" style="color:var(--navy)">Our Services</h2>
+      <p style="color:#4a5568;font-size:.95rem;line-height:1.7;margin-top:16px">Full-service electronics lifecycle management for businesses and individuals across Orange County, CA.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card red-accent" onclick="showPage('svc-data')">
+        <div class="svc-icon red-bg">🔐</div>
+        <h3>Data Destruction</h3>
+        <p>NIST 800-88 compliant hard drive wiping and physical shredding. Certificates of destruction issued for every device.</p>
+        <div class="svc-link">Learn More →</div>
+      </div>
+      <div class="svc-card" onclick="showPage('svc-itad')">
+        <div class="svc-icon">💼</div>
+        <h3>IT Asset Disposition</h3>
+        <p>Complete ITAD lifecycle management — inventory, data sanitization, resale, and responsible disposal for enterprise assets.</p>
+        <div class="svc-link">Learn More →</div>
+      </div>
+      <div class="svc-card" onclick="showPage('svc-recycling')">
+        <div class="svc-icon">♻️</div>
+        <h3>E-Waste Recycling</h3>
+        <p>California DTSC compliant recycling for all electronics. Zero landfill commitment — everything sorted and processed responsibly.</p>
+        <div class="svc-link">Learn More →</div>
+      </div>
+      <div class="svc-card amber-accent">
+        <div class="svc-icon amber-bg">🚛</div>
+        <h3>Business Pickup</h3>
+        <p>Scheduled or on-demand pickup throughout Orange County. Laptops, servers, printers, phones — we handle the heavy lifting.</p>
+        <div class="svc-link">Get a Quote →</div>
+      </div>
+      <div class="svc-card blue-accent">
+        <div class="svc-icon blue-bg">🖥️</div>
+        <h3>Server Decommission</h3>
+        <p>Full rack decommission with data destruction, asset inventory, and logistics management for data center transitions.</p>
+        <div class="svc-link">Learn More →</div>
+      </div>
+      <div class="svc-card cyan-accent">
+        <div class="svc-icon cyan-bg">📱</div>
+        <h3>Mobile Device Recycling</h3>
+        <p>Smartphones, tablets, and wearables — factory reset verification plus secure recycling for HIPAA and GLBA compliance.</p>
+        <div class="svc-link">Learn More →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="data-destruction" class="section-dark">
+  <div class="container">
+    <div class="dd-inner sect-anim">
+      <div class="-left">
+        <span class="overline" style="color:var(--red)">Critical Security</span>
+        <h2 class="section-title">Data Destruction<br>Done Right</h2>
+        <p style="color:#8899aa;line-height:1.7;margin:20px 0">One discarded hard drive with intact data can cost thousands in fines and reputational damage. Our process eliminates that risk completely.</p>
+        <div class="dd-badge-row">
+          <span class="dd-badge nist">NIST 800-88</span>
+          <span class="dd-badge dod">DoD 5220.22-M</span>
+          <span class="dd-badge ca">CA DTSC Compliant</span>
+        </div>
+        <div class="cert-list">
+          <div class="cert-item"><div class="cert-check">✓</div>Physical shredding available on-site or at our facility</div>
+          <div class="cert-item"><div class="cert-check">✓</div>Certificate of destruction issued per device</div>
+          <div class="cert-item"><div class="cert-check">✓</div>Full audit trail and chain-of-custody documentation</div>
+          <div class="cert-item"><div class="cert-check">✓</div>HIPAA, GLBA, and SOX compliance support</div>
+        </div>
+        <div class="amber-urgent">
+          <div class="amber-urgent-icon">⚠️</div>
+          <div class="amber-urgent-text"><strong>Don't risk it.</strong> California law requires proper data disposal. Call <strong>(949) 345-0285</strong> for a same-week appointment.</div>
+        </div>
+      </div>
+      <div class="-right">
+        <div class="shred-visual">
+          <span class="overline" style="color:var(--red)">Destruction Progress</span>
+          <h3 style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;margin:8px 0 20px;color:#fff">Active Shredding Session</h3>
+          <div style="font-size:.72rem;color:var(--muted);font-weight:700;margin-bottom:6px">Device 1 — WD 2TB HDD</div>
+          <div class="shred-bar-track"><div class="shred-bar-fill" style="animation-delay:0s"></div></div>
+          <div style="font-size:.72rem;color:var(--muted);font-weight:700;margin:10px 0 6px">Device 2 — Samsung 500GB SSD</div>
+          <div class="shred-bar-track"><div class="shred-bar-fill" style="animation-delay:.4s"></div></div>
+          <div style="font-size:.72rem;color:var(--muted);font-weight:700;margin:10px 0 6px">Device 3 — Seagate 4TB HDD</div>
+          <div class="shred-bar-track"><div class="shred-bar-fill" style="animation-delay:.8s"></div></div>
+          <div style="font-size:.72rem;color:var(--muted);font-weight:700;margin:10px 0 6px">Device 4 — Kingston 256GB NVMe</div>
+          <div class="shred-bar-track"><div class="shred-bar-fill" style="animation-delay:1.2s"></div></div>
+          <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:.65rem;color:var(--muted)"><span>0%</span><span>Destroyed</span><span>100%</span></div>
+          <div style="margin-top:24px;padding:16px;background:rgba(244,67,54,.08);border-radius:10px;border:1px solid rgba(244,67,54,.2)">
+            <div style="font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Certificate Status</div>
+            <div style="font-family:var(--font-head);font-weight:800;font-size:1rem;color:#fff">✓ Issuing upon completion</div>
+            <div style="font-size:.75rem;color:var(--muted);margin-top:4px">Delivered to your email within 48hrs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="environmental" class="section-dark2">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto">
+      <span class="overline">Environmental Impact</span>
+      <h2 class="section-title">Our Green Footprint</h2>
+      <p style="color:var(--muted);margin-top:16px;line-height:1.7">Every device we recycle stays out of landfills and toxic waste streams.</p>
+    </div>
+    <div class="env-grid">
+      <div class="env-stat"><div class="env-icon">🌍</div><div class="env-num"><span data-count="500">0</span><span class="env-unit">T</span></div><div class="env-label">E-Waste Diverted from Landfills Annually</div></div>
+      <div class="env-stat"><div class="env-icon">⚡</div><div class="env-num"><span data-count="2">0</span><span class="env-unit">M</span></div><div class="env-label">kWh Energy Saved Through Material Recovery</div></div>
+      <div class="env-stat"><div class="env-icon">💧</div><div class="env-num"><span data-count="98">0</span><span class="env-unit">%</span></div><div class="env-label">Materials Recycled or Reused — Zero Landfill</div></div>
+      <div class="env-stat"><div class="env-icon">🏆</div><div class="env-num"><span data-count="12">0</span><span class="env-unit">+</span></div><div class="env-label">Tons of Hazardous Materials Safely Handled</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section-dark">
+  <div class="container">
+    <div style="max-width:480px;margin-bottom:60px">
+      <span class="overline">Client Reviews</span>
+      <h2 class="section-title">What OC Businesses Say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"We decommissioned an entire server room — 80+ drives, dozens of switches and routers. OC Electronic Recycling handled everything in one day and had our certificates ready the next morning. Incredible service."</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px"><div class="testi-avatar img-placeholder" data-label="HEADSHOT" title="Optional: client headshot 80×80px"></div><div><div class="testi-name">David M.</div><div class="testi-role">IT Director — Irvine Manufacturing Co.</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a healthcare provider, HIPAA compliance for data destruction is non-negotiable. These guys understood exactly what we needed, provided proper documentation, and were completely professional."</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px"><div class="testi-avatar img-placeholder" data-label="HEADSHOT" title="Optional: client headshot 80×80px"></div><div><div class="testi-name">Priya S.</div><div class="testi-role">Compliance Officer — Aliso Viejo Medical Group</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Scheduled a business pickup for 40 old laptops. They came same week, inventoried everything on-site, and I got a detailed report with serial numbers. Exactly what you want when you're responsible for data security."</p>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px"><div class="testi-avatar img-placeholder" data-label="HEADSHOT" title="Optional: client headshot 80×80px"></div><div><div class="testi-name">Mark T.</div><div class="testi-role">Operations Manager — Newport Beach Firm</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container"><div>
+    <span class="overline">Ready to Start?</span>
+    <h2>Responsible Recycling<br>Starts With a Call</h2>
+    <p>Orange County's most trusted e-waste and ITAD partner is one call away.</p>
+    <a href="tel:9493450285" class="cta-phone">(949) 345-0285</a>
+    <div class="cta-actions">
+      <button class="btn-primary btn-large" onclick="showPage('contact-page')">Schedule Pickup</button>
+      <button class="btn-outline btn-large" onclick="showPage('contact-page')">Get a Quote</button>
+    </div>
+  </div></div>
+</section>
+</div><!-- end home -->
+
+<!-- SERVICES PAGE -->
+</div>
+
+<div id="pg-services-page" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">What We Do</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">Complete Electronics<br>Lifecycle Services</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">From a single laptop to a full data center decommission, we handle every phase with documented compliance and zero-landfill commitment.</p>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="svc-features">
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🔐</div><h3>Data Destruction</h3><p>NIST 800-88 and DoD 5220.22-M compliant. Physical shredding and software overwrite available. Certificates within 48 hours.</p><button class="btn-primary" style="margin-top:16px;font-size:.78rem;padding:8px 16px" onclick="showPage('svc-data')">View Service →</button></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">💼</div><h3>IT Asset Disposition</h3><p>Full lifecycle from inventory to disposition. Value recovery on working assets. Responsible disposal for non-working equipment.</p><button class="btn-primary" style="margin-top:16px;font-size:.78rem;padding:8px 16px" onclick="showPage('svc-itad')">View Service →</button></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">♻️</div><h3>E-Waste Recycling</h3><p>California DTSC compliant. Accepts all electronics — laptops, desktops, phones, TVs, printers. Businesses and residents welcome.</p><button class="btn-primary" style="margin-top:16px;font-size:.78rem;padding:8px 16px" onclick="showPage('svc-recycling')">View Service →</button></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🚛</div><h3>Business Pickup</h3><p>On-demand or scheduled pickup anywhere in Orange County. No volume minimums. Same-week appointments typically available.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🖥️</div><h3>Server / Data Center Decommission</h3><p>Full rack decommission with on-site chain-of-custody. Coordinated logistics, inventory capture, and secure transport.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📱</div><h3>Mobile Device Recycling</h3><p>MDM-assisted wipe or factory reset verification. iOS and Android. HIPAA and GLBA compliant reporting available.</p></div>
+      </div>
+    </div>
+  </div>
+  <section class="cta-section"><div class="container"><div><h2>Not Sure Which Service?</h2><p>Call us — we'll assess your situation and recommend the right approach.</p><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Get a Custom Quote</button></div></div></div></section>
+</div>
+
+<!-- SVC: DATA DESTRUCTION -->
+</div>
+
+<div id="pg-svc-data" class="page">
+<div class="svc-inner-hero" style="background:linear-gradient(135deg,var(--navy),#1a0508)">
+    <div class="container">
+      <span class="overline" style="color:var(--red)">Security Service</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">Certified Hard Drive<br>&amp; Data Destruction</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">NIST 800-88 compliant data sanitization and physical shredding. Every device gets a certificate. Every certificate is your legal protection.</p>
+      <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+        <span class="dd-badge nist">NIST 800-88</span>
+        <span class="dd-badge dod">DoD 5220.22-M</span>
+        <span class="dd-badge ca">CA DTSC Compliant</span>
+      </div>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="svc-features">
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🔨</div><h3>Physical Shredding</h3><p>Industrial-grade shredders reduce hard drives to particles under 2mm. Impossible to reconstruct. Available on-site or at our secure facility.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">💿</div><h3>Software Overwrite</h3><p>NIST 800-88 Clear and Purge methods for SSDs and HDDs. Multiple pass overwrites with verification. Drives can be reused after wiping.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📄</div><h3>Certificates of Destruction</h3><p>Issued per device with serial number, make/model, method used, technician ID, and timestamp. Audit-ready, legally defensible documentation.</p></div>
+      </div>
+      <div class="amber-urgent" style="max-width:700px;margin:0 auto 48px">
+        <div class="amber-urgent-icon">⚠️</div>
+        <div class="amber-urgent-text"><strong>California AB 1103 &amp; SB 1386</strong> require businesses to protect consumer data on disposed devices. Non-compliance can result in fines up to <strong>$2,500 per record</strong>. Call <strong>(949) 345-0285</strong> today.</div>
+      </div>
+    </div>
+  </div>
+  <section class="cta-section"><div class="container"><div><h2>Your Data Security<br>Starts Here</h2><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Schedule Destruction</button></div></div></div></section>
+</div>
+
+<!-- SVC: ITAD -->
+</div>
+
+<div id="pg-svc-itad" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">Enterprise Service</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">IT Asset Disposition<br>(ITAD)</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">Complete end-of-life management for your IT equipment. We maximize value recovery while ensuring zero data liability and full regulatory compliance.</p>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="svc-features">
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📋</div><h3>Asset Inventory</h3><p>Every device cataloged: serial number, make, model, RAM, storage, condition grade. You get a full manifest before processing begins.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">💰</div><h3>Value Recovery</h3><p>Working assets assessed for resale. Fair market valuations and transparent reporting on any proceeds from device resale.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🔒</div><h3>Data Sanitization</h3><p>All data-bearing devices are wiped or shredded before any disposition decision. Zero data liability — guaranteed and documented.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🌿</div><h3>Responsible Disposal</h3><p>Non-working equipment dismantled and recycled per California DTSC regulations. Zero landfill policy on all ITAD clients.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📊</div><h3>Audit-Ready Reporting</h3><p>Certificates, manifests, and disposition reports ready for SOX, HIPAA, GLBA, and internal compliance audits.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🚛</div><h3>Logistics Management</h3><p>Pickup, transport, and processing all handled end-to-end. Chain-of-custody maintained throughout. Nationwide shipping available.</p></div>
+      </div>
+    </div>
+  </div>
+  <section class="cta-section"><div class="container"><div><h2>Enterprise ITAD<br>Made Simple</h2><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Get ITAD Quote</button></div></div></div></section>
+</div>
+
+<!-- SVC: RECYCLING -->
+</div>
+
+<div id="pg-svc-recycling" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">Green Service</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">E-Waste Recycling<br>Orange County</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">California DTSC compliant. We accept all electronics from businesses and residents. Zero landfill commitment on every item.</p>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="svc-features">
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">💻</div><h3>Computers &amp; Laptops</h3><p>Desktops, laptops, tablets, Chromebooks. All brands, any condition. Free data wipe included with recycling.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📱</div><h3>Phones &amp; Tablets</h3><p>All makes and models. Factory reset verification. Accepted even with cracked screens or broken buttons.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🖨️</div><h3>Printers &amp; Peripherals</h3><p>Printers, scanners, monitors, keyboards, mice, cables, and accessories. We take the hard-to-recycle items too.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">📺</div><h3>TVs &amp; Displays</h3><p>LCD, LED, OLED, and CRT televisions. Monitors of all sizes. Recycled per California AB 2901.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🔋</div><h3>Batteries &amp; Hazardous</h3><p>Lithium-ion, NiMH, lead-acid. Proper handling for hazardous components including mercury lamps and capacitors.</p></div>
+        <div class="svc-feature-card"><div style="font-size:2rem;margin-bottom:12px">🏢</div><h3>Business Bulk Drops</h3><p>No volume limits for business drop-offs. Call ahead and we'll have a team ready to unload. Free for qualifying volumes.</p></div>
+      </div>
+    </div>
+  </div>
+  <section class="cta-section"><div class="container"><div><h2>Recycle Right.<br>Recycle Certified.</h2><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Drop Off or Schedule Pickup</button></div></div></div></section>
+</div>
+
+<!-- HOW IT WORKS PAGE -->
+</div>
+
+<div id="pg-how-page" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">The Process</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">How It Works</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">Simple, transparent, and fully documented. Here's exactly what happens from your first call to your final certificate.</p>
+    </div>
+  </div>
+  <section style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="hiw-timeline">
+        <div class="hiw-step"><div class="hiw-num">1</div><h3>Schedule</h3><p>Call or submit a quote request. We confirm your pickup or drop-off within 24 hours. Same-week service typically available.</p></div>
+        <div class="hiw-step"><div class="hiw-num">2</div><h3>Collection</h3><p>Our technicians arrive on time with sealed containers and chain-of-custody forms. Every asset logged before it leaves your site.</p></div>
+        <div class="hiw-step"><div class="hiw-num">3</div><h3>Processing</h3><p>Data is destroyed first — always. Then devices are assessed for reuse value, disassembly, or recycling per material type.</p></div>
+        <div class="hiw-step"><div class="hiw-num">4</div><h3>Certificate</h3><p>Your recycling and data destruction certificate is emailed within 48 hours. Ready for audits, HR disposal policies, or peace of mind.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section"><div class="container"><div><h2>Ready to Start?</h2><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Schedule Now</button></div></div></div></section>
+</div>
+
+<!-- RESOURCES PAGE -->
+</div>
+
+<div id="pg-resources-page" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">Knowledge Base</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">Resource Center</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly and compliantly.</p>
+    </div>
+  </div>
+  <section id="resources" style="background:var(--light);padding:80px 0">
+    <div class="container">
+      <div class="resource-grid sect-anim">
+        <div class="resource-main">
+          <div class="resource-card">
+            <div class="resource-thumb green-bg">♻️</div>
+            <div>
+              <div class="resource-meta">📄 Guide &nbsp;·&nbsp; 5 min read</div>
+              <h3>California E-Waste Regulations: What Your Business Must Know</h3>
+              <p>A breakdown of AB 2901, SB 1386, and DTSC requirements for businesses disposing of electronics in California. Updated for 2025.</p>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-thumb blue-bg">🔐</div>
+            <div>
+              <div class="resource-meta">📊 Infographic &nbsp;·&nbsp; Visual</div>
+              <h3>NIST 800-88 Data Destruction Standard Explained</h3>
+              <p>Visual guide to the three levels of data sanitization: Clear, Purge, and Destroy. Know which method your business requires.</p>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-thumb red-bg">⚠️</div>
+            <div>
+              <div class="resource-meta">📋 Checklist &nbsp;·&nbsp; Download</div>
+              <h3>IT Asset Disposition Checklist: 12 Steps Before You Dispose</h3>
+              <p>Don't let a data breach happen on your way out. This checklist walks through every step from inventory to final certificate.</p>
+            </div>
+          </div>
+        </div>
+        <div class="resource-sidebar">
+          <div class="sidebar-widget">
+            <h4>📊 E-Waste by the Numbers</h4>
+            <div class="stats-bar-item"><div class="stats-bar-label"><span>Hard Drives (HDDs)</span><span>38%</span></div><div class="stats-bar-track"><div class="stats-bar-fill" style="width:38%"></div></div></div>
+            <div class="stats-bar-item"><div class="stats-bar-label"><span>Laptops / Desktops</span><span>29%</span></div><div class="stats-bar-track"><div class="stats-bar-fill" style="width:29%"></div></div></div>
+            <div class="stats-bar-item"><div class="stats-bar-label"><span>Mobile Devices</span><span>18%</span></div><div class="stats-bar-track"><div class="stats-bar-fill" style="width:18%"></div></div></div>
+            <div class="stats-bar-item"><div class="stats-bar-label"><span>Servers / Networking</span><span>15%</span></div><div class="stats-bar-track"><div class="stats-bar-fill" style="width:15%"></div></div></div>
+          </div>
+          <div class="sidebar-widget">
+            <h4>📥 Free Downloads</h4>
+            <div class="download-list">
+              <div class="download-item"><span style="font-size:1.2rem">📄</span><div><div class="dl-info">ITAD Policy Template</div><div class="dl-size">PDF — 180KB</div></div></div>
+              <div class="download-item"><span style="font-size:1.2rem">📊</span><div><div class="dl-info">E-Waste Audit Checklist</div><div class="dl-size">XLSX — 45KB</div></div></div>
+              <div class="download-item"><span style="font-size:1.2rem">📋</span><div><div class="dl-info">NIST 800-88 Quick Ref</div><div class="dl-size">PDF — 92KB</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- BLOG PAGE -->
+</div>
+
+<div id="pg-blog-page" class="page">
+<div class="blog-hero">
+    <div class="container">
+      <span class="overline">Knowledge &amp; Insights</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">The OC Recycling Blog</h1>
+      <p style="color:var(--muted);margin-top:12px;max-width:500px;line-height:1.7">Industry news, compliance guides, and recycling best practices for Orange County businesses.</p>
+    </div>
+  </div>
+  <div style="background:var(--light)"><div class="container">
+    <div class="blog-grid">
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb">📋<span class="blog-tag tag-compliance">Compliance</span></div><div class="blog-body"><div class="blog-date">December 14, 2024</div><h3>California's New E-Waste Laws: What Every OC Business Must Know in 2025</h3><p>Recent updates to AB 2901 and SB 1386 expand liability for businesses that improperly dispose of electronics. Your compliance checklist.</p><div class="blog-read">Read Article →</div></div></div>
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb" style="background:linear-gradient(135deg,#ffeaea,#ffe0e0)">🔐<span class="blog-tag tag-security">Security</span></div><div class="blog-body"><div class="blog-date">November 28, 2024</div><h3>NIST 800-88 vs DoD 5220.22-M: Which Standard Does Your Business Need?</h3><p>Choosing the right data destruction standard depends on your industry, regulatory requirements, and risk tolerance.</p><div class="blog-read">Read Article →</div></div></div>
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb" style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9)">♻️<span class="blog-tag tag-recycling">Recycling</span></div><div class="blog-body"><div class="blog-date">November 10, 2024</div><h3>What Actually Happens to Your Old Laptop When You Recycle It?</h3><p>A behind-the-scenes look at the e-waste recycling process: from drive shredding to material recovery.</p><div class="blog-read">Read Article →</div></div></div>
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb" style="background:linear-gradient(135deg,#e3f2fd,#e8eaf6)">💼<span class="blog-tag tag-itad">ITAD</span></div><div class="blog-body"><div class="blog-date">October 22, 2024</div><h3>ITAD vs E-Waste Recycling: Understanding the Difference for Your Business</h3><p>Many companies confuse ITAD with simple recycling. The difference has major financial and compliance implications.</p><div class="blog-read">Read Article →</div></div></div>
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb" style="background:linear-gradient(135deg,#fff8e1,#fff3cd)">🌿<span class="blog-tag tag-sustainability">Sustainability</span></div><div class="blog-body"><div class="blog-date">October 5, 2024</div><h3>How OC Businesses Can Achieve Zero E-Waste to Landfill</h3><p>Practical steps any company can take to eliminate e-waste landfill contributions and build a greener IT cycle.</p><div class="blog-read">Read Article →</div></div></div>
+      <div class="blog-card" onclick="showPage('blog-article')"><div class="blog-thumb" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb)">💻<span class="blog-tag tag-tech">Technology</span></div><div class="blog-body"><div class="blog-date">September 18, 2024</div><h3>The Hidden Value in Your Old IT Equipment: A Guide to Asset Recovery</h3><p>Before you recycle everything, find out which assets still have resale value — and how to safely extract it.</p><div class="blog-read">Read Article →</div></div></div>
+    </div>
+  </div></div>
+</div>
+
+<!-- BLOG ARTICLE PAGE -->
+</div>
+
+<div id="pg-blog-article" class="page">
+<div class="reading-bar"><div class="reading-fill" id="readingFill"></div></div>
+  <div class="article-hero">
+    <div class="container">
+      <span class="blog-tag tag-compliance" style="position:static;display:inline-block;margin-bottom:16px">Compliance</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(1.6rem,4vw,3rem);font-weight:900;letter-spacing:-.03em;max-width:780px;line-height:1.05;margin-bottom:16px">California's New E-Waste Laws: What Every OC Business Must Know in 2025</h1>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)">
+        <span>December 14, 2024</span><span>|</span><span>8 min read</span><span>|</span><span style="color:var(--green)">By OC Electronic Recycling Team</span>
+      </div>
+    </div>
+  </div>
+  <div style="background:var(--light)"><div class="container">
+    <div class="article-inner">
+      <div class="article-content">
+        <div class="article-badges">
+          <span class="blog-tag tag-compliance" style="position:static;display:inline-block">Compliance</span>
+          <span class="blog-tag tag-security" style="position:static;display:inline-block">Security</span>
+          <span class="blog-tag tag-recycling" style="position:static;display:inline-block">Recycling</span>
+        </div>
+        <h2>What's Changed in 2025</h2>
+        <p>California has long been at the forefront of electronic waste regulation, and 2025 brings significant updates that Orange County businesses cannot afford to ignore. The California Department of Toxic Substances Control (DTSC) has expanded its oversight of covered electronic devices, and penalties for non-compliance have increased substantially.</p>
+        <p>Under the Electronic Waste Recycling Act (SB 20/50), most businesses in California are already required to properly dispose of covered electronic devices through certified recyclers. But recent amendments extend these requirements to a broader category of equipment — including networking gear, enterprise storage, and certain peripheral devices previously excluded.</p>
+        <h2>Who Is Affected</h2>
+        <p>If your business in Orange County generates more than 50 pounds of electronic waste per year — which includes any company with more than a handful of employees — you are subject to California's e-waste disposal regulations. This covers:</p>
+        <ul>
+          <li>Healthcare providers (with additional HIPAA data obligations)</li>
+          <li>Financial services firms (with GLBA data protection requirements)</li>
+          <li>Educational institutions (with FERPA considerations)</li>
+          <li>Any business with regular IT equipment turnover cycles</li>
+        </ul>
+        <h2>Data Destruction Is Non-Negotiable</h2>
+        <p>California's SB 1386 and AB 1950 impose strict requirements on the protection of personal information — including data stored on disposed devices. Simply recycling a hard drive without verifying data destruction is not sufficient under California law.</p>
+        <p>The required standard for most businesses is NIST Special Publication 800-88, which outlines three levels of data sanitization: Clear, Purge, and Destroy. Physical shredding satisfies the Destroy level and is the most defensible approach for high-security environments.</p>
+        <h2>The Cost of Non-Compliance</h2>
+        <p>Fines for improper e-waste disposal in California can reach $70,000 per day for ongoing violations. Data breach penalties under SB 1386 can reach $2,500 per affected record — a single improperly disposed drive can represent enormous liability if it contains customer or employee data.</p>
+        <h2>How to Stay Compliant</h2>
+        <p>Compliance is straightforward when you work with a certified recycler. Here's what a compliant process looks like:</p>
+        <ul>
+          <li>Use a California DTSC authorized collector or recycler</li>
+          <li>Ensure all data-bearing devices receive data destruction certificates</li>
+          <li>Maintain records of all disposal activities for a minimum of 3 years</li>
+          <li>Request proof of downstream compliance from your recycler</li>
+        </ul>
+        <div class="share-row">
+          <span class="share-label">Share:</span>
+          <button class="share-btn tw">𝕏</button>
+          <button class="share-btn li">in</button>
+          <button class="share-btn em">✉</button>
+        </div>
+        <div class="author-box">
+          <div class="author-avatar">♻</div>
+          <div>
+            <div class="author-name">OC Electronic Recycling Team</div>
+            <div class="author-bio">Our team of certified electronics recycling and data security professionals serves Orange County businesses with ITAD, data destruction, and e-waste recycling services. Call us at (949) 345-0285.</div>
+          </div>
+        </div>
+        <div class="faq-section">
+          <h2 style="font-family:var(--font-head);font-weight:800;margin-bottom:20px">Frequently Asked Questions</h2>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Does my small business need to follow e-waste regulations?<span class="faq-icon">+</span></div><div class="faq-a"><p>Yes. California's e-waste regulations apply to all businesses that generate covered electronic waste, regardless of size. Even a 5-person office turning over a handful of laptops per year is subject to requirements under the Electronic Waste Recycling Act.</p></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is deleting files enough before recycling a computer?<span class="faq-icon">+</span></div><div class="faq-a"><p>No. Deleting files or formatting a drive does not constitute data destruction under NIST 800-88 or California law. Data can be recovered from formatted drives using widely available tools. Proper data destruction requires certified wiping software or physical destruction.</p></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How do I get a certificate of data destruction?<span class="faq-icon">+</span></div><div class="faq-a"><p>When you use OC Electronic Recycling for data destruction, we issue a certificate for each device within 48 hours of processing. The certificate includes the device serial number, destruction method, technician ID, and timestamp.</p></div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What if I donate old computers instead of recycling?<span class="faq-icon">+</span></div><div class="faq-a"><p>Donating computers is acceptable under California law, but you are still responsible for ensuring data is properly wiped before donation. We can wipe drives before donating — call us at (949) 345-0285.</p></div></div>
+        </div>
+        <div style="margin-top:48px">
+          <h3 style="font-family:var(--font-head);font-weight:700;color:var(--blue);border-left:3px solid var(--blue);padding-left:10px;margin-bottom:20px">Related Articles</h3>
+          <div class="related-grid">
+            <div class="related-card" onclick="showPage('blog-article')"><span class="blog-tag tag-security" style="position:static;display:inline-block;margin-bottom:8px">Security</span><h4>NIST 800-88 vs DoD 5220.22-M: Which Standard Does Your Business Need?</h4></div>
+            <div class="related-card" onclick="showPage('blog-article')"><span class="blog-tag tag-itad" style="position:static;display:inline-block;margin-bottom:8px">ITAD</span><h4>ITAD vs E-Waste Recycling: Understanding the Difference</h4></div>
+            <div class="related-card" onclick="showPage('blog-article')"><span class="blog-tag tag-recycling" style="position:static;display:inline-block;margin-bottom:8px">Recycling</span><h4>What Actually Happens to Your Old Laptop When You Recycle It?</h4></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="article-toc">
+          <div class="toc-title">📋 Contents</div>
+          <div class="toc-link">What's Changed in 2025</div>
+          <div class="toc-link">Who Is Affected</div>
+          <div class="toc-link">Data Destruction Is Non-Negotiable</div>
+          <div class="toc-link">The Cost of Non-Compliance</div>
+          <div class="toc-link">How to Stay Compliant</div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ABOUT PAGE -->
+</div>
+
+<div id="pg-about-page" class="page">
+<div class="about-hero">
+    <div class="container">
+      <span class="overline">Our Story</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">Built for Orange County</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">A local business with deep roots in the ITAD and e-waste industry. We built OC Electronic Recycling to do recycling right.</p>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:80px 0"><div class="container">
+    <div class="about-grid sect-anim">
+      <div class="-left">
+        <span class="overline" style="color:var(--blue)">Our Mission</span>
+        <h2 class="section-title" style="color:var(--navy)">Responsible. Certified. Local.</h2>
+        <p style="color:#4a5568;line-height:1.75;margin:20px 0">OC Electronic Recycling was founded by a team with hands-on experience in the e-waste and ITAD industry. We've seen how recycling is done when compliance is an afterthought — and we exist to do the opposite.</p>
+        <p style="color:#4a5568;line-height:1.75;margin-bottom:20px">Every device we process is handled with full chain-of-custody documentation. Every data-bearing device receives proper destruction before any other step.</p>
+        <a href="tel:9493450285" style="font-family:var(--font-head);font-weight:800;font-size:1.1rem;color:var(--blue)">☎ (949) 345-0285</a>
+      </div>
+      <div class="-right">
+        <div class="img-placeholder" data-label="TEAM / FOUNDER PHOTO" style="height:220px;border-radius:12px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:linear-gradient(135deg,#0d1528,#1a2840);border:2px dashed rgba(0,230,118,.25)">
+  <div style="font-size:2.5rem">👥</div>
+  <div style="font-family:var(--font-head);font-size:.78rem;font-weight:700;color:#00e676;letter-spacing:.1em;text-transform:uppercase">Team / Founder Photo</div>
+  <div style="font-size:.7rem;color:#8899aa">Recommended: 700 × 460 px · JPG/WebP</div>
+</div>
+<div style="background:#fff;border-radius:16px;padding:36px;border:1px solid #e2e8f0">
+          <div style="font-family:var(--font-head);font-weight:900;font-size:2.5rem;color:var(--blue);margin-bottom:8px">2,500+</div>
+          <div style="color:#4a5568;margin-bottom:28px;font-size:.9rem">Clients served across Orange County</div>
+          <div style="font-family:var(--font-head);font-weight:900;font-size:2.5rem;color:var(--green);margin-bottom:8px">500T</div>
+          <div style="color:#4a5568;margin-bottom:28px;font-size:.9rem">E-waste diverted from landfills annually</div>
+          <div style="font-family:var(--font-head);font-weight:900;font-size:2.5rem;color:var(--red);margin-bottom:8px">100%</div>
+          <div style="color:#4a5568;font-size:.9rem">Data destruction verified and certified</div>
+        </div>
+      </div>
+    </div>
+    <div class="mission-cards">
+      <div class="mission-card"><div class="mission-icon">🔒</div><h3 style="font-family:var(--font-head);font-weight:800;color:var(--navy);margin-bottom:8px">Security First</h3><p style="font-size:.88rem;color:#4a5568;line-height:1.65">Data destruction happens before anything else. No exceptions. Your data risk is zero before we recycle anything.</p></div>
+      <div class="mission-card"><div class="mission-icon">🌿</div><h3 style="font-family:var(--font-head);font-weight:800;color:var(--navy);margin-bottom:8px">Zero Landfill</h3><p style="font-size:.88rem;color:#4a5568;line-height:1.65">Every component sorted and routed to the correct downstream recycler. Nothing we handle ends up in a landfill.</p></div>
+      <div class="mission-card"><div class="mission-icon">📄</div><h3 style="font-family:var(--font-head);font-weight:800;color:var(--navy);margin-bottom:8px">Full Documentation</h3><p style="font-size:.88rem;color:#4a5568;line-height:1.65">Certificates, manifests, and chain-of-custody records for everything. Always ready for audits or compliance reviews.</p></div>
+      <div class="mission-card"><div class="mission-icon">🤝</div><h3 style="font-family:var(--font-head);font-weight:800;color:var(--navy);margin-bottom:8px">Local &amp; Trusted</h3><p style="font-size:.88rem;color:#4a5568;line-height:1.65">We're an Orange County business serving Orange County businesses. Real people you can call, meet, and hold accountable.</p></div>
+    </div>
+  </div></div>
+  <section class="cta-section"><div class="container"><div><h2>Meet the Team</h2><p>Have questions about our process or certifications? Call us directly.</p><a href="tel:9493450285" class="cta-phone">(949) 345-0285</a><div class="cta-actions"><button class="btn-primary btn-large" onclick="showPage('contact-page')">Get in Touch</button></div></div></div></section>
+</div>
+
+<!-- CONTACT PAGE -->
+</div>
+
+<div id="pg-contact-page" class="page">
+<div class="svc-inner-hero">
+    <div class="container">
+      <span class="overline">Get Started</span>
+      <h1 style="font-family:var(--font-head);font-size:clamp(2rem,5vw,4rem);font-weight:900;letter-spacing:-.03em;margin-top:10px">Request a Quote<br>or Schedule Pickup</h1>
+      <p style="color:var(--muted);font-size:1rem;margin-top:16px;max-width:520px;line-height:1.7">Fill out the form or call us directly. We respond to all inquiries within 24 hours — usually same day.</p>
+    </div>
+  </div>
+  <div style="background:var(--light);padding:60px 0"><div class="container">
+    <div class="contact-grid">
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input class="form-control" type="text" placeholder="John"></div>
+          <div class="form-group"><label>Last Name</label><input class="form-control" type="text" placeholder="Smith"></div>
+        </div>
+        <div class="form-group"><label>Company Name</label><input class="form-control" type="text" placeholder="Acme Corp (optional)"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Email</label><input class="form-control" type="email" placeholder="john@company.com"></div>
+          <div class="form-group"><label>Phone</label><input class="form-control" type="tel" placeholder="(949) 000-0000"></div>
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select class="form-control">
+            <option>Select a service...</option>
+            <option>Data Destruction / Hard Drive Shredding</option>
+            <option>IT Asset Disposition (ITAD)</option>
+            <option>E-Waste Recycling</option>
+            <option>Business Pickup</option>
+            <option>Server / Data Center Decommission</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea class="form-control" placeholder="Describe your equipment, volume, or timeline..."></textarea></div>
+        <label style="font-family:var(--font-head);font-weight:700;font-size:.78rem;color:#374151;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:8px">Attachments (optional)</label>
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+          <div class="drop-icon">📎</div>
+          <div class="drop-text">Drag &amp; drop files here, or <strong style="color:var(--blue)">browse</strong></div>
+          <div class="drop-hint">PDF, XLSX, CSV, JPG, PNG, DOC — Max 10MB each</div>
+          <input type="file" id="fileInput" multiple accept=".pdf,.xlsx,.csv,.jpg,.jpeg,.png,.doc,.docx" style="display:none" onchange="handleFiles(this.files)">
+        </div>
+        <div class="file-list" id="fileList"></div>
+        <button class="btn-primary" style="width:100%;padding:14px;font-size:.95rem;margin-top:8px" onclick="submitForm()">Send Message →</button>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-card"><div class="ci-icon">📞</div><div class="ci-label">Call Us</div><div class="ci-value"><a href="tel:9493450285">(949) 345-0285</a></div></div>
+        <div class="contact-info-card"><div class="ci-icon">✉️</div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:info@ocelectronicrecycling.com" style="font-size:.9rem">info@ocelectronicrecycling.com</a></div></div>
+        <div class="contact-info-card"><div class="ci-icon">📍</div><div class="ci-label">Service Area</div><div class="ci-value" style="font-size:.9rem">Orange County, CA<br><span style="font-weight:400;font-size:.82rem;color:#4a5568">Irvine · Anaheim · Santa Ana · Newport Beach · Huntington Beach · Laguna Niguel · Mission Viejo</span></div></div>
+        <div class="contact-info-card"><div class="ci-icon">🕐</div><div class="ci-label">Hours</div><div class="ci-value" style="font-size:.9rem">Mon–Fri: 8am – 6pm<br><span style="font-weight:400;font-size:.82rem">Sat: By appointment</span></div></div>
+        <div class="map-placeholder img-placeholder" data-label="SERVICE AREA MAP" style="height:220px;flex-direction:column;gap:10px"><div style="font-size:2rem">🗺️</div><div style="font-family:var(--font-head);font-weight:700;font-size:.85rem;color:#2979ff">Orange County Service Area</div><div style="font-size:.72rem;color:#4a5568">Embed Google Maps iframe here<br>or add a custom map image · 700 × 300 px</div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+
+<!-- ═══ FOOTER (always visible) ══════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><div class="logo-icon" style="width:28px;height:28px;font-size:.85rem">♻</div>OC Electronic Recycling</div>
+        <p class="footer-desc">Orange County's certified e-waste recycling and ITAD partner. Responsible disposal, certified data destruction, and full compliance documentation.</p>
+        <div class="footer-phone">☎ (949) 345-0285</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#" data-page="svc-data">Data Destruction</a></li>
+          <li><a href="#" data-page="svc-itad">ITAD</a></li>
+          <li><a href="#" data-page="svc-recycling">E-Waste Recycling</a></li>
+          <li><a href="#" data-page="services-page">Business Pickup</a></li>
+          <li><a href="#" data-page="services-page">Server Decommission</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#" data-page="about-page">About Us</a></li>
+          <li><a href="#" data-page="how-page">How It Works</a></li>
+          <li><a href="#" data-page="resources-page">Resources</a></li>
+          <li><a href="#" data-page="blog-page">Blog</a></li>
+          <li><a href="#" data-page="contact-page">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="#" data-target="svc-data" class="footer-nav-link">NIST 800-88</a></li>
+          <li><a href="#" data-target="svc-recycling" class="footer-nav-link">CA DTSC</a></li>
+          <li><a href="#" data-target="svc-data" class="footer-nav-link">HIPAA Compliant</a></li>
+          <li><a href="#" data-target="contact-page" class="footer-nav-link">Privacy Policy</a></li>
+          <li><a href="#" data-target="contact-page" class="footer-nav-link">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 OC Electronic Recycling. All rights reserved. Orange County, CA.</p>
+      <div class="footer-credits">
+        <span style="color:#445566;font-size:.78rem">Designed &amp; Built by</span>
+        <a href="https://nirowebix.com" target="_blank">NiroWebix.com</a>
+        <a href="https://nextechoc.com" target="_blank">NexTechOC.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav">
+  <div class="mbn-inner">
+    <div class="mbn-item is-active" data-target="home"><div class="mbn-icon">&#127968;</div><span>Home</span></div>
+    <div class="mbn-item" data-target="services-page"><div class="mbn-icon">&#9881;&#65039;</div><span>Services</span><span class="mbn-dot"></span></div>
+    <div class="mbn-item" data-target="resources-page"><div class="mbn-icon">&#128218;</div><span>Resources</span></div>
+    <div class="mbn-item" data-target="blog-page"><div class="mbn-icon">&#128221;</div><span>Blog</span></div>
+    <div class="mbn-item" data-target="contact-page"><div class="mbn-icon">&#128222;</div><span>Contact</span></div>
+  </div>
+</nav>
+
+<!-- ECOBOT -->
+<button id="ecobot-btn" onclick="toggleEcobot()">&#9851;</button>
+<div id="ecobot-window">
+  <div class="eco-head">
+    <div class="eco-avatar">&#9851;</div>
+    <div><div class="eco-name">EcoBot</div><div class="eco-status">&#9679; Online</div></div>
+    <button class="eco-close" onclick="toggleEcobot()">&#10005;</button>
+  </div>
+  <div class="eco-messages" id="ecoMessages">
+    <div class="eco-msg bot">Hi! I&#39;m EcoBot 🌿 Ask me anything about e-waste, data destruction, or our services in Orange County!</div>
+  </div>
+  <div class="eco-input-row">
+    <input class="eco-input" id="ecoInput" placeholder="Ask a question...">
+    <button class="eco-send" onclick="sendEco()">&#10140;</button>
+  </div>
+</div>
+
+<!-- ═══ JAVASCRIPT ═══════════════════════════════════════ -->
+<script>
+// ─── NAVIGATION ────────────────────────────────────────────
+function goTo(pageId) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('is-active');
+  });
+  // Show target — try pg-X first, then raw id for legacy calls
+  var pg = document.getElementById('pg-' + pageId) || document.getElementById(pageId);
+  if (pg) {
+    pg.classList.add('is-active');
+    window.scrollTo(0, 0);
+  }
+  // Update desktop nav highlights
+  document.querySelectorAll('.main-nav .nav-link').forEach(function(a) {
+    a.classList.toggle('is-active', a.getAttribute('data-target') === pageId);
+  });
+  // Update mobile bottom nav
+  document.querySelectorAll('.mbn-item').forEach(function(i) {
+    i.classList.toggle('is-active', i.getAttribute('data-target') === pageId);
+  });
+  // Animate counters on new page
+  animateCounters();
+}
+
+// Wire ALL elements with data-target attribute
+document.querySelectorAll('[data-target]').forEach(function(el) {
+  el.style.cursor = 'pointer';
+  el.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = el.getAttribute('data-target');
+    goTo(target);
+    // Close mobile nav if flagged
+    if (el.getAttribute('data-close') === '1') {
+      document.getElementById('mob-nav').classList.remove('open');
+    }
+  });
+});
+
+// ─── HAMBURGER ─────────────────────────────────────────────
+document.getElementById('ham-btn').addEventListener('click', function() {
+  document.getElementById('mob-nav').classList.toggle('open');
+});
+document.getElementById('mob-close').addEventListener('click', function() {
+  document.getElementById('mob-nav').classList.remove('open');
+});
+
+// ─── CUSTOM CURSOR ─────────────────────────────────────────
+(function() {
+  var dot  = document.getElementById('cur-dot');
+  var ring = document.getElementById('cur-ring');
+  var glow = document.getElementById('cur-glow');
+  var mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', function(e) {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+    glow.style.left = mx + 'px';
+    glow.style.top  = my + 'px';
+  });
+
+  function animRing() {
+    rx += (mx - rx) * 0.13;
+    ry += (my - ry) * 0.13;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+
+  document.addEventListener('mouseover', function(e) {
+    var hov = e.target.closest('a,button,.svc-card,.blog-card,.testi-card,.resource-card,.scroll-step,.faq-q,.download-item,.mbn-item');
+    if (hov) {
+      ring.style.width  = '54px';
+      ring.style.height = '54px';
+      ring.style.borderColor = '#00e676';
+    } else {
+      ring.style.width  = '38px';
+      ring.style.height = '38px';
+      ring.style.borderColor = 'rgba(0,230,118,.5)';
+    }
+  });
+})();
+
+// ─── COUNTERS ──────────────────────────────────────────────
+function animateCounters() {
+  document.querySelectorAll('.is-active [data-count]').forEach(function(el) {
+    if (el.dataset.done) return;
+    el.dataset.done = '1';
+    var target = parseInt(el.getAttribute('data-count'));
+    var cur = 0, inc = target / 60;
+    var t = setInterval(function() {
+      cur = Math.min(cur + inc, target);
+      el.textContent = Math.floor(cur).toLocaleString();
+      if (cur >= target) clearInterval(t);
+    }, 16);
+  });
+}
+animateCounters();
+
+// ─── LAPTOP ANIMATION ──────────────────────────────────────
+var STEPS = [
+  {msg:'&#x2B1C; Laptop Collected<br>Chain of custody starts here', ram:[0,0],hdd:[0,0],ssd:[0,0],bat:[0,0],brd:[0,0]},
+  {msg:'&#x1F4CB; Asset Inventory<br>Serial numbers logged',          ram:[0,0],hdd:[0,0],ssd:[0,0],bat:[0,0],brd:[0,0]},
+  {msg:'&#x1F512; Data Destruction<br>NIST 800-88 Wipe',             ram:[0,0],hdd:[0,0],ssd:[0,0],bat:[0,0],brd:[0,0]},
+  {msg:'&#x1F527; Disassembly<br>Parts separated',                    ram:[-60,-40],hdd:[60,-40],ssd:[0,0],bat:[0,0],brd:[0,0]},
+  {msg:'&#x267B; Material Sorting<br>By type &amp; hazard level',    ram:[-100,-70],hdd:[100,-60],ssd:[-80,60],bat:[90,70],brd:[0,90]},
+  {msg:'&#x2705; Certificate Issued<br>Delivered to your inbox',      ram:[-140,-100],hdd:[140,-90],ssd:[-120,90],bat:[130,100],brd:[0,130]},
+];
+var curStep = 0;
+
+function setStep(i) {
+  curStep = i;
+  document.querySelectorAll('.scroll-step').forEach(function(s, idx) {
+    s.classList.toggle('active', idx === i);
+  });
+  var s = STEPS[i];
+  var sc = document.getElementById('screenContent');
+  if (sc) sc.innerHTML = s.msg;
+  function mv(id, xy) {
+    var el = document.getElementById(id);
+    if (el) el.style.transform = 'translate(' + xy[0] + 'px,' + xy[1] + 'px)';
+  }
+  mv('partRam',s.ram); mv('partHdd',s.hdd); mv('partSsd',s.ssd);
+  mv('partBattery',s.bat); mv('partBoard',s.brd);
+}
+window.setStep = setStep;
+window.showPage = goTo; // alias for buttons inside page content
+setStep(0);
+
+window.addEventListener('scroll', function() {
+  var sec = document.getElementById('scroll-anim');
+  var home = document.getElementById('pg-home');
+  if (!sec || !home || !home.classList.contains('is-active')) return;
+  var r = sec.getBoundingClientRect();
+  if (r.height <= window.innerHeight) return;
+  var prog = Math.max(0, Math.min(1, -r.top / (r.height - window.innerHeight)));
+  var step = Math.min(5, Math.floor(prog * 6));
+  if (step !== curStep) setStep(step);
+});
+
+// ─── FAQ ───────────────────────────────────────────────────
+function toggleFaq(el) {
+  var ans  = el.nextElementSibling;
+  var icon = el.querySelector('.faq-icon');
+  var open = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a').forEach(function(a) { a.classList.remove('open'); });
+  document.querySelectorAll('.faq-icon').forEach(function(i) { i.textContent = '+'; i.style.transform = ''; });
+  if (!open) { ans.classList.add('open'); icon.textContent = '&#8722;'; icon.style.transform = 'rotate(180deg)'; }
+}
+window.toggleFaq = toggleFaq;
+
+// ─── FILE UPLOAD ───────────────────────────────────────────
+var uploadedFiles = [];
+var dz = document.getElementById('dropZone');
+var fi = document.getElementById('fileInput');
+var fl = document.getElementById('fileList');
+if (dz) {
+  dz.addEventListener('click', function() { if(fi) fi.click(); });
+  dz.addEventListener('dragover', function(e) { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', function() { dz.classList.remove('drag-over'); });
+  dz.addEventListener('drop', function(e) { e.preventDefault(); dz.classList.remove('drag-over'); addFiles(e.dataTransfer.files); });
+}
+if (fi) fi.addEventListener('change', function() { addFiles(this.files); });
+function addFiles(files) {
+  Array.from(files).forEach(function(f) { if (!uploadedFiles.find(function(x){return x.name===f.name;})) uploadedFiles.push(f); });
+  renderFiles();
+}
+function renderFiles() {
+  if (!fl) return;
+  fl.innerHTML = uploadedFiles.map(function(f,i) {
+    return '<div class="file-pill">' + f.name + ' <span style="color:var(--muted);font-size:.7rem">(' + (f.size/1024).toFixed(0) + 'KB)</span><button class="file-pill-remove" onclick="removeFile(' + i + ')">&#215;</button></div>';
+  }).join('');
+}
+function removeFile(i) { uploadedFiles.splice(i,1); renderFiles(); }
+window.removeFile = removeFile;
+function submitForm() { alert('Thank you!\nWe will be in touch within 24 hours.\n\nImmediate assistance: (949) 345-0285'); }
+window.submitForm = submitForm;
+
+// ─── ECOBOT ────────────────────────────────────────────────
+function toggleEcobot() { document.getElementById('ecobot-window').classList.toggle('open'); }
+function sendEco() {
+  var inp = document.getElementById('ecoInput');
+  var msg = inp.value.trim(); if (!msg) return;
+  addMsg(msg,'user'); inp.value='';
+  setTimeout(function() { addMsg(reply(msg),'bot'); }, 650);
+}
+window.sendEco = sendEco;
+function addMsg(txt, role) {
+  var box = document.getElementById('ecoMessages');
+  var el = document.createElement('div');
+  el.className = 'eco-msg ' + role; el.textContent = txt;
+  box.appendChild(el); box.scrollTop = box.scrollHeight;
+}
+function reply(m) {
+  m = m.toLowerCase();
+  if (/price|cost|quot/.test(m)) return 'Call (949) 345-0285 for a free same-day quote!';
+  if (/data|hard.?drive|shred/.test(m)) return 'We offer NIST 800-88 data destruction with certificates per device within 48hrs.';
+  if (/pickup|pick.up/.test(m)) return 'We do business pickups throughout OC — often same week! Call (949) 345-0285.';
+  if (/itad/.test(m)) return 'ITAD = inventory, data wipe, value recovery, certified disposal. End-to-end.';
+  if (/cert/.test(m)) return 'Yes — certificates of destruction issued per device within 48 hours.';
+  return 'Great question! Call (949) 345-0285 or use our contact form. Happy to help!';
+}
+var ecoInp = document.getElementById('ecoInput');
+if (ecoInp) ecoInp.addEventListener('keydown', function(e) { if(e.key==='Enter') sendEco(); });
+
+// ── STAGGER CARD INDICES ───────────────────────────────────
+function setStaggerIndices() {
+  var groups = [
+    '.svc-grid .svc-card',
+    '.trust-grid .trust-card',
+    '.testi-grid .testi-card',
+    '.env-grid .env-stat',
+    '.blog-grid .blog-card',
+    '.svc-features .svc-feature-card',
+    '.mission-cards .mission-card',
+  ];
+  groups.forEach(function(sel) {
+    document.querySelectorAll(sel).forEach(function(el, i) {
+      el.style.setProperty('--i', i);
+    });
+  });
+}
+setStaggerIndices();
+
+// ── HERO ENTRANCE ──────────────────────────────────────────
+var homePg = document.getElementById('pg-home');
+if (homePg) {
+  requestAnimationFrame(function() {
+    setTimeout(function() { homePg.classList.add('pg-loaded'); }, 80);
+  });
+}
+
+// ── SECTION SCROLL OBSERVER ────────────────────────────────
+var sectObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('in-view'); sectObs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+
+function observeSections() {
+  document.querySelectorAll('.is-active .sect-anim').forEach(function(el) {
+    sectObs.observe(el);
+  });
+}
+observeSections();
+
+// Re-observe when page changes
+var origGoTo = goTo;
+goTo = function(pageId) {
+  origGoTo(pageId);
+  var pg = document.getElementById('pg-' + pageId) || document.getElementById(pageId);
+  if (pg) {
+    pg.classList.add('pg-loaded');
+    setTimeout(observeSections, 50);
+  }
+};
+window.goTo = goTo;
+window.showPage = goTo;
+
+
+// BACKUP INIT - ensure correct page shows
+window.addEventListener('load', function() {
+  // Force hide all pages except active
+  document.querySelectorAll('.page').forEach(function(p) {
+    if (!p.classList.contains('is-active')) {
+      p.style.display = 'none';
+    } else {
+      p.style.display = 'block';
+    }
+  });
+  // Re-wire all nav links in case they were missed
+  document.querySelectorAll('[data-target]').forEach(function(el) {
+    if (!el.dataset.wired) {
+      el.dataset.wired = '1';
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        goTo(el.getAttribute('data-target'));
+        if (el.getAttribute('data-close') === '1') {
+          var nav = document.getElementById('mob-nav');
+          if (nav) nav.classList.remove('open');
+        }
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
