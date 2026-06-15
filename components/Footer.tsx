@@ -5,8 +5,8 @@ const SERVICES = [
   { label: 'Data Destruction',   href: '/services/data-destruction' },
   { label: 'ITAD',               href: '/services/itad' },
   { label: 'E-Waste Recycling',  href: '/services/recycling' },
-  { label: 'Business Pickup',    href: '/services/pickup' },
-  { label: 'Server Decommission',href: '/services/server' },
+  { label: 'Business Pickup', href: '/contact' },
+  { label: 'Server Decommission', href: '/services/itad' },
 ]
 const COMPANY = [
   { label: 'About Us',     href: '/about' },
@@ -19,8 +19,8 @@ const COMPLIANCE = [
   { label: 'NIST 800-88',      href: '/services/data-destruction' },
   { label: 'CA DTSC',          href: '/services/recycling' },
   { label: 'HIPAA Compliant',  href: '/services/data-destruction' },
-  { label: 'Privacy Policy',   href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms of Service', href: '/terms-of-service' },
 ]
 
 export default function Footer() {

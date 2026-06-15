@@ -144,6 +144,7 @@ interface HeroProps {
   title:     string | React.ReactNode
   subtitle?: string
   children?: React.ReactNode  // extra content below (badges, buttons, etc.)
+  bgImage?: string;
 }
 
 export function PageHero({
@@ -152,9 +153,17 @@ export function PageHero({
   title,
   subtitle,
   children,
+  bgImage,
 }: HeroProps) {
   return (
-    <div className="svc-inner-hero">
+    <div 
+      className="svc-inner-hero"
+      style={bgImage ? {
+        backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('${bgImage}')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center right',
+      } : undefined}
+    >
       <div className="container">
         {overline && (
           <AnimateIn from="fade" delay={0} duration={0.5}>

@@ -35,11 +35,12 @@ export default function ResourcesPage() {
         overline="Knowledge Base"
         title="Resource Center"
         subtitle="Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly and compliantly."
+        bgImage="/image/resources-oc-electronic-recycling.webp"
       />
 
       <section style={{ background: 'var(--light)', padding: '80px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '40px' }}>
+          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '40px' }}>
 
             {/* Main guides */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>

@@ -2748,3 +2748,58 @@ main:has(.blog-post-hero) { background: #ffffff; }
   padding-left: 2rem;
   padding-right: 2rem;
 }
+/* === Services Page Hero === */
+.hero-services {
+  background-image: url('/image/services-oc-electronic-recycling.webp');
+  background-size: cover;
+  background-position: center right;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.svc-inner-hero,
+.about-hero {
+  animation: heroFadeIn 0.3s ease-out both;
+}
+/* === Green Footprint / Environmental Impact Background Effect === */
+.green-footprint-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.green-footprint-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 25%, rgba(0,230,118,0.18) 0%, rgba(0,230,118,0.06) 35%, transparent 70%),
+    linear-gradient(rgba(0,230,118,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,230,118,0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.green-footprint-section > * {
+  position: relative;
+  z-index: 1;
+}
+/* === End Green Footprint Background Effect === */
+/* === CTA / Facility Overview Section Background === */
+.cta-section {
+  background-image: linear-gradient(rgba(13,21,40,0.75), rgba(13,21,40,0.75)), url('/image/facility-overview-oc-electronic-recycling.webp');
+  background-size: cover;
+  background-position: center;
+}
+/* === End CTA / Facility Overview Section === */

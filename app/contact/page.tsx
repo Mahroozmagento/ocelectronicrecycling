@@ -45,7 +45,14 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <div className="svc-inner-hero">
+      <div 
+  className="svc-inner-hero"
+  style={{
+    backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('/image/contact-oc-electronic-recycling.webp')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center right',
+  }}
+>
         <div className="container">
           <AnimateIn from="fade" delay={0} duration={0.5}>
             <span className="overline">Get Started</span>
@@ -65,7 +72,7 @@ export default function ContactPage() {
 
       <div style={{ background: 'var(--light)', padding: '60px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
+          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
 
             {/* Form */}
             <AnimateIn from="left" delay={0.1}>
@@ -79,7 +86,7 @@ export default function ContactPage() {
                   </div>
                 )}
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div className="form-group">
                     <label>First Name</label>
                     <input className="form-control" type="text" placeholder="John" required />
@@ -95,7 +102,7 @@ export default function ContactPage() {
                   <input className="form-control" type="text" placeholder="Acme Corp (optional)" />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div className="form-group">
                     <label>Email</label>
                     <input className="form-control" type="email" placeholder="john@company.com" required />

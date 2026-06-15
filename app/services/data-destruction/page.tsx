@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 export default function DataDestructionPage() {
   return (
     <>
-      <div className="svc-inner-hero" style={{background:'linear-gradient(135deg,var(--navy),#1a0508)'}}>
+      <div className="svc-inner-hero" style={{
+  backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('/image/data-destruction-oc-electronic-recycling.webp')`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center right',
+}}>
         <div className="container">
           <span className="overline" style={{color:'var(--red)'}}>Security Service</span>
           <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2rem,5vw,4rem)',fontWeight:900,letterSpacing:'-.03em',marginTop:'10px'}}>

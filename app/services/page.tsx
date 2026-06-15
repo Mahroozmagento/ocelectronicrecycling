@@ -24,6 +24,7 @@ export default function ServicesPage() {
         overline="What We Do"
         title={<>Complete Electronics<br />Lifecycle Services</>}
         subtitle="From a single laptop to a full data center decommission — every phase documented, compliant, and zero-landfill."
+        bgImage="/image/services-oc-electronic-recycling.webp"
       />
 
       <div style={{ background: 'var(--light)', padding: '80px 0' }}>

@@ -29,6 +29,7 @@ export default function HowItWorksPage() {
         overline="The Process"
         title="How It Works"
         subtitle="Simple, transparent, and fully documented. Here's exactly what happens from your first call to your final certificate."
+        bgImage="/image/how-it-works-oc-electronic-recycling.webp"
       />
 
       <section style={{ background: 'var(--light)', padding: '80px 0' }}>

@@ -18,7 +18,14 @@ const MISSION = [
 export default function AboutPage() {
   return (
     <>
-      <div className="about-hero">
+      <div 
+  className="about-hero"
+  style={{
+    backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('/image/about-oc-electronic-recycling.webp')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center right',
+  }}
+>
         <div className="container">
           <AnimateIn from="fade" delay={0} duration={0.5}>
             <span className="overline">Our Story</span>
@@ -39,7 +46,7 @@ export default function AboutPage() {
 
       <div style={{ background: 'var(--light)', padding: '80px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '60px' }}>
+          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '60px' }}>
             <AnimateIn from="left">
               <span className="overline" style={{ color: 'var(--blue)' }}>Our Mission</span>
               <h2 className="section-title" style={{ color: 'var(--navy)' }}>Responsible. Certified. Local.</h2>
@@ -77,7 +84,7 @@ export default function AboutPage() {
             </AnimateIn>
           </div>
 
-          <StaggerGroup style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px' }}>
+          <StaggerGroup className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px' }}>
             {MISSION.map(({ icon, title, desc }) => (
               <div key={title} style={{ background: '#fff', borderRadius: '14px', padding: '28px', border: '1px solid #e2e8f0' }}>
                 <div style={{ fontSize: '1.6rem', marginBottom: '12px' }}>{icon}</div>
