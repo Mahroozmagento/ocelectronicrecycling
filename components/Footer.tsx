@@ -47,7 +47,7 @@ export default function Footer() {
             <h4>Services</h4>
             <ul>
               {SERVICES.map(({ label, href }) => (
-                <li key={`svc-${href}`}><Link href={href}>{label}</Link></li>
+                <li key={`svc-${label}`}><Link href={href}>{label}</Link></li>
               ))}
             </ul>
           </div>

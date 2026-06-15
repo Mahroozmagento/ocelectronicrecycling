@@ -209,7 +209,9 @@ h2.section-title::after { content: ''; position: absolute; bottom: -6px; left: 0
 .section-light h2.section-title::after { background: var(--blue); }
 .section-light .overline { color: var(--blue); }
 .section-light h1,.section-light h2,.section-light h3,.section-light h4 { color: var(--navy); }
+.section-dark h1.section-title,
 .section-dark h2.section-title,
+.section-dark2 h1.section-title,
 .section-dark2 h2.section-title { color: var(--white); }
 
 /* ── HERO ────────────────────────────────────────────────── */
