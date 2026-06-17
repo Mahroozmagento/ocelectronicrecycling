@@ -164,7 +164,7 @@ export default async function BlogPostPage({
 
       {/* ── BODY ── */}
       <div className="blog-post-layout">
-        <div className="blog-post-container">
+        <div className="blog-post-container" style={{ width: '100%' }}>
 
           {/* Article */}
           <article className="blog-post-article">
