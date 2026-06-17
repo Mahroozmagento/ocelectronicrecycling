@@ -5,6 +5,7 @@
 // ─────────────────────────────────────────────────────────────
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
@@ -53,17 +54,13 @@ export default function HomePage() {
         </div>
         <div className="hero-right">
           <div className="hero-r-ph">
-            {/* ★ Replace this div with:
-                <Image src="/images/hero.jpg" alt="OC Electronic Recycling facility"
-                  fill style={{objectFit:'cover',opacity:.75}} priority />
-            */}
-            <div style={{ fontSize: '3rem', marginBottom: '12px' }}>📸</div>
-            <div style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: '.85rem', color: '#00e676', letterSpacing: '.08em', marginBottom: '6px' }}>
-              YOUR FACILITY PHOTO
-            </div>
-            <div style={{ fontSize: '.75rem', color: '#8899aa', textAlign: 'center', maxWidth: '200px', lineHeight: 1.6 }}>
-              900 × 1100 px · JPG/WebP
-            </div>
+           <Image
+  src="/image/hero-facility-oc-electronic-recycling.webp"
+  alt="OC Electronic Recycling facility"
+  fill
+  style={{ objectFit: 'cover', opacity: .75 }}
+  priority
+/>
           </div>
           <div className="hero-float-card card-tl">
             <div className="hfc-label">Certified Process</div>
@@ -96,19 +93,13 @@ export default function HomePage() {
 
       {/* ── FACILITY PHOTO PLACEHOLDER ────────────────────────── */}
       <div style={{ background: 'var(--light)', padding: '0 0 60px 0' }}>
-        <div className="img-placeholder img-placeholder-banner" data-label="FACILITY OVERVIEW"
+        <div className="cta-section" data-label="FACILITY OVERVIEW"
           style={{ width: '100%', height: '260px', minHeight: '260px', borderRadius: 0,
-            background: 'linear-gradient(135deg,#0d1528 0%,#111f3a 50%,#0a1535 100%)',
+            
             position: 'relative', overflow: 'hidden', display: 'flex',
             flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
               <div className="facility-label">FACILITY OVERVIEW</div>
-          <div style={{ fontSize: '3rem' }}>🏭</div>
-          <div style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1rem', color: '#00e676' }}>
-            FACILITY / OPERATION PHOTO
-          </div>
-          <div style={{ fontSize: '.78rem', color: '#8899aa', textAlign: 'center', maxWidth: '360px', lineHeight: 1.7 }}>
-            Wide shot of your recycling floor or team · 1400 × 520 px
-          </div>
+          
         </div>
       </div>
 
@@ -279,7 +270,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="cta-section">
+      <section className="cta-section cta-bottom-section">
         <div className="container">
           <span className="overline">Ready to Start?</span>
           <h2>Responsible Recycling<br />Starts With a Call</h2>

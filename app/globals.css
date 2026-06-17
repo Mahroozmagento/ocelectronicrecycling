@@ -2800,8 +2800,15 @@ main:has(.blog-post-hero) { background: #ffffff; }
 /* === End Green Footprint Background Effect === */
 /* === CTA / Facility Overview Section Background === */
 .cta-section {
-  background-image: linear-gradient(rgba(13,21,40,0.75), rgba(13,21,40,0.75)), url('/image/facility-overview-oc-electronic-recycling.webp');
+  background-image: linear-gradient(rgba(13,21,40,0.35), rgba(13,21,40,0.35)), url('/image/hero-overview-oc-electronic-recycling.webp');
   background-size: cover;
   background-position: center;
 }
 /* === End CTA / Facility Overview Section === */
+/* === Bottom CTA Section Background === */
+.cta-bottom-section {
+  background-image: linear-gradient(rgba(13,21,40,0.75), rgba(13,21,40,0.75)), url('/image/cta-bottom-oc-electronic-recycling.webp');
+  background-size: cover;
+  background-position: center;
+}
+/* === End Bottom CTA Section === */
