@@ -35,11 +35,34 @@ export default function ContactPage() {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSending(true)
-    setTimeout(() => { setSending(false); setSubmitted(true) }, 1200)
-    setTimeout(() => setSubmitted(false), 5000)
+    try {
+      const formData = new FormData(e.target as HTMLFormElement)
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          service: formData.get('service'),
+          message: formData.get('message'),
+        }),
+      })
+      if (res.ok) {
+        setSending(false)
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        setSending(false)
+        alert('Something went wrong. Please call us at (949) 345-0285.')
+      }
+    } catch {
+      setSending(false)
+      alert('Something went wrong. Please call us at (949) 345-0285.')
+    }
   }
 
   return (
@@ -89,33 +112,33 @@ export default function ContactPage() {
                 <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div className="form-group">
                     <label>First Name</label>
-                    <input className="form-control" type="text" placeholder="John" required />
+                    <input className="form-control" type="text" name="name" placeholder="John" required />
                   </div>
                   <div className="form-group">
                     <label>Last Name</label>
-                    <input className="form-control" type="text" placeholder="Smith" required />
+                    <input className="form-control" type="text" name="lastName" placeholder="Smith" required />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label>Company Name</label>
-                  <input className="form-control" type="text" placeholder="Acme Corp (optional)" />
+                  <input className="form-control" type="text" name="company" placeholder="Acme Corp (optional)" />
                 </div>
 
                 <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                   <div className="form-group">
                     <label>Email</label>
-                    <input className="form-control" type="email" placeholder="john@company.com" required />
+                    <input className="form-control" type="email" name="email" placeholder="john@company.com" required />
                   </div>
                   <div className="form-group">
                     <label>Phone</label>
-                    <input className="form-control" type="tel" placeholder="(949) 000-0000" />
+                    <input className="form-control" type="tel" name="phone" placeholder="(949) 000-0000" />
                   </div>
                 </div>
 
                 <div className="form-group">
                   <label>Service Needed</label>
-                  <select className="form-control">
+                  <select className="form-control" name="service">
                     <option value="">Select a service...</option>
                     {SERVICES_LIST.map(s => <option key={s}>{s}</option>)}
                   </select>
@@ -123,7 +146,7 @@ export default function ContactPage() {
 
                 <div className="form-group">
                   <label>Message</label>
-                  <textarea className="form-control" rows={4} placeholder="Describe your equipment, volume, or timeline..." style={{ resize: 'vertical' }} />
+                  <textarea className="form-control" name="message" rows={4} placeholder="Describe your equipment, volume, or timeline..." style={{ resize: 'vertical' }} />
                 </div>
 
                 {/* Drag and drop upload */}
