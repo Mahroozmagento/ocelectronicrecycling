@@ -180,12 +180,14 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <AnimateIn from="right" delay={0.5}>
                 <div style={{ background: 'linear-gradient(135deg,#e3f2fd,#e8f5e9)', borderRadius: '14px', height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '10px', position: 'relative', border: '2px dashed rgba(41,121,255,.25)' }}>
-                  <div style={{ position: 'absolute', top: '10px', left: '12px', background: 'var(--blue)', color: '#fff', fontSize: '.6rem', fontWeight: 800, letterSpacing: '.12em', padding: '3px 10px', borderRadius: '20px' }}>MAP</div>
-                  <div style={{ fontSize: '2rem' }}>🗺️</div>
-                  <div style={{ fontFamily: 'var(--font-head)', fontWeight: 700, color: 'var(--blue)', fontSize: '.9rem' }}>Orange County Service Area</div>
-                  <div style={{ fontSize: '.72rem', color: '#4a5568', textAlign: 'center' }}>
-                    Embed Google Maps iframe here<br />700 × 300 px recommended
-                  </div>
+                 <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212949.84039433654!2d-118.05!3d33.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc925c54d5f7cf%3A0xdea6c3618b085268!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+  width="100%"
+  height="300"
+  style={{borderRadius:'10px', border:'none'}}
+  allowFullScreen
+  loading="lazy"
+/>
                 </div>
               </AnimateIn>
             </div>

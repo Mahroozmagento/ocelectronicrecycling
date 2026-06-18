@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import AnimateIn, { StaggerGroup } from '@/components/AnimateIn'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -65,11 +66,16 @@ export default function AboutPage() {
 
             <AnimateIn from="right">
               <div style={{ background: '#fff', borderRadius: '16px', padding: '36px', border: '1px solid #e2e8f0' }}>
-                <div style={{ height: '180px', borderRadius: '10px', background: 'linear-gradient(135deg,#0d1528,#1a2840)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '8px', marginBottom: '24px', border: '2px dashed rgba(0,230,118,.2)', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: '10px', left: '12px', background: 'var(--blue)', color: '#fff', fontSize: '.6rem', fontWeight: 800, letterSpacing: '.12em', padding: '3px 10px', borderRadius: '20px' }}>TEAM PHOTO</div>
-                  <div style={{ fontSize: '2rem' }}>👥</div>
-                  <div style={{ fontSize: '.72rem', color: '#8899aa', textAlign: 'center' }}>Replace with your team photo<br />700 × 460 px</div>
-                </div>
+                <div style={{position:'relative'}}>
+  <Image
+    src="/image/about-team.webp"
+    alt="OC Electronic Recycling team"
+    width={700}
+    height={460}
+    style={{width:'100%', height:'180px', objectFit:'cover', borderRadius:'10px'}}
+  />
+  <div style={{ position: 'absolute', top: '10px', left: '12px', background: 'var(--blue)', color: '#fff', fontSize: '.6rem', fontWeight: 800, letterSpacing: '.12em', padding: '3px 10px', borderRadius: '20px' }}>TEAM PHOTO</div>
+</div>
                 {[
                   { num: '2,500+', color: 'var(--blue)',  label: 'Clients served across Orange County' },
                   { num: '500T',   color: 'var(--green)', label: 'E-waste diverted from landfills annually' },
