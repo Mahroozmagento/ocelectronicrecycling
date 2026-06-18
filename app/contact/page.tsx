@@ -150,7 +150,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Drag and drop upload */}
-                <label style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: '.78rem', color: '#374151', textTransform: 'uppercase', letterSpacing: '.05em', display: 'block', marginBottom: '8px' }}>
+                {/* <label style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: '.78rem', color: '#374151', textTransform: 'uppercase', letterSpacing: '.05em', display: 'block', marginBottom: '8px' }}>
                   Attachments (optional)
                 </label>
                 <div
@@ -180,7 +180,14 @@ export default function ContactPage() {
                       </div>
                     ))}
                   </div>
-                )}
+                )} */}
+                {/* Attachments note */}
+<div style={{ background: '#f8f9fa', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '12px 16px', fontSize: '0.85rem', color: '#4a5568' }}>
+  📎 Need to send attachments? Email us directly at{' '}
+  <a href="mailto:info@ocelectronicrecycling.com" style={{ color: 'var(--blue)', fontWeight: 600 }}>
+    info@ocelectronicrecycling.com
+  </a>
+</div>
 
                 <button type="submit" className="btn-primary" style={{ width: '100%', padding: '14px', fontSize: '.95rem' }} disabled={sending}>
                   {sending ? 'Sending...' : 'Send Message →'}
