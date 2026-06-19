@@ -21,7 +21,7 @@ export default function HomePage() {
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section id="hero">
         <div className="hero-left">
-          <div className="hero-bracket">Orange County — Est. 2024</div>
+          <div className="hero-bracket">Orange County — Est. 2012</div>
           <h1 className="hero-h1">
             We Recycle<br /><em>Electronics.</em><br />You Stay Clean.
           </h1>
