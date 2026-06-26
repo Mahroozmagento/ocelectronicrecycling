@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Cursor from '@/components/Cursor'
 import EcoBot from '@/components/EcoBot'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const urbanist = Urbanist({
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Footer />
     <EcoBot />
   </body>
+  <GoogleAnalytics gaId="G-GZHT9EPCHT" />
 </html>
   )
 }
