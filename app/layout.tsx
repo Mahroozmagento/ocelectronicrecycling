@@ -4,7 +4,6 @@ import { Urbanist, Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Cursor from '@/components/Cursor'
-import EcoBot from '@/components/EcoBot'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
@@ -47,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "LocalBusiness",
               "@id": "https://www.ocelectronicrecycling.com/#business",
               "name": "OC Electronic Recycling",
-              "description": "Orange County's certified e-waste recycling, IT Asset Disposition (ITAD), and data destruction provider. NIST 800-88 compliant. Serving all 34 cities in Orange County, California.",
+              "description": "Orange County's e-waste recycling, IT Asset Disposition (ITAD), and data destruction provider, following NIST 800-88 guidelines for data sanitization. Serving all 34 cities in Orange County, California.",
               "url": "https://www.ocelectronicrecycling.com",
               "telephone": "+19493450285",
               "email": "info@ocelectronicrecycling.com",
@@ -83,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     "itemOffered": {
                       "@type": "Service",
                       "name": "E-Waste Recycling",
-                      "description": "California DTSC compliant e-waste recycling for businesses and residents across Orange County.",
+                      "description": "E-waste recycling in compliance with California regulations, for businesses and residents across Orange County.",
                       "url": "https://www.ocelectronicrecycling.com/services/recycling"
                     }
                   },
@@ -92,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     "itemOffered": {
                       "@type": "Service",
                       "name": "Certified Data Destruction",
-                      "description": "NIST 800-88 compliant hard drive wiping and physical shredding with certificate of destruction.",
+                      "description": "Hard drive wiping and physical shredding following NIST 800-88 guidelines, with certificate of destruction.",
                       "url": "https://www.ocelectronicrecycling.com/services/data-destruction"
                     }
                   },
@@ -126,7 +125,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@id": "https://www.ocelectronicrecycling.com/#website",
               "url": "https://www.ocelectronicrecycling.com",
               "name": "OC Electronic Recycling",
-              "description": "Orange County certified e-waste recycling and ITAD services.",
+              "description": "Orange County e-waste recycling and ITAD services.",
               "publisher": {
                 "@id": "https://www.ocelectronicrecycling.com/#business"
               }
@@ -139,7 +138,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Header />
     <main>{children}</main>
     <Footer />
-    <EcoBot />
+    <script
+      src="https://niro-ai-platform.vercel.app/widget.js"
+      data-key="pk_test_ocer_a3f8ed238897ff10"
+      async
+    ></script>
   </body>
   <GoogleAnalytics gaId="G-GZHT9EPCHT" />
 </html>

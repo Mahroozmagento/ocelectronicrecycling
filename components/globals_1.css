@@ -462,41 +462,6 @@ h1.hero-h1    { animation: fadeUp   .7s  cubic-bezier(.23,1,.32,1) .15s both; }
 .sect-anim { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
 .sect-anim.in-view { opacity: 1; transform: none; }
 
-/* ── ECOBOT ──────────────────────────────────────────────── */
-#ecobot-btn {
-  position: fixed; bottom: 90px; right: 24px;
-  width: 52px; height: 52px;
-  background: var(--green); border-radius: 50%;
-  border: none; cursor: pointer; z-index: 250;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
-  box-shadow: 0 8px 24px rgba(0,230,118,.4);
-  transition: transform .2s;
-}
-#ecobot-btn:hover { transform: scale(1.1); }
-#ecobot-window {
-  display: none; position: fixed;
-  bottom: 160px; right: 24px;
-  width: 320px; height: 420px;
-  background: var(--navy2);
-  border: 1px solid rgba(0,230,118,.2);
-  border-radius: 16px; flex-direction: column;
-  z-index: 249; overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,.5);
-}
-#ecobot-window.open { display: flex; }
-.eco-head { background: rgba(0,230,118,.1); padding: 14px 16px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
-.eco-avatar { width: 32px; height: 32px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .9rem; flex-shrink: 0; }
-.eco-name   { font-family: var(--font-head); font-weight: 800; font-size: .88rem; }
-.eco-status { font-size: .7rem; color: var(--green); }
-.eco-close  { margin-left: auto; background: none; border: none; color: var(--muted); font-size: 1.1rem; cursor: pointer; }
-.eco-messages { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
-.eco-msg { max-width: 85%; font-size: .82rem; line-height: 1.5; padding: 10px 14px; border-radius: 12px; }
-.eco-msg.bot  { background: rgba(255,255,255,.06); color: #b0c4d8; align-self: flex-start; border-radius: 4px 12px 12px 12px; }
-.eco-msg.user { background: var(--green); color: var(--navy); align-self: flex-end; font-weight: 600; border-radius: 12px 12px 4px 12px; }
-.eco-input-row { display: flex; padding: 12px; gap: 8px; border-top: 1px solid var(--border); }
-.eco-input { flex: 1; background: rgba(255,255,255,.06); border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; color: #fff; font-size: .82rem; outline: none; }
-.eco-send  { background: var(--green); border: none; border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--navy); font-size: .9rem; }
 
 /* ── FACILITY OVERVIEW LABEL ─────────────────────────────── */
 .facility-banner {
