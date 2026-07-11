@@ -93,7 +93,7 @@ The free service includes labor, transport, itemized pickup manifest, and recycl
 
 ## The Pickup Process: Step by Step
 
-**Step 1 â€” Schedule.** Call (949) 345-0285 or submit the online form. Tell us approximate quantities and types. We confirm a pickup date, typically within the same week.
+**Step 1 â€” Schedule.** Call (949) 287-3056 or submit the online form. Tell us approximate quantities and types. We confirm a pickup date, typically within the same week.
 
 **Step 2 â€” Inventory.** Every device is logged: make, model, serial number, condition. This creates your pickup manifest â€” a legal record for compliance documentation.
 
@@ -201,7 +201,7 @@ Modern multifunction printers and office copiers store every scanned, printed, a
 
 ## How to Schedule Irvine Pickup
 
-**Call (949) 345-0285** or use the online form. We typically schedule Irvine pickups within 3â€“5 business days. When you call, have ready: approximate device count by type, special access requirements, and whether data destruction documentation is required.
+**Call (949) 287-3056** or use the online form. We typically schedule Irvine pickups within 3â€“5 business days. When you call, have ready: approximate device count by type, special access requirements, and whether data destruction documentation is required.
 
 Serving: Irvine Spectrum, Irvine Business Complex (IBC), UCI Research Park, Jamboree Road corridor, Alton Parkway business parks, and all Irvine neighborhoods.
 
@@ -279,7 +279,7 @@ This economics model is why OC Electronic Recycling can offer free pickup to qua
 
 ## The Pickup Process in Detail
 
-**Scheduling:** Call (949) 345-0285 or submit the online form. Tell us approximate quantities and device types.
+**Scheduling:** Call (949) 287-3056 or submit the online form. Tell us approximate quantities and device types.
 
 **Day of pickup:** Our team arrives in a marked vehicle. For smaller jobs, a van with one or two team members. For larger jobs, a box truck with a larger crew.
 
@@ -291,7 +291,7 @@ This economics model is why OC Electronic Recycling can offer free pickup to qua
 
 ## Scheduling
 
-Call **(949) 345-0285** or use the online contact form. We service all 34 Orange County cities. Same-week scheduling available for most locations.
+Call **(949) 287-3056** or use the online contact form. We service all 34 Orange County cities. Same-week scheduling available for most locations.
 
 [Request Your Free Pickup â†’](/contact)
     `,
@@ -1164,7 +1164,7 @@ File these with your move documentation. Some landlords ask for proof of proper 
 
 Schedule electronics disposal 1â€“2 weeks before final move-out, not the day before. This allows time to handle complications (missed equipment, additional volumes, copier drive issues) without deadline pressure.
 
-Call **(949) 345-0285** as early as possible for time-sensitive cleanouts. We handle these regularly and can prioritize scheduling.
+Call **(949) 287-3056** as early as possible for time-sensitive cleanouts. We handle these regularly and can prioritize scheduling.
 
 [Schedule Your Office Cleanout Pickup â†’](/contact)
     `,
@@ -1256,7 +1256,7 @@ Hotels, restaurants, gyms, healthcare facilities, retail chains, and corporate o
 
 **Logistics support.** Appropriate truck size and team staffing for quantity and weight.
 
-Call (949) 345-0285 to schedule. We handle TV recycling throughout all 34 Orange County cities.
+Call (949) 287-3056 to schedule. We handle TV recycling throughout all 34 Orange County cities.
 
 [Schedule TV Recycling Pickup â†’](/contact)
     `,
@@ -1426,7 +1426,7 @@ A tech company handling a SOC 2 audit annually that can't produce data destructi
 
 ## The Simple Solution
 
-1. Call OC Electronic Recycling at (949) 345-0285 or submit the online form
+1. Call OC Electronic Recycling at (949) 287-3056 or submit the online form
 2. Schedule a pickup â€” same week for most Irvine locations
 3. Receive certified data destruction and full documentation
 4. File documents. Done.
@@ -1627,7 +1627,7 @@ We built our service around the way IT managers actually work. When you retire n
 
 For larger projects, we coordinate on-site so your switches, routers, firewalls, and cabling come out cleanly without disrupting production. And because we recover value from resaleable enterprise gear, a refresh that you expected to cost money can often offset part of the project instead.
 
-If you're planning a refresh, closing an office, or staring at a closet full of retired gear, let's make the disposal the easy part. Call **(949) 345-0285** to schedule a pickup or talk through your decommissioning project — and turn a security risk into a documented, defensible win.
+If you're planning a refresh, closing an office, or staring at a closet full of retired gear, let's make the disposal the easy part. Call **(949) 287-3056** to schedule a pickup or talk through your decommissioning project — and turn a security risk into a documented, defensible win.
 `,
   },
 
@@ -1718,7 +1718,7 @@ We treat your switches, routers, and firewalls the way we treat hard drives — 
 
 All of it happens within a tracked chain of custody, with pickup available across Orange County and on-site service for larger jobs. The result is simple: the data risk hiding in your retired network gear becomes a closed, documented case file instead of an open liability.
 
-Don't let your old core switch be the thing that shows up in a breach report. Call **(949) 345-0285** to set up secure network device destruction and pickup, and close the gap most IT programs don't even know they have.
+Don't let your old core switch be the thing that shows up in a breach report. Call **(949) 287-3056** to set up secure network device destruction and pickup, and close the gap most IT programs don't even know they have.
 `,
   },
 
@@ -1798,7 +1798,7 @@ Finally, don't overlook the optics and active components that come out alongside
 
 We make the cabling side of a refresh effortless. Whether you're pulling a few racks of patch cable or stripping an entire floor of structured cabling, we provide scheduled pickup across all 34 Orange County cities and coordinate on-site for larger jobs. Copper twisted-pair, fiber, patch panels, transceivers, and connectors all go through responsible, no-landfill recovery, and you receive documentation of how the material was handled.
 
-Because copper carries scrap value, a large cabling pull can offset part of your project cost rather than adding to it — and you walk away with a clean site and a clear conscience. If you've got a cabling refresh, an office cleanout, or a server room teardown on the calendar, call **(949) 345-0285** and we'll fold the recycling into your plan so the wire doesn't become your problem.
+Because copper carries scrap value, a large cabling pull can offset part of your project cost rather than adding to it — and you walk away with a clean site and a clear conscience. If you've got a cabling refresh, an office cleanout, or a server room teardown on the calendar, call **(949) 287-3056** and we'll fold the recycling into your plan so the wire doesn't become your problem.
 
 One last reason to plan it now rather than later: cable is heavy, awkward, and easy to underestimate. A floor's worth of structured cabling can fill far more space and weight than anyone expects, and finding out mid-teardown that you have nowhere to put it stalls the whole project. Lining up the recycling pickup before the contractor starts pulling keeps the job moving and keeps your timeline intact.
 `,
@@ -1887,7 +1887,7 @@ We position ourselves as the back-end partner that makes refreshes finish cleanl
 
 For hardware with remaining market value, our remarketing recovers revenue you can put back toward the new gear — turning part of the refresh cost into a credit. And because we handle the whole lifecycle locally, you're working with one accountable partner, not juggling a hauler, a shredding service, and a resale broker.
 
-Planning a refresh this year? Loop us in early. Call **(949) 345-0285** and we'll build the secure disposal and value recovery into your project so the old gear is handled before it ever becomes a problem.
+Planning a refresh this year? Loop us in early. Call **(949) 287-3056** and we'll build the secure disposal and value recovery into your project so the old gear is handled before it ever becomes a problem.
 
 The earlier you bring a disposal partner into the planning, the more options you keep open. Decide six months out and there's time to evaluate gear for remarketing, schedule pickups around your install windows, and capture maximum resale value. Decide the week of the cutover and you're usually stuck taking whatever's fastest. A little lead time turns disposal from a last-minute cost into a planned part of the project that can actually pay you back.
 `,
@@ -1978,7 +1978,7 @@ Chain of custody is built into everything we do. We log your assets by serial nu
 
 We serve all 34 Orange County cities with scheduled pickup and on-site service for larger jobs, and our responsible, no-landfill, no-export downstream means the environmental side of your compliance is covered alongside the data side. When the auditor asks, you'll have the answer in writing.
 
-Stop carrying disposal as an open question on your risk register. Call **(949) 345-0285** to set up a chain-of-custody pickup, and turn "a recycler took them" into a signed, serialized, audit-ready record.
+Stop carrying disposal as an open question on your risk register. Call **(949) 287-3056** to set up a chain-of-custody pickup, and turn "a recycler took them" into a signed, serialized, audit-ready record.
 `,
   },
 

@@ -53,7 +53,7 @@ export default function RecyclingPage() {
       <section className="cta-section">
         <div className="container">
           <h2>Recycle Right.<br />Recycle Responsibly.</h2>
-          <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
+          <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary btn-large">Drop Off or Schedule Pickup</Link>
           </div>

@@ -13,7 +13,7 @@ const SERVICES_LIST = [
 ]
 
 const CONTACT_INFO = [
-  { icon: '📞', label: 'Call Us',     value: <a href="tel:9493450285" style={{ color: 'var(--blue)' }}>(949) 345-0285</a> },
+  { icon: '📞', label: 'Call Us',     value: <a href="tel:9492873056" style={{ color: 'var(--blue)' }}>(949) 287-3056</a> },
   { icon: '✉️', label: 'Email',       value: <a href="mailto:info@ocelectronicrecycling.com" style={{ color: 'var(--blue)', fontSize: '.9rem' }}>info@ocelectronicrecycling.com</a> },
   { icon: '📍', label: 'Service Area',value: <><span>Orange County, CA</span><br /><span style={{ fontWeight: 400, fontSize: '.82rem', color: '#4a5568' }}>Irvine · Anaheim · Santa Ana · Newport Beach<br />Huntington Beach · Laguna Niguel · Mission Viejo</span></> },
   { icon: '🕐', label: 'Hours',       value: <><span>Mon–Fri: 8am – 6pm</span><br /><span style={{ fontWeight: 400, fontSize: '.82rem' }}>Sat: By appointment</span></> },
@@ -57,11 +57,11 @@ export default function ContactPage() {
         setTimeout(() => setSubmitted(false), 5000)
       } else {
         setSending(false)
-        alert('Something went wrong. Please call us at (949) 345-0285.')
+        alert('Something went wrong. Please call us at (949) 287-3056.')
       }
     } catch {
       setSending(false)
-      alert('Something went wrong. Please call us at (949) 345-0285.')
+      alert('Something went wrong. Please call us at (949) 287-3056.')
     }
   }
 

@@ -92,7 +92,7 @@ export default function TermsOfServicePage() {
           <h2>Contact Us</h2>
           <p>
             If you have questions about these Terms, you can reach us at{' '}
-            <a href="tel:9493450285" style={{ color: 'var(--green)' }}>(949) 345-0285</a>{' '}
+            <a href="tel:9492873056" style={{ color: 'var(--green)' }}>(949) 287-3056</a>{' '}
             or through our{' '}
             <a href="/contact" style={{ color: 'var(--green)' }}>contact page</a>.
           </p>

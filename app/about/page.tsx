@@ -59,8 +59,8 @@ export default function AboutPage() {
                 Every device is handled with full chain-of-custody documentation. Every data-bearing device receives proper
                 destruction before any other step. Every client receives documentation they can show an auditor.
               </p>
-              <a href="tel:9493450285" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--blue)' }}>
-                ☎ (949) 345-0285
+              <a href="tel:9492873056" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--blue)' }}>
+                ☎ (949) 287-3056
               </a>
             </AnimateIn>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
           <AnimateIn from="up">
             <h2>Meet the Team</h2>
             <p>Have questions about our process? Call us directly.</p>
-            <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
+            <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
             <div className="cta-actions">
               <Link href="/contact" className="btn-primary btn-large">Get in Touch</Link>
             </div>

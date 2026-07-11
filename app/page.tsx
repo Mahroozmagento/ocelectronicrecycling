@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
   description:
     "Orange County's premier e-waste recycling and ITAD company. " +
-    'Certified data destruction, business pickup. Call (949) 345-0285.',
+    'Certified data destruction, business pickup. Call (949) 287-3056.',
   alternates: { canonical: '/' },
 }
 
@@ -33,8 +33,8 @@ export default function HomePage() {
             <Link href="/contact" className="btn-primary btn-large">
               Schedule Pickup
             </Link>
-            <a href="tel:9493450285" className="btn-outline btn-large">
-              ☎ (949) 345-0285
+            <a href="tel:9492873056" className="btn-outline btn-large">
+              ☎ (949) 287-3056
             </a>
           </div>
           <div className="hero-stats">
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <div className="amber-urgent-icon">⚠️</div>
                 <div className="amber-urgent-text">
                   <strong>Don&apos;t risk it.</strong> California law requires proper data disposal.
-                  Call <strong>(949) 345-0285</strong> for a same-week appointment.
+                  Call <strong>(949) 287-3056</strong> for a same-week appointment.
                 </div>
               </div>
             </div>
@@ -275,7 +275,7 @@ export default function HomePage() {
           <span className="overline">Ready to Start?</span>
           <h2>Responsible Recycling<br />Starts With a Call</h2>
           <p>Orange County&apos;s most trusted e-waste and ITAD partner is one call away.</p>
-          <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
+          <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary btn-large">Schedule Pickup</Link>
             <Link href="/contact" className="btn-outline btn-large">Get a Quote</Link>

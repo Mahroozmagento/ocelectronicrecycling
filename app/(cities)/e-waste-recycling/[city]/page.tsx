@@ -43,7 +43,7 @@ function CitySchema({ city }: { city: ReturnType<typeof getCityBySlug> }) {
     name: "OC Electronic Recycling",
     description: city.metaDescription,
     url: `https://ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
-    telephone: "+19493450285",
+    telephone: "+19492873056",
     email: "info@ocelectronicrecycling.com",
     address: {
       "@type": "PostalAddress",
@@ -219,8 +219,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
 
         <div className="city-hero__cta">
-          <a href="tel:+19493450285" className="btn btn--primary btn--lg">
-            📞 (949) 345-0285
+          <a href="tel:+19492873056" className="btn btn--primary btn--lg">
+            📞 (949) 287-3056
           </a>
           <Link href="/contact" className="btn btn--outline btn--lg">
             Schedule Pickup →
@@ -311,7 +311,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         </div>
         <p className="items-note">
           Don&apos;t see your item?{" "}
-          <a href="tel:+19493450285">Call us at (949) 345-0285</a> — we likely
+          <a href="tel:+19492873056">Call us at (949) 287-3056</a> — we likely
           accept it.
         </p>
       </section>
@@ -424,8 +424,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           {city.name} locations.
         </p>
         <div className="city-cta__buttons">
-          <a href="tel:+19493450285" className="btn btn--primary btn--xl">
-            Call (949) 345-0285
+          <a href="tel:+19492873056" className="btn btn--primary btn--xl">
+            Call (949) 287-3056
           </a>
           <Link href="/contact" className="btn btn--ghost btn--xl">
             Schedule Online →

@@ -36,7 +36,7 @@ export default function Footer() {
               Responsible disposal, Certified Data Destruction, and full documentation.
             </p>
             <div className="footer-phone">
-              <a href="tel:9493450285">☎ (949) 345-0285</a>
+              <a href="tel:9492873056">☎ (949) 287-3056</a>
             </div>
           </div>
 

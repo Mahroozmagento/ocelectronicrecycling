@@ -32,7 +32,7 @@ export const cities: CityData[] = [
     businessFocus: "hospitality, entertainment, and manufacturing sectors",
     metaTitle: "E-Waste Recycling Anaheim CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88-guided data destruction, and responsible electronics disposal. Call (949) 345-0285.",
+      "E-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88-guided data destruction, and responsible electronics disposal. Call (949) 287-3056.",
     heroStat: "346K+",
     heroStatLabel: "Anaheim Residents Served",
     faqExtra: {
@@ -55,7 +55,7 @@ export const cities: CityData[] = [
     businessFocus: "technology, biotech, and corporate enterprises",
     metaTitle: "E-Waste Recycling & ITAD Irvine CA | OC Electronic Recycling",
     metaDescription:
-      "Enterprise ITAD and e-waste recycling in Irvine, CA. Secure data destruction, server decommissioning, free business pickup. Serving Irvine Spectrum and IBC. Call (949) 345-0285.",
+      "Enterprise ITAD and e-waste recycling in Irvine, CA. Secure data destruction, server decommissioning, free business pickup. Serving Irvine Spectrum and IBC. Call (949) 287-3056.",
     heroStat: "5,000+",
     heroStatLabel: "Irvine Businesses Served",
     faqExtra: {
@@ -78,7 +78,7 @@ export const cities: CityData[] = [
     businessFocus: "government, retail, and small business sectors",
     metaTitle: "E-Waste Recycling Santa Ana CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in Santa Ana, CA. Serving businesses and residents. Free pickup for qualifying volumes, in compliance with California regulations. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in Santa Ana, CA. Serving businesses and residents. Free pickup for qualifying volumes, in compliance with California regulations. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Pickup for Business Quantities",
   },
@@ -97,7 +97,7 @@ export const cities: CityData[] = [
     businessFocus: "retail, hospitality, and coastal small businesses",
     metaTitle: "E-Waste Recycling Huntington Beach CA | OC Electronic Recycling",
     metaDescription:
-      "Eco-friendly e-waste recycling in Huntington Beach, CA. Keep electronics out of landfills and protect our coastline. Free pickup available. Call (949) 345-0285.",
+      "Eco-friendly e-waste recycling in Huntington Beach, CA. Keep electronics out of landfills and protect our coastline. Free pickup available. Call (949) 287-3056.",
     heroStat: "0",
     heroStatLabel: "Pounds Sent to Landfill",
   },
@@ -116,7 +116,7 @@ export const cities: CityData[] = [
     businessFocus: "retail, food service, and residential communities",
     metaTitle: "E-Waste Recycling Garden Grove CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics pickup in Garden Grove, CA. Computers, TVs, phones, and more. Residential and business service. Call (949) 345-0285.",
+      "E-waste recycling and electronics pickup in Garden Grove, CA. Computers, TVs, phones, and more. Residential and business service. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Pickup Available",
   },
@@ -135,7 +135,7 @@ export const cities: CityData[] = [
     businessFocus: "education, healthcare, and local business",
     metaTitle: "E-Waste Recycling Fullerton CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Fullerton, CA. Serving CSUF, local businesses, and residents. Computer recycling, TV disposal, data destruction. Call (949) 345-0285.",
+      "E-waste recycling in Fullerton, CA. Serving CSUF, local businesses, and residents. Computer recycling, TV disposal, data destruction. Call (949) 287-3056.",
     heroStat: "100%",
     heroStatLabel: "Responsible Disposal",
   },
@@ -154,7 +154,7 @@ export const cities: CityData[] = [
     businessFocus: "healthcare, education, and professional services",
     metaTitle: "E-Waste Recycling Orange CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and ITAD in Orange, CA. Certified data destruction, free business pickup. Serving all of the City of Orange. Call (949) 345-0285.",
+      "Electronics recycling and ITAD in Orange, CA. Certified data destruction, free business pickup. Serving all of the City of Orange. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -173,7 +173,7 @@ export const cities: CityData[] = [
     businessFocus: "design, retail, and creative industries",
     metaTitle: "E-Waste Recycling Costa Mesa CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and IT asset disposal in Costa Mesa, CA. Serving South Coast Plaza area businesses and residents. Certified data destruction. Call (949) 345-0285.",
+      "E-waste recycling and IT asset disposal in Costa Mesa, CA. Serving South Coast Plaza area businesses and residents. Certified data destruction. Call (949) 287-3056.",
     heroStat: "NIST",
     heroStatLabel: "800-88 Data Destruction",
   },
@@ -192,7 +192,7 @@ export const cities: CityData[] = [
     businessFocus: "financial services, legal, and high-net-worth residential",
     metaTitle: "E-Waste Recycling & ITAD Newport Beach CA | OC Electronic Recycling",
     metaDescription:
-      "Premium IT asset disposal and e-waste recycling in Newport Beach, CA. Confidential data destruction, documented chain of custody. Call (949) 345-0285.",
+      "Premium IT asset disposal and e-waste recycling in Newport Beach, CA. Confidential data destruction, documented chain of custody. Call (949) 287-3056.",
     heroStat: "Documented",
     heroStatLabel: "Chain of Custody",
   },
@@ -211,7 +211,7 @@ export const cities: CityData[] = [
     businessFocus: "residential, retail, and healthcare",
     metaTitle: "E-Waste Recycling Mission Viejo CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in Mission Viejo, CA. Convenient residential pickup, TV recycling, computer disposal. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in Mission Viejo, CA. Convenient residential pickup, TV recycling, computer disposal. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Residential Pickup Available",
   },
@@ -230,7 +230,7 @@ export const cities: CityData[] = [
     businessFocus: "mixed commercial, residential, and light industrial",
     metaTitle: "E-Waste Recycling Tustin CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and IT asset disposal in Tustin, CA. Certified data destruction, free business pickup. Serving Tustin Legacy and all of Tustin. Call (949) 345-0285.",
+      "Electronics recycling and IT asset disposal in Tustin, CA. Certified data destruction, free business pickup. Serving Tustin Legacy and all of Tustin. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Service Available",
   },
@@ -249,7 +249,7 @@ export const cities: CityData[] = [
     businessFocus: "business parks, healthcare, and residential",
     metaTitle: "E-Waste Recycling Lake Forest CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and ITAD in Lake Forest, CA. Computer recycling, data destruction, server disposal. Free business pickup. Call (949) 345-0285.",
+      "E-waste recycling and ITAD in Lake Forest, CA. Computer recycling, data destruction, server disposal. Free business pickup. Call (949) 287-3056.",
     heroStat: "100%",
     heroStatLabel: "Data Destruction Guaranteed",
   },
@@ -268,7 +268,7 @@ export const cities: CityData[] = [
     businessFocus: "entertainment, hospitality, and retail",
     metaTitle: "E-Waste Recycling Buena Park CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and disposal in Buena Park, CA. TVs, computers, phones and more. Residential and business pickup. Call (949) 345-0285.",
+      "Electronics recycling and disposal in Buena Park, CA. TVs, computers, phones and more. Residential and business pickup. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Drop-Off for Residents",
   },
@@ -287,7 +287,7 @@ export const cities: CityData[] = [
     businessFocus: "small business, retail, and diverse residential communities",
     metaTitle: "E-Waste Recycling Westminster CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Westminster, CA. Serving Little Saigon and all of Westminster. Computer disposal, TV recycling, data destruction. Call (949) 345-0285.",
+      "E-waste recycling in Westminster, CA. Serving Little Saigon and all of Westminster. Computer disposal, TV recycling, data destruction. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Pickup Available",
   },
@@ -306,7 +306,7 @@ export const cities: CityData[] = [
     businessFocus: "residential, business parks, and professional services",
     metaTitle: "E-Waste Recycling Yorba Linda CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and data destruction in Yorba Linda, CA. Residential and business service. Free business pickup. Call (949) 345-0285.",
+      "E-waste recycling and data destruction in Yorba Linda, CA. Residential and business service. Free business pickup. Call (949) 287-3056.",
     heroStat: "Secure",
     heroStatLabel: "Data Destruction",
   },
@@ -325,7 +325,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and light commercial",
     metaTitle: "E-Waste Recycling Placentia CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling in Placentia, CA. Computers, TVs, phones, and more. Residential and business pickup. Call (949) 345-0285.",
+      "Electronics recycling in Placentia, CA. Computers, TVs, phones, and more. Residential and business pickup. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -344,7 +344,7 @@ export const cities: CityData[] = [
     businessFocus: "residential, retail, and small business",
     metaTitle: "E-Waste Recycling La Habra CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in La Habra, CA. Computers, TVs, and more. Residential and business service. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in La Habra, CA. Computers, TVs, and more. Residential and business service. Call (949) 287-3056.",
     heroStat: "100%",
     heroStatLabel: "Responsible Disposal",
   },
@@ -363,7 +363,7 @@ export const cities: CityData[] = [
     businessFocus: "corporate, retail, and residential",
     metaTitle: "E-Waste Recycling Brea CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and IT asset disposal in Brea, CA. Certified data destruction, server decommissioning. Call (949) 345-0285.",
+      "Electronics recycling and IT asset disposal in Brea, CA. Certified data destruction, server decommissioning. Call (949) 287-3056.",
     heroStat: "NIST",
     heroStatLabel: "800-88 Data Wipe",
   },
@@ -382,7 +382,7 @@ export const cities: CityData[] = [
     businessFocus: "technology companies and professional services",
     metaTitle: "E-Waste Recycling & ITAD Aliso Viejo CA | OC Electronic Recycling",
     metaDescription:
-      "ITAD and e-waste recycling in Aliso Viejo, CA. Certified data destruction for tech companies. Free business pickup. Call (949) 345-0285.",
+      "ITAD and e-waste recycling in Aliso Viejo, CA. Certified data destruction for tech companies. Free business pickup. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Corporate Pickup",
   },
@@ -401,7 +401,7 @@ export const cities: CityData[] = [
     businessFocus: "residential, financial services, and healthcare",
     metaTitle: "E-Waste Recycling Laguna Niguel CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and data destruction in Laguna Niguel, CA. Residential and business service. Responsible disposal. Call (949) 345-0285.",
+      "Electronics recycling and data destruction in Laguna Niguel, CA. Residential and business service. Responsible disposal. Call (949) 287-3056.",
     heroStat: "Secure",
     heroStatLabel: "Data Destruction",
   },
@@ -420,7 +420,7 @@ export const cities: CityData[] = [
     businessFocus: "healthcare, retail, and residential",
     metaTitle: "E-Waste Recycling Laguna Hills CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in Laguna Hills, CA. Computers, TVs, servers. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in Laguna Hills, CA. Computers, TVs, servers. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -439,7 +439,7 @@ export const cities: CityData[] = [
     businessFocus: "arts, hospitality, and eco-conscious residential",
     metaTitle: "E-Waste Recycling Laguna Beach CA | OC Electronic Recycling",
     metaDescription:
-      "Eco-friendly e-waste recycling in Laguna Beach, CA. Protect the coast — recycle your electronics responsibly. Call (949) 345-0285.",
+      "Eco-friendly e-waste recycling in Laguna Beach, CA. Protect the coast — recycle your electronics responsibly. Call (949) 287-3056.",
     heroStat: "0",
     heroStatLabel: "Pounds to Landfill",
   },
@@ -458,7 +458,7 @@ export const cities: CityData[] = [
     businessFocus: "marine, hospitality, and coastal residential",
     metaTitle: "E-Waste Recycling Dana Point CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling in Dana Point, CA. Responsible disposal to protect Dana Point Harbor. Residential and business service. Call (949) 345-0285.",
+      "Electronics recycling in Dana Point, CA. Responsible disposal to protect Dana Point Harbor. Residential and business service. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Residential Pickup",
   },
@@ -477,7 +477,7 @@ export const cities: CityData[] = [
     businessFocus: "retail, hospitality, and residential",
     metaTitle: "E-Waste Recycling San Clemente CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in San Clemente, CA. Free pickup available. Protecting San Clemente's coast. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in San Clemente, CA. Free pickup available. Protecting San Clemente's coast. Call (949) 287-3056.",
     heroStat: "100%",
     heroStatLabel: "Eco-Responsible",
   },
@@ -496,7 +496,7 @@ export const cities: CityData[] = [
     businessFocus: "residential, retail, and historic district businesses",
     metaTitle: "E-Waste Recycling San Juan Capistrano CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling in San Juan Capistrano, CA. Computers, TVs, phones and more. Residential and business pickup. Call (949) 345-0285.",
+      "Electronics recycling in San Juan Capistrano, CA. Computers, TVs, phones and more. Residential and business pickup. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -515,7 +515,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and local small business",
     metaTitle: "E-Waste Recycling Rancho Santa Margarita CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Rancho Santa Margarita, CA. Family-friendly, convenient electronics disposal. Call (949) 345-0285.",
+      "E-waste recycling in Rancho Santa Margarita, CA. Family-friendly, convenient electronics disposal. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Service",
   },
@@ -534,7 +534,7 @@ export const cities: CityData[] = [
     businessFocus: "high-net-worth residential and executive community",
     metaTitle: "E-Waste Recycling Coto de Caza CA | OC Electronic Recycling",
     metaDescription:
-      "Discreet e-waste recycling and data destruction in Coto de Caza, CA. White-glove service for Coto residents. Call (949) 345-0285.",
+      "Discreet e-waste recycling and data destruction in Coto de Caza, CA. White-glove service for Coto residents. Call (949) 287-3056.",
     heroStat: "Discreet",
     heroStatLabel: "White-Glove Service",
   },
@@ -553,7 +553,7 @@ export const cities: CityData[] = [
     businessFocus: "family residential and home office",
     metaTitle: "E-Waste Recycling Ladera Ranch CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Ladera Ranch, CA. Easy residential pickup for computers, TVs, and electronics. Call (949) 345-0285.",
+      "E-waste recycling in Ladera Ranch, CA. Easy residential pickup for computers, TVs, and electronics. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Residential Pickup",
   },
@@ -572,7 +572,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and retail",
     metaTitle: "E-Waste Recycling Foothill Ranch CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Foothill Ranch, CA. Computer and TV disposal. Free pickup. Call (949) 345-0285.",
+      "E-waste recycling in Foothill Ranch, CA. Computer and TV disposal. Free pickup. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Pickup",
   },
@@ -591,7 +591,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and light commercial",
     metaTitle: "E-Waste Recycling El Toro CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling in El Toro, CA. Computers, TVs, and more. Residential and business service. Call (949) 345-0285.",
+      "Electronics recycling in El Toro, CA. Computers, TVs, and more. Residential and business service. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -610,7 +610,7 @@ export const cities: CityData[] = [
     businessFocus: "rural residential and equestrian community",
     metaTitle: "E-Waste Recycling Trabuco Canyon CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling pickup in Trabuco Canyon, CA. We come to you — computers, TVs, electronics. Call (949) 345-0285.",
+      "E-waste recycling pickup in Trabuco Canyon, CA. We come to you — computers, TVs, electronics. Call (949) 287-3056.",
     heroStat: "We",
     heroStatLabel: "Come To You",
   },
@@ -629,7 +629,7 @@ export const cities: CityData[] = [
     businessFocus: "light industrial, commercial, and residential",
     metaTitle: "E-Waste Recycling Cypress CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and IT asset disposal in Cypress, CA. Business pickup, data destruction. Call (949) 345-0285.",
+      "Electronics recycling and IT asset disposal in Cypress, CA. Business pickup, data destruction. Call (949) 287-3056.",
     heroStat: "NIST",
     heroStatLabel: "800-88 Guidelines",
   },
@@ -648,7 +648,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and small business",
     metaTitle: "E-Waste Recycling Stanton CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling in Stanton, CA. Free electronics disposal for qualifying items. Residential and business. Call (949) 345-0285.",
+      "E-waste recycling in Stanton, CA. Free electronics disposal for qualifying items. Residential and business. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Electronics Pickup",
   },
@@ -667,7 +667,7 @@ export const cities: CityData[] = [
     businessFocus: "residential and light commercial",
     metaTitle: "E-Waste Recycling La Palma CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in La Palma, CA. Computer recycling, TV disposal. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in La Palma, CA. Computer recycling, TV disposal. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Pickup",
   },

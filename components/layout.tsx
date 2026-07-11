@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
     template: '%s | OC Electronic Recycling',
   },
-  description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup. Call (949) 345-0285.",
+  description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup. Call (949) 287-3056.",
   metadataBase: new URL('https://ocelectronicrecycling.com'),
 }
 

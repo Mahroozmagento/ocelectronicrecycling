@@ -131,8 +131,8 @@ export default function ResourcesPage() {
                   <p style={{ fontSize: '.82rem', color: 'var(--muted)', lineHeight: 1.6, marginBottom: '16px' }}>
                     Our team can answer any compliance or recycling question.
                   </p>
-                  <a href="tel:9493450285" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '.95rem', color: 'var(--green)' }}>
-                    (949) 345-0285
+                  <a href="tel:9492873056" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '.95rem', color: 'var(--green)' }}>
+                    (949) 287-3056
                   </a>
                 </div>
               </AnimateIn>

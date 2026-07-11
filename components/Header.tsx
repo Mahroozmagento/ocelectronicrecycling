@@ -33,7 +33,7 @@ export default function Header() {
       <div className="preheader">
         🌿 Orange County&apos;s #1 E-Waste Recycler &amp; ITAD Provider
         &nbsp;|&nbsp; Call Now:&nbsp;
-        <a href="tel:9493450285">(949) 345-0285</a>
+        <a href="tel:9492873056">(949) 287-3056</a>
       </div>
 
       {/* Main header */}
@@ -53,7 +53,7 @@ export default function Header() {
         </nav>
 
         <div className="hdr-cta">
-          <a href="tel:9493450285" className="hdr-phone">☎ (949) 345-0285</a>
+          <a href="tel:9492873056" className="hdr-phone">☎ (949) 287-3056</a>
           <Link href="/contact" className="btn-primary">Get a Quote</Link>
           <button className="hamburger" onClick={() => setOpen(true)}
             aria-label="Open menu">
@@ -70,7 +70,7 @@ export default function Header() {
             <Link key={href} href={href} className="nav-link"
               onClick={() => setOpen(false)}>{label}</Link>
           ))}
-          <div className="mobile-phone-big">☎ (949) 345-0285</div>
+          <div className="mobile-phone-big">☎ (949) 287-3056</div>
         </nav>
       )}
 

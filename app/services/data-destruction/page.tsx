@@ -53,7 +53,7 @@ export default function DataDestructionPage() {
             <div className="amber-urgent-text">
               <strong>California AB 1103 &amp; SB 1386</strong> require businesses to protect consumer
               data on disposed devices. Non-compliance can result in fines up to{' '}
-              <strong>$2,500 per record</strong>. Call <strong>(949) 345-0285</strong> today.
+              <strong>$2,500 per record</strong>. Call <strong>(949) 287-3056</strong> today.
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export default function DataDestructionPage() {
       <section className="cta-section">
         <div className="container">
           <h2>Your Data Security<br />Starts Here</h2>
-          <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
+          <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary btn-large">Schedule Destruction</Link>
           </div>

@@ -185,8 +185,8 @@ export default async function BlogPostPage({
                     style={{ background: c.dot, color: "#07080f" }}>
                     Schedule Free Pickup
                   </Link>
-                  <a href="tel:9493450285" className="blog-post-cta__btn blog-post-cta__btn--secondary">
-                    (949) 345-0285
+                  <a href="tel:9492873056" className="blog-post-cta__btn blog-post-cta__btn--secondary">
+                    (949) 287-3056
                   </a>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default async function BlogPostPage({
               <p className="blog-sidebar__contact-text">
                 Schedule your Orange County electronics pickup today. No minimum quantity for data destruction.
               </p>
-              <a href="tel:9493450285" className="blog-sidebar__contact-phone">(949) 345-0285</a>
+              <a href="tel:9492873056" className="blog-sidebar__contact-phone">(949) 287-3056</a>
               <Link href="/contact" className="blog-sidebar__contact-btn">Get a Free Quote</Link>
             </div>
 

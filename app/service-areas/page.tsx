@@ -29,8 +29,8 @@ export default function ServiceAreasPage() {
           California. Free business pickup. Same-week scheduling.
         </p>
         <div className="areas-hero__cta">
-          <a href="tel:+19493450285" className="btn btn--primary btn--lg">
-            📞 (949) 345-0285
+          <a href="tel:+19492873056" className="btn btn--primary btn--lg">
+            📞 (949) 287-3056
           </a>
           <Link href="/contact" className="btn btn--outline btn--lg">
             Schedule Pickup →
@@ -70,7 +70,7 @@ export default function ServiceAreasPage() {
           </p>
           <p>
             Don&apos;t see your city? Call us at{" "}
-            <a href="tel:+19493450285">(949) 345-0285</a> — we likely service
+            <a href="tel:+19492873056">(949) 287-3056</a> — we likely service
             your area.
           </p>
         </div>
@@ -83,8 +83,8 @@ export default function ServiceAreasPage() {
           Free business pickup throughout Orange County. Same-week availability.
         </p>
         <div className="city-cta__buttons">
-          <a href="tel:+19493450285" className="btn btn--primary btn--xl">
-            Call (949) 345-0285
+          <a href="tel:+19492873056" className="btn btn--primary btn--xl">
+            Call (949) 287-3056
           </a>
           <Link href="/contact" className="btn btn--ghost btn--xl">
             Contact Us Online →
