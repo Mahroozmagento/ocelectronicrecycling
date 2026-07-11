@@ -18,7 +18,7 @@ const STEPS = [
 const GUARANTEES = [
   { icon: '🔐', title: 'Data First',        desc: 'Every data-bearing device is wiped or shredded before anything else. Chain-of-custody follows every step.' },
   { icon: '📋', title: 'Full Manifest',     desc: 'Serial numbers, asset tags, condition grades captured for every item. Complete inventory before processing.' },
-  { icon: '♻️', title: 'Zero Landfill',    desc: 'Every component sorted by material type and routed to the correct certified downstream recycler.' },
+  { icon: '♻️', title: 'Zero Landfill',    desc: 'Every component sorted by material type and routed to the correct downstream recycler.' },
   { icon: '📄', title: 'Your Certificate', desc: 'Data destruction and recycling certificates delivered within 48 hours, with full asset manifest.' },
 ]
 

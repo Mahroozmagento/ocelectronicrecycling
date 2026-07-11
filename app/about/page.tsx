@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'OC Electronic Recycling — built for Orange County. Local, certified, responsible e-waste recycling and ITAD.',
+  description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
 }
 
 const MISSION = [
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '60px' }}>
             <AnimateIn from="left">
               <span className="overline" style={{ color: 'var(--blue)' }}>Our Mission</span>
-              <h2 className="section-title" style={{ color: 'var(--navy)' }}>Responsible. Certified. Local.</h2>
+              <h2 className="section-title" style={{ color: 'var(--navy)' }}>Responsible. Local. Trusted.</h2>
               <p style={{ color: '#4a5568', lineHeight: 1.75, margin: '20px 0' }}>
                 OC Electronic Recycling was founded by a team with hands-on experience in the e-waste and ITAD industry.
                 We&apos;ve seen how recycling is done when compliance is an afterthought — and we exist to do the opposite.
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 {[
                   { num: '2,500+', color: 'var(--blue)',  label: 'Clients served across Orange County' },
                   { num: '500T',   color: 'var(--green)', label: 'E-waste diverted from landfills annually' },
-                  { num: '100%',   color: 'var(--red)',   label: 'Data destruction verified and certified' },
+                  { num: '100%',   color: 'var(--red)',   label: 'Data destruction verified' },
                 ].map(({ num, color, label }) => (
                   <div key={num} style={{ marginBottom: '20px' }}>
                     <div style={{ fontFamily: 'var(--font-head)', fontWeight: 900, fontSize: '2rem', color, marginBottom: '4px' }}>{num}</div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="container">
           <AnimateIn from="up">
             <h2>Meet the Team</h2>
-            <p>Have questions about our process or certifications? Call us directly.</p>
+            <p>Have questions about our process? Call us directly.</p>
             <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
             <div className="cta-actions">
               <Link href="/contact" className="btn-primary btn-large">Get in Touch</Link>

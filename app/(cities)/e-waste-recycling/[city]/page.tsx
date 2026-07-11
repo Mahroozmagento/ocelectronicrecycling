@@ -77,7 +77,7 @@ function CitySchema({ city }: { city: ReturnType<typeof getCityBySlug> }) {
           itemOffered: {
             "@type": "Service",
             name: "Certified Data Destruction",
-            description: "NIST 800-88 compliant data wiping and destruction",
+            description: "Data wiping and destruction following NIST 800-88 guidelines",
           },
         },
         {
@@ -139,7 +139,7 @@ const processSteps = [
     number: "04",
     title: "Responsible Recycling",
     description:
-      "Electronics are processed by California DTSC-compliant facilities. Nothing goes to landfill. You receive a recycling certificate.",
+      "Electronics are processed by vetted recycling facilities in compliance with California e-waste regulations. Nothing goes to landfill. You receive a recycling certificate.",
   },
 ];
 
@@ -164,7 +164,7 @@ function getFAQs(city: NonNullable<ReturnType<typeof getCityBySlug>>) {
     },
     {
       q: "Are you compliant with California regulations?",
-      a: "Yes. We operate in compliance with California's Electronic Waste Recycling Act and California DTSC regulations. All materials are processed through certified downstream vendors.",
+      a: "Yes. We operate in compliance with California e-waste regulations, including the Electronic Waste Recycling Act. All materials are processed through vetted downstream vendors.",
     },
   ];
   if (city.faqExtra) {
@@ -214,7 +214,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
           <div className="stat-pill">
             <span className="stat-pill__value">CA</span>
-            <span className="stat-pill__label">DTSC Compliant</span>
+            <span className="stat-pill__label">E-Waste Regulations</span>
           </div>
         </div>
 
@@ -262,8 +262,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <div className="service-card__icon">🔒</div>
             <h3>Certified Data Destruction</h3>
             <p>
-              NIST 800-88 compliant data wiping and physical destruction for
-              hard drives and storage media. Certificate provided.
+              Data wiping and physical destruction following NIST 800-88
+              guidelines for hard drives and storage media. Certificate provided.
             </p>
             <Link href="/services/data-destruction" className="service-card__link">
               Learn more →
@@ -274,7 +274,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             <h3>IT Asset Disposition</h3>
             <p>
               Full ITAD services for {city.name}&apos;s{" "}
-              {city.businessFocus}. Pickups, manifests, and certified
+              {city.businessFocus}. Pickups, manifests, and documented
               downstream processing.
             </p>
             <Link href="/services/itad" className="service-card__link">
@@ -346,8 +346,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             },
             {
               icon: "✅",
-              title: "California Compliant",
-              desc: "We operate under California's Electronic Waste Recycling Act and DTSC regulations — no shortcuts, no liability for you.",
+              title: "California E-Waste Regulations",
+              desc: "We operate under California's Electronic Waste Recycling Act — no shortcuts, no liability for you.",
             },
             {
               icon: "🚛",
@@ -362,7 +362,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             {
               icon: "🌱",
               title: "Zero Landfill Policy",
-              desc: "Nothing we collect goes to landfill. All materials are processed through certified responsible recycling facilities.",
+              desc: "Nothing we collect goes to landfill. All materials are processed through vetted, responsible recycling facilities.",
             },
             {
               icon: "📞",

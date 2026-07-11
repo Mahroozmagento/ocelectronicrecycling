@@ -24,15 +24,15 @@ export const cities: CityData[] = [
     zip: "92801",
     tagline: "E-Waste Recycling & IT Asset Disposal for Anaheim Businesses",
     description:
-      "Anaheim is home to major hospitality, entertainment, and manufacturing industries — all generating significant volumes of electronics waste. OC Electronic Recycling provides certified pickup, data destruction, and responsible disposal for businesses and residents throughout Anaheim.",
+      "Anaheim is home to major hospitality, entertainment, and manufacturing industries — all generating significant volumes of electronics waste. OC Electronic Recycling provides pickup, data destruction, and responsible disposal for businesses and residents throughout Anaheim.",
     localDetail:
-      "From the Resort District near Disneyland to the Platinum Triangle office corridor, Anaheim businesses trust us for compliant, confidential electronics recycling.",
+      "From the Resort District near Disneyland to the Platinum Triangle office corridor, Anaheim businesses trust us for reliable, confidential electronics recycling.",
     nearbyLandmark: "Disneyland Resort",
     population: "346,000+",
     businessFocus: "hospitality, entertainment, and manufacturing sectors",
     metaTitle: "E-Waste Recycling Anaheim CA | OC Electronic Recycling",
     metaDescription:
-      "Certified e-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88 data destruction, and responsible electronics disposal. Call (949) 345-0285.",
+      "E-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88-guided data destruction, and responsible electronics disposal. Call (949) 345-0285.",
     heroStat: "346K+",
     heroStatLabel: "Anaheim Residents Served",
     faqExtra: {
@@ -47,7 +47,7 @@ export const cities: CityData[] = [
     zip: "92614",
     tagline: "IT Asset Disposition & E-Waste Recycling for Irvine Tech Companies",
     description:
-      "Irvine is Orange County's technology and corporate hub, home to thousands of tech firms, biotech companies, and UCI's innovation ecosystem. OC Electronic Recycling specializes in ITAD and certified data destruction tailored for Irvine's demanding corporate compliance requirements.",
+      "Irvine is Orange County's technology and corporate hub, home to thousands of tech firms, biotech companies, and UCI's innovation ecosystem. OC Electronic Recycling specializes in ITAD and data destruction tailored for Irvine's demanding corporate data-security requirements.",
     localDetail:
       "Serving the Irvine Spectrum, Irvine Business Complex, and the UCI Research Park — we understand the data security expectations of Irvine's corporate and biotech community.",
     nearbyLandmark: "Irvine Spectrum Center",
@@ -55,12 +55,12 @@ export const cities: CityData[] = [
     businessFocus: "technology, biotech, and corporate enterprises",
     metaTitle: "E-Waste Recycling & ITAD Irvine CA | OC Electronic Recycling",
     metaDescription:
-      "Enterprise ITAD and e-waste recycling in Irvine, CA. Certified data destruction, server decommissioning, free business pickup. Serving Irvine Spectrum and IBC. Call (949) 345-0285.",
+      "Enterprise ITAD and e-waste recycling in Irvine, CA. Secure data destruction, server decommissioning, free business pickup. Serving Irvine Spectrum and IBC. Call (949) 345-0285.",
     heroStat: "5,000+",
     heroStatLabel: "Irvine Businesses Served",
     faqExtra: {
       q: "Can you handle large server decommissions for Irvine tech companies?",
-      a: "Absolutely. We specialize in full server room and data center decommissioning with NIST 800-88 certified data destruction and chain-of-custody documentation for compliance.",
+      a: "Absolutely. We specialize in full server room and data center decommissioning, with data destruction following NIST 800-88 guidelines and full chain-of-custody documentation.",
     },
   },
   {
@@ -78,7 +78,7 @@ export const cities: CityData[] = [
     businessFocus: "government, retail, and small business sectors",
     metaTitle: "E-Waste Recycling Santa Ana CA | OC Electronic Recycling",
     metaDescription:
-      "E-waste recycling and electronics disposal in Santa Ana, CA. Serving businesses and residents. Free pickup for qualifying volumes. California-compliant. Call (949) 345-0285.",
+      "E-waste recycling and electronics disposal in Santa Ana, CA. Serving businesses and residents. Free pickup for qualifying volumes, in compliance with California regulations. Call (949) 345-0285.",
     heroStat: "Free",
     heroStatLabel: "Pickup for Business Quantities",
   },
@@ -108,7 +108,7 @@ export const cities: CityData[] = [
     zip: "92840",
     tagline: "E-Waste Pickup & Electronics Recycling in Garden Grove",
     description:
-      "Garden Grove's diverse residential neighborhoods and commercial corridors generate a steady stream of outdated electronics. OC Electronic Recycling provides reliable, certified pickup and disposal for computers, TVs, phones, and more throughout Garden Grove.",
+      "Garden Grove's diverse residential neighborhoods and commercial corridors generate a steady stream of outdated electronics. OC Electronic Recycling provides reliable pickup and disposal for computers, TVs, phones, and more throughout Garden Grove.",
     localDetail:
       "Serving the Garden Grove Boulevard corridor and surrounding neighborhoods — we make it simple to dispose of electronics responsibly.",
     nearbyLandmark: "Crystal Cathedral (Christ Cathedral)",
@@ -129,7 +129,7 @@ export const cities: CityData[] = [
     description:
       "Home to Cal State Fullerton and a thriving arts and education community, Fullerton generates significant electronics waste from both the academic and business sectors. OC Electronic Recycling offers student-friendly and business-scale ITAD and recycling solutions.",
     localDetail:
-      "We partner with educational institutions, local businesses, and residents throughout Fullerton to ensure safe, compliant electronics disposal.",
+      "We partner with educational institutions, local businesses, and residents throughout Fullerton to ensure safe, responsible electronics disposal.",
     nearbyLandmark: "California State University, Fullerton",
     population: "140,000+",
     businessFocus: "education, healthcare, and local business",
@@ -137,7 +137,7 @@ export const cities: CityData[] = [
     metaDescription:
       "E-waste recycling in Fullerton, CA. Serving CSUF, local businesses, and residents. Computer recycling, TV disposal, data destruction. Call (949) 345-0285.",
     heroStat: "100%",
-    heroStatLabel: "California-Compliant Disposal",
+    heroStatLabel: "Responsible Disposal",
   },
   {
     slug: "orange",
@@ -146,7 +146,7 @@ export const cities: CityData[] = [
     zip: "92868",
     tagline: "Trusted E-Waste Recycling in the City of Orange",
     description:
-      "The City of Orange blends historic charm with modern commerce. OC Electronic Recycling provides the same high standard of certified data destruction and electronics disposal that Orange's businesses and households have come to expect.",
+      "The City of Orange blends historic charm with modern commerce. OC Electronic Recycling provides the same high standard of data destruction and electronics disposal that Orange's businesses and households have come to expect.",
     localDetail:
       "Serving Old Towne Orange, the Chapman University area, and commercial zones throughout the City of Orange.",
     nearbyLandmark: "Chapman University",
@@ -184,7 +184,7 @@ export const cities: CityData[] = [
     zip: "92660",
     tagline: "Premium ITAD & E-Waste Recycling for Newport Beach",
     description:
-      "Newport Beach's affluent residential community and concentration of financial, legal, and real estate firms demand the highest standards in data security and electronics disposal. OC Electronic Recycling delivers premium, discreet ITAD and certified data destruction.",
+      "Newport Beach's affluent residential community and concentration of financial, legal, and real estate firms demand the highest standards in data security and electronics disposal. OC Electronic Recycling delivers premium, discreet ITAD and data destruction.",
     localDetail:
       "Serving Fashion Island, Newport Center, Balboa Island, and the surrounding Newport Beach peninsula with white-glove, confidential electronics recycling.",
     nearbyLandmark: "Fashion Island",
@@ -192,8 +192,8 @@ export const cities: CityData[] = [
     businessFocus: "financial services, legal, and high-net-worth residential",
     metaTitle: "E-Waste Recycling & ITAD Newport Beach CA | OC Electronic Recycling",
     metaDescription:
-      "Premium IT asset disposal and e-waste recycling in Newport Beach, CA. Confidential data destruction, certified chain of custody. Call (949) 345-0285.",
-    heroStat: "Certified",
+      "Premium IT asset disposal and e-waste recycling in Newport Beach, CA. Confidential data destruction, documented chain of custody. Call (949) 345-0285.",
+    heroStat: "Documented",
     heroStatLabel: "Chain of Custody",
   },
   {
@@ -260,7 +260,7 @@ export const cities: CityData[] = [
     zip: "90621",
     tagline: "E-Waste Recycling for Buena Park Homes & Businesses",
     description:
-      "Buena Park's entertainment district and diverse residential neighborhoods rely on OC Electronic Recycling for convenient, certified electronics disposal that keeps hazardous materials out of landfills.",
+      "Buena Park's entertainment district and diverse residential neighborhoods rely on OC Electronic Recycling for convenient, responsible electronics disposal that keeps hazardous materials out of landfills.",
     localDetail:
       "Serving Knott's Berry Farm area businesses, the Beach Boulevard corridor, and all Buena Park residential communities.",
     nearbyLandmark: "Knott's Berry Farm",
@@ -307,7 +307,7 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Yorba Linda CA | OC Electronic Recycling",
     metaDescription:
       "E-waste recycling and data destruction in Yorba Linda, CA. Residential and business service. Free business pickup. Call (949) 345-0285.",
-    heroStat: "Certified",
+    heroStat: "Secure",
     heroStatLabel: "Data Destruction",
   },
   {
@@ -317,7 +317,7 @@ export const cities: CityData[] = [
     zip: "92870",
     tagline: "E-Waste Recycling & Electronics Disposal in Placentia",
     description:
-      "Placentia's residential neighborhoods and commercial areas choose OC Electronic Recycling for quick, compliant electronics disposal with no hassle.",
+      "Placentia's residential neighborhoods and commercial areas choose OC Electronic Recycling for quick, responsible electronics disposal with no hassle.",
     localDetail:
       "Serving all Placentia neighborhoods and the Orangethorpe Avenue commercial corridor.",
     nearbyLandmark: "Placentia Heritage Park",
@@ -336,7 +336,7 @@ export const cities: CityData[] = [
     zip: "90631",
     tagline: "Electronics Recycling & E-Waste Disposal in La Habra",
     description:
-      "La Habra's diverse community of residents and small businesses relies on OC Electronic Recycling for affordable, certified electronics disposal that meets California regulations.",
+      "La Habra's diverse community of residents and small businesses relies on OC Electronic Recycling for affordable electronics disposal that meets California regulations.",
     localDetail:
       "Serving Imperial Highway businesses and all La Habra residential neighborhoods.",
     nearbyLandmark: "La Habra Children's Museum",
@@ -346,7 +346,7 @@ export const cities: CityData[] = [
     metaDescription:
       "E-waste recycling and electronics disposal in La Habra, CA. Computers, TVs, and more. Residential and business service. Call (949) 345-0285.",
     heroStat: "100%",
-    heroStatLabel: "Compliant Disposal",
+    heroStatLabel: "Responsible Disposal",
   },
   {
     slug: "brea",
@@ -374,7 +374,7 @@ export const cities: CityData[] = [
     zip: "92656",
     tagline: "Corporate E-Waste Recycling & ITAD in Aliso Viejo",
     description:
-      "Aliso Viejo's dense concentration of tech companies and professional offices makes it one of South OC's most active markets for ITAD and certified data destruction. OC Electronic Recycling is the local specialist.",
+      "Aliso Viejo's dense concentration of tech companies and professional offices makes it one of South OC's most active markets for ITAD and secure data destruction. OC Electronic Recycling is the local specialist.",
     localDetail:
       "Serving Pacific Park Drive offices, Aliso Viejo Town Center, and the full Aliso Viejo business community.",
     nearbyLandmark: "Aliso Viejo Town Center",
@@ -393,7 +393,7 @@ export const cities: CityData[] = [
     zip: "92677",
     tagline: "E-Waste Recycling for Laguna Niguel Homes & Offices",
     description:
-      "Laguna Niguel's upscale residential community and growing professional services sector trust OC Electronic Recycling for discreet, certified, and convenient electronics disposal.",
+      "Laguna Niguel's upscale residential community and growing professional services sector trust OC Electronic Recycling for discreet, convenient electronics disposal.",
     localDetail:
       "Serving Crown Valley Parkway businesses and all Laguna Niguel residential communities.",
     nearbyLandmark: "Laguna Niguel Regional Park",
@@ -401,9 +401,9 @@ export const cities: CityData[] = [
     businessFocus: "residential, financial services, and healthcare",
     metaTitle: "E-Waste Recycling Laguna Niguel CA | OC Electronic Recycling",
     metaDescription:
-      "Electronics recycling and data destruction in Laguna Niguel, CA. Residential and business service. Certified disposal. Call (949) 345-0285.",
-    heroStat: "Certified",
-    heroStatLabel: "Secure Data Destruction",
+      "Electronics recycling and data destruction in Laguna Niguel, CA. Residential and business service. Responsible disposal. Call (949) 345-0285.",
+    heroStat: "Secure",
+    heroStatLabel: "Data Destruction",
   },
   {
     slug: "laguna-hills",
@@ -412,7 +412,7 @@ export const cities: CityData[] = [
     zip: "92653",
     tagline: "E-Waste Recycling & Electronics Disposal in Laguna Hills",
     description:
-      "Laguna Hills businesses and residents choose OC Electronic Recycling for fast, reliable, and California-compliant electronics disposal.",
+      "Laguna Hills businesses and residents choose OC Electronic Recycling for fast, reliable electronics disposal in compliance with California regulations.",
     localDetail:
       "Serving Laguna Hills Mall area, El Toro Road corridor, and all Laguna Hills neighborhoods.",
     nearbyLandmark: "Laguna Hills Mall",
@@ -450,7 +450,7 @@ export const cities: CityData[] = [
     zip: "92629",
     tagline: "E-Waste Recycling in Dana Point — Protect the Harbor",
     description:
-      "Dana Point's ocean-loving community takes environmental responsibility seriously. OC Electronic Recycling provides convenient, certified electronics disposal that keeps toxins out of the watershed and off the beaches.",
+      "Dana Point's ocean-loving community takes environmental responsibility seriously. OC Electronic Recycling provides convenient, responsible electronics disposal that keeps toxins out of the watershed and off the beaches.",
     localDetail:
       "Serving Dana Point Harbor, Lantern District businesses, and all Dana Point residential neighborhoods.",
     nearbyLandmark: "Dana Point Harbor",
@@ -469,7 +469,7 @@ export const cities: CityData[] = [
     zip: "92672",
     tagline: "E-Waste Recycling in San Clemente — The Spanish Village by the Sea",
     description:
-      "San Clemente's surf culture and environmental ethos make responsible e-waste recycling a natural fit. OC Electronic Recycling serves San Clemente's southernmost OC community with certified, convenient electronics disposal.",
+      "San Clemente's surf culture and environmental ethos make responsible e-waste recycling a natural fit. OC Electronic Recycling serves San Clemente's southernmost OC community with reliable, convenient electronics disposal.",
     localDetail:
       "Serving Avenida Del Mar businesses, San Clemente Pier area, and all San Clemente residential neighborhoods.",
     nearbyLandmark: "San Clemente Pier",
@@ -528,7 +528,7 @@ export const cities: CityData[] = [
     description:
       "Coto de Caza's exclusive gated community and high-net-worth residents trust OC Electronic Recycling for discreet, white-glove electronics disposal and data destruction.",
     localDetail:
-      "Providing scheduled in-community pickup for Coto de Caza residents with full data security and certification.",
+      "Providing scheduled in-community pickup for Coto de Caza residents with full data security and documentation.",
     nearbyLandmark: "Coto de Caza Golf & Racquet Club",
     population: "15,000+",
     businessFocus: "high-net-worth residential and executive community",
@@ -564,7 +564,7 @@ export const cities: CityData[] = [
     zip: "92610",
     tagline: "Electronics Recycling & E-Waste Disposal in Foothill Ranch",
     description:
-      "Foothill Ranch's residential neighborhoods and the Foothill Ranch Towne Centre commercial area rely on OC Electronic Recycling for convenient, certified electronics disposal.",
+      "Foothill Ranch's residential neighborhoods and the Foothill Ranch Towne Centre commercial area rely on OC Electronic Recycling for convenient, reliable electronics disposal.",
     localDetail:
       "Serving Foothill Ranch Towne Centre and all Foothill Ranch residential communities.",
     nearbyLandmark: "Foothill Ranch Towne Centre",
@@ -583,7 +583,7 @@ export const cities: CityData[] = [
     zip: "92630",
     tagline: "E-Waste Recycling & Electronics Disposal in El Toro",
     description:
-      "The El Toro area's residential communities and commercial zones choose OC Electronic Recycling for straightforward, California-compliant electronics disposal.",
+      "The El Toro area's residential communities and commercial zones choose OC Electronic Recycling for straightforward electronics disposal in compliance with California regulations.",
     localDetail:
       "Serving the El Toro Road corridor and surrounding Lake Forest/El Toro neighborhoods.",
     nearbyLandmark: "Marine Corps Air Station El Toro (Great Park)",
@@ -621,7 +621,7 @@ export const cities: CityData[] = [
     zip: "90630",
     tagline: "E-Waste Recycling & IT Disposal for Cypress Businesses",
     description:
-      "Cypress's mix of light industrial, commercial, and residential areas generates a steady stream of electronics waste. OC Electronic Recycling provides reliable, certified disposal solutions for all of Cypress.",
+      "Cypress's mix of light industrial, commercial, and residential areas generates a steady stream of electronics waste. OC Electronic Recycling provides reliable disposal solutions for all of Cypress.",
     localDetail:
       "Serving Cypress business parks, Katella Avenue corridor, and all Cypress residential communities.",
     nearbyLandmark: "Los Alamitos Race Course",
@@ -631,7 +631,7 @@ export const cities: CityData[] = [
     metaDescription:
       "Electronics recycling and IT asset disposal in Cypress, CA. Business pickup, data destruction. Call (949) 345-0285.",
     heroStat: "NIST",
-    heroStatLabel: "800-88 Compliant",
+    heroStatLabel: "800-88 Guidelines",
   },
   {
     slug: "stanton",

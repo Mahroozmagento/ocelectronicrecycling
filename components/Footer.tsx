@@ -15,10 +15,7 @@ const COMPANY = [
   { label: 'Blog',         href: '/blog' },
   { label: 'Contact',      href: '/contact' },
 ]
-const COMPLIANCE = [
-  { label: 'NIST 800-88',      href: '/services/data-destruction' },
-  { label: 'CA DTSC',          href: '/services/recycling' },
-  { label: 'HIPAA Compliant',  href: '/services/data-destruction' },
+const LEGAL = [
   { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/terms-of-service' },
 ]
@@ -35,8 +32,8 @@ export default function Footer() {
               OC Electronic Recycling
             </div>
             <p className="footer-desc">
-              Orange County&apos;s certified e-waste recycling and ITAD partner.
-              Responsible disposal, certified data destruction, and full compliance documentation.
+              Orange County&apos;s e-waste recycling and ITAD partner.
+              Responsible disposal, Certified Data Destruction, and full documentation.
             </p>
             <div className="footer-phone">
               <a href="tel:9493450285">☎ (949) 345-0285</a>
@@ -62,10 +59,10 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>Compliance</h4>
+            <h4>Legal</h4>
             <ul>
-              {COMPLIANCE.map(({ label, href }) => (
-                <li key={`comp-${label}`}><Link href={href}>{label}</Link></li>
+              {LEGAL.map(({ label, href }) => (
+                <li key={`legal-${label}`}><Link href={href}>{label}</Link></li>
               ))}
             </ul>
           </div>

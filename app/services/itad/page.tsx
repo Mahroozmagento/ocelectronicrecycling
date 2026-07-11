@@ -4,15 +4,15 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'IT Asset Disposition (ITAD)',
-  description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and certified disposal.',
+  description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and responsible disposal.',
 }
 
 const FEATURES = [
   { icon: '📋', title: 'Asset Inventory',       desc: 'Every device cataloged: serial number, make, model, RAM, storage, condition grade. Full manifest before processing begins.' },
   { icon: '💰', title: 'Value Recovery',         desc: 'Working assets assessed for resale. Fair market valuations and transparent reporting on any proceeds from device resale.' },
   { icon: '🔒', title: 'Data Sanitization',      desc: 'All data-bearing devices wiped or shredded before any disposition decision. Zero data liability — guaranteed and documented.' },
-  { icon: '🌿', title: 'Responsible Disposal',   desc: 'Non-working equipment dismantled and recycled per California DTSC regulations. Zero landfill policy on all ITAD clients.' },
-  { icon: '📊', title: 'Audit-Ready Reporting',  desc: 'Certificates, manifests, and disposition reports ready for SOX, HIPAA, GLBA, and internal compliance audits.' },
+  { icon: '🌿', title: 'Responsible Disposal',   desc: 'Non-working equipment dismantled and recycled in compliance with California e-waste regulations. Zero landfill policy on all ITAD clients.' },
+  { icon: '📊', title: 'Audit-Ready Reporting',  desc: 'Certificates, manifests, and disposition reports ready to support your internal compliance audits.' },
   { icon: '🚛', title: 'Logistics Management',   desc: 'Pickup, transport, and processing all handled end-to-end. Chain-of-custody maintained throughout.' },
 ]
 
@@ -31,7 +31,7 @@ export default function ITADPage() {
           </h1>
           <p style={{color:'var(--muted)',fontSize:'1rem',marginTop:'16px',maxWidth:'520px',lineHeight:1.7}}>
             Complete end-of-life management for your IT equipment. We maximize value recovery
-            while ensuring zero data liability and full regulatory compliance.
+            while ensuring zero data liability and responsible, documented handling.
           </p>
         </div>
       </div>

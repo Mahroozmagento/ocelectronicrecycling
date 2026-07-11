@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Certified Data Destruction',
-  description: 'NIST 800-88 compliant hard drive shredding and data destruction in Orange County CA. Certificates issued per device within 48hrs.',
+  description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device within 48hrs.',
 }
 
 export default function DataDestructionPage() {
@@ -21,13 +21,13 @@ export default function DataDestructionPage() {
             Certified Hard Drive<br />&amp; Data Destruction
           </h1>
           <p style={{color:'var(--muted)',fontSize:'1rem',marginTop:'16px',maxWidth:'520px',lineHeight:1.7}}>
-            NIST 800-88 compliant data sanitization and physical shredding.
+            Data sanitization and physical shredding following NIST 800-88 guidelines.
             Every device gets a certificate. Every certificate is your legal protection.
           </p>
           <div className="dd-badge-row" style={{marginTop:'28px'}}>
             <span className="dd-badge nist">NIST 800-88</span>
             <span className="dd-badge dod">DoD 5220.22-M</span>
-            <span className="dd-badge ca">CA DTSC Compliant</span>
+            <span className="dd-badge ca">CA E-Waste Regulations</span>
           </div>
         </div>
       </div>

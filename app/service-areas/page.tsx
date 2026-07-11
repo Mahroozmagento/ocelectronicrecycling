@@ -24,7 +24,7 @@ export default function ServiceAreasPage() {
           Serving All of <span className="text-accent">Orange County</span>
         </h1>
         <p className="areas-hero__sub">
-          OC Electronic Recycling provides certified e-waste recycling, ITAD,
+          OC Electronic Recycling provides e-waste recycling, ITAD,
           and data destruction throughout all 34 cities in Orange County,
           California. Free business pickup. Same-week scheduling.
         </p>
@@ -66,7 +66,7 @@ export default function ServiceAreasPage() {
             From Anaheim in the north to San Clemente in the south, from the
             coast at Laguna Beach and Newport Beach to the inland communities of
             Yorba Linda and Placentia — OC Electronic Recycling covers all of
-            Orange County with the same certified, compliant service.
+            Orange County with the same reliable, responsible service.
           </p>
           <p>
             Don&apos;t see your city? Call us at{" "}

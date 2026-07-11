@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'E-Waste Recycling Orange County',
-  description: 'California DTSC compliant e-waste recycling in Orange County. All electronics accepted. Zero landfill commitment.',
+  description: 'E-waste recycling in compliance with California regulations, in Orange County. All electronics accepted. Zero landfill commitment.',
 }
 
 const ITEMS = [
@@ -30,7 +30,7 @@ export default function RecyclingPage() {
             E-Waste Recycling<br />Orange County
           </h1>
           <p style={{color:'var(--muted)',fontSize:'1rem',marginTop:'16px',maxWidth:'520px',lineHeight:1.7}}>
-            California DTSC compliant. We accept all electronics from businesses and residents.
+            In compliance with California e-waste regulations. We accept all electronics from businesses and residents.
             Zero landfill commitment on every item.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function RecyclingPage() {
 
       <section className="cta-section">
         <div className="container">
-          <h2>Recycle Right.<br />Recycle Certified.</h2>
+          <h2>Recycle Right.<br />Recycle Responsibly.</h2>
           <a href="tel:9493450285" className="cta-phone">(949) 345-0285</a>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary btn-large">Drop Off or Schedule Pickup</Link>

@@ -26,7 +26,7 @@ export default function HomePage() {
             We Recycle<br /><em>Electronics.</em><br />You Stay Clean.
           </h1>
           <p className="hero-sub">
-            Certified data destruction, ITAD services, and responsible e-waste
+            Certified Data Destruction, ITAD services, and responsible e-waste
             recycling for businesses and residents across Orange County, California.
           </p>
           <div className="hero-actions">
@@ -63,12 +63,12 @@ export default function HomePage() {
 />
           </div>
           <div className="hero-float-card card-tl">
-            <div className="hfc-label">Certified Process</div>
-            <div className="hfc-value">NIST 800-88 ✓</div>
+            <div className="hfc-label">Data Sanitization</div>
+            <div className="hfc-value">NIST 800-88 Guidelines</div>
           </div>
           <div className="hero-float-card card-br">
-            <div className="hfc-label">CA DTSC Compliant</div>
-            <div className="hfc-value">Always ✓</div>
+            <div className="hfc-label">Response Time</div>
+            <div className="hfc-value">Same Week ✓</div>
           </div>
         </div>
       </section>
@@ -78,10 +78,10 @@ export default function HomePage() {
         <div className="marquee-track">
           {[
             'E-Waste Recycling','Certified Data Destruction','IT Asset Disposition',
-            'Business Pickup','NIST 800-88 Compliant','Orange County CA',
+            'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
             'Hard Drive Shredding','Server Decommission',
             'E-Waste Recycling','Certified Data Destruction','IT Asset Disposition',
-            'Business Pickup','NIST 800-88 Compliant','Orange County CA',
+            'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
             'Hard Drive Shredding','Server Decommission',
           ].map((item, i) => (
             <span key={i} className="marquee-item">
@@ -137,9 +137,9 @@ export default function HomePage() {
           </div>
           <div className="svc-grid">
             {[
-              { icon: '🔐', title: 'Data Destruction',      href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'NIST 800-88 compliant hard drive wiping and physical shredding. Certificates issued for every device.' },
+              { icon: '🔐', title: 'Data Destruction',      href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'Hard drive wiping and physical shredding following NIST 800-88 guidelines. Certificates issued for every device.' },
               { icon: '💼', title: 'IT Asset Disposition',  href: '/services/itad',             accent: '',             bg: '',         desc: 'Complete ITAD lifecycle — inventory, data sanitization, resale, and responsible disposal.' },
-              { icon: '♻️', title: 'E-Waste Recycling',     href: '/services/recycling',        accent: '',             bg: '',         desc: 'California DTSC compliant. Zero landfill commitment — everything sorted and processed responsibly.' },
+              { icon: '♻️', title: 'E-Waste Recycling',     href: '/services/recycling',        accent: '',             bg: '',         desc: 'In compliance with California e-waste regulations. Zero landfill commitment — everything sorted and processed responsibly.' },
               { icon: '🚛', title: 'Business Pickup',       href: '/contact',                   accent: 'amber-accent', bg: 'amber-bg', desc: 'Scheduled or on-demand pickup throughout Orange County. We handle the heavy lifting.' },
               { icon: '🖥️', title: 'Server Decommission',   href: '/services',                  accent: 'blue-accent',  bg: 'blue-bg',  desc: 'Full rack decommission with data destruction, asset inventory, and logistics management.' },
               { icon: '📱', title: 'Mobile Device Recycling',href: '/services',                 accent: 'cyan-accent',  bg: 'cyan-bg',  desc: 'Smartphones, tablets, wearables — factory reset verification plus secure recycling.' },
@@ -169,14 +169,14 @@ export default function HomePage() {
               <div className="dd-badge-row">
                 <span className="dd-badge nist">NIST 800-88</span>
                 <span className="dd-badge dod">DoD 5220.22-M</span>
-                <span className="dd-badge ca">CA DTSC Compliant</span>
+                <span className="dd-badge ca">CA E-Waste Regulations</span>
               </div>
               <div className="cert-list">
                 {[
-                  'Physical shredding available on-site or at our facility',
+                  'Physical shredding available on-site',
                   'Certificate of destruction issued per device',
                   'Full audit trail and chain-of-custody documentation',
-                  'HIPAA, GLBA, and SOX compliance support',
+                  'Documentation to support your compliance needs',
                 ].map(item => (
                   <div key={item} className="cert-item">
                     <div className="cert-check">✓</div>{item}
@@ -255,7 +255,7 @@ export default function HomePage() {
           <div className="testi-grid">
             {[
               { text: '"We decommissioned an entire server room — 80+ drives. OC Electronic Recycling handled everything in one day and had our certificates ready the next morning. Incredible service."', name: 'David M.', role: 'IT Director — Irvine Manufacturing Co.' },
-              { text: '"As a healthcare provider, HIPAA compliance is non-negotiable. These guys understood exactly what we needed, provided proper documentation, and were completely professional."', name: 'Priya S.', role: 'Compliance Officer — Aliso Viejo Medical Group' },
+              { text: '"As a healthcare provider, proper documentation for equipment disposal is non-negotiable. These guys understood exactly what we needed, provided proper documentation, and were completely professional."', name: 'Priya S.', role: 'Compliance Officer — Aliso Viejo Medical Group' },
               { text: '"Scheduled a pickup for 40 old laptops. They came same week, inventoried everything on-site, and I got a detailed report with serial numbers. Exactly what you want."', name: 'Mark T.', role: 'Operations Manager — Newport Beach Firm' },
             ].map(({ text, name, role }) => (
               <div key={name} className="testi-card">
