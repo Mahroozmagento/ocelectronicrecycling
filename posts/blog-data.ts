@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "e-waste-recycling-orange-county-guide",
     title: "The Complete Guide to E-Waste Recycling in Orange County (2025)",
-    metaTitle: "E-Waste Recycling Orange County | Complete 2025 Guide",
+    metaTitle: "E-Waste Recycling Orange County",
     metaDescription: "Everything Orange County residents and businesses need to know about e-waste recycling: what's accepted, what's free, California law, and how to schedule pickup.",
     keyword: "e-waste recycling Orange County",
     keywordColor: "green",
@@ -127,7 +127,7 @@ OC Electronic Recycling serves all 34 Orange County cities, including Irvine, An
   {
     slug: "free-computer-recycling-irvine-ca",
     title: "Free Computer Recycling in Irvine, CA â€” What Businesses Need to Know",
-    metaTitle: "Free Computer Recycling Irvine CA | OC Electronic Recycling",
+    metaTitle: "Free Computer Recycling Irvine CA",
     metaDescription: "Irvine businesses: free computer pickup with certified data destruction and full compliance documentation. Serving Irvine Spectrum, IBC, and UCI Research Park.",
     keyword: "computer recycling Irvine CA",
     keywordColor: "green",
@@ -211,7 +211,7 @@ Serving: Irvine Spectrum, Irvine Business Complex (IBC), UCI Research Park, Jamb
   {
     slug: "free-electronics-pickup-orange-county",
     title: "Free Electronics Pickup in Orange County: Who Qualifies and How It Works",
-    metaTitle: "Free Electronics Pickup Orange County | OC Electronic Recycling",
+    metaTitle: "Free Electronics Pickup Orange County",
     metaDescription: "Find out who qualifies for free electronics pickup in Orange County. Businesses, schools, nonprofits â€” learn what's included and how to schedule.",
     keyword: "free electronics pickup Orange County",
     keywordColor: "green",
@@ -299,8 +299,8 @@ Call **(949) 287-3056** or use the online contact form. We service all 34 Orange
   {
     slug: "california-e-waste-law-for-businesses",
     title: "California E-Waste Law for Businesses: What You're Required to Do in 2025",
-    metaTitle: "California E-Waste Law for Businesses 2025 | OC Electronic Recycling",
-    metaDescription: "California's e-waste laws apply to every business. Here's what the Electronic Waste Recycling Act requires, what violations cost, and how to stay compliant in 2025.",
+    metaTitle: "California E-Waste Law for Businesses",
+    metaDescription: "California's e-waste laws apply to every business. Here's what the Electronic Waste Recycling Act requires, what violations cost, and how to stay compliant.",
     keyword: "California e-waste law for businesses",
     keywordColor: "blue",
     category: "Compliance",
@@ -390,7 +390,7 @@ These three documents constitute a complete compliance record for a hardware dis
   {
     slug: "how-to-recycle-old-computers-safely",
     title: "How to Recycle Old Computers Safely: A Step-by-Step Technical Guide",
-    metaTitle: "How to Recycle Old Computers Safely | OC Electronic Recycling",
+    metaTitle: "How to Recycle Old Computers Safely",
     metaDescription: "Before recycling that old computer, follow these steps. Data wiping techniques, account sign-out, drive removal, and what certified recycling actually covers.",
     keyword: "how to recycle old computers safely",
     keywordColor: "blue",
@@ -494,8 +494,8 @@ OC Electronic Recycling provides all of the above for Orange County businesses a
   {
     slug: "what-happens-to-recycled-electronics",
     title: "What Actually Happens to Your Electronics After You Recycle Them?",
-    metaTitle: "What Happens to Recycled Electronics | OC Electronic Recycling",
-    metaDescription: "The full lifecycle of recycled electronics â€” from pickup to material recovery. Sorting, data destruction, disassembly, precious metal smelting, and zero landfill.",
+    metaTitle: "What Happens to Recycled Electronics",
+    metaDescription: "The full lifecycle of recycled electronics — from pickup to material recovery. Sorting, data destruction, disassembly, and precious metal smelting.",
     keyword: "what happens to recycled electronics",
     keywordColor: "blue",
     category: "Education",
@@ -613,8 +613,8 @@ Responsible zero-landfill recycling requires contractual relationships with cert
   {
     slug: "it-asset-disposition-orange-county",
     title: "IT Asset Disposition in Orange County: A Complete Guide for Corporate IT Teams",
-    metaTitle: "IT Asset Disposition Orange County | OC Electronic Recycling",
-    metaDescription: "The complete ITAD guide for Orange County IT teams â€” asset inventory, data destruction standards, remarketing, compliance documentation, and decommissioning without liability.",
+    metaTitle: "IT Asset Disposition Orange County",
+    metaDescription: "The complete ITAD guide for Orange County IT teams — asset inventory, data destruction standards, remarketing, and compliance documentation.",
     keyword: "IT asset disposition Orange County",
     keywordColor: "red",
     category: "ITAD",
@@ -722,7 +722,7 @@ We provide complete ITAD services to Orange County businesses of all sizes â€
   {
     slug: "certified-data-destruction-california",
     title: "Certified Data Destruction in California: What the Certificate Actually Proves",
-    metaTitle: "Certified Data Destruction California | OC Electronic Recycling",
+    metaTitle: "Certified Data Destruction California",
     metaDescription: "What a certificate of data destruction actually proves â€” and when California law requires one. The complete guide for IT managers and compliance officers.",
     keyword: "certified data destruction California",
     keywordColor: "red",
@@ -825,8 +825,8 @@ Every storage device processed receives a certificate meeting the above requirem
   {
     slug: "server-decommissioning-services-orange-county",
     title: "Server Decommissioning in Orange County: What a Professional Teardown Looks Like",
-    metaTitle: "Server Decommissioning Orange County | OC Electronic Recycling",
-    metaDescription: "Planning a server room or data center teardown in Orange County? Complete guide to professional server decommissioning â€” inventory, data destruction, teardown, documentation.",
+    metaTitle: "Server Decommissioning Orange County",
+    metaDescription: "Planning a server room or data center teardown in Orange County? A guide to professional server decommissioning — inventory, data destruction, and teardown.",
     keyword: "server decommissioning services OC",
     keywordColor: "red",
     category: "ITAD",
@@ -960,8 +960,8 @@ We handle full server room and data center teardowns throughout Orange County â
   {
     slug: "hard-drive-shred-vs-wipe-guide",
     title: "Hard Drive Shredding vs. Wiping: How to Choose the Right Method for Your Data",
-    metaTitle: "Hard Drive Shred vs Wipe | OC Electronic Recycling",
-    metaDescription: "Should you shred or wipe your hard drives? The answer depends on data sensitivity, drive condition, and compliance requirements. Here's the complete technical guide.",
+    metaTitle: "Hard Drive Shred vs Wipe",
+    metaDescription: "Should you shred or wipe your hard drives? The answer depends on data sensitivity, drive condition, and compliance requirements.",
     keyword: "certified data destruction California",
     keywordColor: "red",
     category: "Data Security",
@@ -1065,7 +1065,7 @@ OC Electronic Recycling provides both services with serial-number-level certific
   {
     slug: "office-cleanout-electronics-disposal-oc",
     title: "Office Move or Cleanout in Orange County: The Electronics Disposal Guide",
-    metaTitle: "Office Cleanout Electronics Disposal Orange County | OC Electronic Recycling",
+    metaTitle: "Office Cleanout Electronics Disposal",
     metaDescription: "Moving offices or clearing out old equipment in Orange County? Step-by-step guide to handling business electronics legally, securely, and without delays.",
     keyword: "IT asset disposition Orange County",
     keywordColor: "red",
@@ -1172,7 +1172,7 @@ Call **(949) 287-3056** as early as possible for time-sensitive cleanouts. We ha
   {
     slug: "tv-recycling-orange-county",
     title: "How to Recycle a TV in Orange County â€” Including Old CRTs and Big-Screen TVs",
-    metaTitle: "TV Recycling Orange County CA | OC Electronic Recycling",
+    metaTitle: "TV Recycling Orange County CA",
     metaDescription: "Complete guide to recycling any TV in Orange County: what's free, CRT disposal, flat screen recycling, and how to schedule pickup.",
     keyword: "free electronics pickup Orange County",
     keywordColor: "green",
@@ -1264,8 +1264,8 @@ Call (949) 287-3056 to schedule. We handle TV recycling throughout all 34 Orange
   {
     slug: "what-is-itad-explained",
     title: "What Is ITAD? IT Asset Disposition Explained for Business Owners",
-    metaTitle: "What Is ITAD? IT Asset Disposition Explained | OC Electronic Recycling",
-    metaDescription: "ITAD â€” IT asset disposition â€” is the process of retiring IT equipment securely and compliantly. Here's what it means, why it exists, and how it works for businesses.",
+    metaTitle: "What Is ITAD? IT Asset Disposition",
+    metaDescription: "ITAD — IT asset disposition — is the process of retiring IT equipment securely and compliantly for businesses.",
     keyword: "IT asset disposition Orange County",
     keywordColor: "red",
     category: "Education",
@@ -1366,7 +1366,7 @@ Final documentation package:
   {
     slug: "e-waste-recycling-irvine-compliance",
     title: "Why Irvine Tech Companies Face the Highest E-Waste Compliance Risk in Orange County",
-    metaTitle: "E-Waste Compliance Irvine CA Tech Companies | OC Electronic Recycling",
+    metaTitle: "E-Waste Compliance Irvine CA",
     metaDescription: "Irvine's concentration of tech and biotech firms creates elevated e-waste compliance exposure. Here's what California law requires and how to handle it simply.",
     keyword: "e-waste recycling Orange County",
     keywordColor: "green",
@@ -1439,8 +1439,8 @@ We service the full Irvine Spectrum, Irvine Business Complex, UCI Research Park,
   {
     slug: "pci-dss-hardware-disposal-requirements",
     title: "PCI-DSS Hardware Disposal: What Payment-Processing Businesses Must Do in California",
-    metaTitle: "PCI-DSS Hardware Disposal Requirements | OC Electronic Recycling",
-    metaDescription: "Payment-processing businesses face specific PCI-DSS requirements for hardware disposal. Here's what Requirement 9.4.7 mandates and how California businesses document compliance.",
+    metaTitle: "PCI-DSS Hardware Disposal",
+    metaDescription: "Payment-processing businesses face specific PCI-DSS requirements for hardware disposal. Here's what Requirement 9.4.7 mandates.",
     keyword: "certified data destruction California",
     keywordColor: "red",
     category: "Compliance",
@@ -1543,7 +1543,7 @@ OC Electronic Recycling provides all required documentation for PCI-compliant ha
   {
     slug: "network-equipment-decommissioning-orange-county",
     title: "Network Equipment Decommissioning: An IT Manager's Retirement Checklist",
-    metaTitle: "Network Equipment Disposal Orange County | Decommissioning Guide",
+    metaTitle: "Network Equipment Disposal Orange County",
     metaDescription:
       "How Orange County IT managers should retire switches, routers, and firewalls — the data risks, the compliance steps, and how to dispose of network gear securely.",
     keyword: "network equipment disposal Orange County",
@@ -1638,7 +1638,7 @@ If you're planning a refresh, closing an office, or staring at a closet full of 
   {
     slug: "data-destruction-network-switches-routers",
     title: "What's Still Stored on a Retired Switch or Router? The Hidden Data Risk",
-    metaTitle: "Network Device Data Destruction | Switch & Router Wiping",
+    metaTitle: "Network Device Data Destruction",
     metaDescription:
       "Retired switches, routers, and firewalls hold credentials, keys, and your full topology. Here's what's really on them and how to destroy that data properly.",
     keyword: "network device data destruction",
@@ -1729,7 +1729,7 @@ Don't let your old core switch be the thing that shows up in a breach report. Ca
   {
     slug: "network-cabling-recycling-orange-county",
     title: "Recycling Network Cabling: What Happens to Cat6, Fiber, and Patch Panels",
-    metaTitle: "Network Cabling Recycling Orange County | Copper & Fiber",
+    metaTitle: "Network Cabling Recycling Orange County",
     metaDescription:
       "What really happens to retired Cat6, fiber, and patch panels — and how Orange County businesses can recycle network cabling responsibly and recover copper value.",
     keyword: "network cabling recycling Orange County",
@@ -1811,7 +1811,7 @@ One last reason to plan it now rather than later: cable is heavy, awkward, and e
   {
     slug: "it-refresh-cycle-decommissioning-orange-county",
     title: "The IT Refresh Cycle: When to Retire Servers, Switches, and Access Points",
-    metaTitle: "IT Hardware Refresh Orange County | Decommissioning Timing",
+    metaTitle: "IT Hardware Refresh Orange County",
     metaDescription:
       "How Orange County IT managers should time server, switch, and access point refreshes — and how to fold secure decommissioning into the plan from day one.",
     keyword: "IT hardware refresh Orange County",
@@ -1900,9 +1900,9 @@ The earlier you bring a disposal partner into the planning, the more options you
   {
     slug: "it-asset-chain-of-custody-california",
     title: "Chain of Custody: How IT Managers Prove Decommissioned Hardware Was Handled Right",
-    metaTitle: "IT Asset Chain of Custody California | Certified Tracking",
+    metaTitle: "IT Asset Chain of Custody California",
     metaDescription:
-      "What chain of custody really means in ITAD, why certificates and serialized tracking matter, and how Orange County IT managers stay audit-ready when retiring hardware.",
+      "What chain of custody really means in ITAD, why certificates and serialized tracking matter, and how Orange County IT managers stay audit-ready.",
     keyword: "IT asset chain of custody",
     keywordColor: "red",
     category: "Compliance",
@@ -1986,7 +1986,7 @@ Stop carrying disposal as an open question on your risk register. Call **(949) 2
     slug: "network-equipment-lifecycle-management",
     title:
       "Network Equipment Lifecycle Management: Secure Recycling of Routers, Switches, Firewalls, and Servers",
-    metaTitle: "Network Equipment Lifecycle Management & Secure Recycling | OC",
+    metaTitle: "Network Equipment Lifecycle Management",
     metaDescription:
       "Learn how to inventory, sanitize, reuse, and securely recycle routers, switches, firewalls, servers, and network storage in Orange County.",
     keyword: "network equipment recycling Orange County",
@@ -2147,7 +2147,7 @@ Network equipment retirement is a controlled technical change, a data-security e
     slug: "data-center-decommissioning-checklist",
     title:
       "Data Center Decommissioning Checklist: Cabling, Network Hardware, Data Security, and ITAD",
-    metaTitle: "Data Center Decommissioning Checklist: Security, Cabling & ITAD",
+    metaTitle: "Data Center Decommissioning Checklist",
     metaDescription:
       "A detailed data center decommissioning checklist covering dependencies, servers, switches, fiber, data destruction, chain of custody, and ITAD.",
     keyword: "data center decommissioning Orange County",
@@ -2312,7 +2312,7 @@ A successful decommission proves that technology, data, and physical assets were
     slug: "old-network-equipment-security-risks",
     title:
       "Why Old Network Equipment Creates Security Risks: VLANs, Firewalls, Storage Media, and Secure Data Destruction",
-    metaTitle: "Old Network Equipment Security Risks & Secure Disposal Guide",
+    metaTitle: "Old Network Equipment Security Risks",
     metaDescription:
       "Discover the security risks hidden in retired routers, switches, firewalls, servers, drives, and configuration files—and how to dispose of them safely.",
     keyword: "old network equipment security risks",

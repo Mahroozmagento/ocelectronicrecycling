@@ -3,9 +3,9 @@ import Link from "next/link";
 import { cities } from "@/lib/cities";
 
 export const metadata: Metadata = {
-  title: "E-Waste Recycling Service Areas | All 34 Orange County Cities | OC Electronic Recycling",
+  title: "E-Waste Recycling Service Areas",
   description:
-    "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal. Find your city.",
+    "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal.",
   alternates: {
     canonical: "https://ocelectronicrecycling.com/service-areas",
   },
