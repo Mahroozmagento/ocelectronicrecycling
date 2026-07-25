@@ -1,6 +1,6 @@
 // app/contact/page.tsx
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import AnimateIn from '@/components/AnimateIn'
 import { trackEvent } from '@/lib/analytics'
 import { getStoredUTM } from '@/lib/utm'
@@ -25,8 +25,23 @@ export default function ContactPage() {
   const [files, setFiles]         = useState<File[]>([])
   const [dragOver, setDragOver]   = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError]         = useState(false)
   const [sending, setSending]     = useState(false)
   const fileInputRef              = useRef<HTMLInputElement>(null)
+  const statusRef                 = useRef<HTMLDivElement>(null)
+
+  // Set after mount (not during render) so server- and client-rendered HTML
+  // match — avoids a hydration mismatch on this hidden field's value.
+  const [renderedAt, setRenderedAt] = useState<number | null>(null)
+  useEffect(() => { setRenderedAt(Date.now()) }, [])
+
+  // Scroll the success/error message into view whenever it appears, so it's
+  // visible even if the form is scrolled or the message lands below the fold.
+  useEffect(() => {
+    if (!submitted && !error) return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    statusRef.current?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' })
+  }, [submitted, error])
 
   const addFiles = (incoming: FileList | null) => {
     if (!incoming) return
@@ -40,6 +55,8 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setSending(true)
+    setSubmitted(false)
+    setError(false)
     try {
       const formData = new FormData(e.target as HTMLFormElement)
       const service = formData.get('service')
@@ -49,6 +66,7 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.get('name'),
+          lastName: formData.get('lastName'),
           email: formData.get('email'),
           phone: formData.get('phone'),
           service,
@@ -56,6 +74,8 @@ export default function ContactPage() {
           utm_source: utm?.utm_source,
           utm_medium: utm?.utm_medium,
           utm_campaign: utm?.utm_campaign,
+          website: formData.get('website'),
+          formRenderedAt: formData.get('formRenderedAt'),
         }),
       })
       if (res.ok) {
@@ -66,11 +86,11 @@ export default function ContactPage() {
         setTimeout(() => setSubmitted(false), 5000)
       } else {
         setSending(false)
-        alert('Something went wrong. Please call us at (949) 287-3056.')
+        setError(true)
       }
     } catch {
       setSending(false)
-      alert('Something went wrong. Please call us at (949) 287-3056.')
+      setError(true)
     }
   }
 
@@ -111,10 +131,43 @@ export default function ContactPage() {
               <form className="contact-form" onSubmit={handleSubmit}>
                 <h3>Send Us a Message</h3>
 
+                {/* Honeypot — real visitors never see or fill this in. Kept off-screen
+                    via positioning rather than display:none, which some bots detect. */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', top: '-9999px' }}
+                />
+                <input type="hidden" name="formRenderedAt" value={renderedAt ?? ''} readOnly />
+
                 {submitted && (
-                  <div style={{ background: 'rgba(0,230,118,.1)', border: '1px solid var(--green)', borderRadius: '10px', padding: '16px', marginBottom: '20px', color: 'var(--green)', fontFamily: 'var(--font-head)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div
+                    id="contact-form-status"
+                    ref={statusRef}
+                    role="status"
+                    aria-live="polite"
+                    className="form-alert"
+                    style={{ border: '1px solid var(--green)', borderRadius: '10px', padding: '16px', marginBottom: '20px', color: 'var(--green)', fontFamily: 'var(--font-head)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}
+                  >
                     <span style={{ fontSize: '1.2rem' }}>✅</span>
                     Message sent! We&apos;ll be in touch within 24 hours.
+                  </div>
+                )}
+
+                {error && (
+                  <div
+                    id="contact-form-status"
+                    ref={statusRef}
+                    role="alert"
+                    aria-live="assertive"
+                    className="form-alert form-alert--error"
+                    style={{ border: '1px solid var(--red)', borderRadius: '10px', padding: '16px', marginBottom: '20px', color: 'var(--red)', fontFamily: 'var(--font-head)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}
+                  >
+                    <span style={{ fontSize: '1.2rem' }}>⚠️</span>
+                    Something went wrong. Please call us at (949) 287-3056.
                   </div>
                 )}
 
