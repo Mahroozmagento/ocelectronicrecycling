@@ -5,7 +5,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, service, message } = await request.json();
+    const { name, email, phone, service, message, utm_source, utm_medium, utm_campaign } = await request.json();
+
+    const source = [utm_source, utm_medium, utm_campaign].some(Boolean)
+      ? `
+        <p><strong>Source:</strong> ${utm_source || "(none)"}</p>
+        <p><strong>Medium:</strong> ${utm_medium || "(none)"}</p>
+        <p><strong>Campaign:</strong> ${utm_campaign || "(none)"}</p>
+      `
+      : `<p><strong>Source:</strong> Direct / no campaign tracked</p>`;
 
     await resend.emails.send({
       from: "OC Electronic Recycling <noreply@nextechoc.com>",
@@ -20,6 +28,9 @@ export async function POST(request: Request) {
         <p><strong>Service:</strong> ${service || "Not specified"}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
+        <hr />
+        <h3>Lead Source</h3>
+        ${source}
       `,
     });
 

@@ -55,6 +55,49 @@ export default function PrivacyPolicyPage() {
             purposes.
           </p>
 
+          <h2>Analytics, Cookies &amp; Tracking</h2>
+          <p>
+            We use the following tools to understand how visitors use our website. None of these load until you
+            accept cookies via the banner shown on your first visit — if you decline, none of them run, and no
+            analytics or advertising cookies are set.
+          </p>
+          <ul>
+            <li>
+              <strong>Google Tag Manager &amp; Google Analytics 4</strong> — collects standard usage data such as
+              pages viewed, approximate location (city/region level), device and browser type, and referral source.
+              We use this to see which pages and marketing channels drive inquiries. See{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--green)' }}>
+                Google&apos;s Privacy Policy
+              </a>{' '}
+              or opt out site-wide using the{' '}
+              <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--green)' }}>
+                Google Analytics Opt-out Browser Add-on
+              </a>.
+            </li>
+            <li>
+              <strong>Microsoft Clarity</strong> — records anonymized session replays and heatmaps so we can see
+              how visitors use the site and fix confusing pages. Clarity masks form input by default. See{' '}
+              <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--green)' }}>
+                Microsoft&apos;s Privacy Statement
+              </a>.
+            </li>
+            <li>
+              <strong>AI chat widget</strong> — the chat assistant on this site collects the name, email address
+              or phone number, and messages you provide during a conversation. This information is used only to
+              respond to your inquiry and follow up with you.
+            </li>
+            <li>
+              <strong>Campaign source tracking</strong> — if you arrive via a tagged link (e.g. from an ad or
+              email campaign), we note which source, medium, and campaign brought you here so that, if you submit
+              our contact form, we know which marketing effort generated that inquiry. This is stored in your
+              browser only and is not a tracking cookie.
+            </li>
+          </ul>
+          <p>
+            You can change your cookie choice at any time by clearing your browser&apos;s local storage for this
+            site and reloading the page, which will show the consent banner again.
+          </p>
+
           <h2>Information Sharing</h2>
           <p>
             We may share information with trusted service providers who assist us in operating our

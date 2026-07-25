@@ -2,6 +2,8 @@
 'use client'
 import { useState, useRef } from 'react'
 import AnimateIn from '@/components/AnimateIn'
+import { trackEvent } from '@/lib/analytics'
+import { getStoredUTM } from '@/lib/utm'
 
 const SERVICES_LIST = [
   'Data Destruction / Hard Drive Shredding',
@@ -40,6 +42,8 @@ export default function ContactPage() {
     setSending(true)
     try {
       const formData = new FormData(e.target as HTMLFormElement)
+      const service = formData.get('service')
+      const utm = getStoredUTM()
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -47,13 +51,18 @@ export default function ContactPage() {
           name: formData.get('name'),
           email: formData.get('email'),
           phone: formData.get('phone'),
-          service: formData.get('service'),
+          service,
           message: formData.get('message'),
+          utm_source: utm?.utm_source,
+          utm_medium: utm?.utm_medium,
+          utm_campaign: utm?.utm_campaign,
         }),
       })
       if (res.ok) {
         setSending(false)
         setSubmitted(true)
+        trackEvent('quote_form_submitted', { service })
+        trackEvent('lead_captured', { lead_source: 'contact_form', service })
         setTimeout(() => setSubmitted(false), 5000)
       } else {
         setSending(false)

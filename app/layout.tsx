@@ -4,7 +4,9 @@ import { Urbanist, Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Cursor from '@/components/Cursor'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import ConsentBanner from '@/components/ConsentBanner'
+import AnalyticsScripts from '@/components/AnalyticsScripts'
+import AnalyticsEvents from '@/components/AnalyticsEvents'
 import './globals.css'
 
 const urbanist = Urbanist({
@@ -153,8 +155,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-key="pk_test_ocer_a3f8ed238897ff10"
       async
     ></script>
+    <AnalyticsEvents />
+    <AnalyticsScripts />
+    <ConsentBanner />
   </body>
-  <GoogleAnalytics gaId="G-GZHT9EPCHT" />
 </html>
   )
 }
