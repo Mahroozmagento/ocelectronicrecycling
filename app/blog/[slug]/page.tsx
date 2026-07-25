@@ -221,9 +221,9 @@ export default async function BlogPostPage({
               <div className="blog-sidebar__services-title">Our Services</div>
               <ul className="blog-sidebar__services-list">
                 {[
-                  { href: "/data-destruction", label: "🔒 Certified Data Destruction" },
-                  { href: "/itad", label: "📦 IT Asset Disposition" },
-                  { href: "/recycling", label: "♻️ Electronics Recycling" },
+                  { href: "/services/data-destruction", label: "🔒 Certified Data Destruction" },
+                  { href: "/services/itad", label: "📦 IT Asset Disposition" },
+                  { href: "/services/recycling", label: "♻️ Electronics Recycling" },
                   { href: "/contact", label: "🖥️ Business Pickup" },
                 ].map((s) => (
                   <li key={s.href}><Link href={s.href}>{s.label}</Link></li>

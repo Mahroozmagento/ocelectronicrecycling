@@ -819,7 +819,7 @@ A certificate missing serial numbers cannot be used for compliance purposes â�
 
 Every storage device processed receives a certificate meeting the above requirements, with serial-number-level detail. Digital PDFs provided for all customers; printed certificates available on request. Records retained minimum seven years.
 
-[Request Certified Data Destruction â†’](/data-destruction)
+[Request Certified Data Destruction →](/services/data-destruction)
     `,
   },
   {
@@ -1059,7 +1059,7 @@ This approach maximizes remarketing value from functional hardware while ensurin
 
 OC Electronic Recycling provides both services with serial-number-level certificates for each drive regardless of method.
 
-[Request Hard Drive Destruction Services â†’](/data-destruction)
+[Request Hard Drive Destruction Services →](/services/data-destruction)
     `,
   },
   {
@@ -1532,7 +1532,7 @@ A PCI QSA conducting a Level 1 or Level 2 merchant assessment will look for:
 
 OC Electronic Recycling provides all required documentation for PCI-compliant hardware disposal â€” serial-number certificates, recycling confirmation, and records you can produce in your next QSA audit.
 
-[Contact Us for PCI-Compliant Disposal â†’](/data-destruction)
+[Contact Us for PCI-Compliant Disposal →](/services/data-destruction)
     `,
   },
 
