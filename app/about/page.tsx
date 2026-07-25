@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: 'About Us',
   description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/about' },
+  openGraph: {
+    title: 'About Us',
+    description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
+    url: 'https://www.ocelectronicrecycling.com/about',
+    images: [{ url: '/image/about-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us',
+    description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
+    images: ['/image/about-oc-electronic-recycling.webp'],
+  },
 }
 
 const MISSION = [

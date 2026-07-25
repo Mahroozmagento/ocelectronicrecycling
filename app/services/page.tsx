@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'Our Services',
   description: 'Complete electronics lifecycle services in Orange County — data destruction, ITAD, e-waste recycling, business pickup.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services' },
+  openGraph: {
+    title: 'Our Services',
+    description: 'Complete electronics lifecycle services in Orange County — data destruction, ITAD, e-waste recycling, business pickup.',
+    url: 'https://www.ocelectronicrecycling.com/services',
+    images: [{ url: '/image/services-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Services',
+    description: 'Complete electronics lifecycle services in Orange County — data destruction, ITAD, e-waste recycling, business pickup.',
+    images: ['/image/services-oc-electronic-recycling.webp'],
+  },
 }
 
 const SERVICES = [

@@ -9,6 +9,20 @@ export const metadata = {
   description:
     "Guides, compliance advice, and local tips for Orange County businesses and residents navigating e-waste recycling and data security.",
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/blog' },
+  openGraph: {
+    title: "Blog | OC Electronic Recycling",
+    description:
+      "Guides, compliance advice, and local tips for Orange County businesses and residents navigating e-waste recycling and data security.",
+    url: 'https://www.ocelectronicrecycling.com/blog',
+    images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Blog | OC Electronic Recycling",
+    description:
+      "Guides, compliance advice, and local tips for Orange County businesses and residents navigating e-waste recycling and data security.",
+    images: ['/image/hero-facility-oc-electronic-recycling.webp'],
+  },
 };
 
 const colorMap = {

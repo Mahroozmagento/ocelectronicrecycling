@@ -30,6 +30,16 @@ export const metadata: Metadata = {
   verification: {
     google: 'PaLUjMBZuaXCfW_w65dE4BmaLsFlHbXC3kiIXNt3CtI',
   },
+  openGraph: {
+    siteName: 'OC Electronic Recycling',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/image/hero-facility-oc-electronic-recycling.webp'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

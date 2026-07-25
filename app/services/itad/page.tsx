@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: 'IT Asset Disposition (ITAD)',
   description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and responsible disposal.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/itad' },
+  openGraph: {
+    title: 'IT Asset Disposition (ITAD)',
+    description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and responsible disposal.',
+    url: 'https://www.ocelectronicrecycling.com/services/itad',
+    images: [{ url: '/image/itad-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'IT Asset Disposition (ITAD)',
+    description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and responsible disposal.',
+    images: ['/image/itad-oc-electronic-recycling.webp'],
+  },
 }
 
 const FEATURES = [

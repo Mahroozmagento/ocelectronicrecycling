@@ -25,6 +25,13 @@ export async function generateMetadata({
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishDate,
+      url: `https://www.ocelectronicrecycling.com/blog/${post.slug}`,
+      images: [`https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle,
+      description: post.metaDescription,
       images: [`https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`],
     },
   };

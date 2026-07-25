@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: 'Resource Center',
   description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/resources' },
+  openGraph: {
+    title: 'Resource Center',
+    description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
+    url: 'https://www.ocelectronicrecycling.com/resources',
+    images: [{ url: '/image/resources-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Resource Center',
+    description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
+    images: ['/image/resources-oc-electronic-recycling.webp'],
+  },
 }
 
 const GUIDES = [

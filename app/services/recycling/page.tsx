@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: 'E-Waste Recycling Orange County',
   description: 'E-waste recycling in compliance with California regulations, in Orange County. All electronics accepted. Zero landfill commitment.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/recycling' },
+  openGraph: {
+    title: 'E-Waste Recycling Orange County',
+    description: 'E-waste recycling in compliance with California regulations, in Orange County. All electronics accepted. Zero landfill commitment.',
+    url: 'https://www.ocelectronicrecycling.com/services/recycling',
+    images: [{ url: '/image/recycling-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'E-Waste Recycling Orange County',
+    description: 'E-waste recycling in compliance with California regulations, in Orange County. All electronics accepted. Zero landfill commitment.',
+    images: ['/image/recycling-oc-electronic-recycling.webp'],
+  },
 }
 
 const ITEMS = [

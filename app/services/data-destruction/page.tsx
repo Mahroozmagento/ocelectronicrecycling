@@ -6,6 +6,18 @@ export const metadata: Metadata = {
   title: 'Certified Data Destruction',
   description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device within 48hrs.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/data-destruction' },
+  openGraph: {
+    title: 'Certified Data Destruction',
+    description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA.',
+    url: 'https://www.ocelectronicrecycling.com/services/data-destruction',
+    images: [{ url: '/image/data-destruction-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Certified Data Destruction',
+    description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA.',
+    images: ['/image/data-destruction-oc-electronic-recycling.webp'],
+  },
 }
 
 export default function DataDestructionPage() {

@@ -13,6 +13,18 @@ export const metadata: Metadata = {
     "Orange County's premier e-waste recycling and ITAD company. " +
     'Certified data destruction, business pickup. Call (949) 287-3056.',
   alternates: { canonical: '/' },
+  openGraph: {
+    title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
+    description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup.",
+    url: 'https://www.ocelectronicrecycling.com',
+    images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
+    description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup.",
+    images: ['/image/hero-facility-oc-electronic-recycling.webp'],
+  },
 }
 
 export default function HomePage() {

@@ -7,6 +7,18 @@ export const metadata: Metadata = {
   title: 'How It Works',
   description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/how-it-works' },
+  openGraph: {
+    title: 'How It Works',
+    description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
+    url: 'https://www.ocelectronicrecycling.com/how-it-works',
+    images: [{ url: '/image/how-it-works-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How It Works',
+    description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
+    images: ['/image/how-it-works-oc-electronic-recycling.webp'],
+  },
 }
 
 const STEPS = [
