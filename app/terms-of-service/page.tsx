@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Terms of Service | OC Electronic Recycling',
   description: 'Terms of Service for OC Electronic Recycling — website use and general service terms.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/terms-of-service' },
 };
 
 export default function TermsOfServicePage() {

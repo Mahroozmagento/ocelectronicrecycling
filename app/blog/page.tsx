@@ -8,6 +8,7 @@ export const metadata = {
   title: "Blog | OC Electronic Recycling",
   description:
     "Guides, compliance advice, and local tips for Orange County businesses and residents navigating e-waste recycling and data security.",
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/blog' },
 };
 
 const colorMap = {

@@ -5,6 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'E-Waste Recycling Orange County',
   description: 'E-waste recycling in compliance with California regulations, in Orange County. All electronics accepted. Zero landfill commitment.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/recycling' },
 }
 
 const ITEMS = [

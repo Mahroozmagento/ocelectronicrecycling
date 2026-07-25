@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal.",
   alternates: {
-    canonical: "https://ocelectronicrecycling.com/service-areas",
+    canonical: "https://www.ocelectronicrecycling.com/service-areas",
   },
 };
 

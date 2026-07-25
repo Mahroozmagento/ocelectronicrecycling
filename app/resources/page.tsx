@@ -7,6 +7,7 @@ import AnimateIn, { StaggerGroup, PageHero } from '@/components/AnimateIn'
 export const metadata: Metadata = {
   title: 'Resource Center',
   description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/resources' },
 }
 
 const GUIDES = [

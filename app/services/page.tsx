@@ -6,6 +6,7 @@ import AnimateIn, { StaggerGroup, PageHero } from '@/components/AnimateIn'
 export const metadata: Metadata = {
   title: 'Our Services',
   description: 'Complete electronics lifecycle services in Orange County — data destruction, ITAD, e-waste recycling, business pickup.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/services' },
 }
 
 const SERVICES = [

@@ -5,6 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'IT Asset Disposition (ITAD)',
   description: 'Complete ITAD services in Orange County — inventory, data sanitization, value recovery, and responsible disposal.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/itad' },
 }
 
 const FEATURES = [

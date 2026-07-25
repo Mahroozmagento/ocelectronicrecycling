@@ -21,12 +21,12 @@ export async function generateMetadata({
     title: city.metaTitle,
     description: city.metaDescription,
     alternates: {
-      canonical: `https://ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
+      canonical: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
     },
     openGraph: {
       title: city.metaTitle,
       description: city.metaDescription,
-      url: `https://ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
+      url: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
       siteName: "OC Electronic Recycling",
       locale: "en_US",
       type: "website",
@@ -42,7 +42,7 @@ function CitySchema({ city }: { city: ReturnType<typeof getCityBySlug> }) {
     "@type": "LocalBusiness",
     name: "OC Electronic Recycling",
     description: city.metaDescription,
-    url: `https://ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
+    url: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
     telephone: "+19492873056",
     email: "info@ocelectronicrecycling.com",
     address: {

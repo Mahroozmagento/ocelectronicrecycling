@@ -5,6 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Certified Data Destruction',
   description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device within 48hrs.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/data-destruction' },
 }
 
 export default function DataDestructionPage() {

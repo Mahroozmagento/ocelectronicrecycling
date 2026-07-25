@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: post.metaTitle,
     description: post.metaDescription,
-    alternates: { canonical: `https://ocelectronicrecycling.com/blog/${post.slug}` },
+    alternates: { canonical: `https://www.ocelectronicrecycling.com/blog/${post.slug}` },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
@@ -45,7 +45,7 @@ function ArticleSchema({ post }: { post: (typeof blogPosts)[0] }) {
     datePublished: post.publishDate,
     image: `https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`,
     author: { "@type": "Organization", name: "OC Electronic Recycling" },
-    publisher: { "@type": "Organization", name: "OC Electronic Recycling", url: "https://ocelectronicrecycling.com" },
+    publisher: { "@type": "Organization", name: "OC Electronic Recycling", url: "https://www.ocelectronicrecycling.com" },
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }

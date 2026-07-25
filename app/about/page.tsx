@@ -7,6 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'About Us',
   description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/about' },
 }
 
 const MISSION = [

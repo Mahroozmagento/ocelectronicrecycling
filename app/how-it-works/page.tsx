@@ -6,6 +6,7 @@ import AnimateIn, { StaggerGroup, PageHero } from '@/components/AnimateIn'
 export const metadata: Metadata = {
   title: 'How It Works',
   description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/how-it-works' },
 }
 
 const STEPS = [

@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Privacy Policy | OC Electronic Recycling',
   description: 'Privacy policy for OC Electronic Recycling — how we handle information collected through our website and services.',
+  alternates: { canonical: 'https://www.ocelectronicrecycling.com/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
