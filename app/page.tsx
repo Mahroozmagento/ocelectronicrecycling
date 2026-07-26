@@ -6,6 +6,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import AnimateIn, { StaggerGroup } from '@/components/AnimateIn'
 
 export const metadata: Metadata = {
   title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
@@ -48,20 +49,6 @@ export default function HomePage() {
             <a href="tel:9492873056" className="btn-outline btn-large">
               ☎ (949) 287-3056
             </a>
-          </div>
-          <div className="hero-stats">
-            <div>
-              <div className="hero-stat-num" data-count="500">500</div>
-              <div className="hero-stat-label">Tons Diverted / Year</div>
-            </div>
-            <div>
-              <div className="hero-stat-num" data-count="100">100</div>
-              <div className="hero-stat-label">% Data Verified</div>
-            </div>
-            <div>
-              <div className="hero-stat-num" data-count="2500">2,500</div>
-              <div className="hero-stat-label">Clients Served</div>
-            </div>
           </div>
         </div>
         <div className="hero-right">
@@ -118,20 +105,23 @@ export default function HomePage() {
       {/* ── TRUST STATS ──────────────────────────────────────── */}
       <section className="trust-band section-light">
         <div className="container">
-          <span className="overline" style={{ color: 'var(--blue)' }}>Why OC Trusts Us</span>
-          <h2 className="section-title" style={{ color: 'var(--navy)' }}>The Numbers Speak</h2>
-          <div className="trust-grid">
+          <AnimateIn from="up">
+            <span className="overline" style={{ color: 'var(--blue)' }}>Why OC Trusts Us</span>
+            <h2 className="section-title" style={{ color: 'var(--navy)' }}>What Sets Us Apart</h2>
+          </AnimateIn>
+          <StaggerGroup className="trust-grid">
             {[
-              { num: '500',   label: 'Tons Recycled Annually' },
-              { num: '2,500', label: 'Businesses Served' },
-              { num: '100%',  label: 'Data Verified Destroyed' },
+              { num: 'NIST 800-88', label: 'Sanitization Guidelines Followed' },
+              { num: 'Per Device',   label: 'Certificate of Destruction Issued' },
+              { num: 'Serial-Level', label: 'Asset Documentation Provided' },
+              { num: 'Same Week',    label: 'Business Pickup Available' },
             ].map(({ num, label }) => (
               <div key={label} className="trust-card">
                 <div className="trust-number">{num}</div>
                 <div className="trust-label">{label}</div>
               </div>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -231,51 +221,57 @@ export default function HomePage() {
       {/* ── ENVIRONMENTAL ────────────────────────────────────── */}
       <section id="environmental" className="section-dark2">
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
-            <span className="overline">Environmental Impact</span>
-            <h2 className="section-title">Our Green Footprint</h2>
-            <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
-              Every device we recycle stays out of landfills and toxic waste streams.
-            </p>
-          </div>
-          <div className="env-grid">
+          <AnimateIn from="up">
+            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+              <span className="overline">Environmental Impact</span>
+              <h2 className="section-title">Our Green Footprint</h2>
+              <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
+                Every device we recycle stays out of landfills and toxic waste streams.
+              </p>
+            </div>
+          </AnimateIn>
+          <StaggerGroup className="env-grid">
             {[
-              { icon: '🌍', num: '500T',  label: 'E-Waste Diverted from Landfills Annually' },
-              { icon: '⚡', num: '2M',    label: 'kWh Energy Saved Through Material Recovery' },
-              { icon: '💧', num: '98%',   label: 'Materials Recycled or Reused — Zero Landfill' },
-              { icon: '🏆', num: '12+',   label: 'Tons of Hazardous Materials Safely Handled' },
+              { icon: '🌍', num: 'Zero Landfill Commitment',        label: 'Every device is sorted and routed to the correct downstream recycler.' },
+              { icon: '♻️', num: 'Responsible Material Recovery',   label: 'Materials are recovered and processed through vetted recycling partners.' },
+              { icon: '📋', num: 'California-Compliant Processing', label: 'Handled in compliance with California e-waste regulations.' },
             ].map(({ icon, num, label }) => (
-              <div key={label} className="env-stat">
+              <div key={num} className="env-stat">
                 <div className="env-icon">{icon}</div>
-                <div className="env-num">{num}</div>
+                <div className="env-num" style={{ fontSize: '1.3rem', lineHeight: 1.25 }}>{num}</div>
                 <div className="env-label">{label}</div>
               </div>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section id="testimonials" className="section-dark">
+      {/* ── WHAT YOU GET ─────────────────────────────────────────
+          Real testimonials can go back in this spot later — same
+          section position, same testi-grid/testi-card styling
+          infrastructure, just swap the data array and card contents. */}
+      <section id="what-you-get" className="section-dark">
         <div className="container">
-          <div style={{ maxWidth: '480px', marginBottom: '60px' }}>
-            <span className="overline">Client Reviews</span>
-            <h2 className="section-title">What OC Businesses Say</h2>
-          </div>
-          <div className="testi-grid">
+          <AnimateIn from="up">
+            <div style={{ maxWidth: '480px', marginBottom: '60px' }}>
+              <span className="overline">Our Commitment</span>
+              <h2 className="section-title">What You Get</h2>
+            </div>
+          </AnimateIn>
+          <StaggerGroup className="testi-grid testi-grid--4">
             {[
-              { text: '"We decommissioned an entire server room — 80+ drives. OC Electronic Recycling handled everything in one day and had our certificates ready the next morning. Incredible service."', name: 'David M.', role: 'IT Director — Irvine Manufacturing Co.' },
-              { text: '"As a healthcare provider, proper documentation for equipment disposal is non-negotiable. These guys understood exactly what we needed, provided proper documentation, and were completely professional."', name: 'Priya S.', role: 'Compliance Officer — Aliso Viejo Medical Group' },
-              { text: '"Scheduled a pickup for 40 old laptops. They came same week, inventoried everything on-site, and I got a detailed report with serial numbers. Exactly what you want."', name: 'Mark T.', role: 'Operations Manager — Newport Beach Firm' },
-            ].map(({ text, name, role }) => (
-              <div key={name} className="testi-card">
-                <div className="testi-stars">★★★★★</div>
-                <p className="testi-text">{text}</p>
-                <div className="testi-name">{name}</div>
-                <div className="testi-role">{role}</div>
+              { icon: '📄', title: 'Certificate of Destruction',      desc: 'Issued for every device we process.' },
+              { icon: '🔢', title: 'Serial-Level Asset Documentation', desc: 'Full inventory and tracking, device by device.' },
+              { icon: '🔗', title: 'Full Chain-of-Custody',           desc: 'Tracked from pickup through final processing.' },
+              { icon: '🛡️', title: 'NIST 800-88 Aligned Process',     desc: 'Data sanitization following recognized federal guidelines.' },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="testi-card">
+                <div className="trust-feature-icon">{icon}</div>
+                <div className="trust-feature-title">{title}</div>
+                <div className="trust-feature-desc">{desc}</div>
               </div>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
 

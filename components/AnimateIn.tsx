@@ -12,7 +12,7 @@
 // Wrap ANY element or section — it will animate in when
 // it enters the viewport.
 // ─────────────────────────────────────────────────────────────
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef } from 'react'
 
 type Direction = 'up' | 'left' | 'right' | 'scale' | 'fade'
@@ -51,6 +51,11 @@ export default function AnimateIn({
   const ref     = useRef<HTMLDivElement>(null)
   const inView  = useInView(ref, { once, margin: '-60px' })
   const variants = getVariants(from)
+  const reduceMotion = useReducedMotion()
+
+  if (reduceMotion) {
+    return <div className={className} style={style}>{children}</div>
+  }
 
   return (
     <motion.div
@@ -98,6 +103,11 @@ export function StaggerGroup({
   const ref    = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const variants = getVariants(from)
+  const reduceMotion = useReducedMotion()
+
+  if (reduceMotion) {
+    return <div className={className} style={style}>{children}</div>
+  }
 
   const containerVariants = {
     hidden:  {},
