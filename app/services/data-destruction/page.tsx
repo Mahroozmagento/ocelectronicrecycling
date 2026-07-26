@@ -35,7 +35,8 @@ export default function DataDestructionPage() {
           </h1>
           <p style={{color:'var(--muted)',fontSize:'1rem',marginTop:'16px',maxWidth:'520px',lineHeight:1.7}}>
             Data sanitization and physical shredding following NIST 800-88 guidelines.
-            Every device gets a certificate. Every certificate is your legal protection.
+            Every device gets a certificate. Certificates provide documentation to support
+            your compliance, audit, and asset-disposition records.
           </p>
           <div className="dd-badge-row" style={{marginTop:'28px'}}>
             <span className="dd-badge nist">NIST 800-88</span>
@@ -49,7 +50,7 @@ export default function DataDestructionPage() {
         <div className="container">
           <div className="svc-features">
             {[
-              { icon: '🔨', title: 'Physical Shredding',          desc: 'Industrial-grade shredders reduce hard drives to particles under 2mm. Impossible to reconstruct. Available on-site or at our secure facility.' },
+              { icon: '🔨', title: 'Physical Shredding',          desc: 'Industrial-grade shredders reduce drives to small fragments. Designed to render the media unusable and make data recovery impractical. Available on-site or at our secure facility.' },
               { icon: '💿', title: 'Software Overwrite',          desc: 'NIST 800-88 Clear and Purge methods for SSDs and HDDs. Multiple-pass overwrites with verification. Drives can be reused after wiping.' },
               { icon: '📄', title: 'Certificates of Destruction', desc: 'Issued per device with serial number, make/model, method used, technician ID, and timestamp. Audit-ready, legally defensible documentation.' },
             ].map(({ icon, title, desc }) => (

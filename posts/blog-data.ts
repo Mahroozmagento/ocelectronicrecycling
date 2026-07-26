@@ -1,6 +1,6 @@
-﻿/**
- * OC Electronic Recycling â€” Blog Data v3
- * 15 long-form posts (1,500â€“2,500 words each)
+/**
+ * OC Electronic Recycling — Blog Data v3
+ * 15 long-form posts (1,500–2,500 words each)
  * Real Unsplash images on every post
  */
 
@@ -32,20 +32,20 @@ export const blogPosts: BlogPost[] = [
     category: "Local Guide",
     readTime: "10 min read",
     publishDate: "2025-01-15",
-    excerpt: "Orange County generates millions of pounds of electronics waste each year. Here's exactly how to recycle responsibly â€” what's free, what's regulated, and what happens to your devices.",
+    excerpt: "Orange County generates millions of pounds of electronics waste each year. Here's exactly how to recycle responsibly — what's free, what's regulated, and what happens to your devices.",
     unsplashId: "photo-1558618666-fcd25c85cd64",
     unsplashAlt: "Electronic circuit boards and components ready for recycling",
-    unsplashCredit: "Alexandre DebiÃ¨ve",
+    unsplashCredit: "Alexandre Debiève",
     content: `
 ## Why E-Waste Recycling in Orange County Matters
 
-Orange County's 3.2 million residents replace smartphones, laptops, TVs, and office equipment at a pace that generates an estimated 50,000 tons of electronic waste annually. That hardware contains lead, mercury, cadmium, hexavalent chromium, and brominated flame retardants â€” all classified as hazardous materials under California law. All are illegal to place in a landfill.
+Orange County's 3.2 million residents replace smartphones, laptops, TVs, and office equipment at a pace that generates an estimated 50,000 tons of electronic waste annually. That hardware contains lead, mercury, cadmium, hexavalent chromium, and brominated flame retardants — all classified as hazardous materials under California law. All are illegal to place in a landfill.
 
-California's Electronic Waste Recycling Act (SB 20/SB 50), signed in 2003 and expanded since, established one of the most comprehensive e-waste frameworks in the United States. Orange County businesses and residents are not only encouraged to recycle electronics â€” they are legally required to do so.
+California's Electronic Waste Recycling Act (SB 20/SB 50), signed in 2003 and expanded since, established one of the most comprehensive e-waste frameworks in the United States. Orange County businesses and residents are not only encouraged to recycle electronics — they are legally required to do so.
 
 ## What Exactly Is "E-Waste"?
 
-Under California's Electronic Waste Recycling Act, **Covered Electronic Devices (CEDs)** specifically include televisions, computer monitors, laptops, and tablets with screens larger than four inches. These are regulated at point of sale â€” California charges a $4â€“$8 recycling fee when you buy a new monitor or TV.
+Under California's Electronic Waste Recycling Act, **Covered Electronic Devices (CEDs)** specifically include televisions, computer monitors, laptops, and tablets with screens larger than four inches. These are regulated at point of sale — California charges a $4–$8 recycling fee when you buy a new monitor or TV.
 
 But responsible recycling extends beyond the CED definition. The following should all be treated as hazardous waste requiring certified disposal:
 
@@ -63,13 +63,13 @@ But responsible recycling extends beyond the CED definition. The following shoul
 
 **Power Equipment:** UPS systems, server PDUs, battery backup units.
 
-**Batteries:** Lithium-ion, lead-acid, nickel-cadmium â€” all require separate handling.
+**Batteries:** Lithium-ion, lead-acid, nickel-cadmium — all require separate handling.
 
 **AV Equipment:** Projectors, commercial displays, amplifiers.
 
 ## California's E-Waste Law: What Businesses Must Know
 
-The California DTSC has clear jurisdiction over electronics containing hazardous materials. Under the **Hazardous Waste Control Law** (California Health & Safety Code Â§25100 et seq.), businesses face penalties of up to **$25,000 per day per violation** for improper disposal.
+The California DTSC has clear jurisdiction over electronics containing hazardous materials. Under the **Hazardous Waste Control Law** (California Health & Safety Code §25100 et seq.), businesses face penalties of up to **$25,000 per day per violation** for improper disposal.
 
 Businesses face three categories of risk:
 
@@ -84,8 +84,8 @@ Businesses face three categories of risk:
 OC Electronic Recycling provides **free scheduled pickup** for:
 
 - Businesses with five or more devices
-- Educational institutions â€” any quantity
-- Nonprofits â€” any quantity
+- Educational institutions — any quantity
+- Nonprofits — any quantity
 - Property managers clearing tenant spaces
 - IT departments executing hardware refresh cycles
 
@@ -93,17 +93,17 @@ The free service includes labor, transport, itemized pickup manifest, and recycl
 
 ## The Pickup Process: Step by Step
 
-**Step 1 â€” Schedule.** Call (949) 287-3056 or submit the online form. Tell us approximate quantities and types. We confirm a pickup date, typically within the same week.
+**Step 1 — Schedule.** Call (949) 287-3056 or submit the online form. Tell us approximate quantities and types. We confirm a pickup date, typically within the same week.
 
-**Step 2 â€” Inventory.** Every device is logged: make, model, serial number, condition. This creates your pickup manifest â€” a legal record for compliance documentation.
+**Step 2 — Inventory.** Every device is logged: make, model, serial number, condition. This creates your pickup manifest — a legal record for compliance documentation.
 
-**Step 3 â€” Load.** Our team handles all physical loading.
+**Step 3 — Load.** Our team handles all physical loading.
 
-**Step 4 â€” Data Destruction.** If requested, all storage media is processed per NIST 800-88 Rev.1 guidelines. Functioning drives may be software-wiped; high-security or failed drives are physically shredded.
+**Step 4 — Data Destruction.** If requested, all storage media is processed per NIST 800-88 Rev.1 guidelines. Functioning drives may be software-wiped; high-security or failed drives are physically shredded.
 
-**Step 5 â€” Processing.** Equipment goes to California DTSC-authorized downstream processors. Nothing reaches a landfill.
+**Step 5 — Processing.** Equipment goes to California DTSC-authorized downstream processors. Nothing reaches a landfill.
 
-**Step 6 â€” Documentation.** You receive a recycling certificate and, if applicable, a certificate of data destruction for every device processed.
+**Step 6 — Documentation.** You receive a recycling certificate and, if applicable, a certificate of data destruction for every device processed.
 
 ## What Happens to Your Electronics After Pickup
 
@@ -121,12 +121,12 @@ The free service includes labor, transport, itemized pickup manifest, and recycl
 
 OC Electronic Recycling serves all 34 Orange County cities, including Irvine, Anaheim, Santa Ana, Huntington Beach, Garden Grove, Fullerton, Orange, Costa Mesa, Newport Beach, Mission Viejo, Tustin, Lake Forest, Buena Park, Westminster, Yorba Linda, Placentia, La Habra, Brea, Aliso Viejo, Laguna Niguel, Laguna Hills, Laguna Beach, Dana Point, San Clemente, San Juan Capistrano, Rancho Santa Margarita, and more.
 
-[Schedule Your Orange County Pickup â†’](/contact)
+[Schedule Your Orange County Pickup →](/contact)
     `,
   },
   {
     slug: "free-computer-recycling-irvine-ca",
-    title: "Free Computer Recycling in Irvine, CA â€” What Businesses Need to Know",
+    title: "Free Computer Recycling in Irvine, CA — What Businesses Need to Know",
     metaTitle: "Free Computer Recycling Irvine CA",
     metaDescription: "Irvine businesses: free computer pickup with certified data destruction and full compliance documentation. Serving Irvine Spectrum, IBC, and UCI Research Park.",
     keyword: "computer recycling Irvine CA",
@@ -134,7 +134,7 @@ OC Electronic Recycling serves all 34 Orange County cities, including Irvine, An
     category: "Local Guide",
     readTime: "9 min read",
     publishDate: "2025-01-22",
-    excerpt: "Irvine is Orange County's tech hub. Here's how local businesses get free computer pickup, certified data wiping, and full compliance documentation â€” without the hassle.",
+    excerpt: "Irvine is Orange County's tech hub. Here's how local businesses get free computer pickup, certified data wiping, and full compliance documentation — without the hassle.",
     unsplashId: "photo-1521737711867-e3b97375f902",
     unsplashAlt: "Modern office with computers and technology equipment",
     unsplashCredit: "Marvin Meyer",
@@ -143,7 +143,7 @@ OC Electronic Recycling serves all 34 Orange County cities, including Irvine, An
 
 Irvine is home to more than 15,000 businesses, with a disproportionate number in technology, biotech, financial services, and professional services. The Irvine Spectrum Center, Irvine Business Complex (IBC), and UCI Research Park together represent one of the densest concentrations of IT equipment in Southern California.
 
-That density creates a consistent challenge: every three to five years, most Irvine companies go through a hardware refresh â€” replacing workstations, laptops, servers, networking gear, and peripherals. Each refresh generates a significant volume of electronics waste that must be handled correctly under California law.
+That density creates a consistent challenge: every three to five years, most Irvine companies go through a hardware refresh — replacing workstations, laptops, servers, networking gear, and peripherals. Each refresh generates a significant volume of electronics waste that must be handled correctly under California law.
 
 ## Why "Free" Computer Recycling Is the Standard for Irvine Businesses
 
@@ -169,7 +169,7 @@ Irvine's tech and biotech firms operate under layered compliance frameworks:
 
 **HIPAA (healthcare and biotech):** The HIPAA Security Rule requires documented destruction of any storage media that held electronic protected health information (ePHI). A factory reset is not adequate.
 
-**SOC 2 (technology companies):** Auditors will ask for evidence of secure hardware disposal â€” a certificate of destruction with serial numbers is the standard evidence.
+**SOC 2 (technology companies):** Auditors will ask for evidence of secure hardware disposal — a certificate of destruction with serial numbers is the standard evidence.
 
 **PCI-DSS (payment processing):** Requirement 9.4.7 explicitly requires destruction of media containing cardholder data, rendered unrecoverable.
 
@@ -179,11 +179,11 @@ Irvine's tech and biotech firms operate under layered compliance frameworks:
 
 NIST SP 800-88 Rev.1 defines three levels of sanitization:
 
-**Clear:** Logical overwrite â€” appropriate for low-sensitivity devices being internally redeployed.
+**Clear:** Logical overwrite — appropriate for low-sensitivity devices being internally redeployed.
 
-**Purge:** Multi-pass overwrite, ATA Secure Erase, or cryptographic erase â€” appropriate for most business use cases. This is the standard OC Electronic Recycling applies by default.
+**Purge:** Multi-pass overwrite, ATA Secure Erase, or cryptographic erase — appropriate for most business use cases. This is the standard OC Electronic Recycling applies by default.
 
-**Destroy:** Physical shredding or disintegration â€” appropriate for high-security environments, failed drives, or ePHI-bearing media.
+**Destroy:** Physical shredding or disintegration — appropriate for high-security environments, failed drives, or ePHI-bearing media.
 
 ## What Irvine's Different Business Types Typically Need
 
@@ -201,18 +201,18 @@ Modern multifunction printers and office copiers store every scanned, printed, a
 
 ## How to Schedule Irvine Pickup
 
-**Call (949) 287-3056** or use the online form. We typically schedule Irvine pickups within 3â€“5 business days. When you call, have ready: approximate device count by type, special access requirements, and whether data destruction documentation is required.
+**Call (949) 287-3056** or use the online form. We typically schedule Irvine pickups within 3–5 business days. When you call, have ready: approximate device count by type, special access requirements, and whether data destruction documentation is required.
 
 Serving: Irvine Spectrum, Irvine Business Complex (IBC), UCI Research Park, Jamboree Road corridor, Alton Parkway business parks, and all Irvine neighborhoods.
 
-[Book Your Irvine Pickup â†’](/contact)
+[Book Your Irvine Pickup →](/contact)
     `,
   },
   {
     slug: "free-electronics-pickup-orange-county",
     title: "Free Electronics Pickup in Orange County: Who Qualifies and How It Works",
     metaTitle: "Free Electronics Pickup Orange County",
-    metaDescription: "Find out who qualifies for free electronics pickup in Orange County. Businesses, schools, nonprofits â€” learn what's included and how to schedule.",
+    metaDescription: "Find out who qualifies for free electronics pickup in Orange County. Businesses, schools, nonprofits — learn what's included and how to schedule.",
     keyword: "free electronics pickup Orange County",
     keywordColor: "green",
     category: "How It Works",
@@ -225,7 +225,7 @@ Serving: Irvine Spectrum, Irvine Business Complex (IBC), UCI Research Park, Jamb
     content: `
 ## The Economics Behind Free Electronics Pickup
 
-Electronics recycling can be profitable enough to subsidize collection â€” because recovered materials have real value. A metric ton of circuit boards from computers contains approximately 250 grams of gold, 2 kilograms of silver, and 100 grams of palladium, along with significant quantities of copper and aluminum.
+Electronics recycling can be profitable enough to subsidize collection — because recovered materials have real value. A metric ton of circuit boards from computers contains approximately 250 grams of gold, 2 kilograms of silver, and 100 grams of palladium, along with significant quantities of copper and aluminum.
 
 This economics model is why OC Electronic Recycling can offer free pickup to qualifying customers. The residual material value and California's Electronic Waste Recycling Fund (which reimburses authorized collectors for covered electronic devices) together offset collection costs for qualifying volumes.
 
@@ -257,7 +257,7 @@ This economics model is why OC Electronic Recycling can offer free pickup to qua
 
 ## What Is Not Included in Free Pickup
 
-**Certified data destruction.** The wiping or physical shredding of storage media â€” with serial-number-level certificate of destruction â€” is a separate paid service. For any business device that held company, client, or employee data, certified data destruction is legally required and not optional.
+**Certified data destruction.** The wiping or physical shredding of storage media — with serial-number-level certificate of destruction — is a separate paid service. For any business device that held company, client, or employee data, certified data destruction is legally required and not optional.
 
 ## What Electronics Are Accepted
 
@@ -269,7 +269,7 @@ This economics model is why OC Electronic Recycling can offer free pickup to qua
 
 **Mobile:** Smartphones, tablets, iPads, e-readers, rugged handhelds.
 
-**Office machines:** Laser printers, inkjet printers, multifunction copiers (which contain internal hard drives â€” these must be addressed for data), fax machines, scanners.
+**Office machines:** Laser printers, inkjet printers, multifunction copiers (which contain internal hard drives — these must be addressed for data), fax machines, scanners.
 
 **Power equipment:** UPS systems, PDUs, battery backup units.
 
@@ -287,13 +287,13 @@ This economics model is why OC Electronic Recycling can offer free pickup to qua
 
 **Manifest handoff:** You receive the pickup manifest before the truck leaves.
 
-**Certificate:** Within 10â€“15 business days, you receive a recycling certificate confirming downstream processing.
+**Certificate:** Within 10–15 business days, you receive a recycling certificate confirming downstream processing.
 
 ## Scheduling
 
 Call **(949) 287-3056** or use the online contact form. We service all 34 Orange County cities. Same-week scheduling available for most locations.
 
-[Request Your Free Pickup â†’](/contact)
+[Request Your Free Pickup →](/contact)
     `,
   },
   {
@@ -306,36 +306,36 @@ Call **(949) 287-3056** or use the online contact form. We service all 34 Orange
     category: "Compliance",
     readTime: "11 min read",
     publishDate: "2025-02-10",
-    excerpt: "California has some of the strictest e-waste disposal laws in the country. Every business is affected. Here's what the law requires â€” and what ignoring it costs.",
+    excerpt: "California has some of the strictest e-waste disposal laws in the country. Every business is affected. Here's what the law requires — and what ignoring it costs.",
     unsplashId: "photo-1589829545856-d10d557cf95f",
     unsplashAlt: "Legal document and gavel representing compliance regulations",
     unsplashCredit: "Tingey Injury Law Firm",
     content: `
 ## California's E-Waste Regulatory Framework: An Overview
 
-California operates the nation's most comprehensive electronic waste regulatory program, combining the Electronic Waste Recycling Act, the Hazardous Waste Control Law, and California's implementation of federal RCRA provisions. Understanding which rules apply â€” and where the enforcement teeth are â€” is essential for IT managers, operations leaders, and compliance officers at any company that uses and retires electronic equipment.
+California operates the nation's most comprehensive electronic waste regulatory program, combining the Electronic Waste Recycling Act, the Hazardous Waste Control Law, and California's implementation of federal RCRA provisions. Understanding which rules apply — and where the enforcement teeth are — is essential for IT managers, operations leaders, and compliance officers at any company that uses and retires electronic equipment.
 
 ## The Electronic Waste Recycling Act (SB 20/SB 50)
 
 Enacted in 2003 and expanded in 2004, administered by CalRecycle and DTSC.
 
-**What counts as a Covered Electronic Device (CED):** Any device with a screen larger than 4 inches diagonal â€” monitors, TVs, laptops, tablets.
+**What counts as a Covered Electronic Device (CED):** Any device with a screen larger than 4 inches diagonal — monitors, TVs, laptops, tablets.
 
-**The recycling fee:** When purchasing a new CED in California, buyers pay a $4â€“$8 recycling fee. This funds authorized collection and recycling. Businesses are not charged again at disposal.
+**The recycling fee:** When purchasing a new CED in California, buyers pay a $4–$8 recycling fee. This funds authorized collection and recycling. Businesses are not charged again at disposal.
 
 **What the act prohibits:**
 - Placing CEDs in containers destined for landfill or incineration
 - Disposing of CEDs through entities not authorized by CalRecycle
 - Exporting CEDs to countries not meeting California environmental standards
 
-## The Hazardous Waste Control Law (Health & Safety Code Â§25100 et seq.)
+## The Hazardous Waste Control Law (Health & Safety Code §25100 et seq.)
 
 This is where businesses face the most serious exposure.
 
 **Electronics not qualifying as CEDs are still regulated as hazardous waste when discarded.** Circuit boards, batteries, cathode ray tubes, and mercury-containing components trigger HWCL requirements regardless of screen size.
 
 **Penalties under HWCL:**
-- Civil penalties: up to **$25,000 per day per violation** (Health & Safety Code Â§25189)
+- Civil penalties: up to **$25,000 per day per violation** (Health & Safety Code §25189)
 - Criminal penalties for knowing violations: up to $25,000 per day and/or imprisonment
 - Corporate officers can be held **personally liable**
 - The state can pursue remediation costs if materials are traced to the violating party
@@ -350,15 +350,15 @@ DTSC has active enforcement authority including:
 - Civil referrals to the California Attorney General or district attorneys
 - Criminal referrals for knowing or willful violations
 
-DTSC maintains a public database of enforcement actions â€” a violation record has reputational implications beyond the penalty.
+DTSC maintains a public database of enforcement actions — a violation record has reputational implications beyond the penalty.
 
 ## The Data Protection Overlay
 
 California's e-waste law and data protection law intersect at hardware disposal in ways that multiply business risk.
 
-**California Civil Code Â§1798.81** requires businesses to "take all reasonable steps to dispose of" customer records when no longer needed. For hardware, this means documented, certified sanitization.
+**California Civil Code §1798.81** requires businesses to "take all reasonable steps to dispose of" customer records when no longer needed. For hardware, this means documented, certified sanitization.
 
-**California Civil Code Â§1798.82** (data breach notification law): A hard drive that surfaces elsewhere with intact customer data triggers breach notification requirements â€” along with potential class action exposure.
+**California Civil Code §1798.82** (data breach notification law): A hard drive that surfaces elsewhere with intact customer data triggers breach notification requirements — along with potential class action exposure.
 
 **CCPA/CPRA:** Hardware disposal procedures are a documented compliance audit focus.
 
@@ -366,7 +366,7 @@ California's e-waste law and data protection law intersect at hardware disposal 
 
 **1. Never place electronics in trash or dumpster.** Applies regardless of quantity, type, or device condition.
 
-**2. Use only authorized collectors and recyclers.** Using an unlicensed "recycler" does not discharge your liability â€” you remain responsible for proper downstream handling.
+**2. Use only authorized collectors and recyclers.** Using an unlicensed "recycler" does not discharge your liability — you remain responsible for proper downstream handling.
 
 **3. Document every disposal event.** Maintain records including date, quantity, type of equipment, and name of authorized recycler. Recommended minimum retention: three years.
 
@@ -378,13 +378,13 @@ California's e-waste law and data protection law intersect at hardware disposal 
 
 Every pickup by OC Electronic Recycling includes:
 
-- **Pickup manifest** (same day) â€” documents date, quantity, and device types
-- **Recycling certificate** (10â€“15 business days) â€” confirms DTSC-authorized downstream processing
-- **Certificate of data destruction** (same day) â€” serial-number-level, per device processed
+- **Pickup manifest** (same day) — documents date, quantity, and device types
+- **Recycling certificate** (10–15 business days) — confirms DTSC-authorized downstream processing
+- **Certificate of data destruction** (same day) — serial-number-level, per device processed
 
 These three documents constitute a complete compliance record for a hardware disposal event.
 
-[Talk to Our Compliance Team â†’](/contact)
+[Talk to Our Compliance Team →](/contact)
     `,
   },
   {
@@ -397,7 +397,7 @@ These three documents constitute a complete compliance record for a hardware dis
     category: "How-To",
     readTime: "10 min read",
     publishDate: "2025-02-17",
-    excerpt: "Old computers hold sensitive data even after you think they're empty. Before recycling, here's exactly what to do â€” technically and legally â€” to protect yourself in California.",
+    excerpt: "Old computers hold sensitive data even after you think they're empty. Before recycling, here's exactly what to do — technically and legally — to protect yourself in California.",
     unsplashId: "photo-1531492746076-161ca9bcad58",
     unsplashAlt: "Old computer hard drive being removed for secure data destruction",
     unsplashCredit: "Patrick Lindenberg",
@@ -408,15 +408,15 @@ The most common mistake when disposing of a computer: treating file deletion, fo
 
 When you delete a file, the OS removes the directory entry but does not overwrite the actual data sectors. The data remains physically intact until those sectors are reused. With freely available tools like Recuva or GetDataBack, significant data recovery from "deleted" drives is routine.
 
-**Formatting** performs one pass of zero-writes in most configurations â€” marginally better, but not meeting any professional sanitization standard.
+**Formatting** performs one pass of zero-writes in most configurations — marginally better, but not meeting any professional sanitization standard.
 
-**Factory reset** on a laptop typically reinstalls the OS partition without thoroughly sanitizing all addressable sectors. Apple's "Erase All Content and Settings" on modern Macs with T2/M-series chips is an exception â€” it performs cryptographic erase, which is NIST 800-88 compliant.
+**Factory reset** on a laptop typically reinstalls the OS partition without thoroughly sanitizing all addressable sectors. Apple's "Erase All Content and Settings" on modern Macs with T2/M-series chips is an exception — it performs cryptographic erase, which is NIST 800-88 compliant.
 
 ## Step 1: Inventory the Device's Data
 
 **Personal devices:** Documents, photos, videos, browser saved passwords, Wi-Fi credentials, tax documents, email archives.
 
-**Business devices:** Corporate email cached locally, VPN credentials and config files, business application data, shared drive mappings and authentication tokens, customer or client data â€” all of these may have compliance implications even on devices that appear to hold only personal use history.
+**Business devices:** Corporate email cached locally, VPN credentials and config files, business application data, shared drive mappings and authentication tokens, customer or client data — all of these may have compliance implications even on devices that appear to hold only personal use history.
 
 ## Step 2: Back Up Everything You Need
 
@@ -428,26 +428,26 @@ When you delete a file, the OS removes the directory entry but does not overwrit
 
 ## Step 3: Sign Out of Platform Accounts
 
-**macOS:** System Settings â†’ Apple ID â†’ Sign Out. Deactivates iMessage, iCloud sync, removes device from trusted list.
+**macOS:** System Settings → Apple ID → Sign Out. Deactivates iMessage, iCloud sync, removes device from trusted list.
 
-**Windows:** Settings â†’ Accounts â†’ Your Info â†’ Sign Out. Also deactivate software with per-device licensing.
+**Windows:** Settings → Accounts → Your Info → Sign Out. Also deactivate software with per-device licensing.
 
-**Chromebook:** Settings â†’ Advanced â†’ Reset Settings â†’ Powerwash.
+**Chromebook:** Settings → Advanced → Reset Settings → Powerwash.
 
-**iPhone/iPad:** Settings â†’ [Your Name] â†’ Sign Out â†’ Remove from Account.
+**iPhone/iPad:** Settings → [Your Name] → Sign Out → Remove from Account.
 
 **Android:** Remove all linked accounts before factory reset.
 
-## Step 4: Wipe the Drive â€” Do It Correctly
+## Step 4: Wipe the Drive — Do It Correctly
 
 ### Windows PCs
 
 **Consumer/low-sensitivity data:**
-Settings â†’ System â†’ Recovery â†’ Reset this PC â†’ Remove everything â†’ Change settings â†’ enable "Clean the drive." One-pass zero-write â€” adequate for non-sensitive personal data.
+Settings → System → Recovery → Reset this PC → Remove everything → Change settings → enable "Clean the drive." One-pass zero-write — adequate for non-sensitive personal data.
 
 **Business/sensitive data:**
 Do not use Windows built-in reset. Use:
-- **DBAN** (free, boots from USB, DoD 5220.22-M multi-pass â€” for magnetic HDDs only, NOT for SSDs)
+- **DBAN** (free, boots from USB, DoD 5220.22-M multi-pass — for magnetic HDDs only, NOT for SSDs)
 - **Blancco Drive Eraser** (commercial, NIST 800-88 certified, generates certificate)
 - **Secure Erase / hdparm** for SATA drives via ATA Secure Erase command
 
@@ -456,25 +456,25 @@ Do not use Windows built-in reset. Use:
 ### Macs
 
 **Macs with T2 chip or Apple Silicon (M1/M2/M3/M4):**
-System Settings â†’ General â†’ Transfer or Reset â†’ Erase All Content and Settings. Performs cryptographic key erasure â€” NIST 800-88 Purge-equivalent. Fully adequate for most business use cases.
+System Settings → General → Transfer or Reset → Erase All Content and Settings. Performs cryptographic key erasure — NIST 800-88 Purge-equivalent. Fully adequate for most business use cases.
 
 **Older Intel Macs (pre-T2):**
-Boot to macOS Recovery (Cmd+R), open Disk Utility, select internal drive, Erase, Security Options â†’ 7-Pass Erase. Slow on large drives but thorough.
+Boot to macOS Recovery (Cmd+R), open Disk Utility, select internal drive, Erase, Security Options → 7-Pass Erase. Slow on large drives but thorough.
 
 ### Chromebooks
 
-Settings â†’ Advanced â†’ Reset Settings â†’ Powerwash. Combined with Google Account sign-out, adequate for low-sensitivity Chromebook use.
+Settings → Advanced → Reset Settings → Powerwash. Combined with Google Account sign-out, adequate for low-sensitivity Chromebook use.
 
 ## Step 5: Handle the Physical Drive (Optional but Recommended for High Security)
 
-If you cannot verify the software wipe completed correctly â€” or want absolute assurance:
+If you cannot verify the software wipe completed correctly — or want absolute assurance:
 
 **Remove the drive:** Most laptops: small Phillips screwdriver, bottom panel, locate 2.5" SATA or M.2 NVMe drive. Desktop PCs: side panel, drive bay access.
 
 **Options:**
-1. **Keep it** â€” repurpose as external storage with USB enclosure
-2. **Destroy it yourself** â€” drilling multiple holes through HDD platters renders data unrecoverable (SSDs are less reliably destroyed this way)
-3. **Send to certified shredder** â€” OC Electronic Recycling accepts drive-only destruction with serial-number certificate
+1. **Keep it** — repurpose as external storage with USB enclosure
+2. **Destroy it yourself** — drilling multiple holes through HDD platters renders data unrecoverable (SSDs are less reliably destroyed this way)
+3. **Send to certified shredder** — OC Electronic Recycling accepts drive-only destruction with serial-number certificate
 
 ## Step 6: Choose a Certified Recycler
 
@@ -488,7 +488,7 @@ Choose a recycler that:
 
 OC Electronic Recycling provides all of the above for Orange County businesses and residences. Free for qualifying business volumes.
 
-[Schedule Pickup with Data Destruction â†’](/contact)
+[Schedule Pickup with Data Destruction →](/contact)
     `,
   },
   {
@@ -501,7 +501,7 @@ OC Electronic Recycling provides all of the above for Orange County businesses a
     category: "Education",
     readTime: "9 min read",
     publishDate: "2025-03-01",
-    excerpt: "Most people hand off electronics and never think about it again. But the journey from your desk to responsible material recovery is more complex â€” and more important â€” than you'd expect.",
+    excerpt: "Most people hand off electronics and never think about it again. But the journey from your desk to responsible material recovery is more complex — and more important — than you'd expect.",
     unsplashId: "photo-1581091226825-a6a2a5aee158",
     unsplashAlt: "Recycling facility with electronic components being processed",
     unsplashCredit: "ThisisEngineering RAEng",
@@ -511,15 +511,15 @@ OC Electronic Recycling provides all of the above for Orange County businesses a
 Before tracing the journey of a recycled device, consider what's actually inside the equipment sitting in your office.
 
 A modern laptop contains approximately:
-- **Gold:** 0.015â€“0.03 grams (in chip packaging, PCB edge connectors)
-- **Silver:** 0.15â€“0.25 grams (in solder, contact points)
-- **Palladium:** 0.005â€“0.01 grams (in multilayer ceramic capacitors)
-- **Copper:** 90â€“150 grams (wiring, PCB traces, motor coils)
-- **Aluminum:** 100â€“300 grams (chassis, heatsinks)
-- **Lithium:** 5â€“20 grams (battery)
-- **Lead:** 1â€“4 grams (historical solder)
+- **Gold:** 0.015–0.03 grams (in chip packaging, PCB edge connectors)
+- **Silver:** 0.15–0.25 grams (in solder, contact points)
+- **Palladium:** 0.005–0.01 grams (in multilayer ceramic capacitors)
+- **Copper:** 90–150 grams (wiring, PCB traces, motor coils)
+- **Aluminum:** 100–300 grams (chassis, heatsinks)
+- **Lithium:** 5–20 grams (battery)
+- **Lead:** 1–4 grams (historical solder)
 
-A single laptop isn't much. At scale â€” one ton of circuit boards â€” you have roughly 250 grams of gold, more than what's recoverable from 17 tons of gold ore at current mine grades. Responsible electronics recycling is economically meaningful at volume.
+A single laptop isn't much. At scale — one ton of circuit boards — you have roughly 250 grams of gold, more than what's recoverable from 17 tons of gold ore at current mine grades. Responsible electronics recycling is economically meaningful at volume.
 
 At the same time, the lead, cadmium, and brominated flame retardants are genuinely hazardous if they reach groundwater. The environmental case for proper recycling is not abstract.
 
@@ -532,31 +532,31 @@ When OC Electronic Recycling arrives at your location, each device is logged bef
 - Physical condition
 - Whether flagged for data destruction
 
-This creates the **pickup manifest** you receive at the time of pickup â€” your documentation that disposal occurred and what was included.
+This creates the **pickup manifest** you receive at the time of pickup — your documentation that disposal occurred and what was included.
 
-## Stage 2: Data Destruction â€” Before Anything Else
+## Stage 2: Data Destruction — Before Anything Else
 
 No device with storage media enters the disassembly stream until data destruction is complete.
 
 **Functioning drives flagged for software wipe:**
 - Connected to certified wiping workstation
-- NIST 800-88 Purge-level overwrite applied â€” DoD 5220.22-M (zeros, ones, random) plus verification pass
+- NIST 800-88 Purge-level overwrite applied — DoD 5220.22-M (zeros, ones, random) plus verification pass
 - Logged with drive serial number, model, wipe standard, result, and operator ID
 - **Certificate of data destruction** generated with this information
 
 **Drives flagged for physical destruction:**
 - Loaded into industrial shredder
-- Output fragments typically 6â€“10mm for HDDs, smaller for SSDs
+- Output fragments typically 6–10mm for HDDs, smaller for SSDs
 - Destruction logged, certificate issued
 - Shredded material sent to precious metal recovery
 
-## Stage 3: Triage â€” Refurbish, Reuse, or Recycle?
+## Stage 3: Triage — Refurbish, Reuse, or Recycle?
 
 Devices are assessed for remaining economic life:
 
 **Refurbishment pathway:** Devices in good condition may be cleaned, tested, and refurbished for donation to schools, nonprofits, or resale. This extends the useful life of equipment and reduces volume requiring material processing.
 
-**Component harvest:** Non-functional devices may still have valuable components â€” working RAM modules, functional power supplies. These are extracted before the chassis goes to shredding.
+**Component harvest:** Non-functional devices may still have valuable components — working RAM modules, functional power supplies. These are extracted before the chassis goes to shredding.
 
 **Direct to material recovery:** Devices beyond economic useful life go straight to disassembly.
 
@@ -566,21 +566,21 @@ Manual disassembly is labor-intensive but necessary. Automated shredding of comp
 
 Trained technicians separate:
 
-**Batteries:** Removed first â€” lithium batteries that are punctured or heated can undergo thermal runaway. Staged separately for certified battery processors.
+**Batteries:** Removed first — lithium batteries that are punctured or heated can undergo thermal runaway. Staged separately for certified battery processors.
 
 **Circuit boards (PCBs):** Separated from housings and staged for precious metal smelting.
 
-**Copper-bearing components:** Wire harnesses, motors, coil windings â€” stripped and bundled.
+**Copper-bearing components:** Wire harnesses, motors, coil windings — stripped and bundled.
 
-**Aluminum:** Chassis components, heatsinks, structural frames â€” shredded separately.
+**Aluminum:** Chassis components, heatsinks, structural frames — shredded separately.
 
-**Steel:** Rack mounts, HDD chassis â€” sent to steel scrap recycling.
+**Steel:** Rack mounts, HDD chassis — sent to steel scrap recycling.
 
 **Plastics:** Sorted by resin type. Brominated plastics (older equipment) are separated and sent to appropriate treatment.
 
 **LCD panels:** Older units with fluorescent backlights contain mercury. Processed by licensed mercury-containing materials facilities.
 
-**CRT glass:** Contains 4â€“8 pounds of lead per large unit. Must be processed by lead glass smelters or specialized CRT glass processors â€” the most regulated stream in e-waste recycling.
+**CRT glass:** Contains 4–8 pounds of lead per large unit. Must be processed by lead glass smelters or specialized CRT glass processors — the most regulated stream in e-waste recycling.
 
 ## Stage 5: Downstream Material Recovery
 
@@ -603,11 +603,11 @@ Non-brominated plastics shredded and sold as industrial regrind. Brominated flam
 
 Zero landfill is a specific commitment: no material collected is sent to a municipal solid waste landfill or incinerated without energy recovery.
 
-This is a differentiator. Some "recyclers" accept electronics but lack downstream contracts for all material streams â€” particularly for difficult, low-value streams like CRT glass, brominated plastics, and lithium batteries. Under economic pressure, low-quality operators may divert these to landfill or informal export.
+This is a differentiator. Some "recyclers" accept electronics but lack downstream contracts for all material streams — particularly for difficult, low-value streams like CRT glass, brominated plastics, and lithium batteries. Under economic pressure, low-quality operators may divert these to landfill or informal export.
 
-Responsible zero-landfill recycling requires contractual relationships with certified downstream processors for every material stream â€” and willingness to absorb the cost of streams with negative value.
+Responsible zero-landfill recycling requires contractual relationships with certified downstream processors for every material stream — and willingness to absorb the cost of streams with negative value.
 
-[Learn More About Our Process â†’](/how-it-works)
+[Learn More About Our Process →](/how-it-works)
     `,
   },
   {
@@ -620,7 +620,7 @@ Responsible zero-landfill recycling requires contractual relationships with cert
     category: "ITAD",
     readTime: "12 min read",
     publishDate: "2025-03-10",
-    excerpt: "IT asset disposition is more than recycling â€” it's a risk management discipline. Here's how Orange County companies should approach equipment retirement from a compliance and security perspective.",
+    excerpt: "IT asset disposition is more than recycling — it's a risk management discipline. Here's how Orange County companies should approach equipment retirement from a compliance and security perspective.",
     unsplashId: "photo-1558494949-ef010cbdcc31",
     unsplashAlt: "Server room with rack-mounted equipment ready for decommissioning",
     unsplashCredit: "Taylor Vick",
@@ -655,21 +655,21 @@ Before any equipment is moved, a complete asset inventory is conducted:
 **What is inventoried:** Every server (make, model, serial number, asset tag), every storage device (HDD, SSD, NVMe including embedded storage and RAID arrays), every workstation and laptop, every networking device, every mobile device, every peripheral with potential storage (copiers/MFPs).
 
 **Data classification:** Each device is classified by the sensitivity of data it may have held:
-- Tier 1 (ePHI, financial, classified) â†’ Destroy-level sanitization
-- Tier 2 (operational data, employee PII, client data) â†’ Purge-level sanitization
-- Tier 3 (non-sensitive, lab test devices) â†’ Clear-level acceptable
+- Tier 1 (ePHI, financial, classified) → Destroy-level sanitization
+- Tier 2 (operational data, employee PII, client data) → Purge-level sanitization
+- Tier 3 (non-sensitive, lab test devices) → Clear-level acceptable
 
 ### Phase 2: Data Destruction
 
 **Software sanitization (Purge-level):**
 - NIST 800-88 Rev.1 compliant wipe
 - HDDs: DoD 5220.22-M three-pass overwrite plus verification
-- SSDs/NVMe: ATA Secure Erase or Cryptographic Erase per manufacturer specification â€” DBAN does not work on flash storage
+- SSDs/NVMe: ATA Secure Erase or Cryptographic Erase per manufacturer specification — DBAN does not work on flash storage
 - Output: certificate of data destruction per drive with serial number, standard, operator, and date
 
 **Physical destruction (Destroy-level):**
-- HDDs shredded to â‰¤6mm fragment size
-- SSDs shredded to â‰¤2mm fragment size
+- HDDs shredded to ≤6mm fragment size
+- SSDs shredded to ≤2mm fragment size
 - Output: certificate of destruction per device
 
 **Verification:** Every wiped drive undergoes post-wipe verification scan. Drives failing verification are escalated to physical destruction.
@@ -702,9 +702,9 @@ Equipment not qualifying for remarketing goes to certified downstream recycling:
 
 ## ITAD Triggers: When Your Organization Needs a Formal Program
 
-**Hardware refresh cycles.** Typical refresh is 3â€“5 years for desktops/servers, 2â€“4 years for laptops. A 200-person company replacing laptops on a 4-year cycle disposes of 50 devices per year.
+**Hardware refresh cycles.** Typical refresh is 3–5 years for desktops/servers, 2–4 years for laptops. A 200-person company replacing laptops on a 4-year cycle disposes of 50 devices per year.
 
-**Office relocations.** Moving surfaces legacy equipment that hasn't been formally disposed of â€” a compliance gap waiting to be discovered in an audit.
+**Office relocations.** Moving surfaces legacy equipment that hasn't been formally disposed of — a compliance gap waiting to be discovered in an audit.
 
 **Mergers and acquisitions.** Post-merger integration involves retiring systems from the acquired entity. The acquiring company inherits compliance obligations around that hardware.
 
@@ -714,22 +714,22 @@ Equipment not qualifying for remarketing goes to certified downstream recycling:
 
 ## OC Electronic Recycling ITAD Services
 
-We provide complete ITAD services to Orange County businesses of all sizes â€” from single-office equipment refreshes to multi-site data center decommissions. Free pickup for qualifying volumes. NIST 800-88 data destruction with per-device certificates. Full documentation package included.
+We provide complete ITAD services to Orange County businesses of all sizes — from single-office equipment refreshes to multi-site data center decommissions. Free pickup for qualifying volumes. NIST 800-88 data destruction with per-device certificates. Full documentation package included.
 
-[Request an ITAD Assessment â†’](/contact)
+[Request an ITAD Assessment →](/contact)
     `,
   },
   {
     slug: "certified-data-destruction-california",
     title: "Certified Data Destruction in California: What the Certificate Actually Proves",
     metaTitle: "Certified Data Destruction California",
-    metaDescription: "What a certificate of data destruction actually proves â€” and when California law requires one. The complete guide for IT managers and compliance officers.",
+    metaDescription: "What a certificate of data destruction actually proves — and when California law requires one. The complete guide for IT managers and compliance officers.",
     keyword: "certified data destruction California",
     keywordColor: "red",
     category: "Data Security",
     readTime: "10 min read",
     publishDate: "2025-03-18",
-    excerpt: "A certificate of data destruction isn't just a piece of paper â€” it's your legal evidence of due diligence. Here's what it must contain and why California businesses need one.",
+    excerpt: "A certificate of data destruction isn't just a piece of paper — it's your legal evidence of due diligence. Here's what it must contain and why California businesses need one.",
     unsplashId: "photo-1614064641938-3bbee52942c7",
     unsplashAlt: "Hard drive being physically destroyed for secure data destruction",
     unsplashCredit: "Michael Dziedzic",
@@ -750,13 +750,13 @@ For California businesses, it serves four distinct purposes:
 
 ## The Legal Foundation in California
 
-**California Civil Code Â§1798.81** requires businesses to "take all reasonable steps to dispose of" personal information records when no longer needed. For hardware, "all reasonable steps" means certified sanitization to NIST 800-88 standard.
+**California Civil Code §1798.81** requires businesses to "take all reasonable steps to dispose of" personal information records when no longer needed. For hardware, "all reasonable steps" means certified sanitization to NIST 800-88 standard.
 
-**California Civil Code Â§1798.82** (breach notification): A drive surfacing elsewhere with intact customer data triggers notification requirements for all affected California residents.
+**California Civil Code §1798.82** (breach notification): A drive surfacing elsewhere with intact customer data triggers notification requirements for all affected California residents.
 
 **CCPA/CPRA:** Hardware disposal procedures are an audit focus for California Privacy Protection Agency investigations.
 
-**HIPAA** (for California healthcare businesses): 45 CFR Â§164.310(d)(2)(i) requires documented policies for final disposal of ePHI-bearing hardware.
+**HIPAA** (for California healthcare businesses): 45 CFR §164.310(d)(2)(i) requires documented policies for final disposal of ePHI-bearing hardware.
 
 ## NIST 800-88 Rev.1: The Standard in Detail
 
@@ -765,20 +765,20 @@ Logical overwrite using software. Appropriate for non-sensitive devices being in
 
 ### Purge
 More thorough sanitization:
-- **Magnetic HDDs:** DoD 5220.22-M three-pass overwrite (zeros, ones, random) plus verification â€” or ATA Secure Erase command
+- **Magnetic HDDs:** DoD 5220.22-M three-pass overwrite (zeros, ones, random) plus verification — or ATA Secure Erase command
 - **SSDs and NVMe:** ATA Enhanced Secure Erase or Cryptographic Erase via controller command. Standard overwrite tools like DBAN **do not work correctly on SSDs** due to wear leveling
 - **Self-Encrypting Drives:** Cryptographic Erase via TCG Opal REVERTSP command
 
 Appropriate for external transfer of most business data. Accepted by CCPA, SOC 2, and most non-ePHI HIPAA contexts.
 
 ### Destroy
-Physical destruction â€” shredding, pulverizing, or incineration. Required for failed drives, ePHI-containing media under HIPAA where reuse is not required, and high-security commercial contexts.
+Physical destruction — shredding, pulverizing, or incineration. Required for failed drives, ePHI-containing media under HIPAA where reuse is not required, and high-security commercial contexts.
 
 Shredding size standards:
-- HDDs: NSA/CSS EPL requires â‰¤2mm x 2mm
-- SSDs: â‰¤1mm
-- Optical disc: â‰¤5mm diameter
-- Magnetic tape: â‰¤3mm width
+- HDDs: NSA/CSS EPL requires ≤2mm x 2mm
+- SSDs: ≤1mm
+- Optical disc: ≤5mm diameter
+- Magnetic tape: ≤3mm width
 
 ## What a Valid Certificate Must Include
 
@@ -789,7 +789,7 @@ Shredding size standards:
 **Per-device information for each storage device:**
 - Make and manufacturer
 - Model number
-- **Serial number** (this is critical â€” certificates without serial numbers are not audit-usable)
+- **Serial number** (this is critical — certificates without serial numbers are not audit-usable)
 - Storage capacity
 - Media type (HDD, SSD, NVMe, LTO tape, etc.)
 
@@ -805,12 +805,12 @@ Shredding size standards:
 
 **Unique certificate identifier:** A traceable number for provider record verification.
 
-A certificate missing serial numbers cannot be used for compliance purposes â€” it proves equipment went somewhere but cannot be matched to specific devices in an investigation.
+A certificate missing serial numbers cannot be used for compliance purposes — it proves equipment went somewhere but cannot be matched to specific devices in an investigation.
 
 ## When California Law Implicitly Requires It
 
 - **CCPA/CPRA:** "Reasonable security" for hardware disposal
-- **California Civil Code Â§1798.81:** "All reasonable steps" to destroy personal information
+- **California Civil Code §1798.81:** "All reasonable steps" to destroy personal information
 - **HIPAA (healthcare):** Documented destruction of PHI on hardware
 - **SOC 2:** Auditable evidence of hardware disposal controls
 - **PCI-DSS v4.0 Requirement 9.4.7:** Media "rendered unrecoverable" with records
@@ -840,9 +840,9 @@ Every storage device processed receives a certificate meeting the above requirem
 ## Why Server Decommissioning Is Different From Regular E-Waste Disposal
 
 A single 2U rack server running VMware or Hyper-V may contain:
-- 6â€“12 hot-swap 3.5" SATA hard drives in main storage bays
-- 2â€“4 M.2 NVMe drives as boot devices or high-speed cache
-- A RAID controller with 512MBâ€“2GB of flash-backed cache memory containing recently written data
+- 6–12 hot-swap 3.5" SATA hard drives in main storage bays
+- 2–4 M.2 NVMe drives as boot devices or high-speed cache
+- A RAID controller with 512MB–2GB of flash-backed cache memory containing recently written data
 - An embedded management module (iDRAC, iLO, CIMC) with its own flash storage containing configuration, credentials, and event logs
 - USB flash drives used for bootable OS images
 - An SD card slot used for hypervisor boot or configuration storage
@@ -860,14 +860,14 @@ A single 2U rack server running VMware or Hyper-V may contain:
 - Operating system and primary workload
 
 **Storage-level inventory (per server):**
-- Every drive bay â€” make, model, serial number, capacity, interface (SATA, SAS, NVMe)
+- Every drive bay — make, model, serial number, capacity, interface (SATA, SAS, NVMe)
 - RAID configuration
 - Location of M.2 or U.2 slots
 - RAID controller model (to identify cache memory specs)
 - Management module model (iDRAC, iLO, CIMC, IMM2)
 - Any external storage connections (FC HBA, iSCSI)
 
-This inventory becomes the reference document for data destruction verification â€” every serial number on the list must be accounted for with a destruction certificate.
+This inventory becomes the reference document for data destruction verification — every serial number on the list must be accounted for with a destruction certificate.
 
 ### Data Migration Verification
 
@@ -895,12 +895,12 @@ Verify replacement systems are fully operational and carrying load before decomm
 ### Step 2: Drive Extraction and Verification
 
 For each server:
-- Remove all hot-swap drive trays â€” record serial numbers against inventory
+- Remove all hot-swap drive trays — record serial numbers against inventory
 - Remove M.2 and U.2 drives from motherboard slots
 - Remove USB boot devices if present
 - Remove SD cards if present
 - Note the RAID controller (contains flash cache)
-- Note the management module (iDRAC, iLO, CIMC) â€” may not be removable but must be addressed
+- Note the management module (iDRAC, iLO, CIMC) — may not be removable but must be addressed
 
 **Cross-reference every serial number against the pre-decommission inventory.** Discrepancies must be resolved before proceeding.
 
@@ -912,12 +912,12 @@ For each server:
 - Certificate generated per drive
 
 **Functioning drives for physical destruction (Destroy-level):**
-- Shredded to NSA/CSS EPL fragment standards (â‰¤2mm x 2mm for HDDs; â‰¤1mm for SSDs)
+- Shredded to NSA/CSS EPL fragment standards (≤2mm x 2mm for HDDs; ≤1mm for SSDs)
 - Certificate generated per drive
 
 **Failed drives:**
-- Cannot be software-wiped â€” must be physically destroyed
-- Certificate generated with note "drive failure â€” physical destruction applied"
+- Cannot be software-wiped — must be physically destroyed
+- Certificate generated with note "drive failure — physical destruction applied"
 
 **RAID controller flash:** Should be reset using manufacturer utilities or the motherboard physically destroyed for high-security deployments.
 
@@ -942,7 +942,7 @@ Post-destruction, server chassis, networking gear, UPS systems, and cabling are:
 
 **Missed storage components.** Use a formal per-server checklist covering all potential storage locations before sign-off.
 
-**Assuming RAID erasure = drive erasure.** Reformatting a RAID array does not wipe individual drives â€” each must be individually sanitized.
+**Assuming RAID erasure = drive erasure.** Reformatting a RAID array does not wipe individual drives — each must be individually sanitized.
 
 **Forgetting management modules.** iDRAC, iLO, and similar modules are overlooked frequently but contain sensitive configuration data.
 
@@ -952,9 +952,9 @@ Post-destruction, server chassis, networking gear, UPS systems, and cabling are:
 
 ## OC Electronic Recycling Server Decommissioning
 
-We handle full server room and data center teardowns throughout Orange County â€” from single-rack offices to multi-row data centers. Free site assessment available. NIST 800-88 data destruction with per-device certificates. Full documentation package for compliance and audit.
+We handle full server room and data center teardowns throughout Orange County — from single-rack offices to multi-row data centers. Free site assessment available. NIST 800-88 data destruction with per-device certificates. Full documentation package for compliance and audit.
 
-[Book a Server Decommission Consultation â†’](/contact)
+[Book a Server Decommission Consultation →](/contact)
     `,
   },
   {
@@ -967,7 +967,7 @@ We handle full server room and data center teardowns throughout Orange County â
     category: "Data Security",
     readTime: "9 min read",
     publishDate: "2025-04-15",
-    excerpt: "Wiping and shredding both destroy data â€” but they're not interchangeable. Here's the technical and compliance-driven guide to choosing the right method for your drives.",
+    excerpt: "Wiping and shredding both destroy data — but they're not interchangeable. Here's the technical and compliance-driven guide to choosing the right method for your drives.",
     unsplashId: "photo-1518770660439-4636190af475",
     unsplashAlt: "Circuit board and hard drive components close up",
     unsplashCredit: "Peng Wang",
@@ -981,7 +981,7 @@ The practical distinction between wiping and shredding comes down to two factors
 
 Both methods, when applied correctly, produce irrecoverable data. But "correctly" means very different things for each, and the failure modes differ significantly.
 
-A correctly executed NIST 800-88 Purge-level software wipe is accepted by every major compliance framework as equivalent to physical destruction for most use cases. An incorrectly executed wipe â€” wrong tool, wrong drive type, no verification â€” is not recoverable from that mistake.
+A correctly executed NIST 800-88 Purge-level software wipe is accepted by every major compliance framework as equivalent to physical destruction for most use cases. An incorrectly executed wipe — wrong tool, wrong drive type, no verification — is not recoverable from that mistake.
 
 Physical shredding, by contrast, is mechanically absolute. It cannot be done incorrectly, which is why it's preferred for high-stakes situations.
 
@@ -993,7 +993,7 @@ Physical shredding, by contrast, is mechanically absolute. It cannot be done inc
 
 **Full format (Windows):** One zero-write pass. Marginally better, but still recoverable with professional forensic tools in some cases.
 
-**Factory reset:** Reinstalls OS partition. Does not perform sector-level overwrite to sanitization standards. Apple's "Erase All Content and Settings" on T2/M-series Macs is the exception â€” it performs NIST 800-88 compliant cryptographic erase.
+**Factory reset:** Reinstalls OS partition. Does not perform sector-level overwrite to sanitization standards. Apple's "Erase All Content and Settings" on T2/M-series Macs is the exception — it performs NIST 800-88 compliant cryptographic erase.
 
 ## Software Wiping: When It Works and When It Doesn't
 
@@ -1008,18 +1008,18 @@ Physical shredding, by contrast, is mechanically absolute. It cannot be done inc
 
 This is the most important technical misunderstanding in data destruction practice:
 
-**DBAN and similar sector-overwrite tools work by addressing every logical block address (LBA) and writing data to each one.** For magnetic HDDs, this is effective â€” the platter stores data precisely where the controller writes it.
+**DBAN and similar sector-overwrite tools work by addressing every logical block address (LBA) and writing data to each one.** For magnetic HDDs, this is effective — the platter stores data precisely where the controller writes it.
 
 For **SSDs, NVMe, and flash storage**, this approach fails:
 
-**Wear leveling.** SSDs spread writes across cells to prevent individual cell wear-out. When DBAN writes to LBA 1000, the SSD controller may physically write to NAND cell cluster 5,430 â€” while old data at the original LBA 1000 mapping remains in cell cluster 1,217. DBAN has no visibility into this mapping.
+**Wear leveling.** SSDs spread writes across cells to prevent individual cell wear-out. When DBAN writes to LBA 1000, the SSD controller may physically write to NAND cell cluster 5,430 — while old data at the original LBA 1000 mapping remains in cell cluster 1,217. DBAN has no visibility into this mapping.
 
-**Over-provisioned cells.** SSDs reserve additional NAND capacity (typically 7â€“28% beyond rated capacity) for wear leveling. This over-provisioned space is not accessible to the OS or to DBAN â€” but it can hold data from prior writes.
+**Over-provisioned cells.** SSDs reserve additional NAND capacity (typically 7–28% beyond rated capacity) for wear leveling. This over-provisioned space is not accessible to the OS or to DBAN — but it can hold data from prior writes.
 
 **The correct approach for SSDs:**
 - **ATA Secure Erase command:** Sent to drive firmware, erases all accessible cells including over-provisioned space. Available via hdparm on Linux.
 - **ATA Enhanced Secure Erase:** Similar, more thorough processing of over-provisioned space.
-- **Cryptographic Erase:** For self-encrypting drives â€” destroys encryption key, rendering all stored data unreadable instantly. NIST 800-88 compliant.
+- **Cryptographic Erase:** For self-encrypting drives — destroys encryption key, rendering all stored data unreadable instantly. NIST 800-88 compliant.
 - **Manufacturer utilities:** Samsung Magician, WD Dashboard, Crucial Storage Executive provide SSD-specific secure erase functions.
 
 **NVMe drives:** Use the NVMe Format command with User Data Erase or Cryptographic Erase via nvme-cli on Linux.
@@ -1030,7 +1030,7 @@ Any Purge-level wipe without post-wipe verification is not NIST 800-88 compliant
 
 ## Physical Shredding: When It's Required
 
-**The drive has failed.** A drive with critical SMART failures â€” reallocated sectors, uncorrectable sector counts, pending sectors â€” cannot be reliably overwritten. These must be shredded.
+**The drive has failed.** A drive with critical SMART failures — reallocated sectors, uncorrectable sector counts, pending sectors — cannot be reliably overwritten. These must be shredded.
 
 **Data sensitivity is highest tier.** ePHI under HIPAA (most healthcare organizations default to Destroy for all ePHI-bearing media), privileged legal matter, financial records under audit.
 
@@ -1042,18 +1042,18 @@ Any Purge-level wipe without post-wipe verification is not NIST 800-88 compliant
 
 | Media Type | NSA/CSS EPL Standard | Common Commercial Practice |
 |---|---|---|
-| HDD (magnetic) | â‰¤2mm x 2mm | â‰¤6mm fragment |
-| SSD (flash) | â‰¤1mm | â‰¤2mm fragment |
-| Optical disc | â‰¤5mm diameter | â‰¤5mm |
-| Magnetic tape | â‰¤3mm width | â‰¤3mm |
+| HDD (magnetic) | ≤2mm x 2mm | ≤6mm fragment |
+| SSD (flash) | ≤1mm | ≤2mm fragment |
+| Optical disc | ≤5mm diameter | ≤5mm |
+| Magnetic tape | ≤3mm width | ≤3mm |
 
 ## The Hybrid Approach: Optimizing Cost and Security
 
 Most organizations with significant hardware volumes use a hybrid approach:
 
-**Wipe:** Functioning drives in good condition with moderate data sensitivity â†’ Purge-level software wipe, retain drive for potential remarketing value.
+**Wipe:** Functioning drives in good condition with moderate data sensitivity → Purge-level software wipe, retain drive for potential remarketing value.
 
-**Shred:** Failed drives, high-sensitivity drives (ePHI, financial), drives of uncertain provenance â†’ Physical shredding, material to precious metal recovery.
+**Shred:** Failed drives, high-sensitivity drives (ePHI, financial), drives of uncertain provenance → Physical shredding, material to precious metal recovery.
 
 This approach maximizes remarketing value from functional hardware while ensuring highest-risk drives are handled at Destroy level.
 
@@ -1072,7 +1072,7 @@ OC Electronic Recycling provides both services with serial-number-level certific
     category: "Business",
     readTime: "8 min read",
     publishDate: "2025-04-22",
-    excerpt: "Office moves and cleanouts create mountains of old electronics fast. Here's the smart, legally compliant way to handle disposal â€” including the data security angle most companies miss.",
+    excerpt: "Office moves and cleanouts create mountains of old electronics fast. Here's the smart, legally compliant way to handle disposal — including the data security angle most companies miss.",
     unsplashId: "photo-1497366216548-37526070297c",
     unsplashAlt: "Empty office space with old furniture and equipment during cleanout",
     unsplashCredit: "Alex Kotliarskyi",
@@ -1081,7 +1081,7 @@ OC Electronic Recycling provides both services with serial-number-level certific
 
 Every office has them: the storage room with three generations of equipment, the IT closet with servers that haven't been on in two years, the pile of monitors nobody has touched since the last renovation. Office moves, lease terminations, and facility consolidations force the same question: what do we do with all of this?
 
-The wrong answer â€” stacking it in the dumpster, handing it to an unlicensed hauler, leaving it for building management â€” creates real legal liability in California. The right answer is straightforward but requires steps that are easy to overlook under the time pressure of a move.
+The wrong answer — stacking it in the dumpster, handing it to an unlicensed hauler, leaving it for building management — creates real legal liability in California. The right answer is straightforward but requires steps that are easy to overlook under the time pressure of a move.
 
 ## Why Electronics Disposal Gets Complicated During a Move
 
@@ -1091,7 +1091,7 @@ The wrong answer â€” stacking it in the dumpster, handing it to an unlicens
 
 **Mixed responsibilities.** IT knows about servers and workstations, but who knows about the copier lease terms? The phones? The AV equipment in conference rooms?
 
-**Data security gaps.** Under time pressure, the data destruction step â€” legally required and producing compliance documentation â€” is the one most likely to be skipped.
+**Data security gaps.** Under time pressure, the data destruction step — legally required and producing compliance documentation — is the one most likely to be skipped.
 
 ## Step 1: Complete Inventory Before Scheduling Anything
 
@@ -1101,7 +1101,7 @@ Before calling a recycler, do a complete walkthrough:
 
 **Displays:** LCD monitors (count, size range), TVs or commercial displays, any CRT monitors remaining.
 
-**Printers and copiers:** Multifunction printers and copiers â€” note whether leased or owned. **Do not dispose of leased equipment** â€” contact the leasing company. For owned copiers, the hard drive must be addressed.
+**Printers and copiers:** Multifunction printers and copiers — note whether leased or owned. **Do not dispose of leased equipment** — contact the leasing company. For owned copiers, the hard drive must be addressed.
 
 **Phones and communication:** IP desk phones (contain configuration data), conference room AV systems, digital signage displays.
 
@@ -1113,27 +1113,27 @@ This inventory lets the recycler send the right team and truck, and gives you th
 
 Any device with authenticated access to file servers, email, CRM, ERP, or other business applications may hold recoverable sensitive data.
 
-**Definite yes â€” flag for data destruction:**
+**Definite yes — flag for data destruction:**
 - All workstations, laptops, and servers
-- Network switches, firewalls, routers (contain configuration with IP addresses, VLANs, credentials â€” factory reset required)
+- Network switches, firewalls, routers (contain configuration with IP addresses, VLANs, credentials — factory reset required)
 - NAS and SAN devices
 - Copiers and multifunction printers
 
 **The copier hard drive problem deserves specific emphasis.**
 
-Modern multifunction printers store every scanned, printed, and faxed document on an internal hard drive â€” often for weeks or months. In a law firm: client documents. In a healthcare practice: patient information. In any business: internal communications and financial documents.
+Modern multifunction printers store every scanned, printed, and faxed document on an internal hard drive — often for weeks or months. In a law firm: client documents. In a healthcare practice: patient information. In any business: internal communications and financial documents.
 
 Before disposing of or returning a copier:
 1. Run the built-in data overwrite function through the copier's admin panel, OR
 2. Physically remove the hard drive for certified destruction
 
-For leased copiers, check the lease agreement â€” call the leasing company.
+For leased copiers, check the lease agreement — call the leasing company.
 
 ## Step 3: Schedule Pickup With Adequate Lead Time
 
-**Standard office cleanout (20â€“50 devices):** 3â€“5 business days lead time.
+**Standard office cleanout (20–50 devices):** 3–5 business days lead time.
 
-**Larger moves (100+ devices, server rooms, multi-floor operations):** 1â€“2 weeks before move date.
+**Larger moves (100+ devices, server rooms, multi-floor operations):** 1–2 weeks before move date.
 
 When scheduling, provide:
 - Total device count by approximate category
@@ -1156,22 +1156,22 @@ If access logistics fall through on pickup day, it delays the entire move.
 After pickup:
 - **Pickup manifest** (same day): itemized list of everything collected
 - **Certificate of data destruction** (same day for destruction events): per-device records for all storage media
-- **Recycling certificate** (10â€“15 business days): confirming downstream processing
+- **Recycling certificate** (10–15 business days): confirming downstream processing
 
 File these with your move documentation. Some landlords ask for proof of proper disposal. Your auditor may ask for it in the next compliance review. Two minutes to file, hours to reconstruct if you don't.
 
 ## Timing Recommendation
 
-Schedule electronics disposal 1â€“2 weeks before final move-out, not the day before. This allows time to handle complications (missed equipment, additional volumes, copier drive issues) without deadline pressure.
+Schedule electronics disposal 1–2 weeks before final move-out, not the day before. This allows time to handle complications (missed equipment, additional volumes, copier drive issues) without deadline pressure.
 
 Call **(949) 287-3056** as early as possible for time-sensitive cleanouts. We handle these regularly and can prioritize scheduling.
 
-[Schedule Your Office Cleanout Pickup â†’](/contact)
+[Schedule Your Office Cleanout Pickup →](/contact)
     `,
   },
   {
     slug: "tv-recycling-orange-county",
-    title: "How to Recycle a TV in Orange County â€” Including Old CRTs and Big-Screen TVs",
+    title: "How to Recycle a TV in Orange County — Including Old CRTs and Big-Screen TVs",
     metaTitle: "TV Recycling Orange County CA",
     metaDescription: "Complete guide to recycling any TV in Orange County: what's free, CRT disposal, flat screen recycling, and how to schedule pickup.",
     keyword: "free electronics pickup Orange County",
@@ -1179,18 +1179,18 @@ Call **(949) 287-3056** as early as possible for time-sensitive cleanouts. We ha
     category: "How-To",
     readTime: "7 min read",
     publishDate: "2025-04-08",
-    excerpt: "TVs are among the most mishandled electronics at disposal time. Here's the complete guide to recycling any television in Orange County â€” from flat screens to old tube TVs.",
+    excerpt: "TVs are among the most mishandled electronics at disposal time. Here's the complete guide to recycling any television in Orange County — from flat screens to old tube TVs.",
     unsplashId: "photo-1593359677879-a4bb92f829e1",
     unsplashAlt: "Old television sets ready for electronics recycling",
     unsplashCredit: "Mollie Sivaram",
     content: `
 ## Why You Can't Put a TV in the Trash in California
 
-Under California's Electronic Waste Recycling Act (SB 20/SB 50), televisions are classified as Covered Electronic Devices â€” regulated hazardous waste that cannot be placed in municipal solid waste streams.
+Under California's Electronic Waste Recycling Act (SB 20/SB 50), televisions are classified as Covered Electronic Devices — regulated hazardous waste that cannot be placed in municipal solid waste streams.
 
 The reason: chemistry. TVs contain:
 
-**CRT TVs:** The glass envelope of a CRT contains lead-silicate glass designed to absorb X-radiation. A 27" CRT typically contains 4â€“7 pounds of lead. This leaches into groundwater when CRTs are landfilled.
+**CRT TVs:** The glass envelope of a CRT contains lead-silicate glass designed to absorb X-radiation. A 27" CRT typically contains 4–7 pounds of lead. This leaches into groundwater when CRTs are landfilled.
 
 **LCD and LED flat panels:** Older LCD panels use fluorescent backlights (CCFL) containing mercury. The LCD panel itself may contain liquid crystal compounds.
 
@@ -1204,9 +1204,9 @@ All categories require certified disposal pathways.
 
 ### LCD and LED Flat Screen TVs (Most Common)
 
-Modern LED-backlit LCD TVs are the most straightforward to recycle. They are covered under California's Electronic Waste Recycling Act â€” a recycling fee was paid at purchase, so collection through authorized recyclers is cost-supported.
+Modern LED-backlit LCD TVs are the most straightforward to recycle. They are covered under California's Electronic Waste Recycling Act — a recycling fee was paid at purchase, so collection through authorized recyclers is cost-supported.
 
-OC Electronic Recycling accepts all flat panel TVs in any condition â€” working, non-working, cracked screens. For business quantities, pickup is free and can accommodate bulk scheduling.
+OC Electronic Recycling accepts all flat panel TVs in any condition — working, non-working, cracked screens. For business quantities, pickup is free and can accommodate bulk scheduling.
 
 ### OLED and QLED TVs
 
@@ -1218,18 +1218,18 @@ Heavier than equivalent LED panels due to glass panel construction. Accepted for
 
 ### CRT Televisions (Tube TVs)
 
-CRT TVs require the most specialized handling. The lead-silicate glass must be processed by facilities licensed for lead-bearing glass waste â€” either through lead-glass smelting or specialized CRT glass cullet processors.
+CRT TVs require the most specialized handling. The lead-silicate glass must be processed by facilities licensed for lead-bearing glass waste — either through lead-glass smelting or specialized CRT glass cullet processors.
 
-This processing has a net cost, which is why some recyclers charge a handling fee for CRTs. OC Electronic Recycling accepts CRT televisions â€” contact us to discuss handling arrangements based on quantity and size.
+This processing has a net cost, which is why some recyclers charge a handling fee for CRTs. OC Electronic Recycling accepts CRT televisions — contact us to discuss handling arrangements based on quantity and size.
 
 **When scheduling CRT pickup:**
 - Tell us how many CRTs and approximate sizes (19", 27", 32", larger)
-- A 27" CRT can weigh 80â€“120 lbs â€” do not attempt to move large CRTs alone
+- A 27" CRT can weigh 80–120 lbs — do not attempt to move large CRTs alone
 - We provide team members who handle these safely
 
 ### Rear Projection TVs
 
-Large rear-projection TVs (typically 50"+ box-style units from the late 1990sâ€“early 2000s) contain projection tubes, optical assemblies, and mirror systems. They can exceed 200 lbs and are awkward due to cabinet construction.
+Large rear-projection TVs (typically 50"+ box-style units from the late 1990s–early 2000s) contain projection tubes, optical assemblies, and mirror systems. They can exceed 200 lbs and are awkward due to cabinet construction.
 
 If you have rear projection TVs, call ahead so we can confirm truck and team configurations.
 
@@ -1237,10 +1237,10 @@ If you have rear projection TVs, call ahead so we can confirm truck and team con
 
 Smart TVs contain network-connected operating systems with stored accounts and potentially payment information. Before recycling:
 
-- **Samsung:** Settings â†’ Support â†’ Self Diagnosis â†’ Reset
-- **LG:** Settings â†’ All Settings â†’ General â†’ Reset to Initial Settings
-- **Sony:** Settings â†’ Device Preferences â†’ Reset
-- **Roku TVs:** Settings â†’ System â†’ Advanced System Settings â†’ Factory Reset
+- **Samsung:** Settings → Support → Self Diagnosis → Reset
+- **LG:** Settings → All Settings → General → Reset to Initial Settings
+- **Sony:** Settings → Device Preferences → Reset
+- **Roku TVs:** Settings → System → Advanced System Settings → Factory Reset
 
 This removes accounts and credentials before the device is processed.
 
@@ -1258,7 +1258,7 @@ Hotels, restaurants, gyms, healthcare facilities, retail chains, and corporate o
 
 Call (949) 287-3056 to schedule. We handle TV recycling throughout all 34 Orange County cities.
 
-[Schedule TV Recycling Pickup â†’](/contact)
+[Schedule TV Recycling Pickup →](/contact)
     `,
   },
   {
@@ -1300,17 +1300,17 @@ ITAD emerged as a formal discipline in the 2000s as IT departments realized that
 
 **The practical distinction:** A small business disposing of five laptops for environmental reasons can use e-waste recycling. A healthcare provider disposing of workstations that processed patient data, under HIPAA audit obligations, needs ITAD.
 
-Most Orange County businesses with any sensitive data â€” client records, employee PII, financial data, healthcare information â€” need ITAD.
+Most Orange County businesses with any sensitive data — client records, employee PII, financial data, healthcare information — need ITAD.
 
 ## The Business Risk That Created ITAD as an Industry
 
 **2008: Oklahoma Department of Human Services.** Used hard drives sold on eBay. Data on more than 1 million individuals recovered by purchaser. Drives had been "formatted" but not sanitized.
 
-**2010: CBS News investigation.** Investigators purchased 40 used photocopiers. Found: complete medical records, police security records, domestic violence records, small business personal records â€” all from copier hard drives that weren't wiped.
+**2010: CBS News investigation.** Investigators purchased 40 used photocopiers. Found: complete medical records, police security records, domestic violence records, small business personal records — all from copier hard drives that weren't wiped.
 
 **2015: Health Net.** Server drives disposed of through a moving company went missing. 1.9 million records potentially exposed. California settlement: $250,000.
 
-These incidents â€” and thousands of less public ones â€” created the demand for ITAD with documentation at every step.
+These incidents — and thousands of less public ones — created the demand for ITAD with documentation at every step.
 
 ## The ITAD Value Chain
 
@@ -1326,7 +1326,7 @@ Every storage device handled per NIST 800-88:
 Every device receives a certificate with serial number, method, standard, operator, and date.
 
 ### 3. Grading and Remarketing
-Functional equipment in good condition is assessed for remaining market value. At scale â€” a 200-device enterprise refresh â€” remarketing value can meaningfully offset ITAD program costs. All remarketed devices must have certified wiped storage before transfer.
+Functional equipment in good condition is assessed for remaining market value. At scale — a 200-device enterprise refresh — remarketing value can meaningfully offset ITAD program costs. All remarketed devices must have certified wiped storage before transfer.
 
 ### 4. Certified Recycling
 Equipment below remarketing threshold goes to certified downstream recycling through DTSC-authorized California facilities.
@@ -1360,7 +1360,7 @@ Final documentation package:
 
 **"How long do you retain records?"** Correct answer: Minimum 3 years; best practice 7 years.
 
-[Get an ITAD Assessment â†’](/contact)
+[Get an ITAD Assessment →](/contact)
     `,
   },
   {
@@ -1373,7 +1373,7 @@ Final documentation package:
     category: "Compliance",
     readTime: "7 min read",
     publishDate: "2025-04-01",
-    excerpt: "For Irvine's tech and biotech companies, e-waste compliance isn't optional â€” and the penalties are significant. Here's what you're required to do and how to make it effortless.",
+    excerpt: "For Irvine's tech and biotech companies, e-waste compliance isn't optional — and the penalties are significant. Here's what you're required to do and how to make it effortless.",
     unsplashId: "photo-1497366754035-f200968a6e72",
     unsplashAlt: "Modern Irvine tech office building exterior",
     unsplashCredit: "Andrea Davis",
@@ -1384,19 +1384,19 @@ Irvine is home to more technology companies per square mile than almost any othe
 
 This concentration creates a specific compliance dynamic: a disproportionate volume of retiring IT equipment, a high proportion of that equipment having held sensitive regulated data, and an audit environment more sophisticated than what typical small businesses face.
 
-For an Irvine tech company that holds California consumer data (CCPA), provides SaaS services (SOC 2), operates in healthcare or biotech (HIPAA), or processes payments (PCI-DSS) â€” improper hardware disposal isn't just an environmental issue. It's a multi-vector compliance gap with real financial exposure.
+For an Irvine tech company that holds California consumer data (CCPA), provides SaaS services (SOC 2), operates in healthcare or biotech (HIPAA), or processes payments (PCI-DSS) — improper hardware disposal isn't just an environmental issue. It's a multi-vector compliance gap with real financial exposure.
 
 ## The Three Risk Layers for Irvine Businesses
 
 ### Layer 1: California Environmental Law
 
-California Health & Safety Code Â§25189 establishes civil penalties of up to **$25,000 per day per violation** for improper disposal of hazardous waste â€” which includes most electronics components.
+California Health & Safety Code §25189 establishes civil penalties of up to **$25,000 per day per violation** for improper disposal of hazardous waste — which includes most electronics components.
 
 DTSC enforcement against businesses in technology corridors is not hypothetical. The agency actively investigates e-waste violations and can pursue corporate officers personally for knowing violations.
 
 ### Layer 2: Data Protection Statutes
 
-California Civil Code Â§1798.81 requires businesses handling California resident personal information to take "all reasonable steps" to destroy that data before hardware disposal.
+California Civil Code §1798.81 requires businesses handling California resident personal information to take "all reasonable steps" to destroy that data before hardware disposal.
 
 For Irvine tech companies, "all reasonable steps" is calibrated against what a similarly situated company would do. When every peer company in your sector uses certified data destruction with NIST 800-88 documentation, that's the standard you're measured against. "We deleted the files" is not adequate.
 
@@ -1417,7 +1417,7 @@ A tech company handling a SOC 2 audit annually that can't produce data destructi
 **Standard requirement (data security + environmental):**
 - Certified data destruction to NIST 800-88 Purge or Destroy level
 - Certificate of destruction per device with serial numbers
-- Records retained for 3â€“7 years
+- Records retained for 3–7 years
 
 **Enhanced requirement (HIPAA-covered entities):**
 - Destroy-level destruction for all ePHI-bearing media
@@ -1427,13 +1427,13 @@ A tech company handling a SOC 2 audit annually that can't produce data destructi
 ## The Simple Solution
 
 1. Call OC Electronic Recycling at (949) 287-3056 or submit the online form
-2. Schedule a pickup â€” same week for most Irvine locations
+2. Schedule a pickup — same week for most Irvine locations
 3. Receive certified data destruction and full documentation
 4. File documents. Done.
 
 We service the full Irvine Spectrum, Irvine Business Complex, UCI Research Park, and all Irvine business corridors. Free pickup for qualifying business volumes.
 
-[Get Compliant Today â†’](/contact)
+[Get Compliant Today →](/contact)
     `,
   },
   {
@@ -1512,7 +1512,7 @@ A PCI QSA conducting a Level 1 or Level 2 merchant assessment will look for:
 
 **Copier/printer drive oversight.** Retail environments routinely miss this. The receipt printer and back-office copier are both in the CDE. The copier's hard drive holds scanned documents and printed transaction records.
 
-**Outdated destruction policy.** Policy says "DoD 5220.22-M" but doesn't address SSDs or flash storage â€” for which that wipe standard is ineffective.
+**Outdated destruction policy.** Policy says "DoD 5220.22-M" but doesn't address SSDs or flash storage — for which that wipe standard is ineffective.
 
 **No annual review.** With PCI-DSS v4.0, the 12-month review requirement is now testable. Many organizations haven't updated their procedures.
 
@@ -1520,7 +1520,7 @@ A PCI QSA conducting a Level 1 or Level 2 merchant assessment will look for:
 
 1. **Maintain a CDE hardware register** with every device, its storage media, and current status
 
-2. **Use an authorized ITAD provider** with NIST 800-88 capability and serial-number-level documentation â€” not just a recycler
+2. **Use an authorized ITAD provider** with NIST 800-88 capability and serial-number-level documentation — not just a recycler
 
 3. **Obtain certificates of destruction** for every disposal event, with serial numbers
 
@@ -1530,7 +1530,7 @@ A PCI QSA conducting a Level 1 or Level 2 merchant assessment will look for:
 
 6. **Include copiers and printers** in your CDE scope and disposal process
 
-OC Electronic Recycling provides all required documentation for PCI-compliant hardware disposal â€” serial-number certificates, recycling confirmation, and records you can produce in your next QSA audit.
+OC Electronic Recycling provides all required documentation for PCI-compliant hardware disposal — serial-number certificates, recycling confirmation, and records you can produce in your next QSA audit.
 
 [Contact Us for PCI-Compliant Disposal →](/services/data-destruction)
     `,

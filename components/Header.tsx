@@ -31,7 +31,7 @@ export default function Header() {
     <>
       {/* Preheader */}
       <div className="preheader">
-        🌿 Orange County&apos;s #1 E-Waste Recycler &amp; ITAD Provider
+        🌿 Orange County E-Waste Recycling &amp; ITAD
         &nbsp;|&nbsp; Call Now:&nbsp;
         <a href="tel:9492873056">(949) 287-3056</a>
       </div>
