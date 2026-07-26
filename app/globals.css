@@ -270,7 +270,7 @@ h1.hero-h1 em { font-style: normal; color: var(--green); }
 /* â”€â”€ TRUST BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .trust-band { background: var(--light); padding: 0 0 90px; }
 .trust-band > .container { padding-top: 72px; }
-.trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
+.trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 60px; }
 .trust-card { background: #fff; border-radius: 14px; padding: 32px 28px; border: 1px solid #e2e8f0; transition: box-shadow .2s,transform .2s; }
 .trust-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.08); transform: translateY(-4px); }
 .trust-number { font-family: var(--font-head); font-size: 3rem; font-weight: 900; color: var(--blue); line-height: 1; letter-spacing: -.04em; }

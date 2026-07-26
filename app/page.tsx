@@ -125,7 +125,6 @@ export default function HomePage() {
               { num: '500',   label: 'Tons Recycled Annually' },
               { num: '2,500', label: 'Businesses Served' },
               { num: '100%',  label: 'Data Verified Destroyed' },
-              { num: '48hr',  label: 'Certificate Turnaround' },
             ].map(({ num, label }) => (
               <div key={label} className="trust-card">
                 <div className="trust-number">{num}</div>
@@ -222,7 +221,7 @@ export default function HomePage() {
                   Certificate Status
                 </div>
                 <div style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1rem', color: '#fff' }}>✓ Issuing upon completion</div>
-                <div style={{ fontSize: '.75rem', color: 'var(--muted)', marginTop: '4px' }}>Delivered to your email within 48hrs</div>
+                <div style={{ fontSize: '.75rem', color: 'var(--muted)', marginTop: '4px' }}>Delivered to your email</div>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Data Destruction with Certificate',
-  description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device within 48hrs.',
+  description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/data-destruction' },
   openGraph: {
     title: 'Data Destruction with Certificate',
@@ -79,7 +79,7 @@ export default function DataDestructionPage() {
             <div style={{marginTop:'24px',padding:'16px',background:'rgba(244,67,54,.08)',borderRadius:'10px',border:'1px solid rgba(244,67,54,.2)'}}>
               <div style={{fontSize:'.72rem',fontWeight:700,color:'var(--red)',letterSpacing:'.08em',textTransform:'uppercase',marginBottom:'6px'}}>Certificate Status</div>
               <div style={{fontFamily:'var(--font-head)',fontWeight:800,fontSize:'1rem',color:'#fff'}}>✓ Issuing upon completion</div>
-              <div style={{fontSize:'.75rem',color:'var(--muted)',marginTop:'4px'}}>Delivered to your email within 48hrs</div>
+              <div style={{fontSize:'.75rem',color:'var(--muted)',marginTop:'4px'}}>Delivered to your email</div>
             </div>
           </div>
         </div>
