@@ -180,7 +180,6 @@ export default function HomePage() {
               </p>
               <div className="dd-badge-row">
                 <span className="dd-badge nist">NIST 800-88</span>
-                <span className="dd-badge dod">DoD 5220.22-M</span>
                 <span className="dd-badge ca">CA E-Waste Regulations</span>
               </div>
               <div className="cert-list">

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 const SERVICES = [
-  { icon: '🔐', title: 'Data Destruction',        href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'Following NIST 800-88 and DoD 5220.22-M guidelines. Physical shredding and software overwrite. Certificates within 48 hours.' },
+  { icon: '🔐', title: 'Data Destruction',        href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'Following NIST 800-88 guidelines. Physical shredding and software overwrite. Certificates within 48 hours.' },
   { icon: '💼', title: 'IT Asset Disposition',    href: '/services/itad',             accent: '',             bg: '',         desc: 'Full lifecycle — inventory, data sanitization, value recovery, and responsible disposal. Audit-ready reporting.' },
   { icon: '♻️', title: 'E-Waste Recycling',       href: '/services/recycling',        accent: '',             bg: '',         desc: 'In compliance with California e-waste regulations. All electronics accepted. Zero landfill commitment on every item.' },
   { icon: '🚛', title: 'Business Pickup',          href: '/contact',                   accent: 'amber-accent', bg: 'amber-bg', desc: 'On-demand or scheduled pickup anywhere in Orange County. No volume minimums. Same-week appointments available.' },

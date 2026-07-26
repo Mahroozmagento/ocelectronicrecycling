@@ -3,18 +3,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Certified Data Destruction',
+  title: 'Data Destruction with Certificate',
   description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA. Certificates issued per device within 48hrs.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/data-destruction' },
   openGraph: {
-    title: 'Certified Data Destruction',
+    title: 'Data Destruction with Certificate',
     description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA.',
     url: 'https://www.ocelectronicrecycling.com/services/data-destruction',
     images: [{ url: '/image/data-destruction-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Certified Data Destruction',
+    title: 'Data Destruction with Certificate',
     description: 'Hard drive shredding and data destruction following NIST 800-88 guidelines in Orange County CA.',
     images: ['/image/data-destruction-oc-electronic-recycling.webp'],
   },
@@ -31,7 +31,7 @@ export default function DataDestructionPage() {
         <div className="container">
           <span className="overline" style={{color:'var(--red)'}}>Security Service</span>
           <h1 style={{fontFamily:'var(--font-head)',fontSize:'clamp(2rem,5vw,4rem)',fontWeight:900,letterSpacing:'-.03em',marginTop:'10px'}}>
-            Certified Hard Drive<br />&amp; Data Destruction
+            Data Destruction<br />with Certificate of Destruction
           </h1>
           <p style={{color:'var(--muted)',fontSize:'1rem',marginTop:'16px',maxWidth:'520px',lineHeight:1.7}}>
             Data sanitization and physical shredding following NIST 800-88 guidelines.
@@ -40,7 +40,6 @@ export default function DataDestructionPage() {
           </p>
           <div className="dd-badge-row" style={{marginTop:'28px'}}>
             <span className="dd-badge nist">NIST 800-88</span>
-            <span className="dd-badge dod">DoD 5220.22-M</span>
             <span className="dd-badge ca">CA E-Waste Regulations</span>
           </div>
         </div>
@@ -48,7 +47,7 @@ export default function DataDestructionPage() {
 
       <div style={{background:'var(--light)',padding:'80px 0'}}>
         <div className="container">
-          <div className="svc-features">
+          <div className="svc-features" style={{marginBottom:'48px'}}>
             {[
               { icon: '🔨', title: 'Physical Shredding',          desc: 'Industrial-grade shredders reduce drives to small fragments. Designed to render the media unusable and make data recovery impractical. Available on-site or at our secure facility.' },
               { icon: '💿', title: 'Software Overwrite',          desc: 'NIST 800-88 Clear and Purge methods for SSDs and HDDs. Multiple-pass overwrites with verification. Drives can be reused after wiping.' },
@@ -60,15 +59,6 @@ export default function DataDestructionPage() {
                 <p>{desc}</p>
               </div>
             ))}
-          </div>
-
-          <div className="amber-urgent" style={{maxWidth:'700px',margin:'0 auto 48px'}}>
-            <div className="amber-urgent-icon">⚠️</div>
-            <div className="amber-urgent-text">
-              <strong>California AB 1103 &amp; SB 1386</strong> require businesses to protect consumer
-              data on disposed devices. Non-compliance can result in fines up to{' '}
-              <strong>$2,500 per record</strong>. Call <strong>(949) 287-3056</strong> today.
-            </div>
           </div>
 
           <div style={{background:'var(--navy)',borderRadius:'16px',padding:'40px',maxWidth:'700px',margin:'0 auto'}}>
