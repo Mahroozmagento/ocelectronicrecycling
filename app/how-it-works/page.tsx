@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 const STEPS = [
-  { num: '01', title: 'Schedule',    desc: 'Call or submit a quote request. We confirm within 24 hours. Same-week service typically available.' },
+  { num: '01', title: 'Schedule',    desc: 'Call or submit a quote request. We aim to respond within one business day, and can often schedule same-week service.' },
   { num: '02', title: 'Collection',  desc: 'Technicians arrive on time with sealed containers and chain-of-custody forms. Every asset logged on-site.' },
   { num: '03', title: 'Processing',  desc: 'Data destroyed first — always. Devices assessed for reuse, disassembly, or recycling per material type.' },
   { num: '04', title: 'Certificate', desc: 'Recycling and data destruction certificate emailed within 48 hours. Audit-ready, every time.' },

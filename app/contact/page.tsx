@@ -116,7 +116,7 @@ export default function ContactPage() {
           </AnimateIn>
           <AnimateIn from="up" delay={0.22}>
             <p style={{ color: 'var(--muted)', fontSize: '1rem', marginTop: '16px', maxWidth: '520px', lineHeight: 1.7 }}>
-              Fill out the form or call us directly. We respond to all inquiries within 24 hours — usually same day.
+              Fill out the form or call us directly. We aim to respond to all inquiries within one business day, often same-day.
             </p>
           </AnimateIn>
         </div>
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     style={{ border: '1px solid var(--green)', borderRadius: '10px', padding: '16px', marginBottom: '20px', color: 'var(--green)', fontFamily: 'var(--font-head)', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '10px' }}
                   >
                     <span style={{ fontSize: '1.2rem' }}>✅</span>
-                    Message sent! We&apos;ll be in touch within 24 hours.
+                    Message sent! We aim to be in touch within one business day.
                   </div>
                 )}
 

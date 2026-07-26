@@ -378,9 +378,9 @@ California's e-waste law and data protection law intersect at hardware disposal 
 
 Every pickup by OC Electronic Recycling includes:
 
-- **Pickup manifest** (same day) — documents date, quantity, and device types
+- **Pickup manifest** — documents date, quantity, and device types
 - **Recycling certificate** (10–15 business days) — confirms DTSC-authorized downstream processing
-- **Certificate of data destruction** (same day) — serial-number-level, per device processed
+- **Certificate of data destruction** — serial-number-level, per device processed
 
 These three documents constitute a complete compliance record for a hardware disposal event.
 
@@ -1154,8 +1154,8 @@ If access logistics fall through on pickup day, it delays the entire move.
 ## Step 5: Receive and File Your Documentation
 
 After pickup:
-- **Pickup manifest** (same day): itemized list of everything collected
-- **Certificate of data destruction** (same day for destruction events): per-device records for all storage media
+- **Pickup manifest**: itemized list of everything collected
+- **Certificate of data destruction**: per-device records for all storage media
 - **Recycling certificate** (10–15 business days): confirming downstream processing
 
 File these with your move documentation. Some landlords ask for proof of proper disposal. Your auditor may ask for it in the next compliance review. Two minutes to file, hours to reconstruct if you don't.
