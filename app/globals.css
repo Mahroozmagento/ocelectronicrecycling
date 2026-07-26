@@ -268,10 +268,10 @@ h1.hero-h1 em { font-style: normal; color: var(--green); }
 .marquee-sep { color: rgba(7,13,26,.3); }
 
 /* â”€â”€ TRUST BAND â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.trust-band { background: var(--light); padding: 0 0 90px; }
+.trust-band { background: var(--light); padding: 0 0 90px; position: relative; }
 .trust-band > .container { padding-top: 72px; }
 .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 60px; }
-.trust-card { background: #fff; border-radius: 14px; padding: 32px 28px; border: 1px solid #e2e8f0; transition: box-shadow .2s,transform .2s; }
+.trust-card { background: #fff; border-radius: 14px; padding: 32px 28px; border: 1px solid #e2e8f0; transition: box-shadow .2s,transform .2s; height: 100%; box-sizing: border-box; }
 .trust-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.08); transform: translateY(-4px); }
 .trust-number { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue); line-height: 1.15; letter-spacing: -.01em; }
 .trust-label { font-size: .88rem; color: #4a5568; font-weight: 600; margin-top: 6px; }
@@ -318,19 +318,19 @@ h1.hero-h1 em { font-style: normal; color: var(--green); }
 .amber-urgent-text strong { color: var(--white); }
 
 /* â”€â”€ ENVIRONMENTAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-#environmental { background: var(--navy2); padding: 110px 0; }
+#environmental { background: var(--navy2); padding: 110px 0; position: relative; }
 .env-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 72px; }
-.env-stat { text-align: center; padding: 36px 24px; border-radius: 14px; background: rgba(255,255,255,.03); border: 1px solid var(--border); transition: background .2s; }
+.env-stat { text-align: center; padding: 36px 24px; border-radius: 14px; background: rgba(255,255,255,.03); border: 1px solid var(--border); transition: background .2s; height: 100%; box-sizing: border-box; }
 .env-stat:hover { background: rgba(0,230,118,.05); }
 .env-num   { font-family: var(--font-head); font-size: 2.4rem; font-weight: 900; color: var(--green); line-height: 1; }
 .env-label { font-size: .82rem; color: var(--muted); margin-top: 8px; line-height: 1.4; }
 .env-icon  { font-size: 2rem; margin-bottom: 12px; }
 
 /* â”€â”€ TESTIMONIALS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-#testimonials, #what-you-get { background: var(--navy); padding: 110px 0; }
+#testimonials, #what-you-get { background: var(--navy); padding: 110px 0; position: relative; }
 .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 72px; }
 .testi-grid--4 { grid-template-columns: repeat(4,1fr); }
-.testi-card { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 16px; padding: 36px 32px; transition: border-color .2s; }
+.testi-card { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 16px; padding: 36px 32px; transition: border-color .2s; height: 100%; box-sizing: border-box; }
 .testi-card:hover { border-color: rgba(0,230,118,.25); }
 .testi-stars { color: var(--amber); font-size: 1rem; margin-bottom: 16px; letter-spacing: 2px; }
 .testi-text  { font-size: .92rem; color: #b0c4d8; line-height: 1.7; font-style: italic; margin-bottom: 20px; }

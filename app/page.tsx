@@ -105,7 +105,7 @@ export default function HomePage() {
       {/* ── TRUST STATS ──────────────────────────────────────── */}
       <section className="trust-band section-light">
         <div className="container">
-          <AnimateIn from="up">
+          <AnimateIn from="up" style={{ position: 'relative' }}>
             <span className="overline" style={{ color: 'var(--blue)' }}>Why OC Trusts Us</span>
             <h2 className="section-title" style={{ color: 'var(--navy)' }}>What Sets Us Apart</h2>
           </AnimateIn>
@@ -222,7 +222,7 @@ export default function HomePage() {
       <section id="environmental" className="section-dark2">
         <div className="container">
           <AnimateIn from="up">
-            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', position: 'relative' }}>
               <span className="overline">Environmental Impact</span>
               <h2 className="section-title">Our Green Footprint</h2>
               <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
@@ -253,7 +253,7 @@ export default function HomePage() {
       <section id="what-you-get" className="section-dark">
         <div className="container">
           <AnimateIn from="up">
-            <div style={{ maxWidth: '480px', marginBottom: '60px' }}>
+            <div style={{ maxWidth: '480px', marginBottom: '60px', position: 'relative' }}>
               <span className="overline">Our Commitment</span>
               <h2 className="section-title">What You Get</h2>
             </div>
