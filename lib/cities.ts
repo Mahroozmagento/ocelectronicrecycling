@@ -33,8 +33,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Anaheim CA",
     metaDescription:
       "E-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88-guided data destruction. Call (949) 287-3056.",
-    heroStat: "346K+",
-    heroStatLabel: "Anaheim Residents Served",
+    heroStat: "Local",
+    heroStatLabel: "Orange County Team",
     faqExtra: {
       q: "Do you pick up from hotels and convention centers in Anaheim?",
       a: "Yes — we regularly service the hospitality corridor near the Anaheim Convention Center and Resort District. Scheduled pickups available for large-volume properties.",
@@ -56,8 +56,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling & ITAD Irvine CA",
     metaDescription:
       "Enterprise ITAD and e-waste recycling in Irvine, CA. Secure data destruction, server decommissioning, free business pickup. Call (949) 287-3056.",
-    heroStat: "5,000+",
-    heroStatLabel: "Irvine Businesses Served",
+    heroStat: "NIST",
+    heroStatLabel: "800-88 Data Handling",
     faqExtra: {
       q: "Can you handle large server decommissions for Irvine tech companies?",
       a: "Absolutely. We specialize in full server room and data center decommissioning, with data destruction following NIST 800-88 guidelines and full chain-of-custody documentation.",
@@ -98,8 +98,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Huntington Beach",
     metaDescription:
       "Eco-friendly e-waste recycling in Huntington Beach, CA. Keep electronics out of landfills and protect our coastline. Free pickup available. Call (949) 287-3056.",
-    heroStat: "0",
-    heroStatLabel: "Pounds Sent to Landfill",
+    heroStat: "CA",
+    heroStatLabel: "Compliant Recycling",
   },
   {
     slug: "garden-grove",
@@ -136,8 +136,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Fullerton CA",
     metaDescription:
       "E-waste recycling in Fullerton, CA. Serving CSUF, local businesses, and residents. Computer recycling, TV disposal, data destruction. Call (949) 287-3056.",
-    heroStat: "100%",
-    heroStatLabel: "Responsible Disposal",
+    heroStat: "CA",
+    heroStatLabel: "Compliant Recycling",
   },
   {
     slug: "orange",
@@ -154,7 +154,7 @@ export const cities: CityData[] = [
     businessFocus: "healthcare, education, and professional services",
     metaTitle: "E-Waste Recycling Orange CA",
     metaDescription:
-      "Electronics recycling and ITAD in Orange, CA. Certified data destruction, free business pickup. Serving all of the City of Orange. Call (949) 287-3056.",
+      "Electronics recycling and ITAD in Orange, CA. Secure data destruction, free business pickup. Serving all of the City of Orange. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Business Pickup",
   },
@@ -173,7 +173,7 @@ export const cities: CityData[] = [
     businessFocus: "design, retail, and creative industries",
     metaTitle: "E-Waste Recycling Costa Mesa CA",
     metaDescription:
-      "E-waste recycling and IT asset disposal in Costa Mesa, CA. Certified data destruction, free business pickup. Call (949) 287-3056.",
+      "E-waste recycling and IT asset disposal in Costa Mesa, CA. Secure data destruction, free business pickup. Call (949) 287-3056.",
     heroStat: "NIST",
     heroStatLabel: "800-88 Data Destruction",
   },
@@ -230,7 +230,7 @@ export const cities: CityData[] = [
     businessFocus: "mixed commercial, residential, and light industrial",
     metaTitle: "E-Waste Recycling Tustin CA",
     metaDescription:
-      "Electronics recycling and IT asset disposal in Tustin, CA. Certified data destruction, free business pickup. Call (949) 287-3056.",
+      "Electronics recycling and IT asset disposal in Tustin, CA. Secure data destruction, free business pickup. Call (949) 287-3056.",
     heroStat: "Same",
     heroStatLabel: "Week Service Available",
   },
@@ -250,8 +250,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Lake Forest CA",
     metaDescription:
       "E-waste recycling and ITAD in Lake Forest, CA. Computer recycling, data destruction, server disposal. Free business pickup. Call (949) 287-3056.",
-    heroStat: "100%",
-    heroStatLabel: "Data Destruction Guaranteed",
+    heroStat: "NIST",
+    heroStatLabel: "800-88 Data Handling",
   },
   {
     slug: "buena-park",
@@ -345,8 +345,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling La Habra CA",
     metaDescription:
       "E-waste recycling and electronics disposal in La Habra, CA. Computers, TVs, and more. Residential and business service. Call (949) 287-3056.",
-    heroStat: "100%",
-    heroStatLabel: "Responsible Disposal",
+    heroStat: "CA",
+    heroStatLabel: "Compliant Recycling",
   },
   {
     slug: "brea",
@@ -363,7 +363,7 @@ export const cities: CityData[] = [
     businessFocus: "corporate, retail, and residential",
     metaTitle: "E-Waste Recycling Brea CA",
     metaDescription:
-      "Electronics recycling and IT asset disposal in Brea, CA. Certified data destruction, server decommissioning. Call (949) 287-3056.",
+      "Electronics recycling and IT asset disposal in Brea, CA. Secure data destruction, server decommissioning. Call (949) 287-3056.",
     heroStat: "NIST",
     heroStatLabel: "800-88 Data Wipe",
   },
@@ -382,7 +382,7 @@ export const cities: CityData[] = [
     businessFocus: "technology companies and professional services",
     metaTitle: "E-Waste Recycling Aliso Viejo CA",
     metaDescription:
-      "ITAD and e-waste recycling in Aliso Viejo, CA. Certified data destruction for tech companies. Free business pickup. Call (949) 287-3056.",
+      "ITAD and e-waste recycling in Aliso Viejo, CA. Secure data destruction for tech companies. Free business pickup. Call (949) 287-3056.",
     heroStat: "Free",
     heroStatLabel: "Corporate Pickup",
   },
@@ -440,8 +440,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling Laguna Beach CA",
     metaDescription:
       "Eco-friendly e-waste recycling in Laguna Beach, CA. Protect the coast — recycle your electronics responsibly. Call (949) 287-3056.",
-    heroStat: "0",
-    heroStatLabel: "Pounds to Landfill",
+    heroStat: "CA",
+    heroStatLabel: "Compliant Recycling",
   },
   {
     slug: "dana-point",
@@ -478,8 +478,8 @@ export const cities: CityData[] = [
     metaTitle: "E-Waste Recycling San Clemente CA",
     metaDescription:
       "E-waste recycling and electronics disposal in San Clemente, CA. Free pickup available. Protecting San Clemente's coast. Call (949) 287-3056.",
-    heroStat: "100%",
-    heroStatLabel: "Eco-Responsible",
+    heroStat: "CA",
+    heroStatLabel: "Compliant Recycling",
   },
   {
     slug: "san-juan-capistrano",

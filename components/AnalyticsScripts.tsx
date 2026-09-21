@@ -11,6 +11,9 @@ export default function AnalyticsScripts() {
   const [accepted, setAccepted] = useState(false)
 
   useEffect(() => {
+    // Read the client-only consent value after mount to avoid a hydration mismatch;
+    // scripts must never render on the server before consent is known.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAccepted(getConsent() === 'accepted')
     return onConsentChange((status) => setAccepted(status === 'accepted'))
   }, [])

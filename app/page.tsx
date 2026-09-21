@@ -11,19 +11,19 @@ import AnimateIn, { StaggerGroup } from '@/components/AnimateIn'
 export const metadata: Metadata = {
   title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
   description:
-    "Orange County's premier e-waste recycling and ITAD company. " +
-    'Certified data destruction, business pickup. Call (949) 287-3056.',
+    'Orange County e-waste recycling and ITAD for businesses and residents. ' +
+    'Secure data destruction following NIST 800-88 guidelines, with business pickup. Call (949) 287-3056.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
-    description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup.",
+    description: 'Orange County e-waste recycling and ITAD for businesses and residents. Secure data destruction and business pickup.',
     url: 'https://www.ocelectronicrecycling.com',
     images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
-    description: "Orange County's premier e-waste recycling and ITAD company. Certified data destruction, business pickup.",
+    description: 'Orange County e-waste recycling and ITAD for businesses and residents. Secure data destruction and business pickup.',
     images: ['/image/hero-facility-oc-electronic-recycling.webp'],
   },
 }
@@ -39,7 +39,7 @@ export default function HomePage() {
             We Recycle<br /><em>Electronics.</em><br />You Stay Clean.
           </h1>
           <p className="hero-sub">
-            Certified Data Destruction, ITAD services, and responsible e-waste
+            Secure data destruction, ITAD services, and responsible e-waste
             recycling for businesses and residents across Orange County, California.
           </p>
           <div className="hero-actions">
@@ -76,10 +76,10 @@ export default function HomePage() {
       <div className="marquee-wrap">
         <div className="marquee-track">
           {[
-            'E-Waste Recycling','Certified Data Destruction','IT Asset Disposition',
+            'E-Waste Recycling','Secure Data Destruction','IT Asset Disposition',
             'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
             'Hard Drive Shredding','Server Decommission',
-            'E-Waste Recycling','Certified Data Destruction','IT Asset Disposition',
+            'E-Waste Recycling','Secure Data Destruction','IT Asset Disposition',
             'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
             'Hard Drive Shredding','Server Decommission',
           ].map((item, i) => (
@@ -140,7 +140,7 @@ export default function HomePage() {
             {[
               { icon: '🔐', title: 'Data Destruction',      href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'Hard drive wiping and physical shredding following NIST 800-88 guidelines. Certificates issued for every device.' },
               { icon: '💼', title: 'IT Asset Disposition',  href: '/services/itad',             accent: '',             bg: '',         desc: 'Complete ITAD lifecycle — inventory, data sanitization, resale, and responsible disposal.' },
-              { icon: '♻️', title: 'E-Waste Recycling',     href: '/services/recycling',        accent: '',             bg: '',         desc: 'In compliance with California e-waste regulations. Zero landfill commitment — everything sorted and processed responsibly.' },
+              { icon: '♻️', title: 'E-Waste Recycling',     href: '/services/recycling',        accent: '',             bg: '',         desc: 'In compliance with California e-waste regulations. Materials are sorted and routed to vetted downstream processors to divert them from landfill.' },
               { icon: '🚛', title: 'Business Pickup',       href: '/contact',                   accent: 'amber-accent', bg: 'amber-bg', desc: 'Scheduled or on-demand pickup throughout Orange County. We handle the heavy lifting.' },
               { icon: '🖥️', title: 'Server Decommission',   href: '/services',                  accent: 'blue-accent',  bg: 'blue-bg',  desc: 'Full rack decommission with data destruction, asset inventory, and logistics management.' },
               { icon: '📱', title: 'Mobile Device Recycling',href: '/services',                 accent: 'cyan-accent',  bg: 'cyan-bg',  desc: 'Smartphones, tablets, wearables — factory reset verification plus secure recycling.' },
@@ -164,8 +164,8 @@ export default function HomePage() {
               <span className="overline" style={{ color: 'var(--red)' }}>Critical Security</span>
               <h2 className="section-title">Data Destruction<br />Done Right</h2>
               <p style={{ color: '#8899aa', lineHeight: 1.7, margin: '20px 0' }}>
-                One discarded hard drive with intact data can cost thousands in fines.
-                Our process eliminates that risk completely.
+                A single discarded hard drive with intact data can put your business at risk.
+                Our documented sanitization process is designed to reduce that risk.
               </p>
               <div className="dd-badge-row">
                 <span className="dd-badge nist">NIST 800-88</span>
@@ -226,13 +226,13 @@ export default function HomePage() {
               <span className="overline">Environmental Impact</span>
               <h2 className="section-title">Our Green Footprint</h2>
               <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
-                Every device we recycle stays out of landfills and toxic waste streams.
+                Devices we collect are sorted and routed to responsible downstream processors, diverting materials from landfills and toxic waste streams.
               </p>
             </div>
           </AnimateIn>
           <StaggerGroup className="env-grid">
             {[
-              { icon: '🌍', num: 'Zero Landfill Commitment',        label: 'Every device is sorted and routed to the correct downstream recycler.' },
+              { icon: '🌍', num: 'Landfill-Diversion Commitment',   label: 'Devices are sorted and routed to the correct downstream recycler to divert materials from landfill.' },
               { icon: '♻️', num: 'Responsible Material Recovery',   label: 'Materials are recovered and processed through vetted recycling partners.' },
               { icon: '📋', num: 'California-Compliant Processing', label: 'Handled in compliance with California e-waste regulations.' },
             ].map(({ icon, num, label }) => (
@@ -280,7 +280,7 @@ export default function HomePage() {
         <div className="container">
           <span className="overline">Ready to Start?</span>
           <h2>Responsible Recycling<br />Starts With a Call</h2>
-          <p>Orange County&apos;s most trusted e-waste and ITAD partner is one call away.</p>
+          <p>Your Orange County e-waste and ITAD partner is one call away.</p>
           <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
           <div className="cta-actions">
             <Link href="/contact" className="btn-primary btn-large">Schedule Pickup</Link>

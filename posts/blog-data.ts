@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "e-waste-recycling-orange-county-guide",
     title: "The Complete Guide to E-Waste Recycling in Orange County (2025)",
-    metaTitle: "E-Waste Recycling Orange County",
+    metaTitle: "E-Waste Recycling Orange County: 2025 Guide",
     metaDescription: "Everything Orange County residents and businesses need to know about e-waste recycling: what's accepted, what's free, California law, and how to schedule pickup.",
     keyword: "e-waste recycling Orange County",
     keywordColor: "green",

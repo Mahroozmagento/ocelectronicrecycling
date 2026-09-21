@@ -33,7 +33,18 @@ export default function ContactPage() {
   // Set after mount (not during render) so server- and client-rendered HTML
   // match — avoids a hydration mismatch on this hidden field's value.
   const [renderedAt, setRenderedAt] = useState<number | null>(null)
+  // Set after mount (not during render) so server/client HTML match for this hidden field.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setRenderedAt(Date.now()) }, [])
+
+  // Fire contact_form_start once, on the visitor's first interaction with the form.
+  // Consent gating and de-duping are handled inside trackEvent / this ref.
+  const startedRef = useRef(false)
+  const handleFormStart = () => {
+    if (startedRef.current) return
+    startedRef.current = true
+    trackEvent('contact_form_start', { page_type: 'contact' })
+  }
 
   // Scroll the success/error message into view whenever it appears, so it's
   // visible even if the form is scrolled or the message lands below the fold.
@@ -81,16 +92,20 @@ export default function ContactPage() {
       if (res.ok) {
         setSending(false)
         setSubmitted(true)
-        trackEvent('quote_form_submitted', { service })
-        trackEvent('lead_captured', { lead_source: 'contact_form', service })
+        // Privacy-safe: send the (non-PII) selected service category only —
+        // never name, email, phone, message text, or file names.
+        trackEvent('contact_form_submit_success', { page_type: 'contact', service })
         setTimeout(() => setSubmitted(false), 5000)
       } else {
         setSending(false)
         setError(true)
+        // Error category only — no message body, field values, or server text.
+        trackEvent('contact_form_submit_error', { page_type: 'contact', error_category: 'server' })
       }
     } catch {
       setSending(false)
       setError(true)
+      trackEvent('contact_form_submit_error', { page_type: 'contact', error_category: 'network' })
     }
   }
 
@@ -128,7 +143,7 @@ export default function ContactPage() {
 
             {/* Form */}
             <AnimateIn from="left" delay={0.1}>
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form className="contact-form" onSubmit={handleSubmit} onFocusCapture={handleFormStart} onChange={handleFormStart}>
                 <h3>Send Us a Message</h3>
 
                 {/* Honeypot — real visitors never see or fill this in. Kept off-screen

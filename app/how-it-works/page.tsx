@@ -25,14 +25,14 @@ const STEPS = [
   { num: '01', title: 'Schedule',    desc: 'Call or submit a quote request. We aim to respond within one business day, and can often schedule same-week service.' },
   { num: '02', title: 'Collection',  desc: 'Technicians arrive on time with sealed containers and chain-of-custody forms. Every asset logged on-site.' },
   { num: '03', title: 'Processing',  desc: 'Data destroyed first — always. Devices assessed for reuse, disassembly, or recycling per material type.' },
-  { num: '04', title: 'Certificate', desc: 'Recycling and data destruction certificate emailed within 48 hours. Audit-ready, every time.' },
+  { num: '04', title: 'Certificate', desc: 'Recycling and data destruction certificates are emailed after processing, typically within a few business days. Audit-ready documentation.' },
 ]
 
 const GUARANTEES = [
   { icon: '🔐', title: 'Data First',        desc: 'Every data-bearing device is wiped or shredded before anything else. Chain-of-custody follows every step.' },
   { icon: '📋', title: 'Full Manifest',     desc: 'Serial numbers, asset tags, condition grades captured for every item. Complete inventory before processing.' },
-  { icon: '♻️', title: 'Zero Landfill',    desc: 'Every component sorted by material type and routed to the correct downstream recycler.' },
-  { icon: '📄', title: 'Your Certificate', desc: 'Data destruction and recycling certificates delivered within 48 hours, with full asset manifest.' },
+  { icon: '♻️', title: 'Landfill Diversion', desc: 'Components are sorted by material type and routed to the correct downstream recycler to divert materials from landfill.' },
+  { icon: '📄', title: 'Your Certificate', desc: 'Data destruction and recycling certificates are delivered after processing, with a full asset manifest.' },
 ]
 
 export default function HowItWorksPage() {
@@ -69,8 +69,8 @@ export default function HowItWorksPage() {
         <div className="container">
           <AnimateIn from="up" delay={0.1}>
             <div style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 60px' }}>
-              <span className="overline">What We Guarantee</span>
-              <h2 className="section-title" style={{ color: 'var(--c-white)' }}>Every Time, Without Exception</h2>
+              <span className="overline">What We Provide</span>
+              <h2 className="section-title" style={{ color: 'var(--c-white)' }}>On Every Job</h2>
             </div>
           </AnimateIn>
           <StaggerGroup className="svc-features">

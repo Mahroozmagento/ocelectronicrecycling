@@ -22,7 +22,7 @@ export default function CityPagesLayout({
         </ol>
       </nav>
 
-      <main className="city-page-main">{children}</main>
+      <div className="city-page-main">{children}</div>
     </div>
   );
 }

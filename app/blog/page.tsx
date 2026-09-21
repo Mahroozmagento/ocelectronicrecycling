@@ -5,7 +5,9 @@ import { BlogIndexHero } from "@/components/BlogHeroClient";
 import AnimateIn from "@/components/AnimateIn";
 
 export const metadata = {
-  title: "Blog | OC Electronic Recycling",
+  // Plain segment title; the root layout's title template appends
+  // " | OC Electronic Recycling", so this must NOT include the suffix itself.
+  title: "Blog",
   description:
     "Guides, compliance advice, and local tips for Orange County businesses and residents navigating e-waste recycling and data security.",
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/blog' },

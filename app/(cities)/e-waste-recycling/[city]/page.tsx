@@ -42,61 +42,64 @@ export async function generateMetadata({
 }
 
 // ─── JSON-LD Schema ────────────────────────────────────────────────────────────
-function CitySchema({ city }: { city: ReturnType<typeof getCityBySlug> }) {
-  if (!city) return null;
+// A city page is a SERVICE-AREA page, not a physical office. We therefore emit a
+// `Service` (provided by the single business @id, with `areaServed` = the city)
+// rather than a `LocalBusiness` carrying a per-city PostalAddress, which would
+// falsely imply an office in every city. BreadcrumbList and FAQPage mirror the
+// visible breadcrumb and FAQ section.
+function CitySchema({
+  city,
+  faqs,
+}: {
+  city: NonNullable<ReturnType<typeof getCityBySlug>>;
+  faqs: { q: string; a: string }[];
+}) {
+  const pageUrl = `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`;
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "OC Electronic Recycling",
-    description: city.metaDescription,
-    url: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
-    telephone: "+19492873056",
-    email: "info@ocelectronicrecycling.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: city.name,
-      addressRegion: "CA",
-      postalCode: city.zip,
-      addressCountry: "US",
-    },
-    areaServed: {
-      "@type": "City",
-      name: city.name,
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: "Orange County",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${pageUrl}#service`,
+        name: `E-Waste Recycling & ITAD in ${city.name}`,
+        serviceType: "Electronics recycling, IT asset disposition, and data destruction",
+        description: city.metaDescription,
+        url: pageUrl,
+        provider: { "@id": "https://www.ocelectronicrecycling.com/#business" },
+        areaServed: {
+          "@type": "City",
+          name: city.name,
+          containedInPlace: { "@type": "AdministrativeArea", name: "Orange County, California" },
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "E-Waste Recycling Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business E-Waste Pickup", description: `Scheduled electronics pickup for businesses in ${city.name}` } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Secure Data Destruction", description: "Data wiping and destruction following NIST 800-88 guidelines" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "IT Asset Disposition (ITAD)", description: `ITAD services for ${city.name} businesses` } },
+          ],
+        },
       },
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "E-Waste Recycling Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Business E-Waste Pickup",
-            description: `Free scheduled pickup for businesses in ${city.name}`,
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Certified Data Destruction",
-            description: "Data wiping and destruction following NIST 800-88 guidelines",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "IT Asset Disposition (ITAD)",
-            description: `Full ITAD services for ${city.name} businesses`,
-          },
-        },
-      ],
-    },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ocelectronicrecycling.com" },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.ocelectronicrecycling.com/service-areas" },
+          { "@type": "ListItem", position: 3, name: `E-Waste Recycling in ${city.name}`, item: pageUrl },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
   };
   return (
     <script
@@ -146,7 +149,7 @@ const processSteps = [
     number: "04",
     title: "Responsible Recycling",
     description:
-      "Electronics are processed by vetted recycling facilities in compliance with California e-waste regulations. Nothing goes to landfill. You receive a recycling certificate.",
+      "Electronics are processed by vetted recycling facilities in compliance with California e-waste regulations, with materials diverted from landfill through documented downstream processing. You receive a recycling certificate.",
   },
 ];
 
@@ -163,7 +166,7 @@ function getFAQs(city: NonNullable<ReturnType<typeof getCityBySlug>>) {
     },
     {
       q: "How do you handle data security?",
-      a: "All storage media is processed following NIST 800-88 guidelines — either overwritten using DoD-grade software or physically shredded. You receive a certificate of data destruction for every job.",
+      a: "All storage media is processed following NIST 800-88 guidelines — either overwritten with verified sanitization software or physically shredded. You receive a certificate of data destruction for every job.",
     },
     {
       q: `Do you serve businesses in ${city.name}?`,
@@ -195,7 +198,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
   return (
     <>
-      <CitySchema city={city} />
+      <CitySchema city={city} faqs={faqs} />
 
       {/* ── Hero ── */}
       <section className="city-hero">
@@ -267,7 +270,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
           <div className="service-card service-card--blue">
             <div className="service-card__icon">🔒</div>
-            <h3>Certified Data Destruction</h3>
+            <h3>Secure Data Destruction</h3>
             <p>
               Data wiping and physical destruction following NIST 800-88
               guidelines for hard drives and storage media. Certificate provided.
@@ -354,7 +357,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             {
               icon: "✅",
               title: "California E-Waste Regulations",
-              desc: "We operate under California's Electronic Waste Recycling Act — no shortcuts, no liability for you.",
+              desc: "We operate under California's Electronic Waste Recycling Act — a documented process that helps reduce your data-security and compliance risk.",
             },
             {
               icon: "🚛",
@@ -368,8 +371,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
             },
             {
               icon: "🌱",
-              title: "Zero Landfill Policy",
-              desc: "Nothing we collect goes to landfill. All materials are processed through vetted, responsible recycling facilities.",
+              title: "Landfill Diversion",
+              desc: "Materials we collect are routed to vetted, responsible recycling facilities and diverted from landfill through documented downstream processing.",
             },
             {
               icon: "📞",

@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 }
 
 const MISSION = [
-  { icon: '🔒', title: 'Security First',    desc: 'Data destruction happens before anything else. No exceptions. Your data risk is zero before we recycle anything.' },
-  { icon: '🌿', title: 'Zero Landfill',     desc: 'Every component sorted and routed to the correct downstream recycler. Nothing ends up in a landfill.' },
+  { icon: '🔒', title: 'Security First',    desc: 'Data destruction happens before anything else. Data-bearing devices are sanitized or destroyed before recycling to reduce your data-security risk.' },
+  { icon: '🌿', title: 'Landfill Diversion', desc: 'Components are sorted and routed to the correct downstream recycler to divert materials from landfill.' },
   { icon: '📄', title: 'Full Documentation',desc: 'Certificates, manifests, and chain-of-custody records for everything. Always ready for audits.' },
   { icon: '🤝', title: 'Local & Trusted',   desc: 'An Orange County business serving Orange County. Real people you can call, meet, and hold accountable.' },
 ]
@@ -90,9 +90,9 @@ export default function AboutPage() {
   <div style={{ position: 'absolute', top: '10px', left: '12px', background: 'var(--blue)', color: '#fff', fontSize: '.6rem', fontWeight: 800, letterSpacing: '.12em', padding: '3px 10px', borderRadius: '20px' }}>TEAM PHOTO</div>
 </div>
                 {[
-                  { num: '2,500+', color: 'var(--blue)',  label: 'Clients served across Orange County' },
-                  { num: '500T',   color: 'var(--green)', label: 'E-waste diverted from landfills annually' },
-                  { num: '100%',   color: 'var(--red)',   label: 'Data destruction verified' },
+                  { num: 'NIST 800-88', color: 'var(--blue)',  label: 'Sanitization guidelines followed for data-bearing media' },
+                  { num: 'Per Device',  color: 'var(--green)', label: 'Certificate of destruction issued for each drive processed' },
+                  { num: 'Chain of Custody', color: 'var(--red)', label: 'Documented from pickup through downstream processing' },
                 ].map(({ num, color, label }) => (
                   <div key={num} style={{ marginBottom: '20px' }}>
                     <div style={{ fontFamily: 'var(--font-head)', fontWeight: 900, fontSize: '2rem', color, marginBottom: '4px' }}>{num}</div>
