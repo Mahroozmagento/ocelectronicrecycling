@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
             <p className="footer-desc">
               Orange County&apos;s e-waste recycling and ITAD partner.
-              Responsible disposal, Certified Data Destruction, and full documentation.
+              Responsible disposal, secure data destruction, and full documentation.
             </p>
             <div className="footer-phone">
               <a href="tel:9492873056">☎ (949) 287-3056</a>

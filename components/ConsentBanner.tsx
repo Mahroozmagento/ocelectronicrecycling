@@ -7,6 +7,8 @@ export default function ConsentBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    // Read the client-only consent value after mount to avoid a hydration mismatch.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setVisible(getConsent() === null)
   }, [])
 

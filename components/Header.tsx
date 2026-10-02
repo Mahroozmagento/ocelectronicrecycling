@@ -25,6 +25,8 @@ export default function Header() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
+  // Close the mobile menu on route change. Intentional state reset on navigation.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setOpen(false) }, [pathname])
 
   return (

@@ -2823,3 +2823,57 @@ main:has(.blog-post-hero) { background: #ffffff; }
 }
 
 
+
+/* ============================================================
+   SERVICE DETAIL PAGES — scope, process, FAQ, related links
+   (server-rendered; native <details>, no JS dependency)
+   ============================================================ */
+.svc-section { padding: 72px 0; }
+.svc-section--light { background: var(--light); }
+.svc-section--white { background: #fff; }
+.svc-lead { max-width: 760px; color: #4a5568; font-size: 1.02rem; line-height: 1.8; }
+.svc-lead strong { color: var(--navy); }
+
+.svc-trust-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 8px; }
+.svc-trust-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; }
+.svc-trust-card__v { font-family: var(--font-head); font-weight: 800; color: var(--navy); font-size: 1rem; }
+.svc-trust-card__l { font-size: .82rem; color: #4a5568; line-height: 1.5; margin-top: 6px; }
+
+.svc-chip-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.svc-chip { background: #fff; border: 1px solid #e2e8f0; border-radius: 999px; padding: 8px 16px; font-size: .85rem; color: var(--navy); font-weight: 600; }
+
+.svc-steps { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 8px; }
+.svc-step { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; }
+.svc-step__n { font-family: var(--font-head); font-weight: 900; color: var(--blue); font-size: 1.4rem; }
+.svc-step h3 { font-family: var(--font-head); font-weight: 800; color: var(--navy); margin: 8px 0; font-size: 1rem; }
+.svc-step p { font-size: .9rem; color: #4a5568; line-height: 1.65; }
+
+.svc-scope { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
+.svc-scope__col { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; }
+.svc-scope__col h3 { font-family: var(--font-head); font-weight: 800; font-size: .95rem; margin-bottom: 12px; }
+.svc-scope__col--in h3 { color: var(--green); }
+.svc-scope__col--out h3 { color: #4a5568; }
+.svc-scope__col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.svc-scope__col li { font-size: .9rem; color: #4a5568; line-height: 1.55; padding-left: 22px; position: relative; }
+.svc-scope__col--in li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+.svc-scope__col--out li::before { content: '—'; position: absolute; left: 0; color: #94a3b8; font-weight: 800; }
+
+.svc-faq { background: var(--light); padding: 72px 0; }
+.svc-faq__list { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.svc-faq__item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; }
+.svc-faq__q { font-family: var(--font-head); font-weight: 700; font-size: .95rem; color: var(--navy); padding: 18px 22px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; list-style: none; }
+.svc-faq__q::-webkit-details-marker { display: none; }
+.svc-faq__q::after { content: '+'; color: var(--blue); font-size: 1.3rem; flex-shrink: 0; transition: transform .2s; }
+.svc-faq__item[open] .svc-faq__q::after { transform: rotate(45deg); }
+.svc-faq__a { font-size: .9rem; color: #4a5568; line-height: 1.7; padding: 0 22px 20px; }
+
+.svc-related { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.svc-related__link { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 12px 18px; font-family: var(--font-head); font-weight: 700; font-size: .85rem; color: var(--navy); text-decoration: none; transition: box-shadow .2s, transform .2s; }
+.svc-related__link:hover { box-shadow: 0 8px 24px rgba(0,0,0,.07); transform: translateY(-2px); color: var(--blue); }
+
+@media (max-width: 1024px) {
+  .svc-trust-strip { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .svc-steps, .svc-scope, .svc-trust-strip { grid-template-columns: 1fr; }
+}

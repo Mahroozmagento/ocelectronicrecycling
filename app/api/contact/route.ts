@@ -1,7 +1,15 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Instantiate Resend lazily at request time rather than at module load. The
+// constructor throws when RESEND_API_KEY is absent; doing it at module scope
+// broke `next build` in any environment without the secret. Runtime behavior is
+// unchanged — the client is created on the first request that needs it.
+let resendClient: Resend | null = null;
+function getResend(): Resend {
+  if (!resendClient) resendClient = new Resend(process.env.RESEND_API_KEY);
+  return resendClient;
+}
 
 const MIN_ELAPSED_MS = 3000;
 
@@ -91,7 +99,7 @@ export async function POST(request: Request) {
       `
       : `<p><strong>Source:</strong> Direct / no campaign tracked</p>`;
 
-    await resend.emails.send({
+    await getResend().emails.send({
       from: "OC Electronic Recycling <noreply@nextechoc.com>",
       to: "nirowebix@gmail.com",
       replyTo: email,

@@ -44,15 +44,36 @@ const colorMap = {
 };
 
 function ArticleSchema({ post }: { post: (typeof blogPosts)[0] }) {
+  const url = `https://www.ocelectronicrecycling.com/blog/${post.slug}`;
+  const image = `https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`;
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.metaDescription,
-    datePublished: post.publishDate,
-    image: `https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`,
-    author: { "@type": "Organization", name: "OC Electronic Recycling" },
-    publisher: { "@type": "Organization", name: "OC Electronic Recycling", url: "https://www.ocelectronicrecycling.com" },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#post`,
+        headline: post.title,
+        description: post.metaDescription,
+        datePublished: post.publishDate,
+        // No separate modification is tracked, so dateModified mirrors the genuine
+        // publish date rather than being backdated or set to build time.
+        dateModified: post.publishDate,
+        image,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        url,
+        author: { "@type": "Organization", name: "OC Electronic Recycling", url: "https://www.ocelectronicrecycling.com" },
+        publisher: { "@id": "https://www.ocelectronicrecycling.com/#business" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ocelectronicrecycling.com" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.ocelectronicrecycling.com/blog" },
+          { "@type": "ListItem", position: 3, name: post.title, item: url },
+        ],
+      },
+    ],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }
@@ -184,7 +205,7 @@ export default async function BlogPostPage({
               <div className="blog-post-cta__body">
                 <h3 className="blog-post-cta__title">Ready to Recycle Your Electronics in Orange County?</h3>
                 <p className="blog-post-cta__text">
-                  OC Electronic Recycling provides free business pickup, certified data destruction,
+                  OC Electronic Recycling provides free business pickup, secure data destruction,
                   and same-week scheduling across all Orange County cities.
                 </p>
                 <div className="blog-post-cta__actions">
@@ -221,7 +242,7 @@ export default async function BlogPostPage({
               <div className="blog-sidebar__services-title">Our Services</div>
               <ul className="blog-sidebar__services-list">
                 {[
-                  { href: "/services/data-destruction", label: "🔒 Certified Data Destruction" },
+                  { href: "/services/data-destruction", label: "🔒 Secure Data Destruction" },
                   { href: "/services/itad", label: "📦 IT Asset Disposition" },
                   { href: "/services/recycling", label: "♻️ Electronics Recycling" },
                   { href: "/contact", label: "🖥️ Business Pickup" },

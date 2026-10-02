@@ -5,14 +5,14 @@ import { cities } from "@/lib/cities";
 export const metadata: Metadata = {
   title: "E-Waste Recycling Service Areas",
   description:
-    "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal.",
+    "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
   alternates: {
     canonical: "https://www.ocelectronicrecycling.com/service-areas",
   },
   openGraph: {
     title: "E-Waste Recycling Service Areas",
     description:
-      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal.",
+      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
     url: "https://www.ocelectronicrecycling.com/service-areas",
     images: [{ url: "/image/hero-facility-oc-electronic-recycling.webp", width: 1200, height: 630 }],
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "E-Waste Recycling Service Areas",
     description:
-      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, certified data destruction, and responsible electronics disposal.",
+      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
     images: ["/image/hero-facility-oc-electronic-recycling.webp"],
   },
 };

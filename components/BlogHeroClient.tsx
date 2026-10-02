@@ -1,6 +1,7 @@
 'use client'
 // components/BlogHeroClient.tsx
 // Animated hero content for blog pages — must be client component
+import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 
 interface BlogIndexHeroProps {
@@ -63,9 +64,9 @@ export function BlogSlugHeroContent({
     <div className="blog-post-hero__content">
       <AnimateIn from="fade" delay={0} duration={0.4}>
         <nav className="blog-post-hero__breadcrumb">
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
           <span>/</span>
-          <a href="/blog">Blog</a>
+          <Link href="/blog">Blog</Link>
           <span>/</span>
           <span>{category}</span>
         </nav>
