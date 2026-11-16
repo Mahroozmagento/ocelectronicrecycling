@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
 import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
 import { blogPosts } from '@/posts/blog-data'
 import { PHONE_DISPLAY, PHONE_HREF, PICKUP_MINIMUM, SITE_URL, TV_FEE } from '@/lib/site'
@@ -93,7 +94,8 @@ export default function ResourcesPage() {
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
           <Breadcrumbs crumbs={CRUMBS} />
-          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 820 }}>
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
             <span className="ct-eyebrow">Resource center</span>
             <h1 className="ct-h1">Guides for retiring business electronics</h1>
             <p className="ct-lede">
@@ -101,6 +103,8 @@ export default function ResourcesPage() {
               disposal rules. General information only — not legal advice.
             </p>
             <p className="ct-small">Maintained by OC Electronic Recycling · Hub reviewed {REVIEWED}</p>
+          </div>
+          <Photo name="records" className="ct-in" sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px" ratio="4 / 3" position="100% 50%" eager />
           </div>
         </div>
       </section>

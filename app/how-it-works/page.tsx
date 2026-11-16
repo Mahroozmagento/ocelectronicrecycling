@@ -2,9 +2,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
-import { CustodyManifest } from '@/components/CustodyVisuals'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
 import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
 import { DOCUMENT_TYPES, HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, PROCESS_STEPS, SERVICE_AREA, SITE_URL } from '@/lib/site'
 
@@ -73,7 +73,7 @@ export default function HowItWorksPage() {
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
           <Breadcrumbs crumbs={CRUMBS} />
-          <div className="ct-hero__grid" style={{ marginTop: 22 }}>
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
             <div className="ct-hero__copy ct-rise">
               <span className="ct-eyebrow">The process</span>
               <h1 className="ct-h1">How business pickup and processing work</h1>
@@ -86,7 +86,7 @@ export default function HowItWorksPage() {
                 <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="hiw_hero"><Icon name="phone" size={18} /> {PHONE_DISPLAY}</a>
               </div>
             </div>
-            <div className="ct-hero__art ct-in"><CustodyManifest /></div>
+            <Photo name="inspection" className="ct-in" sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px" ratio="3 / 2" position="100% 50%" eager />
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
 import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
 import { ELIGIBILITY_FACTS, HOURS, PHONE_DISPLAY, PHONE_HREF, PICKUP_MINIMUM, POLICY, SERVICE_AREA, SITE_URL, TV_FEE } from '@/lib/site'
 
@@ -70,7 +71,8 @@ export default function ServicesPage() {
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
           <Breadcrumbs crumbs={CRUMBS} />
-          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 860 }}>
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
             <span className="ct-eyebrow">Services · {SERVICE_AREA}</span>
             <h1 className="ct-h1">Services for retiring business technology</h1>
             <p className="ct-lede">
@@ -81,6 +83,8 @@ export default function ServicesPage() {
               <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="services_hero">Request a Business Pickup</Link>
               <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="services_hero"><Icon name="phone" size={18} /> {PHONE_DISPLAY}</a>
             </div>
+          </div>
+          <Photo name="workbench" className="ct-in" sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px" ratio="3 / 2" position="100% 50%" eager />
           </div>
           <ul className="ct-facts ct-hero__facts" aria-label="Pickup eligibility summary">
             {ELIGIBILITY_FACTS.map((f) => (

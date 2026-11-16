@@ -3,6 +3,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import Photo from '@/components/Photo'
 import Icon from '@/components/Icon'
 import { trackEvent } from '@/lib/analytics'
 import { getStoredUTM } from '@/lib/utm'
@@ -100,12 +101,15 @@ export default function ContactPage() {
     <>
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
-          <div className="ct-hero__copy ct-rise" style={{ maxWidth: 820 }}>
+          <div className="ct-hero__grid ct-hero__grid--page">
+          <div className="ct-hero__copy ct-rise">
             <span className="ct-eyebrow">Contact</span>
             <h1 className="ct-h1">Contact OC Electronic Recycling</h1>
             <p className="ct-lede">
               Questions about a project, a document or an unusual item? Send a message or call during business hours.
             </p>
+          </div>
+          <Photo name="exterior" className="ct-in" sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px" ratio="3 / 2" position="100% 50%" eager />
           </div>
         </div>
       </section>

@@ -167,6 +167,64 @@ for (const file of [...sourceFiles, 'posts/blog-data.ts', ...walk('app', ['.css'
 if (/lastModified:\s*new Date\(\)/.test(read('app/sitemap.ts'))) fail('[sitemap] app/sitemap.ts uses build-time `new Date()` for lastModified')
 if (!read('app/sitemap.ts').includes('/business-pickup')) fail('[sitemap] /business-pickup is missing from the sitemap')
 
+// ── 9. Company photography stays on the pages it belongs to ─────────────────
+// The owner's own photos must not be dropped or swapped for illustrations.
+// lib/photos.ts declares each photo's real dimensions; check them against the
+// file itself, and check each page still renders the photos it had on `main`.
+function imageSize(buf) {
+  // JPEG (one photo in /public/image is a JPEG despite its .webp name): read the SOF marker.
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    for (let i = 2; i + 9 < buf.length;) {
+      if (buf[i] !== 0xff) { i++; continue }
+      const marker = buf[i + 1]
+      if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) return { w: buf.readUInt16BE(i + 7), h: buf.readUInt16BE(i + 5) }
+      i += 2 + buf.readUInt16BE(i + 2)
+    }
+    return null
+  }
+  if (buf.toString('ascii', 0, 4) !== 'RIFF' || buf.toString('ascii', 8, 12) !== 'WEBP') return null
+  const chunk = buf.toString('ascii', 12, 16)
+  if (chunk === 'VP8X') return { w: 1 + buf.readUIntLE(24, 3), h: 1 + buf.readUIntLE(27, 3) }
+  if (chunk === 'VP8 ') return { w: buf.readUInt16LE(26) & 0x3fff, h: buf.readUInt16LE(28) & 0x3fff }
+  if (chunk === 'VP8L') {
+    const [b0, b1, b2, b3] = buf.subarray(21, 25)
+    return { w: 1 + (((b1 & 0x3f) << 8) | b0), h: 1 + (((b3 & 0xf) << 10) | (b2 << 2) | ((b1 & 0xc0) >> 6)) }
+  }
+  return null
+}
+const photoSrc = read('lib/photos.ts')
+const photos = [...photoSrc.matchAll(/^ {2}(\w+): \{\s*src: '([^']+)',\s*width: (\d+),\s*height: (\d+),\s*alt: '([^']*)'/gm)]
+  .map(([, name, src, w, h, alt]) => ({ name, src, w: Number(w), h: Number(h), alt }))
+if (photos.length === 0) fail('[photos] could not read any entries from lib/photos.ts')
+for (const p of photos) {
+  const file = join(ROOT, 'public', p.src)
+  if (!existsSync(file)) { fail(`[photos] ${p.name}: ${p.src} does not exist in /public`); continue }
+  const size = imageSize(readFileSync(file))
+  if (!size) fail(`[photos] ${p.name}: could not read dimensions of ${p.src}`)
+  else if (size.w !== p.w || size.h !== p.h) fail(`[photos] ${p.name}: lib/photos.ts says ${p.w}×${p.h} but ${p.src} is ${size.w}×${size.h}`)
+  if (p.alt.length < 40) fail(`[photos] ${p.name}: alt text is too short to describe the photo`)
+}
+const REQUIRED_PHOTOS = {
+  'app/page.tsx': ['facility', 'overview', 'sorting'],
+  'app/about/page.tsx': ['about', 'team'],
+  'app/contact/page.tsx': ['exterior'],
+  'app/how-it-works/page.tsx': ['inspection'],
+  'app/resources/page.tsx': ['records'],
+  'app/services/page.tsx': ['workbench'],
+}
+for (const [file, names] of Object.entries(REQUIRED_PHOTOS)) {
+  const src = read(file)
+  for (const n of names) if (!new RegExp(`<Photo[^>]*\\bname="${n}"`).test(src)) fail(`[photos] ${file}: company photo "${n}" is no longer rendered`)
+}
+for (const p of photos) {
+  if (!Object.values(REQUIRED_PHOTOS).flat().includes(p.name)) fail(`[photos] "${p.name}" is declared in lib/photos.ts but not required on any page`)
+}
+// The homepage hero must lead with the warehouse photo, loaded eagerly.
+const homeHero = read('app/page.tsx').match(/<section className="ct-hero[\s\S]*?<\/section>/)
+if (!homeHero || !/<Photo\s[^>]*name="facility"[^>]*\beager\b/.test(homeHero[0].replace(/\n\s*/g, ' '))) {
+  fail('[photos] app/page.tsx: the hero no longer shows the warehouse photo (name="facility", eager)')
+}
+
 // ── Report ──────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`\n✗ SEO check failed with ${errors.length} issue(s):\n`)

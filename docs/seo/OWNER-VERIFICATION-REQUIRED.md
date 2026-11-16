@@ -53,6 +53,9 @@ If any of these change, edit them in `lib/pickup.ts` / `lib/site.ts`. `npm run s
 | 21 | `framer-motion` dependency | `package.json` | No longer imported anywhere. Animations are now CSS only | OK to remove it in a follow-up (`npm uninstall framer-motion`) | config |
 | 22 | Third-party chat widget (`niro-ai-platform.vercel.app`) | Layout | Unchanged. Couldn't be loaded in the sandbox | Confirm it should stay, and that it collects no data before consent | verify |
 | 23 | Phone (949) 287-3056 and `info@ocelectronicrecycling.com` | Sitewide and in the schema | Unchanged | Confirm both are current | verify |
+| 24 | Wording visible inside company photos | `about-team.webp` (back wall reads "Secure. Sustainable. Certified.") and `resources-oc-electronic-recycling.webp` (tablet shows a "Certificate of Compliance") | Both photos are shown as they were on `main`. Site copy claims no certification | Confirm you are comfortable with that wording appearing in the photos, or supply versions without it | verify |
+| 25 | `hero-overview-oc-electronic-recycling.webp` is a JPEG file with a `.webp` name | `/public/image` | Works: Next.js serves an optimized WebP from it. Left as is, because renaming it is not a photo change | Optionally re-export it as a real WebP | config |
+| 26 | Unused photo files | `dd`, `dfd`, `gg`, `ggghh`, `jkj` (storefront variants), `dfdf`, `tyt` (duplicates of the resources photo), `sss` (duplicate of the recycling photo), `contact-hero` (city skyline) | Already unused on `main`. Kept in `/public/image`, not deleted | Say if any of these should appear somewhere | verify |
 
 ### Source links to click once (item 17)
 

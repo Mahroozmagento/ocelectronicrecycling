@@ -7,6 +7,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
 import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
 import { EMAIL, HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, SERVICE_AREA, SITE_URL } from '@/lib/site'
 
@@ -52,13 +53,23 @@ export default function AboutPage() {
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
           <Breadcrumbs crumbs={CRUMBS} />
-          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 860 }}>
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
             <span className="ct-eyebrow">About</span>
             <h1 className="ct-h1">A straightforward partner for retiring business technology</h1>
             <p className="ct-lede">
               OC Electronic Recycling helps organizations across {SERVICE_AREA} retire computers, servers, networking
               gear and office electronics — with clear eligibility rules, data handling you select, and documentation matched to the job.
             </p>
+          </div>
+          <Photo
+            name="about"
+            className="ct-in"
+            sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px"
+            ratio="3 / 2"
+            position="100% 50%"
+            eager
+          />
           </div>
         </div>
       </section>
@@ -82,6 +93,13 @@ export default function AboutPage() {
               <Link href="/services" className="ct-btn ct-btn--ghost">Our services</Link>
             </div>
           </div>
+          <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
+          <Photo
+            name="team"
+            sizes="(max-width: 900px) calc(100vw - 32px), (max-width: 1240px) 40vw, 500px"
+            ratioSm="16 / 9"
+            caption="Our crew and trucks at the warehouse."
+          />
           <div className="ct-panel">
             <h3 className="ct-h3">Contact</h3>
             <ul className="ct-checks" style={{ marginTop: 14, color: 'var(--ct-text-2)' }}>
@@ -90,6 +108,7 @@ export default function AboutPage() {
               <li>{HOURS}</li>
               <li>Service area: {SERVICE_AREA}</li>
             </ul>
+          </div>
           </div>
         </div>
       </section>

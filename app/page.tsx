@@ -3,10 +3,10 @@
 // IT asset disposition. Fully server-rendered; no client JavaScript of its own.
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CustodyLoop } from '@/components/CustodyVisuals'
 import FaqList from '@/components/Faq'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
 import { REGIONS, getCityBySlug } from '@/lib/cities'
 import { faqNode, graph, type Faq } from '@/lib/schema'
 import {
@@ -102,7 +102,7 @@ export default function HomePage() {
       {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="ct-hero ct-gridlines">
         <div className="ct-wrap">
-          <div className="ct-hero__grid">
+          <div className="ct-hero__grid ct-hero__grid--photo">
             <div className="ct-hero__copy ct-rise">
               <span className="ct-eyebrow">{SERVICE_AREA}</span>
               <h1 className="ct-h1">
@@ -123,8 +123,13 @@ export default function HomePage() {
                 <span>Call <a href={PHONE_HREF} data-cta-location="home_hero">{PHONE_DISPLAY}</a> · {HOURS}</span>
               </p>
             </div>
-            <div className="ct-hero__art ct-hero__art--loop ct-in">
-              <CustodyLoop />
+            <div className="ct-hero__photo ct-in">
+              <Photo
+                name="facility"
+                sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 980px) 560px, (max-width: 1240px) 40vw, 500px"
+                eager
+                caption="Inside our warehouse: equipment is sorted by type before processing."
+              />
             </div>
           </div>
 
@@ -187,6 +192,14 @@ export default function HomePage() {
               It is an illustration of the process, not a live feed.
             </p>
           </div>
+          <Photo
+            name="overview"
+            className="ct-photo--wide"
+            sizes="(max-width: 1240px) calc(100vw - 32px), 1200px"
+            ratioSm="4 / 3"
+            position="30% 50%"
+            caption="Company trucks and sorted equipment bins at our warehouse."
+          />
           <ol className="ct-rail">
             {PROCESS_STEPS.map((s) => (
               <li key={s.title}>
@@ -299,6 +312,15 @@ export default function HomePage() {
               <p><strong>Metals, plastics, glass and boards</strong>Separated and sent to downstream processors for recovery.</p>
             </li>
           </ul>
+        </div>
+        <div className="ct-wrap">
+          <Photo
+            name="sorting"
+            className="ct-photo--after"
+            sizes="(max-width: 1240px) calc(100vw - 32px), 1200px"
+            ratioSm="4 / 3"
+            caption="Equipment is sorted by type on our processing floor."
+          />
         </div>
       </section>
 
