@@ -17,6 +17,9 @@ export const HOURS = 'Mon–Fri, 8am–6pm'
 
 /** The only service-area wording used sitewide. Not a list of offices. */
 export const SERVICE_AREA = 'Orange County and South Los Angeles'
+/** Founding year, explicitly confirmed by the business owner. Used in the
+ * homepage hero ("Since 2012") and as LocalBusiness `foundingDate`. */
+export const FOUNDING_YEAR = '2012'
 
 export const DEFAULT_OG_IMAGE = '/image/hero-facility-oc-electronic-recycling.webp'
 
@@ -128,6 +131,7 @@ export const PRIMARY_NAV = [
   { label: 'Service Areas', href: '/service-areas' },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'Resources', href: '/resources' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ] as const

@@ -104,6 +104,7 @@ while (queue.length) {
   const allLd = JSON.stringify(nodes)
   if (/AggregateRating|"Review"/.test(allLd)) fail(path, 'ratings/reviews in structured data')
   if (/streetAddress/.test(allLd)) fail(path, 'street address in structured data (none is verified)')
+  for (const m of allLd.matchAll(/"foundingDate"\s*:\s*"([^"]*)"/g)) if (m[1] !== '2012') fail(path, `foundingDate "${m[1]}" conflicts with the owner-confirmed 2012`)
   for (const m of allLd.matchAll(/"(?:item|url|@id)":"([^"]+)"/g)) {
     if (m[1].startsWith('/')) fail(path, `relative URL in JSON-LD: ${m[1]}`)
   }

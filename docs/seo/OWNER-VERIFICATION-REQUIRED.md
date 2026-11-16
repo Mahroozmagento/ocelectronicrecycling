@@ -9,6 +9,7 @@ This list covers business facts and claims that the repository can't prove. The 
 - `qualified`: softened; safe to ship as it is.
 - `verify`: still on the site in some form and needs your confirmation.
 - `config`: a deployment setting, not copy.
+- `confirmed`: explicitly confirmed by the business owner; now stated on the site.
 
 ## Verified policies (the source of truth in `lib/pickup.ts` and `lib/site.ts`)
 
@@ -18,6 +19,7 @@ This list covers business facts and claims that the repository can't prove. The 
 - **Confirmed individually:** oversized, specialized, hazardous or unusual items.
 - **Requests and timing:** a request is not a confirmed booking. The site makes no same-day or same-week promise.
 - **City pages** describe service areas, not branch locations.
+- **Founding year:** 2012, explicitly confirmed by the business owner (2026-11-16). Shown as "Since 2012" and as `foundingDate: "2012"`.
 - **Data and documentation:**
   - Documentation depends on the service selected and the equipment processed.
   - Data destruction is never automatic.
@@ -30,7 +32,7 @@ If any of these change, edit them in `lib/pickup.ts` / `lib/site.ts`. `npm run s
 
 | # | Item | Where | Current state | What we need from you | Status |
 |---|---|---|---|---|---|
-| 1 | "Est. 2012" founding year | Old homepage hero | Removed everywhere | Business registration date, if you want a founding year shown | removed |
+| 1 | Founding year 2012 | Homepage hero trust line ("Since 2012"); LocalBusiness `foundingDate: "2012"` | **Explicitly confirmed by the business owner on 2026-11-16.** Restored as "Since 2012" from one constant (`FOUNDING_YEAR` in `lib/site.ts`). No full date, anniversary count or years-in-business number is stated. `seo:check` and `seo:crawl` fail on any other founding year or a tenure count | Nothing further, unless a full founding date is wanted (would need records) | confirmed |
 | 2 | DTSC registration, facility ID, or any other regulatory authorization | Nowhere on the site | Not claimed. Copy says equipment is handled "in line with California e-waste regulations" | Your own registration or authorization numbers and their scope. Never use another company's ID | verify |
 | 3 | Certifications (R2, e-Stewards, NAID AAA, ISO 14001, etc.) | Nowhere on the site | Not claimed. "Certificate" refers only to the documents you issue | Copies of current certificates, if any, so they can be stated accurately | verify |
 | 4 | On-site or witnessed shredding | Data destruction page, FAQ | Described as "confirmed per project" | Whether you offer it, and where (your site or a facility) | verify |

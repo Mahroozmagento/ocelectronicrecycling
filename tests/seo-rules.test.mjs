@@ -25,7 +25,14 @@ test('retired claims are caught on commercial pages', () => {
   assert.ok(ids('A certificate for every device').includes('cert-every'))
   assert.ok(ids('Free business pickup for everyone').includes('free-pickup'))
   assert.ok(ids('346K+ Anaheim residents served').includes('served-count'))
-  assert.ok(ids('Est. 2012').includes('est-2012'))
+  // Founding year: 2012 is confirmed; any other year or a tenure count is flagged.
+  assert.deepEqual(ids('Since 2012'), [])
+  assert.deepEqual(ids('Est. 2012'), [])
+  assert.ok(ids('Since 2009').includes('founding-since'))
+  assert.deepEqual(ids('Since 2005, California has regulated e-waste.', { isBlog: true }), [])
+  assert.ok(ids('Founded in 2010', { isBlog: true }).includes('founding-year'))
+  assert.ok(ids('Established in 2015').includes('founding-year'))
+  assert.ok(ids('Over 14 years of experience').includes('tenure-count'))
   assert.ok(ids('Zero landfill policy').includes('zero-landfill'))
 })
 

@@ -221,7 +221,7 @@ The sitemap has 71 URLs and includes `/business-pickup`.
 ## 9. Claims
 
 **Removed or corrected across the site**
-- "Est. 2012" and served-count statistics.
+- Served-count statistics. ("Est. 2012" was removed at first; the owner later confirmed the year, and it now appears as "Since 2012".)
 - "Free" pickup without conditions.
 - Same-day and same-week promises.
 - "Zero landfill" and "nothing goes to landfill".

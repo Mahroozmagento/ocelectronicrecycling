@@ -129,9 +129,6 @@ export default function Header() {
                 {label} <Icon name="chevron" size={18} />
               </Link>
             ))}
-            <Link href="/blog" aria-current={isCurrent(pathname, '/blog') ? 'page' : undefined} onClick={() => setOpen(false)}>
-              Blog <Icon name="chevron" size={18} />
-            </Link>
           </nav>
           <div className="ct-mobile__foot">
             <Link href={pickupHref} className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="mobile_menu" onClick={() => setOpen(false)}>

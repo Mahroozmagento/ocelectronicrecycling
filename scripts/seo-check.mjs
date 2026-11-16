@@ -6,7 +6,9 @@
  *
  * Fails on:
  *   - Retired / prohibited claims (same-week, "all electronics", superlatives,
- *     universal certificates, NIST-as-certification, served counts, Est. 2012…)
+ *     universal certificates, NIST-as-certification, served counts, founding
+ *     years other than the owner-confirmed 2012, years-in-business counts…)
+ *   - foundingDate / FOUNDING_YEAR drift from 2012
  *   - JSX that would join a word to a dynamic value ("most{city.name}" → "mostIrvine")
  *   - City data that reintroduces ZIPs, statistics or relationship claims
  *   - Pickup policy numbers that disagree with lib/pickup.ts (5 items, $39 per TV)
@@ -229,6 +231,21 @@ if (!homeHero || !/<CustodyLoop\s*\/>/.test(homeHero[0])) fail('[photos] app/pag
 for (const n of ['overview', 'sorting']) {
   if (!new RegExp(`<PhotoBand[^>]*\\bname="${n}"`).test(read('app/page.tsx'))) fail(`[photos] app/page.tsx: background band for "${n}" is missing`)
 }
+
+// ── 10. Founding year (owner-confirmed: 2012) ───────────────────────────────
+// One constant drives the visible "Since 2012" and the structured data. Other
+// founding-year phrasing anywhere is caught by the claim rules (section 2).
+const FOUNDED = '2012'
+const yearDecl = read('lib/site.ts').match(/export const FOUNDING_YEAR = '(\d{4})'/)
+if (!yearDecl) fail('[founding] lib/site.ts: FOUNDING_YEAR is missing')
+else if (yearDecl[1] !== FOUNDED) fail(`[founding] lib/site.ts: FOUNDING_YEAR is ${yearDecl[1]}, but the owner-confirmed year is ${FOUNDED}`)
+for (const file of sourceFiles) {
+  for (const m of read(file).matchAll(/foundingDate['"]?\s*:\s*([^,\n}]+)/g)) {
+    const v = m[1].trim()
+    if (v !== 'FOUNDING_YEAR' && v.replace(/['"]/g, '') !== FOUNDED) fail(`[founding] ${file}: foundingDate is ${v}; use FOUNDING_YEAR (${FOUNDED})`)
+  }
+}
+if (!/<span className="ct-since">\{`Since \$\{FOUNDING_YEAR\}`\}<\/span>/.test(read('app/page.tsx'))) fail('[founding] app/page.tsx: the "Since 2012" hero indicator is missing')
 
 // ── Report ──────────────────────────────────────────────────────────────────
 if (errors.length) {

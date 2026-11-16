@@ -57,7 +57,12 @@ export const CLAIM_RULES = [
   { id: 'most-trusted', re: /most trusted/gi, scope: 'site', negatable: false, why: 'superlative' },
   { id: 'premier', re: /\bpremier\b/gi, scope: 'site', negatable: false, why: 'superlative' },
   { id: 'number-one', re: /#1\b|number[- ]one (e-?waste|recycler|itad)/gi, scope: 'site', negatable: false, why: 'superlative' },
-  { id: 'est-2012', re: /\bEst\.? 2012\b/g, scope: 'site', negatable: false, why: 'unverified founding year' },
+  // The owner confirmed 2012 as the founding year (docs/seo/OWNER-VERIFICATION-REQUIRED.md).
+  // Any other founding year, or an invented tenure count, is a conflict.
+  { id: 'founding-year', re: /\b(?:Est\.?|Established(?: in)?|Founded(?: in)?)\s+(?!2012\b)(?:19|20)\d{2}\b/g, scope: 'site', negatable: false, why: 'founding year conflicts with the confirmed 2012' },
+  // "Since <year>" is ordinary prose in articles ("Since 2005, California…"), so it is checked on commercial pages only.
+  { id: 'founding-since', re: /\bSince\s+(?!2012\b)(?:19|20)\d{2}\b/g, scope: 'commercial', negatable: false, why: 'founding year conflicts with the confirmed 2012' },
+  { id: 'tenure-count', re: /\b\d+\+?\s+years?\s+(?:of experience|in business|of service|serving)\b/gi, scope: 'commercial', negatable: false, why: 'unverified years-in-business count' },
   { id: 'free-pickup', re: /\bfree (business |electronics |computer |scheduled )?pick-?up\b/gi, scope: 'site', negatable: true, why: 'unqualified free-pickup claim' },
   { id: 'no-minimum', re: /\bno (volume )?minimums?\b/gi, scope: 'site', negatable: false, why: 'contradicts the 5-item minimum' },
   { id: 'nist-cert', re: /NIST[^.]{0,25}\bcertified\b|certified (to|under) NIST|NIST certification/gi, scope: 'site', negatable: true, why: 'NIST 800-88 described as a certification' },

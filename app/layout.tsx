@@ -8,7 +8,7 @@ import AnalyticsScripts from '@/components/AnalyticsScripts'
 import AnalyticsEvents from '@/components/AnalyticsEvents'
 import JsonLd from '@/components/JsonLd'
 import { AREA_SERVED } from '@/lib/schema'
-import { BUSINESS_ID, DEFAULT_OG_IMAGE, EMAIL, PICKUP_MINIMUM, SERVICE_AREA, SITE_NAME, SITE_URL, WEBSITE_ID } from '@/lib/site'
+import { BUSINESS_ID, DEFAULT_OG_IMAGE, EMAIL, FOUNDING_YEAR, PICKUP_MINIMUM, SERVICE_AREA, SITE_NAME, SITE_URL, WEBSITE_ID } from '@/lib/site'
 import './globals.css'
 import './styles/ct-core.css'
 import './styles/ct-pickup.css'
@@ -63,6 +63,7 @@ const SITE_GRAPH = {
       image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
       address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
       areaServed: AREA_SERVED,
+      foundingDate: FOUNDING_YEAR,
       openingHoursSpecification: [
         {
           '@type': 'OpeningHoursSpecification',

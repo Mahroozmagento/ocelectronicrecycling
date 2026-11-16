@@ -12,7 +12,7 @@ import PhotoBand from '@/components/PhotoBand'
 import { REGIONS, getCityBySlug } from '@/lib/cities'
 import { faqNode, graph, type Faq } from '@/lib/schema'
 import {
-  COURTESY_ITEMS, DEFAULT_OG_IMAGE, ELIGIBILITY_FACTS, FEATURED_CITY_SLUGS, HOURS, PHONE_DISPLAY, PHONE_HREF,
+  COURTESY_ITEMS, DEFAULT_OG_IMAGE, ELIGIBILITY_FACTS, FEATURED_CITY_SLUGS, FOUNDING_YEAR, HOURS, PHONE_DISPLAY, PHONE_HREF,
   PICKUP_MINIMUM, POLICY, PROCESS_STEPS, QUALIFYING_ITEMS, SERVICE_AREA, SITE_URL, TV_FEE,
 } from '@/lib/site'
 
@@ -106,7 +106,11 @@ export default function HomePage() {
         <div className="ct-wrap">
           <div className="ct-hero__grid ct-hero__grid--stage">
             <div className="ct-hero__copy ct-rise">
-              <span className="ct-eyebrow">{SERVICE_AREA}</span>
+              {/* Trust line: founding year (owner-confirmed) + service area */}
+              <p className="ct-hero__meta">
+                <span className="ct-since">{`Since ${FOUNDING_YEAR}`}</span>
+                <span className="ct-eyebrow">{SERVICE_AREA}</span>
+              </p>
               <h1 className="ct-h1">
                 Electronics recycling and secure IT disposal <em>for Orange County businesses</em>
               </h1>
