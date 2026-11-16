@@ -62,7 +62,9 @@ select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid #6aa0ff;
+  /* Light blue reads on ink; light surfaces switch to the darker secure blue
+     (via --ct-focus below) so the ring keeps 3:1 contrast everywhere. */
+  outline: 3px solid var(--ct-focus, #6aa0ff);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -109,10 +111,10 @@ summary:focus-visible,
 .ct-section--ink { background: var(--ct-ink); color: var(--ct-on-ink); }
 .ct-section--ink2 { background: var(--ct-ink-2); color: var(--ct-on-ink); }
 /* Contextual tokens: light surfaces first, ink surfaces override below. */
-.ct-section { --ct-rule: var(--ct-line); --ct-sub: var(--ct-text-2); --ct-accent: var(--ct-circular-ink); --ct-linkc: var(--ct-secure-ink); }
+.ct-section { --ct-rule: var(--ct-line); --ct-sub: var(--ct-text-2); --ct-accent: var(--ct-circular-ink); --ct-linkc: var(--ct-secure-ink); --ct-focus: var(--ct-secure-ink); }
 .ct-section--ink,
 .ct-section--ink2,
-.ct-hero { --ct-rule: var(--ct-ink-line); --ct-sub: var(--ct-on-ink-2); --ct-accent: var(--ct-circular); --ct-linkc: var(--ct-secure-soft); }
+.ct-hero { --ct-rule: var(--ct-ink-line); --ct-sub: var(--ct-on-ink-2); --ct-accent: var(--ct-circular); --ct-linkc: var(--ct-secure-soft); --ct-focus: #6aa0ff; }
 
 /* Technical grid backdrop for ink sections */
 .ct-gridlines { overflow: hidden; isolation: isolate; }
@@ -128,6 +130,13 @@ summary:focus-visible,
   -webkit-mask-image: radial-gradient(ellipse 80% 90% at 75% 20%, #000 10%, transparent 75%);
   mask-image: radial-gradient(ellipse 80% 90% at 75% 20%, #000 10%, transparent 75%);
   pointer-events: none;
+}
+
+/* Light surfaces: the same technical grid in ink at low opacity. */
+.ct-gridlines--light::before {
+  background-image:
+    linear-gradient(rgba(14, 26, 43, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 26, 43, 0.055) 1px, transparent 1px);
 }
 
 /* ── Type ─────────────────────────────────────────────────────────────────── */
@@ -444,16 +453,102 @@ summary:focus-visible,
   .ct-photo__img { aspect-ratio: var(--ph-ratio-sm); border-radius: 12px; }
 }
 
-/* Homepage hero: copy beside the full warehouse photo (portrait, uncropped). */
-.ct-hero__grid--photo { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); align-items: center; }
-.ct-hero__photo { min-width: 0; }
-/* On tablets and phones the photo leads the hero so it is on the first screen
-   (the sticky mobile action bar keeps both CTAs visible). A square crop keeps
-   the wall logo, the staff and the bin labels in frame. */
-@media (max-width: 980px) {
-  .ct-hero__grid--photo { grid-template-columns: 1fr; gap: 28px; }
-  .ct-hero__photo { order: -1; max-width: 560px; width: 100%; margin-inline: auto; }
-  .ct-hero__photo .ct-photo__img { aspect-ratio: 1 / 1; object-position: 50% 60%; }
+/* Homepage hero stage: the custody loop overlaps the left edge of the
+   uncropped warehouse photo. The overlap (12% of the stage) only meets the
+   loop's right-hand arc and "Protect data" station, so the photo's logo,
+   staff and bins stay clear. Phones stack copy → loop → photo. */
+.ct-hero__grid--stage { grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr); gap: clamp(28px, 3.5vw, 52px); }
+@media (min-width: 1181px) { .ct-hero__grid--stage .ct-h1 { font-size: clamp(2.6rem, 3.5vw, 3.35rem); } }
+.ct-stage { display: grid; grid-template-columns: 50fr 12fr 38fr; align-items: center; min-width: 0; }
+.ct-stage__loop { grid-column: 1 / 3; grid-row: 1; position: relative; z-index: 2; min-width: 0; }
+.ct-stage__photo { grid-column: 2 / 4; grid-row: 1; transform: translateY(18px); }
+@media (max-width: 1180px) {
+  .ct-hero__grid--stage { grid-template-columns: 1fr; }
+  .ct-stage { width: min(100%, 760px); margin-inline: auto; }
+}
+@media (max-width: 640px) {
+  .ct-stage { grid-template-columns: 1fr; gap: 24px; }
+  .ct-stage__loop, .ct-stage__photo { grid-column: 1; transform: none; }
+  .ct-stage__photo { grid-row: 2; }
+}
+
+/* ── Photo background bands (components/PhotoBand.tsx) ───────────────────── */
+.ct-photoband {
+  --ct-rule: var(--ct-ink-line); --ct-sub: var(--ct-on-ink-2); --ct-accent: var(--ct-circular); --ct-linkc: var(--ct-secure-soft); --ct-focus: #6aa0ff;
+  --pb-h: clamp(220px, 56vw, 380px);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--ct-ink);
+  color: var(--ct-on-ink);
+  /* Bands sit below the fold: skip their rendering — and so their background
+     download — until they approach the viewport. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 640px;
+}
+.ct-photoband__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--ct-ink-2);
+  background-image: var(--pb-lg);
+  background-size: cover;
+  background-position: var(--pb-pos);
+  background-repeat: no-repeat;
+}
+.ct-photoband__inner { display: flex; align-items: center; min-height: clamp(480px, 38vw, 580px); padding-block: 48px; }
+.ct-photoband .ct-h2 { font-size: clamp(1.8rem, 2.5vw, 2.35rem); }
+.ct-photoband__card { display: grid; gap: 18px; justify-items: start; }
+.ct-photoband__card .ct-lede { max-width: 52ch; font-size: 1.05rem; }
+.ct-photoband__fine { font-size: 0.9rem; line-height: 1.55; color: var(--ct-on-ink-2); max-width: 52ch; }
+.ct-photoband__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+
+/* card: photo across the band, text on an ink card at the right */
+.ct-photoband--card .ct-photoband__inner { justify-content: flex-end; }
+.ct-photoband--card .ct-photoband__media::after {
+  /* A light shade only behind the card side; the left of the photo is untouched. */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 18, 32, 0) 45%, rgba(10, 18, 32, 0.45) 75%, rgba(10, 18, 32, 0.6) 100%);
+}
+.ct-photoband--card .ct-photoband__card {
+  width: min(100%, 548px);
+  padding: clamp(26px, 2.8vw, 38px);
+  border-radius: 18px;
+  background: rgba(10, 18, 32, 0.86);
+  border: 1px solid var(--ct-ink-line);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+/* split: photo in the right half, text on solid ink in the left half */
+.ct-photoband--split .ct-photoband__media { left: 50%; }
+.ct-photoband--split .ct-photoband__card { width: calc(50% - 48px); }
+
+@media (max-width: 900px) {
+  .ct-photoband__media,
+  .ct-photoband--split .ct-photoband__media {
+    inset: 0 0 auto 0;
+    height: var(--pb-h);
+    background-image: var(--pb-sm);
+    background-position: var(--pb-pos-sm);
+  }
+  .ct-photoband--card .ct-photoband__media::after { display: none; }
+  .ct-photoband__inner { min-height: 0; padding-block: calc(var(--pb-h) + 36px) 56px; }
+  .ct-photoband--card .ct-photoband__card,
+  .ct-photoband--split .ct-photoband__card {
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}
+@media (max-width: 520px) {
+  .ct-photoband__actions { width: 100%; }
+  .ct-photoband__actions .ct-btn { flex: 1 1 100%; }
 }
 
 /* Inner-page heroes: copy left, a cropped landscape photo right. */
@@ -482,6 +577,30 @@ summary:focus-visible,
 /* Inner-page hero (compact) */
 .ct-hero--page { padding-block: clamp(36px, 5vw, 64px) clamp(40px, 5.5vw, 72px); }
 .ct-hero--page .ct-h1 { font-size: clamp(2.05rem, 4.4vw, 3.4rem); }
+
+/* Light hero (Business Pickup): pale mineral surface, ink type, AA accents.
+   Same structure and components as the ink hero. */
+.ct-hero--light {
+  --ct-rule: var(--ct-line); --ct-sub: var(--ct-text-2); --ct-accent: var(--ct-circular-ink); --ct-linkc: var(--ct-secure-ink); --ct-focus: var(--ct-secure-ink);
+  background:
+    radial-gradient(ellipse 70% 80% at 85% 0%, rgba(59, 123, 255, 0.07), transparent 60%),
+    linear-gradient(180deg, #eef2f6 0%, #f5f7f9 100%);
+  background-color: #f1f4f7; /* under the gradients; lets tools measure contrast */
+  color: var(--ct-text);
+  border-bottom: 1px solid var(--ct-line);
+}
+.ct-hero--light .ct-h1 em { color: var(--ct-circular-ink); }
+.ct-hero--light .ct-eyebrow--secure { color: var(--ct-secure-ink); }
+.ct-hero--light .ct-eyebrow--warm { color: var(--ct-warm-ink); }
+.ct-hero--light .ct-hero__phone { color: var(--ct-text-2); }
+.ct-hero--light .ct-hero__phone a { color: var(--ct-text); }
+.ct-hero--light .ct-hero__phone a:hover { color: var(--ct-secure-ink); }
+.ct-hero--light .ct-btn--primary { background: var(--ct-ink); color: #fff; }
+.ct-hero--light .ct-btn--primary:hover { background: var(--ct-ink-3); box-shadow: 0 10px 26px -12px rgba(10, 18, 32, 0.55); }
+.ct-hero--light .ct-btn--ghost { border-color: #9aa8bb; background: rgba(255, 255, 255, 0.6); }
+.ct-hero--light .ct-btn--ghost:hover { border-color: var(--ct-text); background: #fff; }
+.ct-hero--light .ct-facts { background: #fff; border-color: var(--ct-line); box-shadow: var(--ct-shadow); }
+.ct-hero.ct-hero--light .ct-facts li:nth-child(2) .ct-facts__value { color: var(--ct-warm-ink); }
 
 /* ── Eligibility facts strip ──────────────────────────────────────────────── */
 .ct-facts {
@@ -749,6 +868,17 @@ a.ct-chip:hover { border-color: currentColor; color: var(--ct-linkc); }
 @media (max-width: 900px) { .ct-footer__grid { grid-template-columns: 1fr 1fr; } .ct-footer__brand { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .ct-footer__grid { grid-template-columns: 1fr; } }
 
+/* ── Custody loop (homepage hero art) ─────────────────────────────────────── */
+.ct-loop { width: 100%; height: auto; display: block; overflow: visible; }
+.ct-loop text { font-family: var(--font-head); }
+.ct-loop__labels text { paint-order: stroke; stroke: var(--ct-ink); stroke-width: 6px; stroke-linejoin: round; }
+.ct-loop__spin { transform-origin: 260px 260px; }
+@media (prefers-reduced-motion: no-preference) {
+  .ct-loop__spin { animation: ct-spin 80s linear infinite; }
+  .ct-loop__pulse { animation: ct-orbit 14s linear infinite; transform-origin: 260px 260px; }
+}
+@keyframes ct-spin { to { transform: rotate(360deg); } }
+@keyframes ct-orbit { to { transform: rotate(360deg); } }
 .ct-art-caption { margin-top: 10px; text-align: center; font: 500 0.72rem/1.4 var(--ct-mono); letter-spacing: 0.06em; color: var(--ct-on-ink-2); }
 
 /* ── Custody manifest (Business Pickup hero art) ───────────────── */
@@ -777,6 +907,22 @@ a.ct-chip:hover { border-color: currentColor; color: var(--ct-linkc); }
   88% { opacity: 1; }
   100% { transform: translateY(var(--ct-travel, 190px)); opacity: 0; }
 }
+
+/* Manifest on a light surface (Business Pickup light hero). */
+.ct-hero--light .ct-manifest { background: #fff; border-color: var(--ct-line); box-shadow: var(--ct-shadow); }
+.ct-hero--light .ct-manifest__bar { color: var(--ct-text-3); border-bottom-color: var(--ct-line); background: var(--ct-mineral); }
+.ct-hero--light .ct-manifest__bar b { color: var(--ct-warm-ink); }
+.ct-hero--light .ct-manifest__inputs li { color: var(--ct-text); border-color: var(--ct-line); background: var(--ct-mineral); }
+.ct-hero--light .ct-manifest__inputs svg { color: var(--ct-text-3); }
+.ct-hero--light .ct-manifest__node { background: var(--ct-circular-tint); border-color: #bfe8d4; color: var(--ct-circular-ink); }
+.ct-hero--light .ct-manifest__flow li:nth-child(2) .ct-manifest__node,
+.ct-hero--light .ct-manifest__flow li:nth-child(3) .ct-manifest__node { background: var(--ct-secure-tint); border-color: #c9d8fb; color: var(--ct-secure-ink); }
+.ct-hero--light .ct-manifest__flow::before { opacity: 0.8; }
+.ct-hero--light .ct-manifest__flow::after { background: var(--ct-ink); box-shadow: 0 0 0 4px rgba(10, 116, 73, 0.22); }
+.ct-hero--light .ct-manifest__title { color: var(--ct-text); }
+.ct-hero--light .ct-manifest__sub { color: var(--ct-text-3); }
+.ct-hero--light .ct-manifest__doc { color: var(--ct-text-2); border-color: #9aa8bb; }
+.ct-hero--light .ct-art-caption { color: var(--ct-text-3); }
 @media (max-width: 480px) {
   .ct-manifest__flow li { grid-template-columns: 44px minmax(0, 1fr); }
   .ct-manifest__doc { grid-column: 2; justify-self: start; }

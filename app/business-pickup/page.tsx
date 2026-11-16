@@ -118,10 +118,12 @@ export default function BusinessPickupPage() {
         )}
       />
 
+      {/* Page wrapper: gives this page's plain sections a soft off-white (see ct-pickup.css). */}
+      <div className="ct-page--pickup">
       {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="ct-hero ct-gridlines">
+      <section className="ct-hero ct-hero--light ct-gridlines ct-gridlines--light">
         <div className="ct-wrap">
-          <Breadcrumbs crumbs={CRUMBS} />
+          <Breadcrumbs crumbs={CRUMBS} tone="light" />
           <div className="ct-hero__grid" style={{ marginTop: 22 }}>
             <div className="ct-hero__copy ct-rise">
               <span className="ct-eyebrow">Business pickup · {SERVICE_AREA}</span>
@@ -161,7 +163,7 @@ export default function BusinessPickupPage() {
       </section>
 
       {/* 2 ── Estimator ────────────────────────────────────────────────────── */}
-      <section className="ct-section ct-section--ink2" id="estimator" aria-labelledby="estimator-title">
+      <section className="ct-section" id="estimator" aria-labelledby="estimator-title">
         <div className="ct-wrap">
           <div className="ct-head ct-head--split">
             <div>
@@ -175,7 +177,7 @@ export default function BusinessPickupPage() {
           </div>
           <EligibilityEstimator />
           <noscript>
-            <p className="ct-note ct-note--ink" style={{ marginTop: 16 }}>
+            <p className="ct-note" style={{ marginTop: 16 }}>
               The estimator and request form need JavaScript. You can also call {PHONE_DISPLAY} or email {EMAIL} with your equipment list.
             </p>
           </noscript>
@@ -385,6 +387,7 @@ export default function BusinessPickupPage() {
           </div>
         </div>
       </section>
+      </div>
     </PickupProvider>
   )
 }

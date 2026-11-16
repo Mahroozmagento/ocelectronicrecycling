@@ -3,10 +3,12 @@
 // IT asset disposition. Fully server-rendered; no client JavaScript of its own.
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { CustodyLoop } from '@/components/CustodyVisuals'
 import FaqList from '@/components/Faq'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
 import Photo from '@/components/Photo'
+import PhotoBand from '@/components/PhotoBand'
 import { REGIONS, getCityBySlug } from '@/lib/cities'
 import { faqNode, graph, type Faq } from '@/lib/schema'
 import {
@@ -102,7 +104,7 @@ export default function HomePage() {
       {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="ct-hero ct-gridlines">
         <div className="ct-wrap">
-          <div className="ct-hero__grid ct-hero__grid--photo">
+          <div className="ct-hero__grid ct-hero__grid--stage">
             <div className="ct-hero__copy ct-rise">
               <span className="ct-eyebrow">{SERVICE_AREA}</span>
               <h1 className="ct-h1">
@@ -123,12 +125,16 @@ export default function HomePage() {
                 <span>Call <a href={PHONE_HREF} data-cta-location="home_hero">{PHONE_DISPLAY}</a> · {HOURS}</span>
               </p>
             </div>
-            <div className="ct-hero__photo ct-in">
+            {/* Circle and warehouse photo share one stage: the loop overlaps the
+                photo's left edge on wide screens; phones stack loop, then photo. */}
+            <div className="ct-stage ct-in">
+              <div className="ct-stage__loop"><CustodyLoop /></div>
               <Photo
                 name="facility"
-                sizes="(max-width: 600px) calc(100vw - 32px), (max-width: 980px) 560px, (max-width: 1240px) 40vw, 500px"
+                className="ct-stage__photo"
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1180px) 380px, 340px"
                 eager
-                caption="Inside our warehouse: equipment is sorted by type before processing."
+                caption="Inside our warehouse: equipment sorted by type."
               />
             </div>
           </div>
@@ -179,7 +185,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4 ── Chain-of-custody story ───────────────────────────────────────── */}
+      {/* 4 ── Business pickup band on the original truck photograph ─────────── */}
+      <PhotoBand name="overview" variant="card" position="0% 50%" positionSm="0% 50%" labelledBy="pickup-band-title">
+        <span className="ct-eyebrow">Business electronics pickup</span>
+        <h2 className="ct-h2" id="pickup-band-title">Clear out retired technology with a documented pickup plan</h2>
+        <p className="ct-lede">
+          Send us a list of what you&apos;re retiring. We confirm what qualifies, any fees and an available pickup window
+          before anything is scheduled, and record the handoff according to the services you select.
+        </p>
+        <p className="ct-photoband__fine">
+          {POLICY.minimum} Serving Orange County and eligible South Los Angeles requests.
+        </p>
+        <div className="ct-photoband__actions">
+          <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_truck_band">
+            Request a Business Pickup
+          </Link>
+          <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="home_truck_band">
+            <Icon name="phone" size={18} /> Call {PHONE_DISPLAY}
+          </a>
+        </div>
+      </PhotoBand>
+
+      {/* 5 ── Chain-of-custody story ───────────────────────────────────────── */}
       <section className="ct-section ct-section--ink2" aria-labelledby="custody-title">
         <div className="ct-wrap">
           <div className="ct-head ct-head--split">
@@ -192,14 +219,6 @@ export default function HomePage() {
               It is an illustration of the process, not a live feed.
             </p>
           </div>
-          <Photo
-            name="overview"
-            className="ct-photo--wide"
-            sizes="(max-width: 1240px) calc(100vw - 32px), 1200px"
-            ratioSm="4 / 3"
-            position="30% 50%"
-            caption="Company trucks and sorted equipment bins at our warehouse."
-          />
           <ol className="ct-rail">
             {PROCESS_STEPS.map((s) => (
               <li key={s.title}>
@@ -214,7 +233,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5 ── Business pickup eligibility feature ──────────────────────────── */}
+      {/* 6 ── Business pickup eligibility feature ──────────────────────────── */}
       <section className="ct-section ct-section--mineral" aria-labelledby="pickup-title">
         <div className="ct-wrap ct-split ct-split--center">
           <div className="ct-stack">
@@ -242,7 +261,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6 ── Data destruction explanation ─────────────────────────────────── */}
+      {/* 7 ── Data destruction explanation ─────────────────────────────────── */}
       <section className="ct-section" aria-labelledby="dd-title">
         <div className="ct-wrap">
           <div className="ct-head ct-head--split">
@@ -283,7 +302,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7 ── Responsible downstream processing ────────────────────────────── */}
+      {/* 8 ── Responsible downstream processing ────────────────────────────── */}
       <section className="ct-section ct-section--ink ct-gridlines" aria-labelledby="down-title">
         <div className="ct-wrap ct-split ct-split--center">
           <div className="ct-stack">
@@ -313,18 +332,9 @@ export default function HomePage() {
             </li>
           </ul>
         </div>
-        <div className="ct-wrap">
-          <Photo
-            name="sorting"
-            className="ct-photo--after"
-            sizes="(max-width: 1240px) calc(100vw - 32px), 1200px"
-            ratioSm="4 / 3"
-            caption="Equipment is sorted by type on our processing floor."
-          />
-        </div>
       </section>
 
-      {/* 8 ── Service-area discovery ───────────────────────────────────────── */}
+      {/* 9 ── Service-area discovery ───────────────────────────────────────── */}
       <section className="ct-section ct-section--mineral" aria-labelledby="areas-title">
         <div className="ct-wrap ct-split">
           <div className="ct-stack">
@@ -348,7 +358,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9 ── FAQ ──────────────────────────────────────────────────────────── */}
+      {/* 10 ── FAQ ─────────────────────────────────────────────────────────── */}
       <section className="ct-section" aria-labelledby="faq-title">
         <div className="ct-wrap ct-wrap--narrow">
           <div className="ct-head">
@@ -363,30 +373,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10 ── Final CTA ───────────────────────────────────────────────────── */}
-      <section className="ct-cta" aria-labelledby="cta-title">
-        <div className="ct-wrap ct-cta__grid">
-          <div className="ct-cta__copy">
-            <span className="ct-eyebrow">Next step</span>
-            <h2 className="ct-h2" id="cta-title">Tell us what you&apos;re retiring</h2>
-            <p className="ct-lede">
-              Send a list, a few photos or a rough count. We confirm what we can accept, any fees and timing before anything is scheduled.
-            </p>
-          </div>
-          <div className="ct-cta__actions">
-            <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_final">
-              Request a Business Pickup
-            </Link>
-            <div className="ct-cta__phone">
-              <Icon name="phone" size={22} />
-              <div>
-                <a href={PHONE_HREF} data-cta-location="home_final">{PHONE_DISPLAY}</a>
-                <small>{HOURS} · {SERVICE_AREA}</small>
-              </div>
-            </div>
+      {/* 11 ── Final CTA on the original sorting-floor photograph ──────────────────────────────────────────────────── */}
+      <PhotoBand name="sorting" variant="split" position="50% 50%" positionSm="50% 50%" labelledBy="cta-title">
+        <span className="ct-eyebrow">Next step</span>
+        <h2 className="ct-h2" id="cta-title">Tell us what you&apos;re retiring</h2>
+        <p className="ct-lede">
+          Send a list, a few photos or a rough count. We confirm what we can accept, any fees and timing before anything is scheduled.
+        </p>
+        <div className="ct-photoband__actions">
+          <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_final">
+            Request a Business Pickup
+          </Link>
+        </div>
+        <div className="ct-cta__phone">
+          <Icon name="phone" size={22} />
+          <div>
+            <a href={PHONE_HREF} data-cta-location="home_final">{PHONE_DISPLAY}</a>
+            <small>{HOURS} · {SERVICE_AREA}</small>
           </div>
         </div>
-      </section>
+      </PhotoBand>
     </>
   )
 }

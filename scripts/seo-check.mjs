@@ -219,10 +219,15 @@ for (const [file, names] of Object.entries(REQUIRED_PHOTOS)) {
 for (const p of photos) {
   if (!Object.values(REQUIRED_PHOTOS).flat().includes(p.name)) fail(`[photos] "${p.name}" is declared in lib/photos.ts but not required on any page`)
 }
-// The homepage hero must lead with the warehouse photo, loaded eagerly.
+// The homepage hero must keep both the circular visual and the warehouse photo.
 const homeHero = read('app/page.tsx').match(/<section className="ct-hero[\s\S]*?<\/section>/)
 if (!homeHero || !/<Photo\s[^>]*name="facility"[^>]*\beager\b/.test(homeHero[0].replace(/\n\s*/g, ' '))) {
   fail('[photos] app/page.tsx: the hero no longer shows the warehouse photo (name="facility", eager)')
+}
+if (!homeHero || !/<CustodyLoop\s*\/>/.test(homeHero[0])) fail('[photos] app/page.tsx: the hero no longer shows the circular custody visual (<CustodyLoop />)')
+// The original truck and sorting-floor photos are background bands on the homepage.
+for (const n of ['overview', 'sorting']) {
+  if (!new RegExp(`<PhotoBand[^>]*\\bname="${n}"`).test(read('app/page.tsx'))) fail(`[photos] app/page.tsx: background band for "${n}" is missing`)
 }
 
 // ── Report ──────────────────────────────────────────────────────────────────
