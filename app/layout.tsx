@@ -1,164 +1,147 @@
 // app/layout.tsx
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Urbanist, Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Cursor from '@/components/Cursor'
 import ConsentBanner from '@/components/ConsentBanner'
 import AnalyticsScripts from '@/components/AnalyticsScripts'
 import AnalyticsEvents from '@/components/AnalyticsEvents'
+import JsonLd from '@/components/JsonLd'
+import { AREA_SERVED } from '@/lib/schema'
+import { BUSINESS_ID, DEFAULT_OG_IMAGE, EMAIL, PICKUP_MINIMUM, SERVICE_AREA, SITE_NAME, SITE_URL, WEBSITE_ID } from '@/lib/site'
 import './globals.css'
+import './styles/ct-core.css'
+import './styles/ct-pickup.css'
 
-const urbanist = Urbanist({
-  subsets: ['latin'],
-  weight: ['400','500','600','700','800','900'],
-  variable: '--font-head',
-  display: 'swap',
-})
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['300','400','500','600'],
-  variable: '--font-body',
-  display: 'swap',
-})
+// Both families are variable fonts: one file each covers every weight in use.
+const urbanist = Urbanist({ subsets: ['latin'], variable: '--font-head', display: 'swap' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-body', display: 'swap' })
+
+const DESCRIPTION = `Business electronics pickup, e-waste recycling, IT asset disposition and data destruction across ${SERVICE_AREA}. Call (949) 287-3056.`
 
 export const metadata: Metadata = {
   title: {
     default: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
     template: '%s | OC Electronic Recycling',
   },
-  description: "Orange County e-waste recycling and ITAD for businesses and residents. Secure data destruction following NIST 800-88 guidelines, with business pickup. Call (949) 287-3056.",
-  metadataBase: new URL('https://www.ocelectronicrecycling.com'),
+  description: DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
   verification: {
     google: 'PaLUjMBZuaXCfW_w65dE4BmaLsFlHbXC3kiIXNt3CtI',
   },
   openGraph: {
-    siteName: 'OC Electronic Recycling',
+    siteName: SITE_NAME,
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/image/hero-facility-oc-electronic-recycling.webp'],
+    images: [DEFAULT_OG_IMAGE],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0a1220',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+// Sitewide entity graph. Service area is expressed with `areaServed` only —
+// there is no street address because none has been verified for publication.
+const SITE_GRAPH = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': BUSINESS_ID,
+      name: SITE_NAME,
+      description: `Electronics recycling, IT asset disposition (ITAD) and data destruction for businesses across ${SERVICE_AREA}.`,
+      url: SITE_URL,
+      telephone: '+19492873056',
+      email: EMAIL,
+      image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+      address: { '@type': 'PostalAddress', addressRegion: 'CA', addressCountry: 'US' },
+      areaServed: AREA_SERVED,
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '08:00',
+          closes: '18:00',
+        },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Electronics recycling and ITAD services',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Business Electronics Pickup',
+              description: `Pickup of business electronics for requests with at least ${PICKUP_MINIMUM} qualifying major items. Eligibility, fees and timing are confirmed before scheduling.`,
+              url: `${SITE_URL}/business-pickup`,
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'IT Asset Disposition (ITAD)',
+              description: 'Inventory, data sanitization, value recovery and responsible recycling for retired business IT equipment.',
+              url: `${SITE_URL}/services/itad`,
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Secure Data Destruction',
+              description: 'Drive sanitization with reference to NIST SP 800-88 guidelines, or physical destruction, with a Certificate of Data Destruction for the media processed.',
+              url: `${SITE_URL}/services/data-destruction`,
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'E-Waste Recycling',
+              description: 'Electronics recycling handled in line with California e-waste regulations and routed to downstream processors.',
+              url: `${SITE_URL}/services/recycling`,
+            },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': WEBSITE_ID,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: `E-waste recycling and ITAD services for ${SERVICE_AREA}.`,
+      publisher: { '@id': BUSINESS_ID },
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${urbanist.variable} ${inter.variable}`}>
-  <body>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "LocalBusiness",
-              "@id": "https://www.ocelectronicrecycling.com/#business",
-              "name": "OC Electronic Recycling",
-              "description": "Orange County's e-waste recycling, IT Asset Disposition (ITAD), and data destruction provider, following NIST 800-88 guidelines for data sanitization. Serving all 34 cities in Orange County, California.",
-              "url": "https://www.ocelectronicrecycling.com",
-              "telephone": "+19492873056",
-              "email": "info@ocelectronicrecycling.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressRegion": "CA",
-                "addressCountry": "US",
-                "addressLocality": "Orange County"
-              },
-              "areaServed": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": 33.7175,
-                  "longitude": -117.8311
-                },
-                "geoRadius": "50000"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                  "opens": "08:00",
-                  "closes": "18:00"
-                }
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "E-Waste & ITAD Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "E-Waste Recycling",
-                      "description": "E-waste recycling in compliance with California regulations, for businesses and residents across Orange County.",
-                      "url": "https://www.ocelectronicrecycling.com/services/recycling"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Secure Data Destruction",
-                      "description": "Hard drive wiping and physical shredding following NIST 800-88 guidelines, with certificate of destruction.",
-                      "url": "https://www.ocelectronicrecycling.com/services/data-destruction"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "IT Asset Disposition (ITAD)",
-                      "description": "Full ITAD lifecycle management including inventory, data sanitization, resale, and responsible disposal.",
-                      "url": "https://www.ocelectronicrecycling.com/services/itad"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Business Electronics Pickup",
-                      "description": "Free scheduled pickup for businesses throughout Orange County.",
-                      "url": "https://www.ocelectronicrecycling.com/contact"
-                    }
-                  }
-                ]
-              },
-              "sameAs": [
-                "https://www.facebook.com/ocelectronicrecycling",
-                "https://www.linkedin.com/company/ocelectronicrecycling"
-              ]
-            },
-            {
-              "@type": "WebSite",
-              "@id": "https://www.ocelectronicrecycling.com/#website",
-              "url": "https://www.ocelectronicrecycling.com",
-              "name": "OC Electronic Recycling",
-              "description": "Orange County e-waste recycling and ITAD services.",
-              "publisher": {
-                "@id": "https://www.ocelectronicrecycling.com/#business"
-              }
-            }
-          ]
-        })
-      }}
-    />
-    <Cursor />
-    <Header />
-    <main>{children}</main>
-    <Footer />
-    <script
-      src="https://niro-ai-platform.vercel.app/widget.js"
-      data-key="pk_test_ocer_a3f8ed238897ff10"
-      async
-    ></script>
-    <AnalyticsEvents />
-    <AnalyticsScripts />
-    <ConsentBanner />
-  </body>
-</html>
+      <body>
+        <JsonLd data={SITE_GRAPH} />
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
+        <script
+          src="https://niro-ai-platform.vercel.app/widget.js"
+          data-key="pk_test_ocer_a3f8ed238897ff10"
+          async
+        ></script>
+        <AnalyticsEvents />
+        <AnalyticsScripts />
+        <ConsentBanner />
+      </body>
+    </html>
   )
 }

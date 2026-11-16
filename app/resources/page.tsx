@@ -1,157 +1,189 @@
-// app/resources/page.tsx
-// NOTE: No 'use client' needed here — AnimateIn handles client-side
-// Removed onMouseEnter/onMouseLeave (not allowed in Server Components)
+// app/resources/page.tsx — knowledge hub.
+// Every link points to a page that exists on this site or to an official source.
+// There are deliberately no downloads: none exist yet, and none are implied.
 import type { Metadata } from 'next'
-import AnimateIn, { StaggerGroup, PageHero } from '@/components/AnimateIn'
+import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
+import { blogPosts } from '@/posts/blog-data'
+import { PHONE_DISPLAY, PHONE_HREF, PICKUP_MINIMUM, SITE_URL, TV_FEE } from '@/lib/site'
+
+const PATH = '/resources'
+const TITLE = 'Resource Center'
+const DESCRIPTION = 'Guides and checklists for retiring business electronics in California: pickup preparation, data sanitization, ITAD planning and official regulatory sources.'
+const REVIEWED = 'November 2026'
 
 export const metadata: Metadata = {
-  title: 'Resource Center',
-  description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
-  alternates: { canonical: 'https://www.ocelectronicrecycling.com/resources' },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'Resource Center',
-    description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
-    url: 'https://www.ocelectronicrecycling.com/resources',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PATH}`,
     images: [{ url: '/image/resources-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Resource Center',
-    description: 'Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly in Orange County.',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
     images: ['/image/resources-oc-electronic-recycling.webp'],
   },
 }
 
-const GUIDES = [
-  { icon: '♻️', bg: '#e8f5e9', tag: '📄 Guide · 5 min read',  title: 'California E-Waste Regulations: What Your Business Must Know',       desc: 'A breakdown of AB 2901, SB 1386, and DTSC requirements for businesses disposing of electronics in California. Updated for 2025.' },
-  { icon: '🔐', bg: '#e3f2fd', tag: '📊 Infographic · Visual', title: 'NIST 800-88 Data Destruction Standard Explained',                      desc: 'Visual guide to the three levels of data sanitization: Clear, Purge, and Destroy. Know which method your business requires.' },
-  { icon: '⚠️', bg: '#ffeaea', tag: '📋 Checklist · Download', title: 'IT Asset Disposition Checklist: 12 Steps Before You Dispose',          desc: "Don't let a data breach happen on your way out. This checklist walks through every step from inventory to final certificate." },
+const CRUMBS: Crumb[] = [
+  { name: 'Home', path: '/' },
+  { name: 'Resources', path: PATH },
 ]
 
-const STATS = [
-  { label: 'Hard Drives (HDDs)',   pct: 38 },
-  { label: 'Laptops / Desktops',   pct: 29 },
-  { label: 'Mobile Devices',       pct: 18 },
-  { label: 'Servers / Networking', pct: 15 },
+const TOPICS = [
+  {
+    title: 'Preparing for a business pickup',
+    body: 'What qualifies, how to plan an office cleanout, and what happens to equipment afterward.',
+    service: { href: '/business-pickup', label: 'Business pickup' },
+    slugs: ['free-electronics-pickup-orange-county', 'office-cleanout-electronics-disposal-oc', 'what-happens-to-recycled-electronics', 'tv-recycling-orange-county'],
+  },
+  {
+    title: 'Data security and sanitization',
+    body: 'Wiping versus shredding, what a destruction certificate records, and data on network gear.',
+    service: { href: '/services/data-destruction', label: 'Data destruction' },
+    slugs: ['hard-drive-shred-vs-wipe-guide', 'certified-data-destruction-california', 'data-destruction-network-switches-routers', 'how-to-recycle-old-computers-safely'],
+  },
+  {
+    title: 'Planning IT asset disposition',
+    body: 'How ITAD differs from recycling, chain of custody, and decommissioning projects.',
+    service: { href: '/services/itad', label: 'IT asset disposition' },
+    slugs: ['what-is-itad-explained', 'it-asset-chain-of-custody-california', 'data-center-decommissioning-checklist', 'it-refresh-cycle-decommissioning-orange-county'],
+  },
+  {
+    title: 'California disposal rules',
+    body: 'An overview of the state rules that apply when businesses dispose of electronics.',
+    service: { href: '/services/recycling', label: 'Electronics recycling' },
+    slugs: ['california-e-waste-law-for-businesses', 'e-waste-recycling-irvine-compliance', 'pci-dss-hardware-disposal-requirements', 'e-waste-recycling-orange-county-guide'],
+  },
 ]
 
-const DOWNLOADS = [
-  { icon: '📄', name: 'ITAD Policy Template',    size: 'PDF — 180KB' },
-  { icon: '📊', name: 'E-Waste Audit Checklist', size: 'XLSX — 45KB' },
-  { icon: '📋', name: 'NIST 800-88 Quick Ref',   size: 'PDF — 92KB' },
+const CHECKLIST = [
+  'Count equipment by type: desktops, laptops, servers, networking, monitors, phones and tablets, printers, televisions.',
+  `Check the total against the ${PICKUP_MINIMUM}-item minimum for qualifying major equipment (accessories do not count).`,
+  `List televisions separately — each carries a $${TV_FEE} recycling fee.`,
+  'Note anything unusual: loose drives, UPS units, batteries, CRTs, racks, lab or medical equipment.',
+  'Decide which devices need data sanitization or physical destruction, if any.',
+  'Write down the documents your records or auditors require.',
+  'Gather access details: floor, elevator, loading dock, parking and building hours.',
+  'Take a few photos of the equipment if the mix is complex.',
+]
+
+const SOURCES = [
+  { name: 'California Department of Toxic Substances Control (DTSC) — electronic hazardous waste', href: 'https://dtsc.ca.gov/electronic-hazardous-waste/', note: 'State guidance on managing e-waste as universal or hazardous waste.' },
+  { name: 'CalRecycle — electronic waste', href: 'https://calrecycle.ca.gov/electronics/', note: 'The Covered Electronic Waste program and the Electronic Waste Recycling Act of 2003.' },
+  { name: 'NIST Special Publication 800-88 — Guidelines for Media Sanitization', href: 'https://csrc.nist.gov/pubs/sp/800/88/r1/final', note: 'The federal guideline describing Clear, Purge and Destroy. It is guidance, not a certification.' },
+  { name: 'California Civil Code §1798.81 — disposal of customer records', href: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.81.', note: 'The state requirement to make personal information unreadable before records are disposed of.' },
 ]
 
 export default function ResourcesPage() {
+  const bySlug = new Map(blogPosts.map((p) => [p.slug, p]))
+
   return (
     <>
-      <PageHero
-        overline="Knowledge Base"
-        title="Resource Center"
-        subtitle="Guides, infographics, and tools to help your business manage e-waste and IT assets responsibly and compliantly."
-        bgImage="/image/resources-oc-electronic-recycling.webp"
-      />
+      <JsonLd data={graph(breadcrumbNode(PATH, CRUMBS))} />
 
-      <section style={{ background: 'var(--light)', padding: '80px 0' }}>
-        <div className="container">
-          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '40px' }}>
-
-            {/* Main guides */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              {GUIDES.map(({ icon, bg, tag, title, desc }, i) => (
-                <AnimateIn key={title} from="left" delay={i * 0.12}>
-                  <div style={{
-                    background: '#fff',
-                    borderRadius: '14px',
-                    padding: '28px',
-                    border: '1px solid #e2e8f0',
-                    display: 'flex',
-                    gap: '20px',
-                    cursor: 'pointer',
-                    transition: 'box-shadow .2s, transform .2s',
-                  }}>
-                    <div style={{
-                      width: '80px', height: '80px',
-                      borderRadius: '10px',
-                      background: bg,
-                      flexShrink: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '2rem',
-                    }}>
-                      {icon}
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '.75rem', color: 'var(--muted)', fontWeight: 600, marginBottom: '8px' }}>{tag}</div>
-                      <h3 style={{ fontFamily: 'var(--font-head)', fontWeight: 700, fontSize: '1rem', color: 'var(--navy)', marginBottom: '8px' }}>{title}</h3>
-                      <p style={{ fontSize: '.85rem', color: '#4a5568', lineHeight: 1.6 }}>{desc}</p>
-                    </div>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
-
-            {/* Sidebar */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-
-              {/* Stats widget */}
-              <AnimateIn from="right" delay={0.1}>
-                <div style={{ background: '#fff', borderRadius: '14px', padding: '24px', border: '1px solid #e2e8f0' }}>
-                  <h4 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '.92rem', color: 'var(--navy)', marginBottom: '16px' }}>
-                    📊 E-Waste by the Numbers
-                  </h4>
-                  {STATS.map(({ label, pct }) => (
-                    <div key={label} style={{ marginBottom: '14px' }}>
-                      <div style={{ fontSize: '.78rem', color: '#4a5568', fontWeight: 600, marginBottom: '5px', display: 'flex', justifyContent: 'space-between' }}>
-                        <span>{label}</span><span>{pct}%</span>
-                      </div>
-                      <div style={{ height: '7px', background: '#e2e8f0', borderRadius: '4px', overflow: 'hidden' }}>
-                        <div style={{ height: '100%', width: `${pct}%`, borderRadius: '4px', background: 'linear-gradient(90deg,var(--blue),var(--cyan))' }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </AnimateIn>
-
-              {/* Downloads widget */}
-              <AnimateIn from="right" delay={0.22}>
-                <div style={{ background: '#fff', borderRadius: '14px', padding: '24px', border: '1px solid #e2e8f0' }}>
-                  <h4 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '.92rem', color: 'var(--navy)', marginBottom: '16px' }}>
-                    📥 Free Downloads
-                  </h4>
-                  {DOWNLOADS.map(({ icon, name, size }) => (
-                    <div key={name} style={{
-                      display: 'flex', alignItems: 'center', gap: '12px',
-                      padding: '10px', borderRadius: '8px',
-                      background: '#f8faff', marginBottom: '8px',
-                      cursor: 'pointer',
-                    }}>
-                      <span style={{ fontSize: '1.2rem' }}>{icon}</span>
-                      <div>
-                        <div style={{ fontSize: '.78rem', fontWeight: 600, color: 'var(--navy)' }}>{name}</div>
-                        <div style={{ fontSize: '.68rem', color: 'var(--muted)' }}>{size}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </AnimateIn>
-
-              {/* CTA widget */}
-              <AnimateIn from="right" delay={0.34}>
-                <div style={{ background: 'var(--navy)', borderRadius: '14px', padding: '24px', border: '1px solid var(--border)' }}>
-                  <div style={{ fontSize: '1.5rem', marginBottom: '10px' }}>📞</div>
-                  <h4 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, color: '#fff', marginBottom: '8px' }}>Need Help?</h4>
-                  <p style={{ fontSize: '.82rem', color: 'var(--muted)', lineHeight: 1.6, marginBottom: '16px' }}>
-                    Our team can answer any compliance or recycling question.
-                  </p>
-                  <a href="tel:9492873056" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '.95rem', color: 'var(--green)' }}>
-                    (949) 287-3056
-                  </a>
-                </div>
-              </AnimateIn>
-
-            </div>
+      <section className="ct-hero ct-hero--page ct-gridlines">
+        <div className="ct-wrap">
+          <Breadcrumbs crumbs={CRUMBS} />
+          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 820 }}>
+            <span className="ct-eyebrow">Resource center</span>
+            <h1 className="ct-h1">Guides for retiring business electronics</h1>
+            <p className="ct-lede">
+              Practical guides, a pickup preparation checklist and links to the official sources behind California&apos;s
+              disposal rules. General information only — not legal advice.
+            </p>
+            <p className="ct-small">Maintained by OC Electronic Recycling · Hub reviewed {REVIEWED}</p>
           </div>
+        </div>
+      </section>
+
+      <section className="ct-section" aria-labelledby="guides-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">Guides by topic</span>
+            <h2 className="ct-h2" id="guides-title">Start with the question you have</h2>
+          </div>
+          {TOPICS.map((t) => (
+            <div key={t.title} className="ct-topic">
+              <div className="ct-topic__head">
+                <h3 className="ct-h3">{t.title}</h3>
+                <p>{t.body}</p>
+                <Link href={t.service.href} className="ct-link">{t.service.label} <Icon name="arrow" size={16} /></Link>
+              </div>
+              <ul className="ct-guides">
+                {t.slugs.map((slug) => {
+                  const post = bySlug.get(slug)
+                  if (!post) return null
+                  const updated = post.dateModified ?? post.publishDate
+                  return (
+                    <li key={slug}>
+                      <Link href={`/blog/${slug}`}>
+                        <span className="ct-guides__title">{post.title}</span>
+                        <span className="ct-guides__meta">{post.readTime} · Updated <time dateTime={updated}>{new Date(`${updated}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}</time></span>
+                        <Icon name="arrow" size={18} />
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          ))}
+          <p style={{ marginTop: 28 }}>
+            <Link href="/blog" className="ct-link">Browse all articles <Icon name="arrow" size={18} /></Link>
+          </p>
+        </div>
+      </section>
+
+      <section className="ct-section ct-section--mineral" aria-labelledby="checklist-title">
+        <div className="ct-wrap ct-split ct-split--wide-left">
+          <div className="ct-panel">
+            <span className="ct-eyebrow">Checklist</span>
+            <h2 className="ct-h2" id="checklist-title" style={{ margin: '12px 0 20px' }}>Before you request a pickup</h2>
+            <ol className="ct-numlist">
+              {CHECKLIST.map((c) => <li key={c}>{c}</li>)}
+            </ol>
+          </div>
+          <div className="ct-stack">
+            <h3 className="ct-h3">Ready with your list?</h3>
+            <p className="ct-body">
+              The pickup request form follows the same order as this checklist, and the eligibility estimator shows
+              how your list compares with the minimum before you send it.
+            </p>
+            <Link href="/business-pickup#estimator" className="ct-btn ct-btn--ink" data-cta-location="resources_checklist">Estimate your eligibility</Link>
+            <a href={PHONE_HREF} className="ct-inline-link" data-cta-location="resources_checklist">Or call {PHONE_DISPLAY}</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="ct-section ct-section--ink2" aria-labelledby="sources-title">
+        <div className="ct-wrap ct-split">
+          <div className="ct-stack">
+            <span className="ct-eyebrow ct-eyebrow--secure">Official sources</span>
+            <h2 className="ct-h2" id="sources-title">Check the rules at the source</h2>
+            <p className="ct-body">
+              Regulations and guidance change. For anything with legal consequences, rely on the agencies and
+              publications themselves — and on your own counsel — rather than any vendor summary, including ours.
+            </p>
+          </div>
+          <ul className="ct-sources">
+            {SOURCES.map((s) => (
+              <li key={s.href}>
+                <a className="ct-link" href={s.href} target="_blank" rel="noopener noreferrer">
+                  {s.name} <Icon name="external" size={15} />
+                  <span className="ct-vh"> (opens in a new tab)</span>
+                </a>
+                <p>{s.note}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

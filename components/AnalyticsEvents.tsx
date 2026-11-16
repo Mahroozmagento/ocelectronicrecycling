@@ -8,6 +8,7 @@ import { captureUTM } from '@/lib/utm'
 function pageType(path: string): string {
   if (path === '/') return 'home'
   if (path === '/contact') return 'contact'
+  if (path === '/business-pickup') return 'business_pickup'
   if (path === '/services') return 'services_index'
   if (path.startsWith('/services/')) return 'service_detail'
   if (path.startsWith('/e-waste-recycling/')) return 'city'
@@ -48,6 +49,17 @@ export default function AnalyticsEvents() {
         trackEvent('phone_click', {
           page_type: type,
           cta_location: phoneLink.dataset.ctaLocation || 'inline',
+        })
+        return
+      }
+
+      // pickup_cta_click — any CTA that routes to the business pickup page or
+      // jumps to the request form on it.
+      const pickupCta = target.closest('a[href^="/business-pickup"], a[href="#request"], a[href="#estimator"]') as HTMLAnchorElement | null
+      if (pickupCta) {
+        trackEvent('pickup_cta_click', {
+          page_type: type,
+          cta_location: pickupCta.dataset.ctaLocation || 'inline',
         })
         return
       }

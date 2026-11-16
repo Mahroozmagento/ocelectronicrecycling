@@ -1,211 +1,101 @@
-'use client'
 // components/AnimateIn.tsx
-// ─────────────────────────────────────────────────────────────
-// Reusable entrance animation wrapper using Framer Motion
-// Usage:
-//   <AnimateIn>  ← fade up (default)
-//   <AnimateIn from="left">
-//   <AnimateIn from="right">
-//   <AnimateIn from="scale">
-//   <AnimateIn delay={0.2}>  ← stagger with delay
+// ─────────────────────────────────────────────────────────────────────────────
+// Lightweight entrance helpers. These used to depend on a JavaScript animation
+// library and rendered content at opacity:0 until hydration. They are now plain
+// server components with a short CSS-only entrance (see `.ct-in` in
+// app/styles/ct-core.css), so content is always present and visible in the HTML,
+// nothing waits on JavaScript, and `prefers-reduced-motion` is respected.
 //
-// Wrap ANY element or section — it will animate in when
-// it enters the viewport.
-// ─────────────────────────────────────────────────────────────
-import { motion, useInView, useReducedMotion } from 'framer-motion'
-import { useRef } from 'react'
+// The props are unchanged so existing pages keep working.
+// ─────────────────────────────────────────────────────────────────────────────
+import { Children } from 'react'
 
 type Direction = 'up' | 'left' | 'right' | 'scale' | 'fade'
 
 interface Props {
   children: React.ReactNode
-  from?:     Direction
-  delay?:    number
+  from?: Direction
+  delay?: number
   duration?: number
   className?: string
-  style?:    React.CSSProperties
-  once?:     boolean   // animate only first time (default: true)
+  style?: React.CSSProperties
+  once?: boolean
 }
 
-function getVariants(from: Direction) {
-  const base = { opacity: 0 }
-  const variants = {
-    up:    { hidden: { ...base, y: 32  }, visible: { opacity: 1, y: 0 } },
-    left:  { hidden: { ...base, x: -32 }, visible: { opacity: 1, x: 0 } },
-    right: { hidden: { ...base, x: 32  }, visible: { opacity: 1, x: 0 } },
-    scale: { hidden: { ...base, scale: .88 }, visible: { opacity: 1, scale: 1 } },
-    fade:  { hidden: { opacity: 0 },         visible: { opacity: 1 } },
-  }
-  return variants[from]
-}
-
-export default function AnimateIn({
-  children,
-  from     = 'up',
-  delay    = 0,
-  duration = 0.6,
-  className,
-  style,
-  once     = true,
-}: Props) {
-  const ref     = useRef<HTMLDivElement>(null)
-  const inView  = useInView(ref, { once, margin: '-60px' })
-  const variants = getVariants(from)
-  const reduceMotion = useReducedMotion()
-
-  if (reduceMotion) {
-    return <div className={className} style={style}>{children}</div>
-  }
-
+export default function AnimateIn({ children, delay = 0, className, style }: Props) {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={{
-        duration,
-        delay,
-        ease: [0.23, 1, 0.32, 1], // cubic-bezier — snappy premium feel
-      }}
-      className={className}
-      style={style}
+    <div
+      className={`ct-in${className ? ` ${className}` : ''}`}
+      style={{ ...style, animationDelay: delay ? `${Math.min(delay, 0.4)}s` : undefined }}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
 
-// ─────────────────────────────────────────────────────────────
-// StaggerGroup — animates children one by one with delay
-// Usage:
-//   <StaggerGroup>
-//     <div>Card 1</div>
-//     <div>Card 2</div>
-//     <div>Card 3</div>
-//   </StaggerGroup>
-// ─────────────────────────────────────────────────────────────
 interface StaggerProps {
-  children:  React.ReactNode
+  children: React.ReactNode
   className?: string
-  style?:    React.CSSProperties
-  stagger?:  number  // delay between each child (default: 0.08s)
-  from?:     Direction
+  style?: React.CSSProperties
+  stagger?: number
+  from?: Direction
 }
 
-export function StaggerGroup({
-  children,
-  className,
-  style,
-  stagger = 0.08,
-  from    = 'up',
-}: StaggerProps) {
-  const ref    = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-  const variants = getVariants(from)
-  const reduceMotion = useReducedMotion()
-
-  if (reduceMotion) {
-    return <div className={className} style={style}>{children}</div>
-  }
-
-  const containerVariants = {
-    hidden:  {},
-    visible: { transition: { staggerChildren: stagger } },
-  }
-
+/** Lays out children in the given grid; each child keeps its own wrapper. */
+export function StaggerGroup({ children, className, style }: StaggerProps) {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={containerVariants}
-      className={className}
-      style={style}
-    >
-      {Array.isArray(children)
-        ? children.map((child, i) => (
-            <motion.div
-              key={i}
-              variants={variants}
-              transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1] }}
-            >
-              {child}
-            </motion.div>
-          ))
-        : children}
-    </motion.div>
+    <div className={className} style={style}>
+      {Children.map(children, (child, i) => (
+        <div className="ct-in" style={{ animationDelay: `${Math.min(i * 0.05, 0.3)}s` }}>
+          {child}
+        </div>
+      ))}
+    </div>
   )
 }
 
-// ─────────────────────────────────────────────────────────────
-// PageHero — special entrance for page hero titles
-// Animates the overline, h1, and paragraph in sequence
-// Usage:
-//   <PageHero
-//     overline="What We Do"
-//     title="Complete Electronics Lifecycle Services"
-//     subtitle="From a single laptop to a full data center..."
-//   />
-// ─────────────────────────────────────────────────────────────
 interface HeroProps {
   overline?: string
   overlineColor?: string
-  title:     string | React.ReactNode
+  title: string | React.ReactNode
   subtitle?: string
-  children?: React.ReactNode  // extra content below (badges, buttons, etc.)
-  bgImage?: string;
+  children?: React.ReactNode
+  bgImage?: string
 }
 
-export function PageHero({
-  overline,
-  overlineColor,
-  title,
-  subtitle,
-  children,
-  bgImage,
-}: HeroProps) {
+/** Inner-page hero used by Services, How It Works, About-style pages. */
+export function PageHero({ overline, overlineColor, title, subtitle, children, bgImage }: HeroProps) {
   return (
-    <div 
+    <div
       className="svc-inner-hero"
       style={bgImage ? {
-        backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('${bgImage}')`,
+        backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.78), rgba(7,8,15,0.5)), url('${bgImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center right',
       } : undefined}
     >
-      <div className="container">
+      <div className="container ct-rise">
         {overline && (
-          <AnimateIn from="fade" delay={0} duration={0.5}>
-            <span className="overline" style={overlineColor ? { color: overlineColor } : {}}>
-              {overline}
-            </span>
-          </AnimateIn>
+          <span className="overline" style={overlineColor ? { color: overlineColor } : {}}>
+            {overline}
+          </span>
         )}
-        <AnimateIn from="up" delay={0.1} duration={0.7}>
-          <h1 style={{
-            fontFamily: 'var(--font-head)',
-            fontSize:   'clamp(2rem,5vw,4rem)',
-            fontWeight: 900,
-            letterSpacing: '-.03em',
-            marginTop: overline ? '10px' : 0,
-            lineHeight: 1.05,
-          }}>
-            {title}
-          </h1>
-        </AnimateIn>
+        <h1 style={{
+          fontFamily: 'var(--font-head)',
+          fontSize: 'clamp(2rem,5vw,4rem)',
+          fontWeight: 900,
+          letterSpacing: '-.03em',
+          marginTop: overline ? '10px' : 0,
+          lineHeight: 1.05,
+        }}>
+          {title}
+        </h1>
         {subtitle && (
-          <AnimateIn from="up" delay={0.22} duration={0.65}>
-            <p style={{ color: 'var(--muted)', fontSize: '1rem', marginTop: '16px', maxWidth: '520px', lineHeight: 1.7 }}>
-              {subtitle}
-            </p>
-          </AnimateIn>
+          <p style={{ color: '#c3cfdd', fontSize: '1rem', marginTop: '16px', maxWidth: '560px', lineHeight: 1.7 }}>
+            {subtitle}
+          </p>
         )}
-        {children && (
-          <AnimateIn from="up" delay={0.34} duration={0.6}>
-            {children}
-          </AnimateIn>
-        )}
+        {children && <div>{children}</div>}
       </div>
     </div>
   )

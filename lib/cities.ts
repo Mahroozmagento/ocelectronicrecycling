@@ -1,682 +1,602 @@
+// lib/cities.ts
+// ─────────────────────────────────────────────────────────────────────────────
+// Service-area data for /e-waste-recycling/{city}.
+//
+// Rules for this file (enforced by scripts/seo-check.mjs):
+//   • These are SERVICE AREAS, not branch locations — no addresses or ZIP codes.
+//   • No statistics, customer counts, or statements that local businesses "trust",
+//     "choose" or "rely on" us. Describe the place, not our track record there.
+//   • Only verifiable local geography and business character.
+//   • Pricing / pickup policy comes from lib/site.ts — never restate it here.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type Region = 'North County' | 'Central County' | 'South County' | 'Coast'
+
 export interface CityData {
-  slug: string;
-  name: string;
-  county: string;
-  zip: string;
-  tagline: string;
-  description: string;
-  localDetail: string;
-  nearbyLandmark: string;
-  population: string;
-  businessFocus: string;
-  metaTitle: string;
-  metaDescription: string;
-  heroStat: string;
-  heroStatLabel: string;
-  faqExtra?: { q: string; a: string };
+  slug: string
+  name: string
+  region: Region
+  /** Unincorporated communities and named communities inside another city. */
+  kind?: 'community'
+  metaTitle: string
+  metaDescription: string
+  /** One or two sentences on the area's business character and geography. */
+  intro: string
+  /** Practical note about the kind of pickups that are typical for the area. */
+  context: string
+  /** Common commercial equipment scenarios for this area (not past projects). */
+  scenarios: string[]
+  /** Slugs of genuinely adjacent service areas. */
+  nearby: string[]
+  faq?: { q: string; a: string }
 }
+
+const PHONE = '(949) 287-3056'
 
 export const cities: CityData[] = [
   {
-    slug: "anaheim",
-    name: "Anaheim",
-    county: "Orange County",
-    zip: "92801",
-    tagline: "E-Waste Recycling & IT Asset Disposal for Anaheim Businesses",
-    description:
-      "Anaheim is home to major hospitality, entertainment, and manufacturing industries — all generating significant volumes of electronics waste. OC Electronic Recycling provides pickup, data destruction, and responsible disposal for businesses and residents throughout Anaheim.",
-    localDetail:
-      "From the Resort District near Disneyland to the Platinum Triangle office corridor, Anaheim businesses trust us for reliable, confidential electronics recycling.",
-    nearbyLandmark: "Disneyland Resort",
-    population: "346,000+",
-    businessFocus: "hospitality, entertainment, and manufacturing sectors",
-    metaTitle: "E-Waste Recycling Anaheim CA",
-    metaDescription:
-      "E-waste recycling and IT asset disposal in Anaheim, CA. Free business pickup, NIST 800-88-guided data destruction. Call (949) 287-3056.",
-    heroStat: "Local",
-    heroStatLabel: "Orange County Team",
-    faqExtra: {
-      q: "Do you pick up from hotels and convention centers in Anaheim?",
-      a: "Yes — we regularly service the hospitality corridor near the Anaheim Convention Center and Resort District. Scheduled pickups available for large-volume properties.",
+    slug: 'anaheim',
+    name: 'Anaheim',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Anaheim CA',
+    metaDescription: `Business electronics pickup and e-waste recycling for Anaheim hotels, venues, offices and industrial sites. 5-item pickup minimum, $39 per TV.`,
+    intro: 'Anaheim is Orange County’s most populous city, with a hospitality economy centered on the Anaheim Resort and Convention Center, office and mixed-use growth in the Platinum Triangle, and a large industrial base in Anaheim Canyon.',
+    context: 'Requests here often involve volume: guest-room televisions, point-of-sale hardware and back-office computers from hospitality properties, or production and warehouse equipment from industrial tenants.',
+    scenarios: [
+      'Hotel and venue technology refreshes, including televisions and point-of-sale terminals',
+      'Warehouse and manufacturing office equipment from the Anaheim Canyon area',
+      'Office relocations and build-outs around the Platinum Triangle',
+    ],
+    nearby: ['fullerton', 'orange', 'garden-grove', 'buena-park', 'placentia'],
+    faq: {
+      q: 'Is there a fee to recycle hotel or venue televisions in Anaheim?',
+      a: 'Yes. Televisions carry a $39 recycling fee per unit, including bulk guest-room replacements. Tell us the approximate count and screen sizes and we will confirm the total and pickup logistics before anything is scheduled.',
     },
   },
   {
-    slug: "irvine",
-    name: "Irvine",
-    county: "Orange County",
-    zip: "92614",
-    tagline: "IT Asset Disposition & E-Waste Recycling for Irvine Tech Companies",
-    description:
-      "Irvine is Orange County's technology and corporate hub, home to thousands of tech firms, biotech companies, and UCI's innovation ecosystem. OC Electronic Recycling specializes in ITAD and data destruction tailored for Irvine's demanding corporate data-security requirements.",
-    localDetail:
-      "Serving the Irvine Spectrum, Irvine Business Complex, and the UCI Research Park — we understand the data security expectations of Irvine's corporate and biotech community.",
-    nearbyLandmark: "Irvine Spectrum Center",
-    population: "310,000+",
-    businessFocus: "technology, biotech, and corporate enterprises",
-    metaTitle: "E-Waste Recycling & ITAD Irvine CA",
-    metaDescription:
-      "Enterprise ITAD and e-waste recycling in Irvine, CA. Secure data destruction, server decommissioning, free business pickup. Call (949) 287-3056.",
-    heroStat: "NIST",
-    heroStatLabel: "800-88 Data Handling",
-    faqExtra: {
-      q: "Can you handle large server decommissions for Irvine tech companies?",
-      a: "Absolutely. We specialize in full server room and data center decommissioning, with data destruction following NIST 800-88 guidelines and full chain-of-custody documentation.",
+    slug: 'irvine',
+    name: 'Irvine',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling & ITAD Irvine CA',
+    metaDescription: `IT asset disposition, data destruction and e-waste pickup for Irvine offices, labs and campuses. 5-item minimum; scope confirmed before scheduling.`,
+    intro: 'Irvine is a master-planned city with major office concentrations at the Irvine Spectrum and the Irvine Business Complex near John Wayne Airport, alongside UC Irvine and the adjacent research park.',
+    context: 'Technology, medical-device and life-science employers make data-bearing equipment a common part of requests from this area, so it helps to decide early whether you need sanitization, physical destruction or serialized reporting.',
+    scenarios: [
+      'Laptop and workstation refreshes for office and engineering teams',
+      'Server-room and network-closet decommissions in multi-tenant office buildings',
+      'Lab and R&D computers — instruments and specialized equipment are confirmed individually',
+    ],
+    nearby: ['tustin', 'costa-mesa', 'newport-beach', 'lake-forest'],
+    faq: {
+      q: 'Can you handle a server-room decommission for an Irvine office?',
+      a: 'Server and network equipment can be included in a pickup request. Tell us what is in the racks, whether drives need sanitization or physical destruction, and any building access rules. We confirm scope, documentation and timing before scheduling.',
     },
   },
   {
-    slug: "santa-ana",
-    name: "Santa Ana",
-    county: "Orange County",
-    zip: "92701",
-    tagline: "Affordable E-Waste Recycling & Electronics Disposal in Santa Ana",
-    description:
-      "Santa Ana, the county seat of Orange County, is a vibrant community with a diverse mix of small businesses, government offices, and residents. OC Electronic Recycling offers convenient, affordable e-waste pickup and drop-off solutions for all of Santa Ana.",
-    localDetail:
-      "From Downtown Santa Ana to the Civic Center area, we make it easy for residents and businesses to dispose of electronics responsibly and in compliance with California law.",
-    nearbyLandmark: "Santa Ana Civic Center",
-    population: "310,000+",
-    businessFocus: "government, retail, and small business sectors",
-    metaTitle: "E-Waste Recycling Santa Ana CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in Santa Ana, CA. Free pickup for qualifying volumes, in compliance with California regulations. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Pickup for Business Quantities",
+    slug: 'santa-ana',
+    name: 'Santa Ana',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Santa Ana CA',
+    metaDescription: `E-waste recycling and business electronics pickup for Santa Ana offices, agencies and shops. 5-item pickup minimum; $39 per TV; fees confirmed first.`,
+    intro: 'Santa Ana is the county seat, home to the Civic Center’s county and court offices, a dense downtown, and the South Coast Metro office district it shares with Costa Mesa.',
+    context: 'Public agencies, law offices and professional firms here frequently need a record of what left the building, so documentation requirements are worth raising in the first conversation.',
+    scenarios: [
+      'Office computer and monitor replacements for professional and legal practices',
+      'Equipment clear-outs ahead of a lease end or tenant improvement',
+      'Retired desktops and printers from small businesses downtown and along Main Street',
+    ],
+    nearby: ['tustin', 'orange', 'garden-grove', 'costa-mesa', 'irvine'],
+    faq: {
+      q: 'Can documentation be provided for a Santa Ana law office or public agency?',
+      a: 'Documentation depends on the service you select and the equipment processed. Options can include a pickup manifest, a serialized asset inventory, a Certificate of Recycling and a Certificate of Data Destruction. Tell us what your records policy requires and we will confirm what applies before pickup.',
+    },
   },
   {
-    slug: "huntington-beach",
-    name: "Huntington Beach",
-    county: "Orange County",
-    zip: "92648",
-    tagline: "E-Waste Recycling in Huntington Beach — Protecting Our Coast",
-    description:
-      "Surf City USA takes its environment seriously. Huntington Beach residents and businesses choose OC Electronic Recycling to keep hazardous electronics out of landfills and away from the coastline that defines this iconic community.",
-    localDetail:
-      "From the Pacific City corridor to Downtown HB, we make electronics recycling easy for Huntington Beach households and local businesses.",
-    nearbyLandmark: "Huntington Beach Pier",
-    population: "200,000+",
-    businessFocus: "retail, hospitality, and coastal small businesses",
-    metaTitle: "E-Waste Recycling Huntington Beach",
-    metaDescription:
-      "Eco-friendly e-waste recycling in Huntington Beach, CA. Keep electronics out of landfills and protect our coastline. Free pickup available. Call (949) 287-3056.",
-    heroStat: "CA",
-    heroStatLabel: "Compliant Recycling",
+    slug: 'huntington-beach',
+    name: 'Huntington Beach',
+    region: 'Coast',
+    metaTitle: 'E-Waste Recycling Huntington Beach',
+    metaDescription: `Electronics recycling and business pickup for Huntington Beach offices, retailers and industrial tenants. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Huntington Beach pairs a coastal visitor economy with the Beach Boulevard commercial corridor and an industrial and aerospace employment area in the north of the city.',
+    context: 'Equipment here ranges from retail and hospitality hardware near the coast to engineering workstations and shop-floor computers from industrial tenants inland.',
+    scenarios: [
+      'Retail and restaurant point-of-sale systems and back-office PCs',
+      'Engineering and manufacturing office equipment from the northern industrial area',
+      'Monitors, desktops and printers from offices along Beach Boulevard',
+    ],
+    nearby: ['westminster', 'costa-mesa', 'newport-beach', 'garden-grove'],
   },
   {
-    slug: "garden-grove",
-    name: "Garden Grove",
-    county: "Orange County",
-    zip: "92840",
-    tagline: "E-Waste Pickup & Electronics Recycling in Garden Grove",
-    description:
-      "Garden Grove's diverse residential neighborhoods and commercial corridors generate a steady stream of outdated electronics. OC Electronic Recycling provides reliable pickup and disposal for computers, TVs, phones, and more throughout Garden Grove.",
-    localDetail:
-      "Serving the Garden Grove Boulevard corridor and surrounding neighborhoods — we make it simple to dispose of electronics responsibly.",
-    nearbyLandmark: "Crystal Cathedral (Christ Cathedral)",
-    population: "170,000+",
-    businessFocus: "retail, food service, and residential communities",
-    metaTitle: "E-Waste Recycling Garden Grove CA",
-    metaDescription:
-      "E-waste recycling and electronics pickup in Garden Grove, CA. Computers, TVs, phones, and more. Residential and business service. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Pickup Available",
+    slug: 'garden-grove',
+    name: 'Garden Grove',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Garden Grove CA',
+    metaDescription: `Business e-waste pickup and electronics recycling in Garden Grove — offices, hotels and shops. 5-item pickup minimum; televisions $39 each. Call ${PHONE}.`,
+    intro: 'Garden Grove sits in central Orange County, with a hotel district along Harbor Boulevard just south of the Anaheim Resort and long commercial corridors on Garden Grove Boulevard and Brookhurst Street.',
+    context: 'Requests from this area tend to be mixed loads from small and mid-sized businesses, plus hospitality equipment from the Harbor Boulevard hotels.',
+    scenarios: [
+      'Hotel televisions and front-desk systems along Harbor Boulevard',
+      'Computers and printers from medical, dental and professional offices',
+      'Retail and restaurant equipment from corridor shopping centers',
+    ],
+    nearby: ['anaheim', 'westminster', 'santa-ana', 'stanton', 'orange'],
   },
   {
-    slug: "fullerton",
-    name: "Fullerton",
-    county: "Orange County",
-    zip: "92832",
-    tagline: "E-Waste Recycling for Fullerton Residents, Businesses & Schools",
-    description:
-      "Home to Cal State Fullerton and a thriving arts and education community, Fullerton generates significant electronics waste from both the academic and business sectors. OC Electronic Recycling offers student-friendly and business-scale ITAD and recycling solutions.",
-    localDetail:
-      "We partner with educational institutions, local businesses, and residents throughout Fullerton to ensure safe, responsible electronics disposal.",
-    nearbyLandmark: "California State University, Fullerton",
-    population: "140,000+",
-    businessFocus: "education, healthcare, and local business",
-    metaTitle: "E-Waste Recycling Fullerton CA",
-    metaDescription:
-      "E-waste recycling in Fullerton, CA. Serving CSUF, local businesses, and residents. Computer recycling, TV disposal, data destruction. Call (949) 287-3056.",
-    heroStat: "CA",
-    heroStatLabel: "Compliant Recycling",
+    slug: 'fullerton',
+    name: 'Fullerton',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Fullerton CA',
+    metaDescription: `E-waste recycling and equipment pickup for Fullerton businesses, schools and manufacturers. 5 qualifying items minimum; $39 per TV; confirmed first.`,
+    intro: 'Fullerton is a north Orange County education and employment center — home to Cal State Fullerton and Fullerton College, a walkable downtown, and manufacturing and distribution sites in the south and east of the city.',
+    context: 'Education and manufacturing both generate large, uniform batches of equipment, which makes approximate counts by device type especially useful for planning a pickup.',
+    scenarios: [
+      'Classroom and department computer replacements at the end of a term',
+      'Manufacturing and distribution office equipment, including label printers and terminals',
+      'Downtown office and medical practice refreshes',
+    ],
+    nearby: ['anaheim', 'brea', 'placentia', 'buena-park', 'la-habra'],
+    faq: {
+      q: 'Can a school or college department in Fullerton request a pickup?',
+      a: 'Yes. Schools and other organizations can request a pickup the same way as a business. The five-item minimum for qualifying major equipment applies, and we confirm acceptance, any fees and timing before scheduling.',
+    },
   },
   {
-    slug: "orange",
-    name: "Orange",
-    county: "Orange County",
-    zip: "92868",
-    tagline: "Trusted E-Waste Recycling in the City of Orange",
-    description:
-      "The City of Orange blends historic charm with modern commerce. OC Electronic Recycling provides the same high standard of data destruction and electronics disposal that Orange's businesses and households have come to expect.",
-    localDetail:
-      "Serving Old Towne Orange, the Chapman University area, and commercial zones throughout the City of Orange.",
-    nearbyLandmark: "Chapman University",
-    population: "140,000+",
-    businessFocus: "healthcare, education, and professional services",
-    metaTitle: "E-Waste Recycling Orange CA",
-    metaDescription:
-      "Electronics recycling and ITAD in Orange, CA. Secure data destruction, free business pickup. Serving all of the City of Orange. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Business Pickup",
+    slug: 'orange',
+    name: 'Orange',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Orange CA',
+    metaDescription: `Electronics recycling, data destruction and business pickup in the City of Orange, from Old Towne to the medical district. 5-item minimum. Call ${PHONE}.`,
+    intro: 'The City of Orange combines the historic Old Towne district and Chapman University with a major concentration of hospitals and medical offices in the south of the city.',
+    context: 'Healthcare-related offices are common here, so requests often include data-bearing computers where a selected data destruction service and matching documentation matter.',
+    scenarios: [
+      'Medical and dental office computers — clinical devices are confirmed individually',
+      'University department and administrative equipment',
+      'Small-office and retail equipment around Old Towne and Tustin Street',
+    ],
+    nearby: ['anaheim', 'santa-ana', 'tustin', 'garden-grove'],
   },
   {
-    slug: "costa-mesa",
-    name: "Costa Mesa",
-    county: "Orange County",
-    zip: "92626",
-    tagline: "E-Waste Recycling & ITAD for Costa Mesa's Creative Economy",
-    description:
-      "Costa Mesa's design, retail, and creative industries are always upgrading equipment. OC Electronic Recycling makes responsible electronics disposal easy for businesses along the 17th Street corridor and South Coast Plaza area.",
-    localDetail:
-      "From the Segerstrom Center area to Triangle Square, we serve Costa Mesa's unique mix of creative studios, retail, and professional offices.",
-    nearbyLandmark: "South Coast Plaza",
-    population: "115,000+",
-    businessFocus: "design, retail, and creative industries",
-    metaTitle: "E-Waste Recycling Costa Mesa CA",
-    metaDescription:
-      "E-waste recycling and IT asset disposal in Costa Mesa, CA. Secure data destruction, free business pickup. Call (949) 287-3056.",
-    heroStat: "NIST",
-    heroStatLabel: "800-88 Data Destruction",
+    slug: 'costa-mesa',
+    name: 'Costa Mesa',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Costa Mesa CA',
+    metaDescription: `E-waste recycling and IT equipment pickup for Costa Mesa offices, studios and retailers near South Coast Metro. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Costa Mesa is anchored by South Coast Plaza, the Segerstrom Center for the Arts and the South Coast Metro office towers, with design studios and apparel companies spread across the city’s Westside.',
+    context: 'Creative and retail businesses refresh displays and workstations often, so monitors and desktop computers make up a large share of typical loads.',
+    scenarios: [
+      'Design-studio workstations and large-format displays',
+      'Retail point-of-sale and stockroom equipment',
+      'Office tower tenant move-outs in South Coast Metro',
+    ],
+    nearby: ['newport-beach', 'santa-ana', 'irvine', 'huntington-beach'],
   },
   {
-    slug: "newport-beach",
-    name: "Newport Beach",
-    county: "Orange County",
-    zip: "92660",
-    tagline: "Premium ITAD & E-Waste Recycling for Newport Beach",
-    description:
-      "Newport Beach's affluent residential community and concentration of financial, legal, and real estate firms demand the highest standards in data security and electronics disposal. OC Electronic Recycling delivers premium, discreet ITAD and data destruction.",
-    localDetail:
-      "Serving Fashion Island, Newport Center, Balboa Island, and the surrounding Newport Beach peninsula with white-glove, confidential electronics recycling.",
-    nearbyLandmark: "Fashion Island",
-    population: "87,000+",
-    businessFocus: "financial services, legal, and high-net-worth residential",
-    metaTitle: "E-Waste Recycling Newport Beach CA",
-    metaDescription:
-      "Premium IT asset disposal and e-waste recycling in Newport Beach, CA. Confidential data destruction, documented chain of custody. Call (949) 287-3056.",
-    heroStat: "Documented",
-    heroStatLabel: "Chain of Custody",
+    slug: 'newport-beach',
+    name: 'Newport Beach',
+    region: 'Coast',
+    metaTitle: 'E-Waste Recycling Newport Beach CA',
+    metaDescription: `IT asset disposition, data destruction and electronics pickup for Newport Beach offices. Documentation by project scope; 5-item minimum. Call ${PHONE}.`,
+    intro: 'Newport Beach’s office market is concentrated in Newport Center around Fashion Island and in the airport area, with a strong presence of financial, real-estate and legal firms.',
+    context: 'Professional-services firms typically hold client records on every laptop and server, so data handling is usually the first decision — not an afterthought to recycling.',
+    scenarios: [
+      'Laptop and desktop refreshes for financial, legal and real-estate offices',
+      'Small server and network closet retirements',
+      'Conference-room displays and audio-visual equipment',
+    ],
+    nearby: ['costa-mesa', 'irvine', 'huntington-beach', 'laguna-beach'],
+    faq: {
+      q: 'Is data destruction included when a Newport Beach office recycles computers?',
+      a: 'No. Data destruction is a selected service and is not automatically included with recycling. If your equipment held client or employee data, choose sanitization or physical destruction when you request pickup, and a Certificate of Data Destruction can be issued for the media processed.',
+    },
   },
   {
-    slug: "mission-viejo",
-    name: "Mission Viejo",
-    county: "Orange County",
-    zip: "92691",
-    tagline: "E-Waste Recycling for Mission Viejo Homes & Businesses",
-    description:
-      "Mission Viejo's family-friendly master-planned community generates significant residential electronics waste. OC Electronic Recycling offers convenient scheduled pickups and drop-off options for Mission Viejo residents and the local business community.",
-    localDetail:
-      "Serving Kaleidoscope Center, the Shops at Mission Viejo area, and all residential communities throughout Mission Viejo.",
-    nearbyLandmark: "Lake Mission Viejo",
-    population: "95,000+",
-    businessFocus: "residential, retail, and healthcare",
-    metaTitle: "E-Waste Recycling Mission Viejo CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in Mission Viejo, CA. Convenient residential pickup, TV recycling, computer disposal. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Residential Pickup Available",
+    slug: 'mission-viejo',
+    name: 'Mission Viejo',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Mission Viejo CA',
+    metaDescription: `Electronics recycling and business pickup for Mission Viejo offices, medical practices and schools. 5-item minimum; $39 per TV; confirmed first.`,
+    intro: 'Mission Viejo is a master-planned south Orange County city whose employment centers include Saddleback College, a regional hospital campus and the retail and office areas around Crown Valley Parkway and Marguerite Parkway.',
+    context: 'Most requests come from professional and medical offices with moderate quantities, where grouping equipment from several suites can make reaching the pickup minimum easier.',
+    scenarios: [
+      'Medical and professional office computer replacements',
+      'College and school department equipment',
+      'Retail and back-office hardware from shopping-center tenants',
+    ],
+    nearby: ['lake-forest', 'laguna-hills', 'laguna-niguel', 'rancho-santa-margarita'],
   },
   {
-    slug: "tustin",
-    name: "Tustin",
-    county: "Orange County",
-    zip: "92780",
-    tagline: "E-Waste Recycling & IT Disposal in Tustin",
-    description:
-      "Tustin's growing commercial and residential base, including the Tustin Legacy development, is producing more electronics waste than ever. OC Electronic Recycling is the trusted partner for responsible disposal throughout Tustin.",
-    localDetail:
-      "From Tustin Legacy to Old Town Tustin, we serve the full range of Tustin's residential and commercial electronics recycling needs.",
-    nearbyLandmark: "Tustin Legacy (former MCAS Tustin)",
-    population: "80,000+",
-    businessFocus: "mixed commercial, residential, and light industrial",
-    metaTitle: "E-Waste Recycling Tustin CA",
-    metaDescription:
-      "Electronics recycling and IT asset disposal in Tustin, CA. Secure data destruction, free business pickup. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Service Available",
+    slug: 'tustin',
+    name: 'Tustin',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Tustin CA',
+    metaDescription: `Business e-waste pickup and IT equipment recycling in Tustin, from Old Town to Tustin Legacy. 5-item minimum; fees and timing confirmed first.`,
+    intro: 'Tustin stretches from historic Old Town to Tustin Legacy, the redevelopment of the former Marine Corps air station, with business parks along Red Hill Avenue bordering Irvine and Santa Ana.',
+    context: 'Flex-space and business-park tenants here often combine office equipment with light-industrial hardware, so a short item list helps us confirm what qualifies.',
+    scenarios: [
+      'Business-park office and warehouse computer refreshes',
+      'New-office build-outs and consolidations in Tustin Legacy',
+      'Small-business equipment from Old Town and the retail centers',
+    ],
+    nearby: ['irvine', 'santa-ana', 'orange'],
   },
   {
-    slug: "lake-forest",
-    name: "Lake Forest",
-    county: "Orange County",
-    zip: "92630",
-    tagline: "Electronics Recycling & ITAD in Lake Forest",
-    description:
-      "Lake Forest's blend of business parks and residential communities makes it a key market for both commercial ITAD services and residential e-waste collection. OC Electronic Recycling serves the entire Lake Forest corridor.",
-    localDetail:
-      "Serving the Bake Parkway business corridor, Portola Hills, and all Lake Forest neighborhoods.",
-    nearbyLandmark: "Lake Forest Sports Park",
-    population: "84,000+",
-    businessFocus: "business parks, healthcare, and residential",
-    metaTitle: "E-Waste Recycling Lake Forest CA",
-    metaDescription:
-      "E-waste recycling and ITAD in Lake Forest, CA. Computer recycling, data destruction, server disposal. Free business pickup. Call (949) 287-3056.",
-    heroStat: "NIST",
-    heroStatLabel: "800-88 Data Handling",
+    slug: 'lake-forest',
+    name: 'Lake Forest',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Lake Forest CA',
+    metaDescription: `E-waste recycling, ITAD and equipment pickup for Lake Forest business parks and offices. 5 qualifying items minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Lake Forest is a south Orange County city known for its business parks along Bake Parkway and Lake Forest Drive, and it includes the Foothill Ranch and Portola Hills communities.',
+    context: 'Corporate and light-manufacturing tenants mean requests frequently include servers and networking gear alongside ordinary office equipment.',
+    scenarios: [
+      'Corporate office laptop, desktop and monitor refreshes',
+      'Engineering and light-manufacturing workstation retirements',
+      'Network and server equipment from on-site IT rooms',
+    ],
+    nearby: ['irvine', 'mission-viejo', 'laguna-hills', 'foothill-ranch', 'el-toro'],
   },
   {
-    slug: "buena-park",
-    name: "Buena Park",
-    county: "Orange County",
-    zip: "90621",
-    tagline: "E-Waste Recycling for Buena Park Homes & Businesses",
-    description:
-      "Buena Park's entertainment district and diverse residential neighborhoods rely on OC Electronic Recycling for convenient, responsible electronics disposal that keeps hazardous materials out of landfills.",
-    localDetail:
-      "Serving Knott's Berry Farm area businesses, the Beach Boulevard corridor, and all Buena Park residential communities.",
-    nearbyLandmark: "Knott's Berry Farm",
-    population: "82,000+",
-    businessFocus: "entertainment, hospitality, and retail",
-    metaTitle: "E-Waste Recycling Buena Park CA",
-    metaDescription:
-      "Electronics recycling and disposal in Buena Park, CA. TVs, computers, phones and more. Residential and business pickup. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Drop-Off for Residents",
+    slug: 'buena-park',
+    name: 'Buena Park',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Buena Park CA',
+    metaDescription: `Electronics recycling and business pickup in Buena Park for entertainment, retail and distribution sites. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Buena Park sits at the junction of Interstate 5 and State Route 91, with the Beach Boulevard entertainment corridor on one side and distribution and industrial properties on the other.',
+    context: 'Distribution and logistics sites tend to retire rugged terminals, label printers and warehouse-office PCs in batches, alongside display equipment from entertainment venues.',
+    scenarios: [
+      'Warehouse and distribution office terminals and printers',
+      'Entertainment and hospitality displays, including televisions',
+      'Auto-center and retail back-office equipment',
+    ],
+    nearby: ['anaheim', 'fullerton', 'la-palma', 'cypress', 'la-habra'],
   },
   {
-    slug: "westminster",
-    name: "Westminster",
-    county: "Orange County",
-    zip: "92683",
-    tagline: "E-Waste Pickup & Electronics Recycling in Westminster",
-    description:
-      "Westminster, home to the vibrant Little Saigon district, has a strong community of small businesses and households that rely on OC Electronic Recycling for affordable, responsible electronics disposal.",
-    localDetail:
-      "Serving Little Saigon, Bolsa Avenue businesses, and all Westminster neighborhoods with bilingual-friendly service.",
-    nearbyLandmark: "Little Saigon (Bolsa Avenue)",
-    population: "91,000+",
-    businessFocus: "small business, retail, and diverse residential communities",
-    metaTitle: "E-Waste Recycling Westminster CA",
-    metaDescription:
-      "E-waste recycling in Westminster, CA. Serving Little Saigon and all of Westminster. Computer disposal, TV recycling, data destruction. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Pickup Available",
+    slug: 'westminster',
+    name: 'Westminster',
+    region: 'Central County',
+    metaTitle: 'E-Waste Recycling Westminster CA',
+    metaDescription: `E-waste recycling and business electronics pickup in Westminster, including Little Saigon. 5-item pickup minimum; $39 per television. Call ${PHONE}.`,
+    intro: 'Westminster is a central Orange County city best known for Little Saigon along Bolsa Avenue, with a dense mix of independent retailers, restaurants, medical offices and professional services.',
+    context: 'Small businesses dominate here, and neighboring suites sometimes coordinate a single request so that together they meet the pickup minimum.',
+    scenarios: [
+      'Medical, dental and pharmacy office computers and printers',
+      'Retail and restaurant point-of-sale systems',
+      'Office equipment from professional services along Bolsa Avenue and Beach Boulevard',
+    ],
+    nearby: ['garden-grove', 'huntington-beach', 'stanton'],
   },
   {
-    slug: "yorba-linda",
-    name: "Yorba Linda",
-    county: "Orange County",
-    zip: "92886",
-    tagline: "Responsible E-Waste Recycling in Yorba Linda",
-    description:
-      "Yorba Linda's upscale residential community and growing commercial sector trust OC Electronic Recycling for safe, confidential, and convenient electronics disposal.",
-    localDetail:
-      "Serving Yorba Linda Town Center, Savi Ranch business park, and all Yorba Linda residential communities.",
-    nearbyLandmark: "Nixon Presidential Library",
-    population: "68,000+",
-    businessFocus: "residential, business parks, and professional services",
-    metaTitle: "E-Waste Recycling Yorba Linda CA",
-    metaDescription:
-      "E-waste recycling and data destruction in Yorba Linda, CA. Residential and business service. Free business pickup. Call (949) 287-3056.",
-    heroStat: "Secure",
-    heroStatLabel: "Data Destruction",
+    slug: 'yorba-linda',
+    name: 'Yorba Linda',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Yorba Linda CA',
+    metaDescription: `Electronics recycling and equipment pickup for Yorba Linda offices and home-based businesses. 5-item minimum; eligibility confirmed first. Call ${PHONE}.`,
+    intro: 'Yorba Linda is a largely residential city in northeast Orange County, with most commercial activity in the Savi Ranch center near State Route 91 and around the town center on Yorba Linda Boulevard.',
+    context: 'Requests are usually smaller office loads, so it is worth checking the five-item minimum for qualifying major equipment before planning a pickup.',
+    scenarios: [
+      'Professional and medical office equipment',
+      'Home-office and small-business computer replacements',
+      'Retail back-office hardware from Savi Ranch tenants',
+    ],
+    nearby: ['placentia', 'anaheim', 'brea'],
   },
   {
-    slug: "placentia",
-    name: "Placentia",
-    county: "Orange County",
-    zip: "92870",
-    tagline: "E-Waste Recycling & Electronics Disposal in Placentia",
-    description:
-      "Placentia's residential neighborhoods and commercial areas choose OC Electronic Recycling for quick, responsible electronics disposal with no hassle.",
-    localDetail:
-      "Serving all Placentia neighborhoods and the Orangethorpe Avenue commercial corridor.",
-    nearbyLandmark: "Placentia Heritage Park",
-    population: "52,000+",
-    businessFocus: "residential and light commercial",
-    metaTitle: "E-Waste Recycling Placentia CA",
-    metaDescription:
-      "Electronics recycling in Placentia, CA. Computers, TVs, phones, and more. Residential and business pickup. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Business Pickup",
+    slug: 'placentia',
+    name: 'Placentia',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Placentia CA',
+    metaDescription: `Business e-waste pickup and electronics recycling in Placentia for offices and light-industrial sites. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Placentia lies between Fullerton and Yorba Linda in north Orange County, with light-industrial properties along Orangethorpe Avenue and a small historic core in Old Town Placentia.',
+    context: 'Light-industrial tenants typically mix office computers with shop-floor terminals; unusual or specialized equipment is confirmed individually.',
+    scenarios: [
+      'Light-industrial office and shop-floor computers',
+      'School and administrative office equipment',
+      'Small-business desktops, monitors and printers',
+    ],
+    nearby: ['fullerton', 'yorba-linda', 'anaheim', 'brea'],
   },
   {
-    slug: "la-habra",
-    name: "La Habra",
-    county: "Orange County",
-    zip: "90631",
-    tagline: "Electronics Recycling & E-Waste Disposal in La Habra",
-    description:
-      "La Habra's diverse community of residents and small businesses relies on OC Electronic Recycling for affordable electronics disposal that meets California regulations.",
-    localDetail:
-      "Serving Imperial Highway businesses and all La Habra residential neighborhoods.",
-    nearbyLandmark: "La Habra Children's Museum",
-    population: "62,000+",
-    businessFocus: "residential, retail, and small business",
-    metaTitle: "E-Waste Recycling La Habra CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in La Habra, CA. Computers, TVs, and more. Residential and business service. Call (949) 287-3056.",
-    heroStat: "CA",
-    heroStatLabel: "Compliant Recycling",
+    slug: 'la-habra',
+    name: 'La Habra',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling La Habra CA',
+    metaDescription: `E-waste recycling and business pickup in La Habra, at the Orange County–Los Angeles County line. 5-item minimum; fees confirmed first. Call ${PHONE}.`,
+    intro: 'La Habra occupies the northwest corner of Orange County on the Los Angeles County line, with commercial activity along Imperial Highway, Beach Boulevard and Whittier Boulevard.',
+    context: 'Because the city borders Los Angeles County, businesses with a second site across the county line can ask about combining locations in one request.',
+    scenarios: [
+      'Retail and restaurant equipment from corridor shopping centers',
+      'Medical and professional office computers',
+      'Small manufacturing and service-business office hardware',
+    ],
+    nearby: ['brea', 'fullerton', 'buena-park'],
   },
   {
-    slug: "brea",
-    name: "Brea",
-    county: "Orange County",
-    zip: "92821",
-    tagline: "E-Waste Recycling & IT Asset Disposal in Brea",
-    description:
-      "Brea's oil-turned-technology corridor and residential communities generate significant electronics waste. OC Electronic Recycling handles everything from single-device drop-offs to full corporate IT decommissions.",
-    localDetail:
-      "Serving Brea Mall area businesses, the Carbon Canyon corridor, and all Brea neighborhoods.",
-    nearbyLandmark: "Brea Mall",
-    population: "45,000+",
-    businessFocus: "corporate, retail, and residential",
-    metaTitle: "E-Waste Recycling Brea CA",
-    metaDescription:
-      "Electronics recycling and IT asset disposal in Brea, CA. Secure data destruction, server decommissioning. Call (949) 287-3056.",
-    heroStat: "NIST",
-    heroStatLabel: "800-88 Data Wipe",
+    slug: 'brea',
+    name: 'Brea',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Brea CA',
+    metaDescription: `IT equipment pickup, data destruction and e-waste recycling for Brea corporate offices and retailers. 5-item minimum; scope confirmed first.`,
+    intro: 'Brea is a north Orange County employment center with corporate offices along Imperial Highway and State Route 57, a regional mall and a redeveloped downtown.',
+    context: 'Corporate tenants here commonly retire equipment on a refresh cycle, which suits a planned pickup with documentation agreed in advance.',
+    scenarios: [
+      'Corporate laptop and desktop refresh cycles',
+      'Server and network equipment from office IT rooms',
+      'Retail and back-office hardware from mall and downtown tenants',
+    ],
+    nearby: ['fullerton', 'la-habra', 'placentia', 'yorba-linda'],
   },
   {
-    slug: "aliso-viejo",
-    name: "Aliso Viejo",
-    county: "Orange County",
-    zip: "92656",
-    tagline: "Corporate E-Waste Recycling & ITAD in Aliso Viejo",
-    description:
-      "Aliso Viejo's dense concentration of tech companies and professional offices makes it one of South OC's most active markets for ITAD and secure data destruction. OC Electronic Recycling is the local specialist.",
-    localDetail:
-      "Serving Pacific Park Drive offices, Aliso Viejo Town Center, and the full Aliso Viejo business community.",
-    nearbyLandmark: "Aliso Viejo Town Center",
-    population: "53,000+",
-    businessFocus: "technology companies and professional services",
-    metaTitle: "E-Waste Recycling Aliso Viejo CA",
-    metaDescription:
-      "ITAD and e-waste recycling in Aliso Viejo, CA. Secure data destruction for tech companies. Free business pickup. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Corporate Pickup",
+    slug: 'aliso-viejo',
+    name: 'Aliso Viejo',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Aliso Viejo CA',
+    metaDescription: `ITAD, data destruction and e-waste pickup for Aliso Viejo office campuses. 5-item pickup minimum; documentation by project scope. Call ${PHONE}.`,
+    intro: 'Aliso Viejo is a master-planned south Orange County city with office campuses near State Route 73 that house technology, software and medical-device companies.',
+    context: 'Campus tenants usually manage assets by serial number, so say so in your request if you need a serialized asset inventory as part of the project scope.',
+    scenarios: [
+      'Engineering laptops and workstations at the end of a lease or refresh cycle',
+      'Network closets and small server rooms in office campuses',
+      'Monitors and docking equipment from hybrid-office consolidations',
+    ],
+    nearby: ['laguna-hills', 'laguna-niguel', 'laguna-beach', 'mission-viejo'],
   },
   {
-    slug: "laguna-niguel",
-    name: "Laguna Niguel",
-    county: "Orange County",
-    zip: "92677",
-    tagline: "E-Waste Recycling for Laguna Niguel Homes & Offices",
-    description:
-      "Laguna Niguel's upscale residential community and growing professional services sector trust OC Electronic Recycling for discreet, convenient electronics disposal.",
-    localDetail:
-      "Serving Crown Valley Parkway businesses and all Laguna Niguel residential communities.",
-    nearbyLandmark: "Laguna Niguel Regional Park",
-    population: "67,000+",
-    businessFocus: "residential, financial services, and healthcare",
-    metaTitle: "E-Waste Recycling Laguna Niguel CA",
-    metaDescription:
-      "Electronics recycling and data destruction in Laguna Niguel, CA. Residential and business service. Responsible disposal. Call (949) 287-3056.",
-    heroStat: "Secure",
-    heroStatLabel: "Data Destruction",
+    slug: 'laguna-niguel',
+    name: 'Laguna Niguel',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Laguna Niguel CA',
+    metaDescription: `Electronics recycling and business pickup for Laguna Niguel offices and practices along Crown Valley Parkway. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Laguna Niguel is a south Orange County city whose offices, medical practices and retail centers are concentrated along Crown Valley Parkway.',
+    context: 'Professional, financial and medical practices make up most of the business community, typically with modest equipment counts per office.',
+    scenarios: [
+      'Financial and professional office computers',
+      'Medical and dental practice equipment — clinical devices are confirmed individually',
+      'Retail and service-business back-office hardware',
+    ],
+    nearby: ['aliso-viejo', 'dana-point', 'mission-viejo', 'san-juan-capistrano'],
   },
   {
-    slug: "laguna-hills",
-    name: "Laguna Hills",
-    county: "Orange County",
-    zip: "92653",
-    tagline: "E-Waste Recycling & Electronics Disposal in Laguna Hills",
-    description:
-      "Laguna Hills businesses and residents choose OC Electronic Recycling for fast, reliable electronics disposal in compliance with California regulations.",
-    localDetail:
-      "Serving Laguna Hills Mall area, El Toro Road corridor, and all Laguna Hills neighborhoods.",
-    nearbyLandmark: "Laguna Hills Mall",
-    population: "32,000+",
-    businessFocus: "healthcare, retail, and residential",
-    metaTitle: "E-Waste Recycling Laguna Hills CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in Laguna Hills, CA. Computers, TVs, servers. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Business Pickup",
+    slug: 'laguna-hills',
+    name: 'Laguna Hills',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Laguna Hills CA',
+    metaDescription: `E-waste recycling and equipment pickup for Laguna Hills medical and professional offices near Interstate 5. 5-item minimum; confirmed first.`,
+    intro: 'Laguna Hills sits along Interstate 5 in south Orange County, with a cluster of medical offices around its hospital campus and commercial properties along El Toro Road.',
+    context: 'Medical office buildings often have shared loading areas and set delivery hours, so access details are useful when you request pickup.',
+    scenarios: [
+      'Medical-office computers, monitors and printers',
+      'Professional-suite equipment during a lease change',
+      'Retail back-office hardware along El Toro Road',
+    ],
+    nearby: ['lake-forest', 'mission-viejo', 'aliso-viejo', 'el-toro'],
   },
   {
-    slug: "laguna-beach",
-    name: "Laguna Beach",
-    county: "Orange County",
-    zip: "92651",
-    tagline: "Eco-Conscious E-Waste Recycling in Laguna Beach",
-    description:
-      "Laguna Beach's commitment to environmental preservation extends to electronics recycling. OC Electronic Recycling helps the Laguna Beach community dispose of electronics responsibly, protecting the coastal environment they love.",
-    localDetail:
-      "Serving Laguna Beach's arts community, hospitality businesses, and residential neighborhoods with eco-conscious electronics disposal.",
-    nearbyLandmark: "Heisler Park",
-    population: "23,000+",
-    businessFocus: "arts, hospitality, and eco-conscious residential",
-    metaTitle: "E-Waste Recycling Laguna Beach CA",
-    metaDescription:
-      "Eco-friendly e-waste recycling in Laguna Beach, CA. Protect the coast — recycle your electronics responsibly. Call (949) 287-3056.",
-    heroStat: "CA",
-    heroStatLabel: "Compliant Recycling",
+    slug: 'laguna-beach',
+    name: 'Laguna Beach',
+    region: 'Coast',
+    metaTitle: 'E-Waste Recycling Laguna Beach CA',
+    metaDescription: `Electronics recycling and business pickup for Laguna Beach hotels, galleries and offices. 5-item minimum; access and fees confirmed first. Call ${PHONE}.`,
+    intro: 'Laguna Beach is a coastal arts community where hotels, galleries, restaurants and small offices line Coast Highway and Laguna Canyon Road.',
+    context: 'Streets are narrow and parking is limited in much of the city, so loading access and stairs are worth describing when you send a request.',
+    scenarios: [
+      'Hotel and resort televisions and front-desk systems',
+      'Gallery, studio and small-office computers and displays',
+      'Restaurant and retail point-of-sale equipment',
+    ],
+    nearby: ['newport-beach', 'aliso-viejo', 'dana-point', 'laguna-niguel'],
+    faq: {
+      q: 'What should we tell you about access for a Laguna Beach pickup?',
+      a: 'Let us know about parking, stairs, elevators and any delivery-hour limits at your building. Many Laguna Beach properties have tight loading access, and knowing this in advance helps us confirm whether and when a pickup is possible.',
+    },
   },
   {
-    slug: "dana-point",
-    name: "Dana Point",
-    county: "Orange County",
-    zip: "92629",
-    tagline: "E-Waste Recycling in Dana Point — Protect the Harbor",
-    description:
-      "Dana Point's ocean-loving community takes environmental responsibility seriously. OC Electronic Recycling provides convenient, responsible electronics disposal that keeps toxins out of the watershed and off the beaches.",
-    localDetail:
-      "Serving Dana Point Harbor, Lantern District businesses, and all Dana Point residential neighborhoods.",
-    nearbyLandmark: "Dana Point Harbor",
-    population: "34,000+",
-    businessFocus: "marine, hospitality, and coastal residential",
-    metaTitle: "E-Waste Recycling Dana Point CA",
-    metaDescription:
-      "Electronics recycling in Dana Point, CA. Responsible disposal to protect Dana Point Harbor. Residential and business service. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Residential Pickup",
+    slug: 'dana-point',
+    name: 'Dana Point',
+    region: 'Coast',
+    metaTitle: 'E-Waste Recycling Dana Point CA',
+    metaDescription: `E-waste recycling and business electronics pickup for Dana Point resorts, harbor businesses and offices. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'Dana Point is a south Orange County harbor city with resort hotels, marine businesses around the harbor and a growing downtown in the Lantern District.',
+    context: 'Hospitality properties here can generate large television and guest-technology replacements, while most other businesses have small office loads.',
+    scenarios: [
+      'Resort and hotel guest-room televisions and property systems',
+      'Marine and harbor business office equipment',
+      'Small-office and retail hardware in the Lantern District',
+    ],
+    nearby: ['san-juan-capistrano', 'san-clemente', 'laguna-niguel', 'laguna-beach'],
   },
   {
-    slug: "san-clemente",
-    name: "San Clemente",
-    county: "Orange County",
-    zip: "92672",
-    tagline: "E-Waste Recycling in San Clemente — The Spanish Village by the Sea",
-    description:
-      "San Clemente's surf culture and environmental ethos make responsible e-waste recycling a natural fit. OC Electronic Recycling serves San Clemente's southernmost OC community with reliable, convenient electronics disposal.",
-    localDetail:
-      "Serving Avenida Del Mar businesses, San Clemente Pier area, and all San Clemente residential neighborhoods.",
-    nearbyLandmark: "San Clemente Pier",
-    population: "65,000+",
-    businessFocus: "retail, hospitality, and residential",
-    metaTitle: "E-Waste Recycling San Clemente CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in San Clemente, CA. Free pickup available. Protecting San Clemente's coast. Call (949) 287-3056.",
-    heroStat: "CA",
-    heroStatLabel: "Compliant Recycling",
+    slug: 'san-clemente',
+    name: 'San Clemente',
+    region: 'Coast',
+    metaTitle: 'E-Waste Recycling San Clemente CA',
+    metaDescription: `Electronics recycling and equipment pickup for San Clemente businesses, from Avenida Del Mar to the business parks. 5-item minimum. Call ${PHONE}.`,
+    intro: 'San Clemente is Orange County’s southernmost city, with a downtown along Avenida Del Mar and business parks inland that house manufacturers, medical-device firms and action-sports companies.',
+    context: 'As the far end of the county, pickup timing here depends on routing, which is one reason availability is always confirmed before scheduling.',
+    scenarios: [
+      'Business-park office and light-manufacturing computers',
+      'Medical and professional office equipment',
+      'Retail and hospitality hardware downtown',
+    ],
+    nearby: ['dana-point', 'san-juan-capistrano'],
   },
   {
-    slug: "san-juan-capistrano",
-    name: "San Juan Capistrano",
-    county: "Orange County",
-    zip: "92675",
-    tagline: "Electronics Recycling in San Juan Capistrano",
-    description:
-      "San Juan Capistrano's historic community and growing residential base rely on OC Electronic Recycling for simple, responsible electronics disposal.",
-    localDetail:
-      "Serving the Ortega Highway corridor, historic downtown, and all San Juan Capistrano neighborhoods.",
-    nearbyLandmark: "Mission San Juan Capistrano",
-    population: "36,000+",
-    businessFocus: "residential, retail, and historic district businesses",
-    metaTitle: "E-Waste Recycling San Juan Capistrano",
-    metaDescription:
-      "Electronics recycling in San Juan Capistrano, CA. Computers, TVs, phones and more. Residential and business pickup. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Business Pickup",
+    slug: 'san-juan-capistrano',
+    name: 'San Juan Capistrano',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling San Juan Capistrano',
+    metaDescription: `Business e-waste pickup and electronics recycling in San Juan Capistrano. 5 qualifying items minimum; $39 per TV; confirmed before scheduling.`,
+    intro: 'San Juan Capistrano centers on its historic mission and downtown, with offices, auto dealerships and service businesses along the Interstate 5 corridor.',
+    context: 'Businesses here are mostly small and mid-sized, so mixed loads of computers, monitors and printers are typical.',
+    scenarios: [
+      'Dealership and service-center office equipment',
+      'Professional and medical office computers',
+      'School and nonprofit administrative equipment',
+    ],
+    nearby: ['dana-point', 'san-clemente', 'laguna-niguel', 'mission-viejo', 'ladera-ranch'],
   },
   {
-    slug: "rancho-santa-margarita",
-    name: "Rancho Santa Margarita",
-    county: "Orange County",
-    zip: "92688",
-    tagline: "E-Waste Recycling for Rancho Santa Margarita Families & Businesses",
-    description:
-      "RSM's family-centric master-planned community and local business district choose OC Electronic Recycling for safe, convenient electronics disposal that reflects their community values.",
-    localDetail:
-      "Serving the Rancho Santa Margarita Towne Centre and all RSM residential communities.",
-    nearbyLandmark: "Lago Santa Margarita",
-    population: "48,000+",
-    businessFocus: "residential and local small business",
-    metaTitle: "E-Waste Recycling Rancho Santa Margarita",
-    metaDescription:
-      "E-waste recycling in Rancho Santa Margarita, CA. Family-friendly, convenient electronics disposal. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Service",
+    slug: 'rancho-santa-margarita',
+    name: 'Rancho Santa Margarita',
+    region: 'South County',
+    metaTitle: 'E-Waste Recycling Rancho Santa Margarita',
+    metaDescription: `Electronics recycling and business pickup for Rancho Santa Margarita offices and business-park tenants. 5-item minimum; confirmed first. Call ${PHONE}.`,
+    intro: 'Rancho Santa Margarita is a master-planned city in the foothills of south Orange County, with a business park and town-center retail serving the surrounding communities.',
+    context: 'Light-manufacturing and office tenants in the business park account for most equipment, usually in planned refresh batches.',
+    scenarios: [
+      'Business-park office and light-manufacturing computers',
+      'Professional and medical office refreshes',
+      'Retail back-office equipment near the town center',
+    ],
+    nearby: ['mission-viejo', 'coto-de-caza', 'trabuco-canyon', 'lake-forest'],
   },
   {
-    slug: "coto-de-caza",
-    name: "Coto de Caza",
-    county: "Orange County",
-    zip: "92679",
-    tagline: "Premium E-Waste & ITAD Services for Coto de Caza",
-    description:
-      "Coto de Caza's exclusive gated community and high-net-worth residents trust OC Electronic Recycling for discreet, white-glove electronics disposal and data destruction.",
-    localDetail:
-      "Providing scheduled in-community pickup for Coto de Caza residents with full data security and documentation.",
-    nearbyLandmark: "Coto de Caza Golf & Racquet Club",
-    population: "15,000+",
-    businessFocus: "high-net-worth residential and executive community",
-    metaTitle: "E-Waste Recycling Coto de Caza CA",
-    metaDescription:
-      "Discreet e-waste recycling and data destruction in Coto de Caza, CA. White-glove service for Coto residents. Call (949) 287-3056.",
-    heroStat: "Discreet",
-    heroStatLabel: "White-Glove Service",
+    slug: 'coto-de-caza',
+    name: 'Coto de Caza',
+    region: 'South County',
+    kind: 'community',
+    metaTitle: 'E-Waste Recycling Coto de Caza CA',
+    metaDescription: `Electronics recycling and pickup requests for Coto de Caza home offices and businesses. 5-item minimum; gate access and fees confirmed first.`,
+    intro: 'Coto de Caza is a gated, unincorporated residential community in the foothills of south Orange County, where most business activity is home-office based.',
+    context: 'Because the community is gated, pickup requests need gate-access arrangements in addition to the usual eligibility confirmation.',
+    scenarios: [
+      'Home-office computers, monitors and printers',
+      'Equipment from a business being wound down or relocated',
+      'Estate and household clear-outs with several qualifying items',
+    ],
+    nearby: ['rancho-santa-margarita', 'ladera-ranch', 'trabuco-canyon'],
+    faq: {
+      q: 'Coto de Caza is gated — how does pickup access work?',
+      a: 'If your request is confirmed, you arrange guest access with the gate for the agreed pickup window. Mention the gate you use and any community delivery rules when you send the request so we can confirm timing.',
+    },
   },
   {
-    slug: "ladera-ranch",
-    name: "Ladera Ranch",
-    county: "Orange County",
-    zip: "92694",
-    tagline: "E-Waste Recycling for Ladera Ranch Families",
-    description:
-      "Ladera Ranch's award-winning master-planned community chooses OC Electronic Recycling for hassle-free, eco-responsible electronics disposal for families and home offices.",
-    localDetail:
-      "Serving all Ladera Ranch villages including Covenant Hills, Terramor, and Avendale.",
-    nearbyLandmark: "Ladera Ranch Water Tower",
-    population: "25,000+",
-    businessFocus: "family residential and home office",
-    metaTitle: "E-Waste Recycling Ladera Ranch CA",
-    metaDescription:
-      "E-waste recycling in Ladera Ranch, CA. Easy residential pickup for computers, TVs, and electronics. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Residential Pickup",
+    slug: 'ladera-ranch',
+    name: 'Ladera Ranch',
+    region: 'South County',
+    kind: 'community',
+    metaTitle: 'E-Waste Recycling Ladera Ranch CA',
+    metaDescription: `Electronics recycling and pickup requests for Ladera Ranch home offices and village-center businesses. 5-item minimum; confirmed first. Call ${PHONE}.`,
+    intro: 'Ladera Ranch is an unincorporated master-planned community in south Orange County, with village retail centers and a large share of home-based businesses.',
+    context: 'Home offices rarely have many major items at once, so it helps to count qualifying equipment against the five-item minimum before requesting pickup.',
+    scenarios: [
+      'Home-office laptops, desktops and monitors',
+      'Small-business equipment from village-center tenants',
+      'School and community-organization computers',
+    ],
+    nearby: ['mission-viejo', 'san-juan-capistrano', 'rancho-santa-margarita', 'coto-de-caza'],
   },
   {
-    slug: "foothill-ranch",
-    name: "Foothill Ranch",
-    county: "Orange County",
-    zip: "92610",
-    tagline: "Electronics Recycling & E-Waste Disposal in Foothill Ranch",
-    description:
-      "Foothill Ranch's residential neighborhoods and the Foothill Ranch Towne Centre commercial area rely on OC Electronic Recycling for convenient, reliable electronics disposal.",
-    localDetail:
-      "Serving Foothill Ranch Towne Centre and all Foothill Ranch residential communities.",
-    nearbyLandmark: "Foothill Ranch Towne Centre",
-    population: "14,000+",
-    businessFocus: "residential and retail",
-    metaTitle: "E-Waste Recycling Foothill Ranch",
-    metaDescription:
-      "E-waste recycling in Foothill Ranch, CA. Computer and TV disposal. Free pickup. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Pickup",
+    slug: 'foothill-ranch',
+    name: 'Foothill Ranch',
+    region: 'South County',
+    kind: 'community',
+    metaTitle: 'E-Waste Recycling Foothill Ranch',
+    metaDescription: `IT equipment pickup and e-waste recycling for Foothill Ranch corporate and industrial tenants. 5-item minimum; scope confirmed first. Call ${PHONE}.`,
+    intro: 'Foothill Ranch is a master-planned community within the City of Lake Forest, combining corporate campuses and industrial buildings with the Foothill Ranch Towne Centre.',
+    context: 'Corporate and industrial tenants make this one of the more equipment-heavy parts of south county, often with servers and networking gear in the mix.',
+    scenarios: [
+      'Corporate headquarters laptop and workstation refreshes',
+      'Industrial and distribution office terminals',
+      'Server and network equipment from on-site IT rooms',
+    ],
+    nearby: ['lake-forest', 'rancho-santa-margarita', 'irvine', 'el-toro'],
+    faq: {
+      q: 'Is Foothill Ranch covered separately from Lake Forest?',
+      a: 'Foothill Ranch is part of the City of Lake Forest, and both are in the same Orange County service area. Requests are handled the same way: tell us what you have and where, and we confirm eligibility and timing.',
+    },
   },
   {
-    slug: "el-toro",
-    name: "El Toro",
-    county: "Orange County",
-    zip: "92630",
-    tagline: "E-Waste Recycling & Electronics Disposal in El Toro",
-    description:
-      "The El Toro area's residential communities and commercial zones choose OC Electronic Recycling for straightforward electronics disposal in compliance with California regulations.",
-    localDetail:
-      "Serving the El Toro Road corridor and surrounding Lake Forest/El Toro neighborhoods.",
-    nearbyLandmark: "Marine Corps Air Station El Toro (Great Park)",
-    population: "Unincorporated area",
-    businessFocus: "residential and light commercial",
-    metaTitle: "E-Waste Recycling El Toro CA",
-    metaDescription:
-      "Electronics recycling in El Toro, CA. Computers, TVs, and more. Residential and business service. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Business Pickup",
+    slug: 'el-toro',
+    name: 'El Toro',
+    region: 'South County',
+    kind: 'community',
+    metaTitle: 'E-Waste Recycling El Toro CA',
+    metaDescription: `Electronics recycling and business pickup for the El Toro area of Lake Forest, along El Toro Road. 5-item minimum; $39 per TV. Call ${PHONE}.`,
+    intro: 'El Toro is the historic name of the community that incorporated as the City of Lake Forest in 1991; the name lives on along El Toro Road and in the surrounding neighborhoods.',
+    context: 'Businesses along El Toro Road are mostly retail, medical and professional offices with small to mid-sized equipment loads.',
+    scenarios: [
+      'Medical and professional office computers',
+      'Retail and restaurant point-of-sale equipment',
+      'Small-business desktops, monitors and printers',
+    ],
+    nearby: ['lake-forest', 'laguna-hills', 'mission-viejo', 'foothill-ranch'],
+    faq: {
+      q: 'Is El Toro the same service area as Lake Forest?',
+      a: 'Yes. El Toro is the former name of the community that became the City of Lake Forest, so addresses in the El Toro area are served the same way as the rest of Lake Forest.',
+    },
   },
   {
-    slug: "trabuco-canyon",
-    name: "Trabuco Canyon",
-    county: "Orange County",
-    zip: "92679",
-    tagline: "E-Waste Recycling in Trabuco Canyon",
-    description:
-      "Trabuco Canyon's rural and semi-rural communities count on OC Electronic Recycling for scheduled electronics pickup — no need to drive far to dispose of computers, TVs, or appliances responsibly.",
-    localDetail:
-      "We travel out to Trabuco Canyon — bringing responsible recycling to this beautiful South OC community.",
-    nearbyLandmark: "O'Neill Regional Park",
-    population: "5,000+",
-    businessFocus: "rural residential and equestrian community",
-    metaTitle: "E-Waste Recycling Trabuco Canyon",
-    metaDescription:
-      "E-waste recycling pickup in Trabuco Canyon, CA. We come to you — computers, TVs, electronics. Call (949) 287-3056.",
-    heroStat: "We",
-    heroStatLabel: "Come To You",
+    slug: 'trabuco-canyon',
+    name: 'Trabuco Canyon',
+    region: 'South County',
+    kind: 'community',
+    metaTitle: 'E-Waste Recycling Trabuco Canyon',
+    metaDescription: `Electronics recycling and pickup requests for Trabuco Canyon home offices and businesses. 5-item minimum; access and timing confirmed first.`,
+    intro: 'Trabuco Canyon is an unincorporated community in the Santa Ana Mountains foothills of south Orange County, with rural roads and a small number of home-based and local businesses.',
+    context: 'Canyon roads and driveways can limit vehicle access, so describing the route and parking at your property helps us confirm whether a pickup is practical.',
+    scenarios: [
+      'Home-office computers and monitors',
+      'Small-business and ranch office equipment',
+      'Household clear-outs with several qualifying items',
+    ],
+    nearby: ['rancho-santa-margarita', 'coto-de-caza', 'foothill-ranch'],
   },
   {
-    slug: "cypress",
-    name: "Cypress",
-    county: "Orange County",
-    zip: "90630",
-    tagline: "E-Waste Recycling & IT Disposal for Cypress Businesses",
-    description:
-      "Cypress's mix of light industrial, commercial, and residential areas generates a steady stream of electronics waste. OC Electronic Recycling provides reliable disposal solutions for all of Cypress.",
-    localDetail:
-      "Serving Cypress business parks, Katella Avenue corridor, and all Cypress residential communities.",
-    nearbyLandmark: "Los Alamitos Race Course",
-    population: "50,000+",
-    businessFocus: "light industrial, commercial, and residential",
-    metaTitle: "E-Waste Recycling Cypress CA",
-    metaDescription:
-      "Electronics recycling and IT asset disposal in Cypress, CA. Business pickup, data destruction. Call (949) 287-3056.",
-    heroStat: "NIST",
-    heroStatLabel: "800-88 Guidelines",
+    slug: 'cypress',
+    name: 'Cypress',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Cypress CA',
+    metaDescription: `IT equipment pickup and e-waste recycling for Cypress business parks, offices and schools. 5-item minimum; fees confirmed before scheduling.`,
+    intro: 'Cypress is a northwest Orange County city with a large business-park district along Katella Avenue that houses corporate offices, and it is home to Cypress College.',
+    context: 'Corporate tenants in the business parks typically retire equipment in planned batches, which fits well with a scheduled pickup and agreed documentation.',
+    scenarios: [
+      'Corporate office laptop, desktop and monitor refreshes',
+      'College and school department equipment',
+      'Server and networking gear from office IT rooms',
+    ],
+    nearby: ['la-palma', 'buena-park', 'stanton', 'garden-grove'],
   },
   {
-    slug: "stanton",
-    name: "Stanton",
-    county: "Orange County",
-    zip: "90680",
-    tagline: "Affordable E-Waste Recycling in Stanton",
-    description:
-      "Stanton residents and businesses rely on OC Electronic Recycling for convenient, no-cost electronics disposal that keeps hazardous materials out of local landfills.",
-    localDetail:
-      "Serving Beach Boulevard businesses and all Stanton residential neighborhoods.",
-    nearbyLandmark: "Rodeo 39 Public Market",
-    population: "39,000+",
-    businessFocus: "residential and small business",
-    metaTitle: "E-Waste Recycling Stanton CA",
-    metaDescription:
-      "E-waste recycling in Stanton, CA. Free electronics disposal for qualifying items. Residential and business. Call (949) 287-3056.",
-    heroStat: "Free",
-    heroStatLabel: "Electronics Pickup",
+    slug: 'stanton',
+    name: 'Stanton',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling Stanton CA',
+    metaDescription: `Business e-waste pickup and electronics recycling in Stanton along Beach Boulevard. 5 qualifying items minimum; $39 per television. Call ${PHONE}.`,
+    intro: 'Stanton is a small city along Beach Boulevard between Anaheim and Garden Grove, with retail centers on the boulevard and pockets of light-industrial property.',
+    context: 'Most businesses are small, so requests are usually mixed loads of office computers, printers and point-of-sale hardware.',
+    scenarios: [
+      'Retail and restaurant point-of-sale equipment',
+      'Light-industrial office computers and printers',
+      'Small professional-office refreshes',
+    ],
+    nearby: ['garden-grove', 'anaheim', 'westminster', 'cypress', 'buena-park'],
   },
   {
-    slug: "la-palma",
-    name: "La Palma",
-    county: "Orange County",
-    zip: "90623",
-    tagline: "E-Waste Recycling in La Palma",
-    description:
-      "La Palma's tight-knit residential community and business district trust OC Electronic Recycling for fast, responsible electronics disposal.",
-    localDetail:
-      "Serving all La Palma neighborhoods and the Walker Street business corridor.",
-    nearbyLandmark: "La Palma Park",
-    population: "16,000+",
-    businessFocus: "residential and light commercial",
-    metaTitle: "E-Waste Recycling La Palma CA",
-    metaDescription:
-      "E-waste recycling and electronics disposal in La Palma, CA. Computer recycling, TV disposal. Call (949) 287-3056.",
-    heroStat: "Same",
-    heroStatLabel: "Week Pickup",
+    slug: 'la-palma',
+    name: 'La Palma',
+    region: 'North County',
+    metaTitle: 'E-Waste Recycling La Palma CA',
+    metaDescription: `Electronics recycling and business pickup in La Palma, near State Route 91 and the Los Angeles County line. 5-item minimum. Call ${PHONE}.`,
+    intro: 'La Palma is one of Orange County’s smallest cities, in the northwest corner beside the Los Angeles County line, with a business district near State Route 91.',
+    context: 'Its position on the county line makes it a convenient reference point for businesses that also operate in neighboring Los Angeles County communities.',
+    scenarios: [
+      'Corporate and medical office computers',
+      'Light-industrial and distribution office equipment',
+      'Small-business desktops, monitors and printers',
+    ],
+    nearby: ['cypress', 'buena-park'],
   },
-];
+]
+
+export const REGIONS: Region[] = ['North County', 'Central County', 'South County', 'Coast']
 
 export function getCityBySlug(slug: string): CityData | undefined {
-  return cities.find((c) => c.slug === slug);
+  return cities.find((c) => c.slug === slug)
 }
 
 export function getAllCitySlugs(): string[] {
-  return cities.map((c) => c.slug);
+  return cities.map((c) => c.slug)
+}
+
+export function citiesByRegion(region: Region): CityData[] {
+  return cities.filter((c) => c.region === region).sort((a, b) => a.name.localeCompare(b.name))
 }

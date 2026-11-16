@@ -1,11 +1,11 @@
 export const metadata = {
-  title: 'Terms of Service | OC Electronic Recycling',
+  title: 'Terms of Service',
   description: 'Terms of Service for OC Electronic Recycling — website use and general service terms.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/terms-of-service' },
 };
 
 export default function TermsOfServicePage() {
-  const lastUpdated = 'June 2026';
+  const lastUpdated = 'November 2026';
 
   return (
     <>
@@ -37,6 +37,13 @@ export default function TermsOfServicePage() {
             infringe the rights of, or restrict or inhibit the use of, this website by any third party.
           </p>
 
+          <h2>Service Requests Are Not Bookings</h2>
+          <p>
+            Submitting a pickup request, quote request or contact form does not create a confirmed appointment
+            or a contract for service. Final acceptance of equipment, any fees, pickup eligibility and
+            appointment timing are confirmed with you before anything is scheduled. Eligibility estimates shown on
+            this website are nonbinding guidance only.
+          </p>
           <h2>No Guarantee of Availability or Accuracy</h2>
           <p>
             We make reasonable efforts to keep information on this website accurate and up to date,
