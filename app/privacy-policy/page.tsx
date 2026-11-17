@@ -1,11 +1,11 @@
 export const metadata = {
-  title: 'Privacy Policy | OC Electronic Recycling',
+  title: 'Privacy Policy',
   description: 'Privacy policy for OC Electronic Recycling — how we handle information collected through our website and services.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {
-  const lastUpdated = 'June 2026';
+  const lastUpdated = 'November 2026';
 
   return (
     <>
@@ -35,6 +35,12 @@ export default function PrivacyPolicyPage() {
             We may collect information you voluntarily provide to us, such as your name, business
             name, phone number, email address, and details about the equipment or services you
             inquire about, when you fill out a contact form, request a quote, or schedule a pickup.
+          </p>
+          <p>
+            The business pickup request form also collects the pickup address, access details, equipment
+            quantities, your data destruction and documentation preferences, and any equipment photos you
+            choose to attach. Photos are resized in your browser, renamed on our server, and sent to our team
+            only to evaluate your request. Original file names are not kept.
           </p>
           <p>
             Like most websites, we may also automatically collect limited technical information

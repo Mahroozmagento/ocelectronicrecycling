@@ -1,293 +1,402 @@
-// app/page.tsx
-// ─────────────────────────────────────────────────────────────
-// Home page — OC Electronic Recycling
-// Place this file at: app/page.tsx
-// ─────────────────────────────────────────────────────────────
+// app/page.tsx — Home
+// Guides visitors into three intentions: business pickup, data destruction and
+// IT asset disposition. Fully server-rendered; no client JavaScript of its own.
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
-import AnimateIn, { StaggerGroup } from '@/components/AnimateIn'
+import { CustodyLoop } from '@/components/CustodyVisuals'
+import FaqList from '@/components/Faq'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
+import PhotoBand from '@/components/PhotoBand'
+import { REGIONS, getCityBySlug } from '@/lib/cities'
+import { faqNode, graph, type Faq } from '@/lib/schema'
+import {
+  COURTESY_ITEMS, DEFAULT_OG_IMAGE, ELIGIBILITY_FACTS, FEATURED_CITY_SLUGS, FOUNDING_YEAR, HOURS, PHONE_DISPLAY, PHONE_HREF,
+  PICKUP_MINIMUM, POLICY, PROCESS_STEPS, QUALIFYING_ITEMS, SERVICE_AREA, SITE_URL, TV_FEE,
+} from '@/lib/site'
+
+const TITLE = 'OC Electronic Recycling — Orange County E-Waste & ITAD'
+const DESCRIPTION = `Business electronics pickup, recycling, ITAD and data destruction across ${SERVICE_AREA}. ${PICKUP_MINIMUM}-item pickup minimum; scope confirmed first.`
 
 export const metadata: Metadata = {
-  title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
-  description:
-    'Orange County e-waste recycling and ITAD for businesses and residents. ' +
-    'Secure data destruction following NIST 800-88 guidelines, with business pickup. Call (949) 287-3056.',
-  alternates: { canonical: '/' },
+  title: { absolute: TITLE },
+  description: DESCRIPTION,
+  alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
-    description: 'Orange County e-waste recycling and ITAD for businesses and residents. Secure data destruction and business pickup.',
-    url: 'https://www.ocelectronicrecycling.com',
-    images: [{ url: '/image/hero-facility-oc-electronic-recycling.webp', width: 1200, height: 630 }],
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OC Electronic Recycling — Orange County E-Waste & ITAD',
-    description: 'Orange County e-waste recycling and ITAD for businesses and residents. Secure data destruction and business pickup.',
-    images: ['/image/hero-facility-oc-electronic-recycling.webp'],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
 }
 
+const PATHWAYS = [
+  {
+    href: '/business-pickup',
+    tone: '',
+    icon: 'truck',
+    num: '01',
+    title: 'Business electronics pickup',
+    body: 'Collection from your office, warehouse or server room once we have confirmed what qualifies.',
+    points: [`${PICKUP_MINIMUM}+ qualifying major items`, `Televisions $${TV_FEE} each`, 'Request online in four steps'],
+    go: 'Check pickup eligibility',
+  },
+  {
+    href: '/services/data-destruction',
+    tone: ' ct-path--secure',
+    icon: 'lock',
+    num: '02',
+    title: 'Secure data destruction',
+    body: 'Sanitization or physical destruction for drives and other data-bearing media — a service you select.',
+    points: ['Guided by NIST SP 800-88', 'Wipe for reuse or destroy', 'Certificate for media processed'],
+    go: 'Compare destruction methods',
+  },
+  {
+    href: '/services/itad',
+    tone: ' ct-path--ink',
+    icon: 'layers',
+    num: '03',
+    title: 'IT asset disposition',
+    body: 'A planned exit for retired IT: inventory, data handling, value recovery and documented disposition.',
+    points: ['Refreshes, moves and decommissions', 'Serialized reporting by scope', 'Resale assessed, not promised'],
+    go: 'See how ITAD works',
+  },
+]
+
+// Visible FAQ and FAQPage schema come from this one array.
+const FAQS: Faq[] = [
+  {
+    q: 'What does OC Electronic Recycling do?',
+    a: `We collect retired business electronics across ${SERVICE_AREA}, provide data sanitization or physical destruction when you select that service, and route equipment to reuse or recycling through downstream processors.`,
+  },
+  {
+    q: 'Who qualifies for business pickup?',
+    a: `Business pickup requires at least ${PICKUP_MINIMUM} qualifying major electronic items, such as computers, servers, monitors or networking equipment. Small accessories can be included but do not count toward the minimum. Final acceptance, fees and timing are confirmed before scheduling.`,
+  },
+  {
+    q: 'Is there a fee to recycle electronics?',
+    a: `Most accepted qualifying electronics can be recycled without a recycling fee. Televisions carry a $${TV_FEE} recycling fee per unit, and oversized, specialized or hazardous equipment is confirmed individually.`,
+  },
+  {
+    q: 'Is data destruction automatic when we recycle computers?',
+    a: 'No. Data destruction is a selected service and is not automatically included with recycling. Choose sanitization or physical destruction when you request pickup if your devices hold business data.',
+  },
+  {
+    q: 'What documentation can we receive?',
+    a: 'Depending on the service you select and the equipment processed, documentation can include a pickup manifest, a serialized asset inventory, a Certificate of Recycling, a Certificate of Data Destruction and chain-of-custody documentation.',
+  },
+]
+
 export default function HomePage() {
+  const featured = FEATURED_CITY_SLUGS.map(getCityBySlug).filter((c) => c !== undefined)
+
   return (
     <>
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section id="hero">
-        <div className="hero-left">
-          <div className="hero-bracket">Orange County — Est. 2012</div>
-          <h1 className="hero-h1">
-            We Recycle<br /><em>Electronics.</em><br />You Stay Clean.
-          </h1>
-          <p className="hero-sub">
-            Secure data destruction, ITAD services, and responsible e-waste
-            recycling for businesses and residents across Orange County, California.
-          </p>
-          <div className="hero-actions">
-            <Link href="/contact" className="btn-primary btn-large">
-              Schedule Pickup
-            </Link>
-            <a href="tel:9492873056" className="btn-outline btn-large">
-              ☎ (949) 287-3056
-            </a>
-          </div>
-        </div>
-        <div className="hero-right">
-          <div className="hero-r-ph">
-           <Image
-  src="/image/hero-facility-oc-electronic-recycling.webp"
-  alt="OC Electronic Recycling facility"
-  fill
-  style={{ objectFit: 'cover', opacity: .75 }}
-  priority
-/>
-          </div>
-          <div className="hero-float-card card-tl">
-            <div className="hfc-label">Data Sanitization</div>
-            <div className="hfc-value">NIST 800-88 Guidelines</div>
-          </div>
-          <div className="hero-float-card card-br">
-            <div className="hfc-label">Response Time</div>
-            <div className="hfc-value">Same Week ✓</div>
-          </div>
-        </div>
-      </section>
+      <JsonLd data={graph(faqNode('/', FAQS))} />
 
-      {/* ── MARQUEE ──────────────────────────────────────────── */}
-      <div className="marquee-wrap">
-        <div className="marquee-track">
-          {[
-            'E-Waste Recycling','Secure Data Destruction','IT Asset Disposition',
-            'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
-            'Hard Drive Shredding','Server Decommission',
-            'E-Waste Recycling','Secure Data Destruction','IT Asset Disposition',
-            'Business Pickup','NIST 800-88 Guidelines','Orange County CA',
-            'Hard Drive Shredding','Server Decommission',
-          ].map((item, i) => (
-            <span key={i} className="marquee-item">
-              {item} <span className="marquee-sep">✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* ── FACILITY PHOTO PLACEHOLDER ────────────────────────── */}
-      <div style={{ background: 'var(--light)', padding: '0 0 60px 0' }}>
-        <div className="cta-section" data-label="FACILITY OVERVIEW"
-          style={{ width: '100%', height: '260px', minHeight: '260px', borderRadius: 0,
-            
-            position: 'relative', overflow: 'hidden', display: 'flex',
-            flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '14px' }}>
-              <div className="facility-label">FACILITY OVERVIEW</div>
-          
-        </div>
-      </div>
-
-      {/* ── TRUST STATS ──────────────────────────────────────── */}
-      <section className="trust-band section-light">
-        <div className="container">
-          <AnimateIn from="up" style={{ position: 'relative' }}>
-            <span className="overline" style={{ color: 'var(--blue)' }}>Why OC Trusts Us</span>
-            <h2 className="section-title" style={{ color: 'var(--navy)' }}>What Sets Us Apart</h2>
-          </AnimateIn>
-          <StaggerGroup className="trust-grid">
-            {[
-              { num: 'NIST 800-88', label: 'Sanitization Guidelines Followed' },
-              { num: 'Per Device',   label: 'Certificate of Destruction Issued' },
-              { num: 'Serial-Level', label: 'Asset Documentation Provided' },
-              { num: 'Same Week',    label: 'Business Pickup Available' },
-            ].map(({ num, label }) => (
-              <div key={label} className="trust-card">
-                <div className="trust-number">{num}</div>
-                <div className="trust-label">{label}</div>
+      {/* 1 ── Hero ─────────────────────────────────────────────────────────── */}
+      <section className="ct-hero ct-gridlines">
+        <div className="ct-wrap">
+          <div className="ct-hero__grid ct-hero__grid--stage">
+            <div className="ct-hero__copy ct-rise">
+              {/* Trust line: founding year (owner-confirmed) + service area */}
+              <p className="ct-hero__meta">
+                <span className="ct-since">{`Since ${FOUNDING_YEAR}`}</span>
+                <span className="ct-eyebrow">{SERVICE_AREA}</span>
+              </p>
+              <h1 className="ct-h1">
+                Electronics recycling and secure IT disposal <em>for Orange County businesses</em>
+              </h1>
+              <p className="ct-lede">
+                We pick up retired business technology, protect the data on it when you select that service, and route
+                equipment to reuse or responsible recycling — with documentation matched to your project.
+              </p>
+              <div className="ct-hero__actions">
+                <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_hero">
+                  Request a Business Pickup
+                </Link>
+                <Link href="/services" className="ct-btn ct-btn--ghost ct-btn--lg">Explore Services</Link>
               </div>
+              <p className="ct-hero__phone">
+                <Icon name="phone" size={18} />
+                <span>Call <a href={PHONE_HREF} data-cta-location="home_hero">{PHONE_DISPLAY}</a> · {HOURS}</span>
+              </p>
+            </div>
+            {/* Circle and warehouse photo share one stage: the loop overlaps the
+                photo's left edge on wide screens; phones stack loop, then photo. */}
+            <div className="ct-stage ct-in">
+              <div className="ct-stage__loop"><CustodyLoop /></div>
+              <Photo
+                name="facility"
+                className="ct-stage__photo"
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1180px) 380px, 340px"
+                eager
+                caption="Inside our warehouse: equipment sorted by type."
+              />
+            </div>
+          </div>
+
+          {/* 2 ── Eligibility strip ──────────────────────────────────────── */}
+          <ul className="ct-facts ct-hero__facts" aria-label="Pickup eligibility summary">
+            {ELIGIBILITY_FACTS.map((f) => (
+              <li key={f.label}>
+                <span className="ct-facts__value">{f.value}<small>{f.label}</small></span>
+                <span className="ct-facts__detail">{f.detail}</span>
+              </li>
             ))}
-          </StaggerGroup>
+          </ul>
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────────── */}
-      <section id="services" className="section-light">
-        <div className="container">
-          <div className="services-intro">
-            <span className="overline" style={{ color: 'var(--blue)' }}>What We Offer</span>
-            <h2 className="section-title" style={{ color: 'var(--navy)' }}>Our Services</h2>
-            <p style={{ color: '#4a5568', fontSize: '.95rem', lineHeight: 1.7, marginTop: '16px' }}>
-              Full-service electronics lifecycle management for businesses and individuals
-              across Orange County, CA.
+      {/* 3 ── Three pathways ───────────────────────────────────────────────── */}
+      <section className="ct-section" aria-labelledby="paths-title">
+        <div className="ct-wrap">
+          <div className="ct-head ct-head--split">
+            <div>
+              <span className="ct-eyebrow">Start here</span>
+              <h2 className="ct-h2" id="paths-title">Three ways we help businesses retire technology</h2>
+            </div>
+            <p className="ct-lede">
+              Most projects combine all three. Pick the one that matches the question you need answered first.
             </p>
           </div>
-          <div className="svc-grid">
-            {[
-              { icon: '🔐', title: 'Data Destruction',      href: '/services/data-destruction', accent: 'red-accent',   bg: 'red-bg',   desc: 'Hard drive wiping and physical shredding following NIST 800-88 guidelines. Certificates issued for every device.' },
-              { icon: '💼', title: 'IT Asset Disposition',  href: '/services/itad',             accent: '',             bg: '',         desc: 'Complete ITAD lifecycle — inventory, data sanitization, resale, and responsible disposal.' },
-              { icon: '♻️', title: 'E-Waste Recycling',     href: '/services/recycling',        accent: '',             bg: '',         desc: 'In compliance with California e-waste regulations. Materials are sorted and routed to vetted downstream processors to divert them from landfill.' },
-              { icon: '🚛', title: 'Business Pickup',       href: '/contact',                   accent: 'amber-accent', bg: 'amber-bg', desc: 'Scheduled or on-demand pickup throughout Orange County. We handle the heavy lifting.' },
-              { icon: '🖥️', title: 'Server Decommission',   href: '/services',                  accent: 'blue-accent',  bg: 'blue-bg',  desc: 'Full rack decommission with data destruction, asset inventory, and logistics management.' },
-              { icon: '📱', title: 'Mobile Device Recycling',href: '/services',                 accent: 'cyan-accent',  bg: 'cyan-bg',  desc: 'Smartphones, tablets, wearables — factory reset verification plus secure recycling.' },
-            ].map(({ icon, title, href, accent, bg, desc }) => (
-              <Link key={title} href={href} className={`svc-card ${accent}`}>
-                <div className={`svc-icon ${bg}`}>{icon}</div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-                <div className="svc-link">Learn More →</div>
-              </Link>
+          <div className="ct-paths">
+            {PATHWAYS.map((p) => (
+              <div key={p.href} className={`ct-path${p.tone}`}>
+                <span className="ct-path__num">{p.num}</span>
+                <span className="ct-path__icon"><Icon name={p.icon} size={22} /></span>
+                <h3 className="ct-h3"><Link href={p.href}>{p.title}</Link></h3>
+                <p>{p.body}</p>
+                <ul className="ct-checks">
+                  {p.points.map((pt) => <li key={pt}>{pt}</li>)}
+                </ul>
+                <span className="ct-path__go" aria-hidden="true">{p.go} <Icon name="arrow" size={18} /></span>
+              </div>
             ))}
           </div>
+          <p className="ct-small" style={{ marginTop: 20 }}>
+            Looking for something else?{' '}
+            <Link className="ct-inline-link" href="/services/recycling">Electronics recycling</Link> and{' '}
+            <Link className="ct-inline-link" href="/services">all services</Link>.
+          </p>
         </div>
       </section>
 
-      {/* ── DATA DESTRUCTION ─────────────────────────────────── */}
-      <section id="data-destruction" className="section-dark">
-        <div className="container">
-          <div className="dd-inner">
+      {/* 4 ── Business pickup band on the original truck photograph ─────────── */}
+      <PhotoBand name="overview" variant="card" position="0% 50%" positionSm="0% 50%" labelledBy="pickup-band-title">
+        <span className="ct-eyebrow">Business electronics pickup</span>
+        <h2 className="ct-h2" id="pickup-band-title">Clear out retired technology with a documented pickup plan</h2>
+        <p className="ct-lede">
+          Send us a list of what you&apos;re retiring. We confirm what qualifies, any fees and an available pickup window
+          before anything is scheduled, and record the handoff according to the services you select.
+        </p>
+        <p className="ct-photoband__fine">
+          {POLICY.minimum} Serving Orange County and eligible South Los Angeles requests.
+        </p>
+        <div className="ct-photoband__actions">
+          <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_truck_band">
+            Request a Business Pickup
+          </Link>
+          <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="home_truck_band">
+            <Icon name="phone" size={18} /> Call {PHONE_DISPLAY}
+          </a>
+        </div>
+      </PhotoBand>
+
+      {/* 5 ── Chain-of-custody story ───────────────────────────────────────── */}
+      <section className="ct-section ct-section--ink2" aria-labelledby="custody-title">
+        <div className="ct-wrap">
+          <div className="ct-head ct-head--split">
             <div>
-              <span className="overline" style={{ color: 'var(--red)' }}>Critical Security</span>
-              <h2 className="section-title">Data Destruction<br />Done Right</h2>
-              <p style={{ color: '#8899aa', lineHeight: 1.7, margin: '20px 0' }}>
-                A single discarded hard drive with intact data can put your business at risk.
-                Our documented sanitization process is designed to reduce that risk.
-              </p>
-              <div className="dd-badge-row">
-                <span className="dd-badge nist">NIST 800-88</span>
-                <span className="dd-badge ca">CA E-Waste Regulations</span>
-              </div>
-              <div className="cert-list">
-                {[
-                  'Physical shredding available on-site',
-                  'Certificate of destruction issued per device',
-                  'Full audit trail and chain-of-custody documentation',
-                  'Documentation to support your compliance needs',
-                ].map(item => (
-                  <div key={item} className="cert-item">
-                    <div className="cert-check">✓</div>{item}
-                  </div>
-                ))}
-              </div>
-              <div className="amber-urgent">
-                <div className="amber-urgent-icon">⚠️</div>
-                <div className="amber-urgent-text">
-                  <strong>Don&apos;t risk it.</strong> California law requires proper data disposal.
-                  Call <strong>(949) 287-3056</strong> for a same-week appointment.
-                </div>
-              </div>
+              <span className="ct-eyebrow">Example chain-of-custody workflow</span>
+              <h2 className="ct-h2" id="custody-title">Every handoff has a step — and a record when you need one</h2>
             </div>
-            <div className="shred-visual">
-              <span className="overline" style={{ color: 'var(--red)' }}>Destruction Progress</span>
-              <h3 style={{ fontFamily: 'var(--font-head)', fontSize: '1.1rem', fontWeight: 700, margin: '8px 0 20px', color: '#fff' }}>
-                Active Shredding Session
-              </h3>
-              {['WD 2TB HDD', 'Samsung 500GB SSD', 'Seagate 4TB HDD', 'Kingston 256GB NVMe'].map((drive, i) => (
-                <div key={drive}>
-                  <div style={{ fontSize: '.72rem', color: 'var(--muted)', fontWeight: 700, margin: `${i > 0 ? '10px' : '0'} 0 6px` }}>
-                    Device {i + 1} — {drive}
-                  </div>
-                  <div className="shred-bar-track">
-                    <div className="shred-bar-fill" style={{ animationDelay: `${i * 0.3}s` }} />
-                  </div>
-                </div>
+            <p className="ct-lede">
+              This is how a typical business project moves, from your first message to the paperwork in your scope.
+              It is an illustration of the process, not a live feed.
+            </p>
+          </div>
+          <ol className="ct-rail">
+            {PROCESS_STEPS.map((s) => (
+              <li key={s.title}>
+                <h3 className="ct-h3">{s.title}</h3>
+                <p>{s.body}</p>
+              </li>
+            ))}
+          </ol>
+          <p style={{ marginTop: 32 }}>
+            <Link href="/how-it-works" className="ct-link">See the full process <Icon name="arrow" size={18} /></Link>
+          </p>
+        </div>
+      </section>
+
+      {/* 6 ── Business pickup eligibility feature ──────────────────────────── */}
+      <section className="ct-section ct-section--mineral" aria-labelledby="pickup-title">
+        <div className="ct-wrap ct-split ct-split--center">
+          <div className="ct-stack">
+            <span className="ct-eyebrow ct-eyebrow--warm">Business pickup eligibility</span>
+            <h2 className="ct-h2" id="pickup-title">Know whether you qualify before you ask</h2>
+            <p className="ct-body">{POLICY.minimum} {POLICY.fees}</p>
+            <p className="ct-body">{POLICY.unusual} {POLICY.request}</p>
+            <div className="ct-hero__actions">
+              <Link href="/business-pickup#estimator" className="ct-btn ct-btn--ink ct-btn--lg" data-cta-location="home_eligibility">
+                Estimate your eligibility
+              </Link>
+              <Link href="/business-pickup#what-counts" className="ct-btn ct-btn--ghost ct-btn--lg">What counts?</Link>
+            </div>
+          </div>
+          <div className="ct-panel ct-panel--lift">
+            <h3 className="ct-h3">Counts toward the {PICKUP_MINIMUM}-item minimum</h3>
+            <ul className="ct-checks" style={{ marginTop: 14, color: 'var(--ct-text-2)' }}>
+              {QUALIFYING_ITEMS.map((i) => <li key={i}>{i}</li>)}
+            </ul>
+            <h3 className="ct-h3" style={{ marginTop: 22 }}>Welcome, but does not count</h3>
+            <p className="ct-small" style={{ marginTop: 8 }}>
+              {COURTESY_ITEMS.slice(0, 4).join(', ')} and similar small accessories.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 7 ── Data destruction explanation ─────────────────────────────────── */}
+      <section className="ct-section" aria-labelledby="dd-title">
+        <div className="ct-wrap">
+          <div className="ct-head ct-head--split">
+            <div>
+              <span className="ct-eyebrow ct-eyebrow--secure">Secure data destruction</span>
+              <h2 className="ct-h2" id="dd-title">Wipe it or destroy it — your call, made before pickup</h2>
+            </div>
+            <p className="ct-lede">
+              {POLICY.data} NIST SP 800-88 is a media-sanitization guideline we work with reference to — it is not a certification.
+            </p>
+          </div>
+          <table className="ct-table">
+            <caption>Method is chosen per device type and your requirements, and confirmed before pickup.</caption>
+            <thead>
+              <tr><th scope="col">Method</th><th scope="col">Best when</th><th scope="col">What you receive</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Data sanitization (wiping)</th>
+                <td data-label="Best when">Drives are working and the hardware will be reused or resold.</td>
+                <td data-label="What you receive">A Certificate of Data Destruction recording the method for the media processed.</td>
+              </tr>
+              <tr>
+                <th scope="row">Physical destruction</th>
+                <td data-label="Best when">Media is failed, obsolete, or policy requires that it never be reused.</td>
+                <td data-label="What you receive">A Certificate of Data Destruction for the media destroyed.</td>
+              </tr>
+              <tr>
+                <th scope="row">Recycling only</th>
+                <td data-label="Best when">Equipment holds no business data, or drives were already removed.</td>
+                <td data-label="What you receive">A Certificate of Recycling on request. No data service is performed.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style={{ marginTop: 26 }}>
+            <Link href="/services/data-destruction" className="ct-link">Data destruction service details <Icon name="arrow" size={18} /></Link>
+          </p>
+        </div>
+      </section>
+
+      {/* 8 ── Responsible downstream processing ────────────────────────────── */}
+      <section className="ct-section ct-section--ink ct-gridlines" aria-labelledby="down-title">
+        <div className="ct-wrap ct-split ct-split--center">
+          <div className="ct-stack">
+            <span className="ct-eyebrow">Responsible processing</span>
+            <h2 className="ct-h2" id="down-title">Where equipment goes after it leaves your site</h2>
+            <p className="ct-body">
+              Equipment is evaluated for reuse first, then for parts, then for material recovery. Material streams are
+              routed to downstream processors in line with California e-waste regulations.
+            </p>
+            <p className="ct-body">
+              We describe the process rather than promise an outcome: we do not publish a landfill-diversion figure we cannot document.
+            </p>
+            <Link href="/services/recycling" className="ct-link">How electronics recycling works <Icon name="arrow" size={18} /></Link>
+          </div>
+          <ul className="ct-lanes">
+            <li>
+              <span className="ct-lanes__tag"><Icon name="recycle" size={16} /> Reuse</span>
+              <p><strong>Working equipment</strong>Assessed for resale or redeployment after any selected data service is complete.</p>
+            </li>
+            <li>
+              <span className="ct-lanes__tag"><Icon name="layers" size={16} /> Parts</span>
+              <p><strong>Usable components</strong>Recovered from equipment that is not worth keeping whole.</p>
+            </li>
+            <li>
+              <span className="ct-lanes__tag"><Icon name="box" size={16} /> Materials</span>
+              <p><strong>Metals, plastics, glass and boards</strong>Separated and sent to downstream processors for recovery.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* 9 ── Service-area discovery ───────────────────────────────────────── */}
+      <section className="ct-section ct-section--mineral" aria-labelledby="areas-title">
+        <div className="ct-wrap ct-split">
+          <div className="ct-stack">
+            <span className="ct-eyebrow">Service areas</span>
+            <h2 className="ct-h2" id="areas-title">We come to you across {SERVICE_AREA}</h2>
+            <p className="ct-body">
+              Coverage spans {REGIONS.length} parts of Orange County — north, central, south and the coast — plus South
+              Los Angeles. City pages describe service areas, not branch locations.
+            </p>
+            <Link href="/service-areas" className="ct-link">View all service areas <Icon name="arrow" size={18} /></Link>
+          </div>
+          <nav aria-label="Principal service areas">
+            <ul className="ct-chips">
+              {featured.map((c) => (
+                <li key={c.slug}>
+                  <Link className="ct-chip" href={`/e-waste-recycling/${c.slug}`}><Icon name="pin" size={14} /> {c.name}</Link>
+                </li>
               ))}
-              <div style={{ marginTop: '24px', padding: '16px', background: 'rgba(244,67,54,.08)', borderRadius: '10px', border: '1px solid rgba(244,67,54,.2)' }}>
-                <div style={{ fontSize: '.72rem', fontWeight: 700, color: 'var(--red)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '6px' }}>
-                  Certificate Status
-                </div>
-                <div style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1rem', color: '#fff' }}>✓ Issuing upon completion</div>
-                <div style={{ fontSize: '.75rem', color: 'var(--muted)', marginTop: '4px' }}>Delivered to your email</div>
-              </div>
-            </div>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      {/* 10 ── FAQ ─────────────────────────────────────────────────────────── */}
+      <section className="ct-section" aria-labelledby="faq-title">
+        <div className="ct-wrap ct-wrap--narrow">
+          <div className="ct-head">
+            <span className="ct-eyebrow">FAQ</span>
+            <h2 className="ct-h2" id="faq-title">Common questions</h2>
+          </div>
+          <FaqList faqs={FAQS} />
+          <p className="ct-small" style={{ marginTop: 20 }}>
+            More detail in the <Link className="ct-inline-link" href="/business-pickup#faq-title">pickup FAQ</Link> and the{' '}
+            <Link className="ct-inline-link" href="/resources">resource center</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* 11 ── Final CTA on the original sorting-floor photograph ──────────────────────────────────────────────────── */}
+      <PhotoBand name="sorting" variant="split" position="50% 50%" positionSm="50% 50%" labelledBy="cta-title">
+        <span className="ct-eyebrow">Next step</span>
+        <h2 className="ct-h2" id="cta-title">Tell us what you&apos;re retiring</h2>
+        <p className="ct-lede">
+          Send a list, a few photos or a rough count. We confirm what we can accept, any fees and timing before anything is scheduled.
+        </p>
+        <div className="ct-photoband__actions">
+          <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="home_final">
+            Request a Business Pickup
+          </Link>
+        </div>
+        <div className="ct-cta__phone">
+          <Icon name="phone" size={22} />
+          <div>
+            <a href={PHONE_HREF} data-cta-location="home_final">{PHONE_DISPLAY}</a>
+            <small>{HOURS} · {SERVICE_AREA}</small>
           </div>
         </div>
-      </section>
-
-      {/* ── ENVIRONMENTAL ────────────────────────────────────── */}
-      <section id="environmental" className="section-dark2">
-        <div className="container">
-          <AnimateIn from="up">
-            <div style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', position: 'relative' }}>
-              <span className="overline">Environmental Impact</span>
-              <h2 className="section-title">Our Green Footprint</h2>
-              <p style={{ color: 'var(--muted)', marginTop: '16px', lineHeight: 1.7 }}>
-                Devices we collect are sorted and routed to responsible downstream processors, diverting materials from landfills and toxic waste streams.
-              </p>
-            </div>
-          </AnimateIn>
-          <StaggerGroup className="env-grid">
-            {[
-              { icon: '🌍', num: 'Landfill-Diversion Commitment',   label: 'Devices are sorted and routed to the correct downstream recycler to divert materials from landfill.' },
-              { icon: '♻️', num: 'Responsible Material Recovery',   label: 'Materials are recovered and processed through vetted recycling partners.' },
-              { icon: '📋', num: 'California-Compliant Processing', label: 'Handled in compliance with California e-waste regulations.' },
-            ].map(({ icon, num, label }) => (
-              <div key={num} className="env-stat">
-                <div className="env-icon">{icon}</div>
-                <div className="env-num" style={{ fontSize: '1.3rem', lineHeight: 1.25 }}>{num}</div>
-                <div className="env-label">{label}</div>
-              </div>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* ── WHAT YOU GET ─────────────────────────────────────────
-          Real testimonials can go back in this spot later — same
-          section position, same testi-grid/testi-card styling
-          infrastructure, just swap the data array and card contents. */}
-      <section id="what-you-get" className="section-dark">
-        <div className="container">
-          <AnimateIn from="up">
-            <div style={{ maxWidth: '480px', marginBottom: '60px', position: 'relative' }}>
-              <span className="overline">Our Commitment</span>
-              <h2 className="section-title">What You Get</h2>
-            </div>
-          </AnimateIn>
-          <StaggerGroup className="testi-grid testi-grid--4">
-            {[
-              { icon: '📄', title: 'Certificate of Destruction',      desc: 'Issued for every device we process.' },
-              { icon: '🔢', title: 'Serial-Level Asset Documentation', desc: 'Full inventory and tracking, device by device.' },
-              { icon: '🔗', title: 'Full Chain-of-Custody',           desc: 'Tracked from pickup through final processing.' },
-              { icon: '🛡️', title: 'NIST 800-88 Aligned Process',     desc: 'Data sanitization following recognized federal guidelines.' },
-            ].map(({ icon, title, desc }) => (
-              <div key={title} className="testi-card">
-                <div className="trust-feature-icon">{icon}</div>
-                <div className="trust-feature-title">{title}</div>
-                <div className="trust-feature-desc">{desc}</div>
-              </div>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="cta-section cta-bottom-section">
-        <div className="container">
-          <span className="overline">Ready to Start?</span>
-          <h2>Responsible Recycling<br />Starts With a Call</h2>
-          <p>Your Orange County e-waste and ITAD partner is one call away.</p>
-          <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
-          <div className="cta-actions">
-            <Link href="/contact" className="btn-primary btn-large">Schedule Pickup</Link>
-            <Link href="/contact" className="btn-outline btn-large">Get a Quote</Link>
-          </div>
-        </div>
-      </section>
+      </PhotoBand>
     </>
   )
 }

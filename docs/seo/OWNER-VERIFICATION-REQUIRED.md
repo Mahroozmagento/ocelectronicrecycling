@@ -1,33 +1,74 @@
 # Owner Verification Required
 
-These items are **business facts or claims** that could not be verified from the repository. Copy has been written conservatively (or the claim removed) so nothing unsupported is published. **Before deployment, the owner should confirm each item.** If a claim is supportable with evidence, we can restore stronger wording; if not, keep the conservative version.
+Updated 2026-11-16 for the Circular Technology Operations redesign.
 
-Legend — **Status**: `qualified` (softened, safe to ship) · `removed` (deleted, safe to ship) · `verify` (kept but needs confirmation).
+This list covers business facts and claims that the repository can't prove. The site now states only the policies listed under "Verified policies" below. Everything else was removed or worded conservatively. **Please confirm each open item before deployment.** If you have evidence for an item, stronger wording can come back. If you don't, leave the current wording as it is.
 
-| # | Claim / fact | Where it was | Action taken | What we need from the owner | Status |
+**Status key:**
+- `removed`: deleted from the site.
+- `qualified`: softened; safe to ship as it is.
+- `verify`: still on the site in some form and needs your confirmation.
+- `config`: a deployment setting, not copy.
+- `confirmed`: explicitly confirmed by the business owner; now stated on the site.
+
+## Verified policies (the source of truth in `lib/pickup.ts` and `lib/site.ts`)
+
+- **Service area:** Orange County and South Los Angeles.
+- **Pickup minimum:** business pickup needs at least **5 qualifying major items**. Accessories are welcome but don't count toward the minimum.
+- **Fees:** most accepted qualifying electronics have no recycling fee. Televisions are **$39 per unit**.
+- **Confirmed individually:** oversized, specialized, hazardous or unusual items.
+- **Requests and timing:** a request is not a confirmed booking. The site makes no same-day or same-week promise.
+- **City pages** describe service areas, not branch locations.
+- **Founding year:** 2012, explicitly confirmed by the business owner (2026-11-16). Shown as "Since 2012" and as `foundingDate: "2012"`.
+- **Data and documentation:**
+  - Documentation depends on the service selected and the equipment processed.
+  - Data destruction is never automatic.
+  - Serial-number reporting is provided only when it is in the agreed scope.
+- **Wording rules:** NIST SP 800-88 is described as a guideline, never as a certification. No "zero landfill" guarantee.
+
+If any of these change, edit them in `lib/pickup.ts` / `lib/site.ts`. `npm run seo:check` fails if hard-coded copy disagrees with them.
+
+## Open items
+
+| # | Item | Where | Current state | What we need from you | Status |
 |---|---|---|---|---|---|
-| 1 | "2,500+ clients served" | `app/about` stat card | Replaced with process fact ("NIST 800-88 guidelines followed") | Real client count + how it's measured, if you want a number restored | qualified |
-| 2 | "500T e-waste diverted annually" | `app/about` stat card | Replaced with "Certificate of destruction per device" | Weight/manifest records for a stated period | qualified |
-| 3 | "100% Data destruction verified" | `app/about` stat card | Replaced with "Chain of custody documented" | Per-job verification records if "100%" is to return | qualified |
-| 4 | "346K+ Anaheim Residents Served" | `lib/cities.ts` (anaheim hero) | Replaced with "Local · Orange County Team" | Actual served figures per city, if any | removed |
-| 5 | "5,000+ Irvine Businesses Served" | `lib/cities.ts` (irvine hero) | Replaced with "NIST · 800-88 Data Handling" | Actual served figures, if any | removed |
-| 6 | "Data Destruction Guaranteed" / "100%" | `lib/cities.ts` (lake-forest, fullerton, la-habra, san-clemente, huntington-beach, laguna-beach) | Replaced with "NIST 800-88 Data Handling" / "CA Compliant Recycling" | Confirm whether any guarantee is offered contractually | qualified |
-| 7 | "Zero landfill" / "Nothing goes to landfill" (absolute) | home, how-it-works, about, itad, recycling, services, city pages | Reworded to "landfill diversion via vetted downstream processors" | Downstream processor audit / zero-landfill contracts to support an absolute claim | qualified |
-| 8 | "Zero data liability — guaranteed" | `app/services/itad` | Reworded to "documented sanitization to reduce data-security risk" | N/A — legal guarantee not recommended without counsel | qualified |
-| 9 | "legally defensible documentation" | `app/services/data-destruction` | Reworded to "audit-ready documentation" | Counsel opinion if legal framing is desired | qualified |
-| 10 | "Certified Data Destruction" (self-label) | layout schema, home, footer, city pages + schema, blog | Renamed to "Secure Data Destruction"; kept "certificate of destruction" (the document issued) | Copies of any current certifications (NAID AAA, R2, e-Stewards, ISO, etc.) — with these we can state them accurately | verify |
-| 11 | "DoD-grade software" | city page FAQ | Reworded to "verified sanitization software (NIST 800-88)" | Name of wiping software used, if you want it cited | qualified |
-| 12 | "no liability for you" | city page why-card | Reworded to "helps reduce your data-security and compliance risk" | N/A — legal conclusion avoided | qualified |
-| 13 | "certificate within 48 hours" | `app/how-it-works` | Reworded to "typically within a few business days" | Real turnaround SLA if a specific window should be stated | verify |
-| 14 | "cost thousands in fines" | `app/page.tsx` | Reworded to "can put your business at risk" | Specific statute/penalty citation if a figure is wanted | qualified |
-| 15 | "premier" / "most trusted" | root metadata, home | Removed superlatives | N/A | removed |
-| 16 | "Est. 2012" | `app/page.tsx` hero | **Kept as-is** | Confirm founding year (business registration) | verify |
-| 17 | "Free business pickup (qualifying volumes)" | sitewide | **Kept** with "qualifying volumes" qualifier | Confirm current pickup policy & any minimums | verify |
-| 18 | Phone `(949) 287-3056`, email `info@…`, hours Mon–Fri 8–6 | sitewide + schema | **Kept unchanged** (not modified per rules) | Confirm still accurate | verify |
-| 19 | `sameAs` Facebook & LinkedIn URLs | `app/layout.tsx` schema | **Kept unchanged** | Confirm these profiles exist and are owned | verify |
-| 20 | Blog Unsplash images (hotlinked) | `posts/blog-data.ts` / blog pages | **Kept** (not self-hosted) | Confirm licensing before self-hosting; credits stored in `unsplashCredit` | verify |
-| 21 | "34 cities in Orange County" | service-areas, layout schema | **Kept** | Note: the list includes some unincorporated communities (El Toro, Coto de Caza, Foothill Ranch, Ladera Ranch, Trabuco Canyon). Confirm framing or relabel as "cities & communities" | verify |
+| 1 | Founding year 2012 | Homepage hero trust line ("Since 2012"); LocalBusiness `foundingDate: "2012"` | **Explicitly confirmed by the business owner on 2026-11-16.** Restored as "Since 2012" from one constant (`FOUNDING_YEAR` in `lib/site.ts`). No full date, anniversary count or years-in-business number is stated. `seo:check` and `seo:crawl` fail on any other founding year or a tenure count | Nothing further, unless a full founding date is wanted (would need records) | confirmed |
+| 2 | DTSC registration, facility ID, or any other regulatory authorization | Nowhere on the site | Not claimed. Copy says equipment is handled "in line with California e-waste regulations" | Your own registration or authorization numbers and their scope. Never use another company's ID | verify |
+| 3 | Certifications (R2, e-Stewards, NAID AAA, ISO 14001, etc.) | Nowhere on the site | Not claimed. "Certificate" refers only to the documents you issue | Copies of current certificates, if any, so they can be stated accurately | verify |
+| 4 | On-site or witnessed shredding | Data destruction page, FAQ | Described as "confirmed per project" | Whether you offer it, and where (your site or a facility) | verify |
+| 5 | Which documents you actually issue: pickup manifest, serialized inventory, Certificate of Recycling, Certificate of Data Destruction, chain-of-custody record | `DOCUMENT_TYPES` in `lib/site.ts`; Business Pickup, How It Works and service pages | All five listed as "available depending on scope" | Confirm each one. Remove any you don't offer | verify |
+| 6 | Serial-level (serialized) asset inventory | ITAD page, documentation table | "When in scope" | Confirm it's offered and whether a fee applies | verify |
+| 7 | South Los Angeles coverage boundaries | Header, footer, schema `areaServed`, Business Pickup page, ZIP guidance | ZIPs 900–918 get "we'll confirm your address", not "yes" | The exact cities or ZIPs you serve in LA County. This would let the ZIP helper say "yes" where appropriate | verify |
+| 8 | The 34 city and community pages (all in Orange County) | `lib/cities.ts` | Each says "a service area, not a branch location". Unincorporated communities are typed `community` (El Toro, Coto de Caza, Foothill Ranch, Ladera Ranch, Trabuco Canyon) | Confirm you serve every listed place. Delete any you don't | verify |
+| 9 | Typical turnaround for pickup scheduling and for documents | How It Works, FAQs | No time window stated. "Timing depends on location, volume and availability" | A typical window, if you want one stated | verify |
+| 10 | Drop-off location | City FAQ ("Do you have a branch or drop-off location?") | Says you travel to the customer's site and invites them to ask about drop-off | Whether a drop-off location exists and its address | verify |
+| 11 | Hours (Mon–Fri, 8am–6pm) | Header, footer, contact page, schema | Saturday hours removed from the contact page because nothing confirmed them | Confirm the hours, including Saturday | verify |
+| 12 | Insurance or bonding | Nowhere on the site | Not claimed | Certificates, if you want this stated | verify |
+| 13 | Staff credentials and background checks | Nowhere on the site | Not claimed | Evidence, if you want this stated | verify |
+| 14 | Client counts, tonnage, landfill-diversion percentages, reviews | Previously on the about, home and city pages | Removed. The site says you don't publish a diversion figure you can't document | Records for a stated period, if you want a figure restored | removed |
+| 15 | `sameAs` social profiles (Facebook, LinkedIn) | Previously in the layout schema | Removed from the LocalBusiness schema | Profile URLs you own, which can then be added back | removed |
+| 16 | Blog hero images hotlinked from Unsplash | `posts/blog-data.ts` | Unchanged. Credits are stored in `unsplashCredit` | Confirm licensing, then self-host them in `/public/image` | verify |
+| 17 | Official source links (DTSC, CalRecycle, NIST, California statutes) | Resources page, two blog posts | Added, but the build sandbox has no web access, so none could be opened | Click each link once before deploy (list below) | verify |
+| 18 | Breach examples in the data-security blog post | `posts/blog-data.ts` | Replaced unverifiable examples with the 2010 CBS photocopier report and the 2022 Morgan Stanley SEC settlement | Confirm you're comfortable citing them, or remove them | verify |
+| 19 | Mail settings `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `CONTACT_TO_EMAIL` | `lib/mail.ts` | Recipient and sender are now environment variables. They fall back to the previously hard-coded addresses | Set all three in Vercel. Without `RESEND_API_KEY`, both forms return a clear error rather than a false success | config |
+| 20 | Pickup-request rate limit | `lib/mail.ts` | In-memory: 5 requests per 10 minutes per IP, per server instance. Best effort only | Accept as is, or add Vercel KV / Upstash later if spam appears | config |
+| 21 | `framer-motion` dependency | `package.json` | No longer imported anywhere. Animations are now CSS only | OK to remove it in a follow-up (`npm uninstall framer-motion`) | config |
+| 22 | Third-party chat widget (`niro-ai-platform.vercel.app`) | Layout | Unchanged. Couldn't be loaded in the sandbox | Confirm it should stay, and that it collects no data before consent | verify |
+| 23 | Phone (949) 287-3056 and `info@ocelectronicrecycling.com` | Sitewide and in the schema | Unchanged | Confirm both are current | verify |
+| 24 | Wording visible inside company photos | `about-team.webp` (back wall reads "Secure. Sustainable. Certified.") and `resources-oc-electronic-recycling.webp` (tablet shows a "Certificate of Compliance") | Both photos are shown as they were on `main`. Site copy claims no certification | Confirm you are comfortable with that wording appearing in the photos, or supply versions without it | verify |
+| 25 | `hero-overview-oc-electronic-recycling.webp` is a JPEG file with a `.webp` name | `/public/image` | Works: Next.js serves an optimized WebP from it. Left as is, because renaming it is not a photo change | Optionally re-export it as a real WebP | config |
+| 26 | Unused photo files | `dd`, `dfd`, `gg`, `ggghh`, `jkj` (storefront variants), `dfdf`, `tyt` (duplicates of the resources photo), `sss` (duplicate of the recycling photo), `contact-hero` (city skyline) | Already unused on `main`. Kept in `/public/image`, not deleted | Say if any of these should appear somewhere | verify |
 
-## Notes
-- No certifications, addresses, customer names, reviews, tonnage, or served-counts were invented anywhere.
-- Educational references to NIST 800-88, DoD 5220.22-M, and California statutes inside blog articles were left intact — they are used to explain concepts, not to claim the company is certified.
+### Source links to click once (item 17)
+
+- https://dtsc.ca.gov/electronic-hazardous-waste/
+- https://calrecycle.ca.gov/electronics/
+- https://csrc.nist.gov/pubs/sp/800/88/r1/final
+- https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.81. (Civil Code §1798.81)
+- The `leginfo.legislature.ca.gov` and `dtsc.ca.gov` links inside the two blog posts' Sources sections
+
+## What was not done
+
+- No certifications, licenses, regulatory or facility IDs, addresses, staff, clients, reviews, awards, processing totals or environmental statistics were invented.
+- No competitor's credentials or wording were used.
+- Blog articles that explain NIST SP 800-88 or DoD 5220.22-M do so as education, not as a claim of certification.

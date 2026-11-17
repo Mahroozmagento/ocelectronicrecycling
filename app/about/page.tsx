@@ -1,130 +1,153 @@
 // app/about/page.tsx
+// Only verifiable statements: what the business does, how it works and where.
+// No founding year, headcount, customer counts or certifications are stated
+// until the owner supplies evidence (see docs/seo/OWNER-VERIFICATION-REQUIRED.md).
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import AnimateIn, { StaggerGroup } from '@/components/AnimateIn'
-import Image from 'next/image'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
+import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
+import { EMAIL, HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, SERVICE_AREA, SITE_URL } from '@/lib/site'
+
+const PATH = '/about'
+const TITLE = 'About Us'
+const DESCRIPTION = `About OC Electronic Recycling: business pickup, data destruction and ITAD across ${SERVICE_AREA}, with policies stated up front.`
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
-  alternates: { canonical: 'https://www.ocelectronicrecycling.com/about' },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'About Us',
-    description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
-    url: 'https://www.ocelectronicrecycling.com/about',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PATH}`,
     images: [{ url: '/image/about-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us',
-    description: 'OC Electronic Recycling — built for Orange County. Local, responsible e-waste recycling and ITAD.',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
     images: ['/image/about-oc-electronic-recycling.webp'],
   },
 }
 
-const MISSION = [
-  { icon: '🔒', title: 'Security First',    desc: 'Data destruction happens before anything else. Data-bearing devices are sanitized or destroyed before recycling to reduce your data-security risk.' },
-  { icon: '🌿', title: 'Landfill Diversion', desc: 'Components are sorted and routed to the correct downstream recycler to divert materials from landfill.' },
-  { icon: '📄', title: 'Full Documentation',desc: 'Certificates, manifests, and chain-of-custody records for everything. Always ready for audits.' },
-  { icon: '🤝', title: 'Local & Trusted',   desc: 'An Orange County business serving Orange County. Real people you can call, meet, and hold accountable.' },
+const CRUMBS: Crumb[] = [
+  { name: 'Home', path: '/' },
+  { name: 'About', path: PATH },
+]
+
+const PRINCIPLES = [
+  { icon: 'info', title: 'Policies up front', body: `${POLICY.minimum} ${POLICY.fees}` },
+  { icon: 'lock', title: 'Data handling you choose', body: `${POLICY.data} You decide whether drives are sanitized or physically destroyed.` },
+  { icon: 'doc', title: 'Documentation by scope', body: `${POLICY.documents} We tell you plainly which documents apply.` },
+  { icon: 'pin', title: 'Local service area', body: POLICY.area },
 ]
 
 export default function AboutPage() {
   return (
     <>
-      <div 
-  className="about-hero"
-  style={{
-    backgroundImage: `linear-gradient(to right, rgba(7,8,15,0.6), rgba(7,8,15,0.35)), url('/image/about-oc-electronic-recycling.webp')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center right',
-  }}
->
-        <div className="container">
-          <AnimateIn from="fade" delay={0} duration={0.5}>
-            <span className="overline">Our Story</span>
-          </AnimateIn>
-          <AnimateIn from="up" delay={0.1} duration={0.7}>
-            <h1 style={{ fontFamily: 'var(--font-head)', fontSize: 'clamp(2rem,5vw,4rem)', fontWeight: 900, letterSpacing: '-.03em', marginTop: '10px' }}>
-              Built for Orange County
-            </h1>
-          </AnimateIn>
-          <AnimateIn from="up" delay={0.22}>
-            <p style={{ color: 'var(--muted)', fontSize: '1rem', marginTop: '16px', maxWidth: '520px', lineHeight: 1.7 }}>
-              A local business with deep roots in the ITAD and e-waste industry.
-              We built OC Electronic Recycling to do recycling right.
+      <JsonLd data={graph(breadcrumbNode(PATH, CRUMBS))} />
+
+      <section className="ct-hero ct-hero--page ct-gridlines">
+        <div className="ct-wrap">
+          <Breadcrumbs crumbs={CRUMBS} />
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
+            <span className="ct-eyebrow">About</span>
+            <h1 className="ct-h1">A straightforward partner for retiring business technology</h1>
+            <p className="ct-lede">
+              OC Electronic Recycling helps organizations across {SERVICE_AREA} retire computers, servers, networking
+              gear and office electronics — with clear eligibility rules, data handling you select, and documentation matched to the job.
             </p>
-          </AnimateIn>
-        </div>
-      </div>
-
-      <div style={{ background: 'var(--light)', padding: '80px 0' }}>
-        <div className="container">
-          <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '60px' }}>
-            <AnimateIn from="left">
-              <span className="overline" style={{ color: 'var(--blue)' }}>Our Mission</span>
-              <h2 className="section-title" style={{ color: 'var(--navy)' }}>Responsible. Local. Trusted.</h2>
-              <p style={{ color: '#4a5568', lineHeight: 1.75, margin: '20px 0' }}>
-                OC Electronic Recycling was founded by a team with hands-on experience in the e-waste and ITAD industry.
-                We&apos;ve seen how recycling is done when compliance is an afterthought — and we exist to do the opposite.
-              </p>
-              <p style={{ color: '#4a5568', lineHeight: 1.75, marginBottom: '24px' }}>
-                Every device is handled with full chain-of-custody documentation. Every data-bearing device receives proper
-                destruction before any other step. Every client receives documentation they can show an auditor.
-              </p>
-              <a href="tel:9492873056" style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1.1rem', color: 'var(--blue)' }}>
-                ☎ (949) 287-3056
-              </a>
-            </AnimateIn>
-
-            <AnimateIn from="right">
-              <div style={{ background: '#fff', borderRadius: '16px', padding: '36px', border: '1px solid #e2e8f0' }}>
-                <div style={{position:'relative'}}>
-  <Image
-    src="/image/about-team.webp"
-    alt="OC Electronic Recycling team"
-    width={700}
-    height={460}
-    style={{width:'100%', height:'180px', objectFit:'cover', borderRadius:'10px'}}
-  />
-  <div style={{ position: 'absolute', top: '10px', left: '12px', background: 'var(--blue)', color: '#fff', fontSize: '.6rem', fontWeight: 800, letterSpacing: '.12em', padding: '3px 10px', borderRadius: '20px' }}>TEAM PHOTO</div>
-</div>
-                {[
-                  { num: 'NIST 800-88', color: 'var(--blue)',  label: 'Sanitization guidelines followed for data-bearing media' },
-                  { num: 'Per Device',  color: 'var(--green)', label: 'Certificate of destruction issued for each drive processed' },
-                  { num: 'Chain of Custody', color: 'var(--red)', label: 'Documented from pickup through downstream processing' },
-                ].map(({ num, color, label }) => (
-                  <div key={num} style={{ marginBottom: '20px' }}>
-                    <div style={{ fontFamily: 'var(--font-head)', fontWeight: 900, fontSize: '2rem', color, marginBottom: '4px' }}>{num}</div>
-                    <div style={{ color: '#4a5568', fontSize: '.88rem' }}>{label}</div>
-                  </div>
-                ))}
-              </div>
-            </AnimateIn>
           </div>
-
-          <StaggerGroup className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '20px' }}>
-            {MISSION.map(({ icon, title, desc }) => (
-              <div key={title} style={{ background: '#fff', borderRadius: '14px', padding: '28px', border: '1px solid #e2e8f0' }}>
-                <div style={{ fontSize: '1.6rem', marginBottom: '12px' }}>{icon}</div>
-                <h3 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, color: 'var(--navy)', marginBottom: '8px', fontSize: '1rem' }}>{title}</h3>
-                <p style={{ fontSize: '.88rem', color: '#4a5568', lineHeight: 1.65 }}>{desc}</p>
-              </div>
-            ))}
-          </StaggerGroup>
+          <Photo
+            name="about"
+            className="ct-in"
+            sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px"
+            ratio="3 / 2"
+            position="100% 50%"
+            eager
+          />
+          </div>
         </div>
-      </div>
+      </section>
 
-      <section className="cta-section">
-        <div className="container">
-          <AnimateIn from="up">
-            <h2>Meet the Team</h2>
-            <p>Have questions about our process? Call us directly.</p>
-            <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
-            <div className="cta-actions">
-              <Link href="/contact" className="btn-primary btn-large">Get in Touch</Link>
+      <section className="ct-section" aria-labelledby="approach-title">
+        <div className="ct-wrap ct-split ct-split--wide-left">
+          <div className="ct-stack">
+            <span className="ct-eyebrow">Our approach</span>
+            <h2 className="ct-h2" id="approach-title">Clear answers before anything is scheduled</h2>
+            <p className="ct-body">
+              Disposing of business electronics raises the same questions every time: what qualifies, what it costs,
+              what happens to the data, and what proof you will have afterward. We answer those before pickup, in writing
+              where it matters, and we only schedule once you have agreed to the confirmed scope.
+            </p>
+            <p className="ct-body">
+              After pickup, selected data services are performed, equipment is evaluated for reuse, and remaining material
+              is routed to downstream processors in line with California e-waste regulations.
+            </p>
+            <div className="ct-hero__actions">
+              <Link href="/how-it-works" className="ct-btn ct-btn--ink">See how it works</Link>
+              <Link href="/services" className="ct-btn ct-btn--ghost">Our services</Link>
             </div>
-          </AnimateIn>
+          </div>
+          <div style={{ display: 'grid', gap: 18, alignContent: 'start' }}>
+          <Photo
+            name="team"
+            sizes="(max-width: 900px) calc(100vw - 32px), (max-width: 1240px) 40vw, 500px"
+            ratioSm="16 / 9"
+            caption="Our crew and trucks at the warehouse."
+          />
+          <div className="ct-panel">
+            <h3 className="ct-h3">Contact</h3>
+            <ul className="ct-checks" style={{ marginTop: 14, color: 'var(--ct-text-2)' }}>
+              <li><a className="ct-inline-link" href={PHONE_HREF} data-cta-location="about_panel">{PHONE_DISPLAY}</a></li>
+              <li><a className="ct-inline-link" href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+              <li>{HOURS}</li>
+              <li>Service area: {SERVICE_AREA}</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ct-section ct-section--mineral" aria-labelledby="principles-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">How we operate</span>
+            <h2 className="ct-h2" id="principles-title">Four commitments we can actually keep</h2>
+          </div>
+          <ul className="ct-projects">
+            {PRINCIPLES.map((p) => (
+              <li key={p.title}>
+                <span className="ct-projects__icon"><Icon name={p.icon} size={20} /></span>
+                <div>
+                  <h3 className="ct-h3">{p.title}</h3>
+                  <p>{p.body}</p>
+                </div>
+                <span />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="ct-cta" aria-labelledby="cta-title">
+        <div className="ct-wrap ct-cta__grid">
+          <div className="ct-cta__copy">
+            <span className="ct-eyebrow">Talk to us</span>
+            <h2 className="ct-h2" id="cta-title">Questions about a project?</h2>
+            <p className="ct-lede">Call, or send your equipment list online and we&apos;ll follow up.</p>
+          </div>
+          <div className="ct-cta__actions">
+            <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="about_final">Request a Business Pickup</Link>
+            <div className="ct-cta__phone">
+              <Icon name="phone" size={22} />
+              <div><a href={PHONE_HREF} data-cta-location="about_final">{PHONE_DISPLAY}</a><small>{HOURS}</small></div>
+            </div>
+          </div>
         </div>
       </section>
     </>

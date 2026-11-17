@@ -2,6 +2,7 @@
 // JSON-LD (Service + BreadcrumbList + FAQPage). Reused by the three core service
 // pages so structured data always mirrors the visible content.
 import Link from 'next/link'
+import { AREA_SERVED } from '@/lib/schema'
 
 export type Faq = { q: string; a: string }
 
@@ -33,7 +34,7 @@ export function ServiceStructuredData({
       description,
       url,
       provider: { '@id': BUSINESS_ID },
-      areaServed: { '@type': 'AdministrativeArea', name: 'Orange County, California' },
+      areaServed: AREA_SERVED,
     },
     {
       '@type': 'BreadcrumbList',

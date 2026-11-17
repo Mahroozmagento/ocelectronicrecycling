@@ -1,6 +1,7 @@
 // app/services/data-destruction/page.tsx
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Icon from '@/components/Icon'
 import {
   ServiceStructuredData,
   FaqSection,
@@ -12,12 +13,12 @@ import {
 export const metadata: Metadata = {
   title: 'Secure Data Destruction with Certificate',
   description:
-    'Hard drive shredding and data sanitization following NIST 800-88 guidelines in Orange County, CA. Certificate of destruction issued per device, with chain-of-custody documentation.',
+    'Hard drive shredding and data sanitization guided by NIST SP 800-88 in Orange County, CA. A Certificate of Data Destruction is issued for the media processed.',
   alternates: { canonical: 'https://www.ocelectronicrecycling.com/services/data-destruction' },
   openGraph: {
     title: 'Secure Data Destruction with Certificate',
     description:
-      'Hard drive shredding and data sanitization following NIST 800-88 guidelines in Orange County, CA. Certificate of destruction issued per device.',
+      'Hard drive shredding and data sanitization guided by NIST SP 800-88 in Orange County, CA. A Certificate of Data Destruction is issued for the media processed.',
     url: 'https://www.ocelectronicrecycling.com/services/data-destruction',
     images: [{ url: '/image/data-destruction-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
@@ -25,15 +26,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Secure Data Destruction with Certificate',
     description:
-      'Hard drive shredding and data sanitization following NIST 800-88 guidelines in Orange County, CA. Certificate of destruction issued per device.',
+      'Hard drive shredding and data sanitization guided by NIST SP 800-88 in Orange County, CA. A Certificate of Data Destruction is issued for the media processed.',
     images: ['/image/data-destruction-oc-electronic-recycling.webp'],
   },
 }
 
 const FEATURES = [
-  { icon: '🔨', title: 'Physical Shredding', desc: 'Industrial shredders reduce drives to fragments — designed to render media unusable and make data recovery impractical. Available on-site or at our secure facility.' },
-  { icon: '💿', title: 'Software Overwrite', desc: 'NIST 800-88 Clear and Purge methods for HDDs and SSDs, with verification. Suitable when drives will be reused after sanitization.' },
-  { icon: '📄', title: 'Certificate of Destruction', desc: 'Issued per device with serial number, make/model, method used, and date — audit-ready documentation to support your records.' },
+  { icon: 'drive', title: 'Physical Shredding', desc: 'Shredding reduces drives to fragments — designed to render media unusable and make data recovery impractical. Ask if your policy requires witnessed destruction.' },
+  { icon: 'scan', title: 'Software Overwrite', desc: 'NIST 800-88 Clear and Purge methods for HDDs and SSDs, with verification. Suitable when drives will be reused after sanitization.' },
+  { icon: 'doc', title: 'Certificate of Destruction', desc: 'Records the method used for the media processed, with serial numbers when serialized tracking is in scope — documentation to support your records.' },
 ]
 
 const MEDIA = [
@@ -43,33 +44,33 @@ const MEDIA = [
 ]
 
 const STEPS = [
-  { n: '01', t: 'Identify data-bearing media', d: 'During intake, every device is checked for storage. Data-bearing media is separated and logged before anything else happens.' },
+  { n: '01', t: 'Identify data-bearing media', d: 'For equipment in your data destruction scope, data-bearing media is identified, separated and logged before anything else happens.' },
   { n: '02', t: 'Choose the method', d: 'Reusable drives can be overwritten (NIST 800-88 Clear/Purge) with verification; drives that cannot be reliably overwritten are physically destroyed.' },
-  { n: '03', t: 'Destroy or sanitize', d: 'Shredding is available on-site or at our secure facility. Software wiping runs on dedicated workstations with a verification pass.' },
-  { n: '04', t: 'Document & certify', d: 'A certificate of destruction is issued per device, with serial-level detail and chain-of-custody records for your files.' },
+  { n: '03', t: 'Destroy or sanitize', d: 'Media is shredded, or wiped on dedicated workstations with a verification pass. Witnessed destruction is confirmed per project.' },
+  { n: '04', t: 'Document & certify', d: 'A Certificate of Data Destruction is issued for the media processed, with serial-level detail and custody records when they are in scope.' },
 ]
 
 const INCLUDES = [
   'NIST 800-88-guided sanitization (Clear/Purge) or physical destruction',
-  'On-site or facility-based hard-drive shredding',
-  'Serial-level certificate of destruction per device',
-  'Chain-of-custody documentation from pickup to destruction',
-  'Recycling of destroyed media through vetted downstream processors',
+  'Hard-drive shredding (witnessed destruction confirmed per project)',
+  'Certificate of Data Destruction for the media processed',
+  'Serial-level detail and chain-of-custody records when in scope',
+  'Recycling of destroyed media through downstream processors',
 ]
 const EXCLUDES = [
   'Data recovery, forensic imaging, or file retrieval',
   'Legal certification that a specific regulation is satisfied (documentation supports your own compliance review)',
-  'Guarantees of a specific particle size beyond the equipment’s rated output',
+  'No guarantee of a specific particle size beyond the equipment’s rated output',
   'Certifications we do not hold — we describe our methods, not accreditations we lack',
 ]
 
 const FAQS: Faq[] = [
   { q: 'Do you shred hard drives or wipe them?', a: 'Both are available. Physical shredding is used when media should be destroyed outright; software overwriting (following NIST 800-88 Clear or Purge methods, with a verification pass) is used when a drive will be reused. We help you pick based on the device type and your requirements.' },
-  { q: 'What does the certificate of destruction include?', a: 'It records the device serial number, make/model, the sanitization or destruction method used, and the date. It is intended as audit-ready documentation to support your internal records; it is not a legal opinion.' },
-  { q: 'Is shredding available on-site at our location?', a: 'On-site shredding can be arranged for qualifying jobs, so you can witness destruction before media leaves your site. Facility-based destruction is also available. Ask us which fits your volume and location.' },
+  { q: 'What does the certificate of destruction include?', a: 'It records the sanitization or destruction method used for the media processed and the date, with drive serial numbers when serialized tracking is part of the agreed scope. It is intended as documentation to support your internal records; it is not a legal opinion.' },
+  { q: 'Can destruction be witnessed or done at our location?', a: 'Not for every project. If your policy requires witnessed or on-site destruction, say so when you request service and we will confirm whether it can be arranged before anything is scheduled.' },
   { q: 'Can you destroy SSDs and modern flash storage?', a: 'Yes. SSDs and NVMe drives are handled with methods appropriate to flash media — physical destruction, or a Purge-level approach with verification — because traditional multi-pass overwrites designed for magnetic drives are not appropriate for flash.' },
   { q: 'How is this different from just deleting files or reformatting?', a: 'Deleting or reformatting typically leaves recoverable data. Sanitization following NIST 800-88 is designed to make recovery impractical, and physical destruction renders the media unusable — with documentation to evidence what was done.' },
-  { q: 'Do you serve businesses across Orange County?', a: 'Yes — we serve businesses throughout Orange County, California as a service area (we come to you), and can coordinate secure transport for facility-based destruction.' },
+  { q: 'Do you serve businesses across Orange County?', a: 'Yes — we serve businesses across Orange County and South Los Angeles as a service area. Business pickup requires at least five qualifying major items; loose drives and smaller jobs are confirmed individually.' },
 ]
 
 export default function DataDestructionPage() {
@@ -95,11 +96,11 @@ export default function DataDestructionPage() {
             Secure Data Destruction<br />with Certificate
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: '1rem', marginTop: '16px', maxWidth: '560px', lineHeight: 1.7 }}>
-            Data sanitization and physical shredding following NIST 800-88 guidelines. Every device
-            processed receives a certificate of destruction to support your compliance and audit records.
+            Data sanitization guided by NIST SP 800-88, or physical shredding. A Certificate of Data Destruction
+            is issued for the media processed to support your compliance and audit records.
           </p>
           <div className="dd-badge-row" style={{ marginTop: '28px' }}>
-            <span className="dd-badge nist">NIST 800-88</span>
+            <span className="dd-badge nist">Guided by NIST SP 800-88</span>
             <span className="dd-badge ca">CA E-Waste Regulations</span>
           </div>
         </div>
@@ -131,7 +132,7 @@ export default function DataDestructionPage() {
           <div className="svc-features" style={{ marginTop: '24px' }}>
             {FEATURES.map(({ icon, title, desc }) => (
               <div key={title} className="svc-feature-card">
-                <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{icon}</div>
+                <span className="ct-feature-icon"><Icon name={icon} size={22} /></span>
                 <h3>{title}</h3>
                 <p>{desc}</p>
               </div>
@@ -193,12 +194,13 @@ export default function DataDestructionPage() {
           </p>
           <h3 style={{ fontFamily: 'var(--font-head)', color: 'var(--navy)', margin: '28px 0 12px', fontSize: '1.05rem' }}>Orange County coverage</h3>
           <p className="svc-lead">
-            Available throughout Orange County, California as a service area — on-site destruction for qualifying jobs,
-            or secure transport to our facility. This is a service area, not a physical office in each city.
+            Available across Orange County and South Los Angeles as a service area. Witnessed destruction is confirmed
+            per project. This is a service area, not a physical office in each city.
           </p>
           <h3 style={{ fontFamily: 'var(--font-head)', color: 'var(--navy)', margin: '28px 0 12px', fontSize: '1.05rem' }}>Related guides &amp; pages</h3>
           <RelatedLinks
             links={[
+              { href: '/business-pickup', label: 'Request a pickup with data destruction' },
               { href: '/blog/certified-data-destruction-california', label: 'What a destruction certificate proves' },
               { href: '/blog/hard-drive-shred-vs-wipe-guide', label: 'Shred vs. wipe: which to choose' },
               { href: '/blog/data-destruction-network-switches-routers', label: 'Data on switches & routers' },
@@ -207,8 +209,7 @@ export default function DataDestructionPage() {
             ]}
           />
           <p className="svc-lead" style={{ marginTop: '18px', fontSize: '.92rem' }}>
-            For an accurate quote, share the number and type of drives or devices, whether you need on-site or
-            facility destruction, and your location and timeline.
+            For an accurate quote, share the number and type of drives or devices, whether destruction must be witnessed, and your location and timeline.
           </p>
         </div>
       </section>
@@ -221,7 +222,7 @@ export default function DataDestructionPage() {
           <p>Tell us what needs destroying — we&apos;ll recommend shredding or wiping.</p>
           <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
           <div className="cta-actions">
-            <Link href="/contact" className="btn-primary btn-large">Schedule Destruction</Link>
+            <Link href="/business-pickup" className="btn-primary btn-large" data-cta-location="dd_final">Request Data Destruction</Link>
           </div>
         </div>
       </section>

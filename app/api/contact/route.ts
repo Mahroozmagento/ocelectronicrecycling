@@ -1,15 +1,6 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-// Instantiate Resend lazily at request time rather than at module load. The
-// constructor throws when RESEND_API_KEY is absent; doing it at module scope
-// broke `next build` in any environment without the secret. Runtime behavior is
-// unchanged — the client is created on the first request that needs it.
-let resendClient: Resend | null = null;
-function getResend(): Resend {
-  if (!resendClient) resendClient = new Resend(process.env.RESEND_API_KEY);
-  return resendClient;
-}
+import { sendNotification } from "@/lib/mail";
+import { escapeHtml } from "@/lib/pickup";
 
 const MIN_ELAPSED_MS = 3000;
 
@@ -91,27 +82,29 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true });
     }
 
+    // Every user-supplied value is HTML-escaped before it goes into the email.
+    const e = (v: unknown) => escapeHtml(String(v ?? "").slice(0, 4000));
     const source = [utm_source, utm_medium, utm_campaign].some(Boolean)
       ? `
-        <p><strong>Source:</strong> ${utm_source || "(none)"}</p>
-        <p><strong>Medium:</strong> ${utm_medium || "(none)"}</p>
-        <p><strong>Campaign:</strong> ${utm_campaign || "(none)"}</p>
+        <p><strong>Source:</strong> ${e(utm_source) || "(none)"}</p>
+        <p><strong>Medium:</strong> ${e(utm_medium) || "(none)"}</p>
+        <p><strong>Campaign:</strong> ${e(utm_campaign) || "(none)"}</p>
       `
       : `<p><strong>Source:</strong> Direct / no campaign tracked</p>`;
 
-    await getResend().emails.send({
-      from: "OC Electronic Recycling <noreply@nextechoc.com>",
-      to: "nirowebix@gmail.com",
-      replyTo: email,
-      subject: `New Contact Form: ${service || "General Inquiry"} - ${fullName}`,
+    // sendNotification throws if the provider rejects the message, so this
+    // route never reports success for an email that was not handed off.
+    await sendNotification({
+      replyTo: typeof email === "string" ? email : undefined,
+      subject: `New Contact Form: ${service || "General Inquiry"} - ${fullName}`.replace(/[\r\n\t]+/g, " ").slice(0, 180),
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-        <p><strong>Service:</strong> ${service || "Not specified"}</p>
+        <p><strong>Name:</strong> ${e(fullName)}</p>
+        <p><strong>Email:</strong> ${e(email)}</p>
+        <p><strong>Phone:</strong> ${e(phone) || "Not provided"}</p>
+        <p><strong>Service:</strong> ${e(service) || "Not specified"}</p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p>${e(message).replace(/\n/g, "<br />")}</p>
         <hr />
         <h3>Lead Source</h3>
         ${source}

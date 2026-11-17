@@ -1,99 +1,175 @@
-// app/how-it-works/page.tsx
+// app/how-it-works/page.tsx — the end-to-end process, stated accurately.
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import AnimateIn, { StaggerGroup, PageHero } from '@/components/AnimateIn'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import Photo from '@/components/Photo'
+import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
+import { DOCUMENT_TYPES, HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, PROCESS_STEPS, SERVICE_AREA, SITE_URL } from '@/lib/site'
+
+const PATH = '/how-it-works'
+const TITLE = 'How It Works'
+const DESCRIPTION = 'How business electronics pickup works: send your list, we confirm scope and eligibility, then pickup, selected data services, processing and documentation.'
 
 export const metadata: Metadata = {
-  title: 'How It Works',
-  description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
-  alternates: { canonical: 'https://www.ocelectronicrecycling.com/how-it-works' },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'How It Works',
-    description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
-    url: 'https://www.ocelectronicrecycling.com/how-it-works',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PATH}`,
     images: [{ url: '/image/how-it-works-oc-electronic-recycling.webp', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'How It Works',
-    description: 'Simple, transparent, fully documented — from your first call to your final certificate.',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
     images: ['/image/how-it-works-oc-electronic-recycling.webp'],
   },
 }
 
-const STEPS = [
-  { num: '01', title: 'Schedule',    desc: 'Call or submit a quote request. We aim to respond within one business day, and can often schedule same-week service.' },
-  { num: '02', title: 'Collection',  desc: 'Technicians arrive on time with sealed containers and chain-of-custody forms. Every asset logged on-site.' },
-  { num: '03', title: 'Processing',  desc: 'Data destroyed first — always. Devices assessed for reuse, disassembly, or recycling per material type.' },
-  { num: '04', title: 'Certificate', desc: 'Recycling and data destruction certificates are emailed after processing, typically within a few business days. Audit-ready documentation.' },
+const CRUMBS: Crumb[] = [
+  { name: 'Home', path: '/' },
+  { name: 'How It Works', path: PATH },
 ]
 
-const GUARANTEES = [
-  { icon: '🔐', title: 'Data First',        desc: 'Every data-bearing device is wiped or shredded before anything else. Chain-of-custody follows every step.' },
-  { icon: '📋', title: 'Full Manifest',     desc: 'Serial numbers, asset tags, condition grades captured for every item. Complete inventory before processing.' },
-  { icon: '♻️', title: 'Landfill Diversion', desc: 'Components are sorted by material type and routed to the correct downstream recycler to divert materials from landfill.' },
-  { icon: '📄', title: 'Your Certificate', desc: 'Data destruction and recycling certificates are delivered after processing, with a full asset manifest.' },
+const DETAILS = [
+  {
+    title: 'Before pickup',
+    items: [
+      'Approximate quantities by equipment type, plus any unusual items',
+      'Pickup address, access, floor, elevator or dock details',
+      'Whether any devices need data sanitization or physical destruction',
+      'Which documents your records or auditors require',
+    ],
+  },
+  {
+    title: 'What we confirm',
+    items: [
+      'Which items we can accept, and whether the request meets the pickup minimum',
+      'Any fees, including the per-unit television fee',
+      'The data services and documentation in scope',
+      'An available pickup window — nothing is scheduled until you agree',
+    ],
+  },
+  {
+    title: 'After pickup',
+    items: [
+      'Selected data services are performed on the media in scope',
+      'Equipment is evaluated for reuse, then routed to material recovery',
+      'Documents in your scope are issued once processing is complete',
+      'Questions about a project? Call us with your company name',
+    ],
+  },
 ]
 
 export default function HowItWorksPage() {
   return (
     <>
-      <PageHero
-        overline="The Process"
-        title="How It Works"
-        subtitle="Simple, transparent, and fully documented. Here's exactly what happens from your first call to your final certificate."
-        bgImage="/image/how-it-works-oc-electronic-recycling.webp"
-      />
+      <JsonLd data={graph(breadcrumbNode(PATH, CRUMBS))} />
 
-      <section style={{ background: 'var(--light)', padding: '80px 0' }}>
-        <div className="container">
-          <AnimateIn from="up" delay={0.1}>
-            <div style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 60px' }}>
-              <span className="overline" style={{ color: 'var(--blue)' }}>Step by Step</span>
-              <h2 className="section-title" style={{ color: 'var(--navy)' }}>4 Simple Steps</h2>
-            </div>
-          </AnimateIn>
-          <StaggerGroup className="hiw-timeline">
-            {STEPS.map(({ num, title, desc }) => (
-              <div key={num} className="hiw-step">
-                <div className="hiw-num">{num}</div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
+      <section className="ct-hero ct-hero--page ct-gridlines">
+        <div className="ct-wrap">
+          <Breadcrumbs crumbs={CRUMBS} />
+          <div className="ct-hero__grid ct-hero__grid--page" style={{ marginTop: 22 }}>
+            <div className="ct-hero__copy ct-rise">
+              <span className="ct-eyebrow">The process</span>
+              <h1 className="ct-h1">How business pickup and processing work</h1>
+              <p className="ct-lede">
+                Four steps from your first message to the documentation in your scope. Nothing is scheduled until
+                we have confirmed eligibility, any fees and timing with you.
+              </p>
+              <div className="ct-hero__actions">
+                <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="hiw_hero">Request a Business Pickup</Link>
+                <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="hiw_hero"><Icon name="phone" size={18} /> {PHONE_DISPLAY}</a>
               </div>
-            ))}
-          </StaggerGroup>
+            </div>
+            <Photo name="inspection" className="ct-in" sizes="(max-width: 980px) calc(100vw - 32px), (max-width: 1240px) 46vw, 576px" ratio="3 / 2" position="100% 50%" eager />
+          </div>
         </div>
       </section>
 
-      <section style={{ background: 'var(--navy2)', padding: '80px 0' }}>
-        <div className="container">
-          <AnimateIn from="up" delay={0.1}>
-            <div style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 60px' }}>
-              <span className="overline">What We Provide</span>
-              <h2 className="section-title" style={{ color: 'var(--c-white)' }}>On Every Job</h2>
-            </div>
-          </AnimateIn>
-          <StaggerGroup className="svc-features">
-            {GUARANTEES.map(({ icon, title, desc }) => (
-              <div key={title} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid var(--border)', borderRadius: '14px', padding: '32px 28px' }}>
-                <div style={{ fontSize: '2rem', marginBottom: '14px' }}>{icon}</div>
-                <h3 style={{ fontFamily: 'var(--font-head)', fontWeight: 800, fontSize: '1rem', color: '#fff', marginBottom: '10px' }}>{title}</h3>
-                <p style={{ fontSize: '.88rem', color: 'var(--muted)', lineHeight: 1.65 }}>{desc}</p>
-              </div>
+      <section className="ct-section" aria-labelledby="steps-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">Step by step</span>
+            <h2 className="ct-h2" id="steps-title">Four steps, each with a clear handoff</h2>
+          </div>
+          <ol className="ct-rail">
+            {PROCESS_STEPS.map((s) => (
+              <li key={s.title}>
+                <h3 className="ct-h3">{s.title}</h3>
+                <p>{s.body}</p>
+              </li>
             ))}
-          </StaggerGroup>
+          </ol>
         </div>
       </section>
 
-      <section className="cta-section">
-        <div className="container">
-          <AnimateIn from="up">
-            <h2>Ready to Start?</h2>
-            <a href="tel:9492873056" className="cta-phone">(949) 287-3056</a>
-            <div className="cta-actions">
-              <Link href="/contact" className="btn-primary btn-large">Schedule Now</Link>
+      <section className="ct-section ct-section--mineral" aria-labelledby="detail-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">In detail</span>
+            <h2 className="ct-h2" id="detail-title">What happens before, during and after</h2>
+          </div>
+          <div className="ct-triage">
+            {DETAILS.map((d, i) => (
+              <div key={d.title} className={`ct-triage__col ${i === 0 ? 'ct-triage__col--courtesy' : i === 1 ? 'ct-triage__col--confirm' : 'ct-triage__col--major'}`}>
+                <div className="ct-triage__head">
+                  <span className="ct-triage__tag">0{i + 1}</span>
+                  <h3 className="ct-h3">{d.title}</h3>
+                </div>
+                <div className="ct-triage__body">
+                  <ul className="ct-checks">{d.items.map((it) => <li key={it}>{it}</li>)}</ul>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="ct-small" style={{ marginTop: 20 }}>{POLICY.minimum} {POLICY.fees} {POLICY.data}</p>
+        </div>
+      </section>
+
+      <section className="ct-section" aria-labelledby="docs-title">
+        <div className="ct-wrap">
+          <div className="ct-head ct-head--split">
+            <div>
+              <span className="ct-eyebrow ct-eyebrow--secure">Documentation</span>
+              <h2 className="ct-h2" id="docs-title">Documents are matched to your scope</h2>
             </div>
-          </AnimateIn>
+            <p className="ct-lede">{POLICY.documents}</p>
+          </div>
+          <table className="ct-table">
+            <caption>Serial-number tracking and data destruction certificates are not automatic — request them in your scope.</caption>
+            <thead><tr><th scope="col">Document</th><th scope="col">What it records</th><th scope="col">When it applies</th></tr></thead>
+            <tbody>
+              {DOCUMENT_TYPES.map((d) => (
+                <tr key={d.name}>
+                  <th scope="row">{d.name}</th>
+                  <td data-label="What it records">{d.what}</td>
+                  <td data-label="When it applies">{d.when}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="ct-cta" aria-labelledby="cta-title">
+        <div className="ct-wrap ct-cta__grid">
+          <div className="ct-cta__copy">
+            <span className="ct-eyebrow">Ready to start?</span>
+            <h2 className="ct-h2" id="cta-title">Step one takes about three minutes</h2>
+            <p className="ct-lede">Send your list online, or call. Serving {SERVICE_AREA}.</p>
+          </div>
+          <div className="ct-cta__actions">
+            <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="hiw_final">Request a Business Pickup</Link>
+            <div className="ct-cta__phone">
+              <Icon name="phone" size={22} />
+              <div><a href={PHONE_HREF} data-cta-location="hiw_final">{PHONE_DISPLAY}</a><small>{HOURS}</small></div>
+            </div>
+          </div>
         </div>
       </section>
     </>

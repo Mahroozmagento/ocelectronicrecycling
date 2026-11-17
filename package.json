@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seo:check": "node scripts/seo-check.mjs"
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:crawl": "node scripts/seo-crawl.mjs",
+    "test": "node --no-warnings --test tests/*.test.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.9",

@@ -1,453 +1,369 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { cities, getCityBySlug, getAllCitySlugs } from "@/lib/cities";
+// app/(cities)/e-waste-recycling/[city]/page.tsx
+// Shared template for every service-area page. All 34 pages are produced from
+// lib/cities.ts — fix copy here or in the data, never on a single city.
+//
+// IMPORTANT: sentences that include the city name are built as template
+// strings (see `t` below), never as JSX text split across lines. JSX trims the
+// whitespace around a line break, which is what once produced "mostIrvine".
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import FaqList from '@/components/Faq'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import { getAllCitySlugs, getCityBySlug, type CityData } from '@/lib/cities'
+import { breadcrumbNode, faqNode, graph, serviceNode, type Crumb, type Faq } from '@/lib/schema'
+import {
+  CONFIRM_ITEMS, COURTESY_ITEMS, DEFAULT_OG_IMAGE, ELIGIBILITY_FACTS, HOURS, PHONE_DISPLAY, PHONE_HREF,
+  PICKUP_MINIMUM, POLICY, PROCESS_STEPS, QUALIFYING_ITEMS, SERVICE_AREA, SITE_URL, TV_FEE,
+} from '@/lib/site'
 
-// ─── Static Params ────────────────────────────────────────────────────────────
 export async function generateStaticParams() {
-  return getAllCitySlugs().map((slug) => ({ city: slug }));
+  return getAllCitySlugs().map((slug) => ({ city: slug }))
 }
 
-// ─── Metadata ─────────────────────────────────────────────────────────────────
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ city: string }>;
-}): Promise<Metadata> {
-  const { city: citySlug } = await params;
-  const city = getCityBySlug(citySlug);
-  if (!city) return {};
+// Unknown slugs return a real 404 instead of rendering on demand.
+export const dynamicParams = false
+
+const pathFor = (city: CityData) => `/e-waste-recycling/${city.slug}`
+const h1For = (city: CityData) => `Electronics Recycling & Business Pickup in ${city.name}`
+
+export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
+  const { city: slug } = await params
+  const city = getCityBySlug(slug)
+  if (!city) return {}
+  const url = `${SITE_URL}${pathFor(city)}`
   return {
     title: city.metaTitle,
     description: city.metaDescription,
-    alternates: {
-      canonical: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
-    },
+    alternates: { canonical: url },
     openGraph: {
-      title: city.metaTitle,
+      title: `${city.metaTitle} | OC Electronic Recycling`,
       description: city.metaDescription,
-      url: `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`,
-      siteName: "OC Electronic Recycling",
-      locale: "en_US",
-      type: "website",
-      images: [{ url: "/image/hero-facility-oc-electronic-recycling.webp", width: 1200, height: 630 }],
+      url,
+      siteName: 'OC Electronic Recycling',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
     },
     twitter: {
-      card: "summary_large_image",
-      title: city.metaTitle,
+      card: 'summary_large_image',
+      title: `${city.metaTitle} | OC Electronic Recycling`,
       description: city.metaDescription,
-      images: ["/image/hero-facility-oc-electronic-recycling.webp"],
+      images: [DEFAULT_OG_IMAGE],
     },
-  };
-}
-
-// ─── JSON-LD Schema ────────────────────────────────────────────────────────────
-// A city page is a SERVICE-AREA page, not a physical office. We therefore emit a
-// `Service` (provided by the single business @id, with `areaServed` = the city)
-// rather than a `LocalBusiness` carrying a per-city PostalAddress, which would
-// falsely imply an office in every city. BreadcrumbList and FAQPage mirror the
-// visible breadcrumb and FAQ section.
-function CitySchema({
-  city,
-  faqs,
-}: {
-  city: NonNullable<ReturnType<typeof getCityBySlug>>;
-  faqs: { q: string; a: string }[];
-}) {
-  const pageUrl = `https://www.ocelectronicrecycling.com/e-waste-recycling/${city.slug}`;
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": `${pageUrl}#service`,
-        name: `E-Waste Recycling & ITAD in ${city.name}`,
-        serviceType: "Electronics recycling, IT asset disposition, and data destruction",
-        description: city.metaDescription,
-        url: pageUrl,
-        provider: { "@id": "https://www.ocelectronicrecycling.com/#business" },
-        areaServed: {
-          "@type": "City",
-          name: city.name,
-          containedInPlace: { "@type": "AdministrativeArea", name: "Orange County, California" },
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "E-Waste Recycling Services",
-          itemListElement: [
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business E-Waste Pickup", description: `Scheduled electronics pickup for businesses in ${city.name}` } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Secure Data Destruction", description: "Data wiping and destruction following NIST 800-88 guidelines" } },
-            { "@type": "Offer", itemOffered: { "@type": "Service", name: "IT Asset Disposition (ITAD)", description: `ITAD services for ${city.name} businesses` } },
-          ],
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${pageUrl}#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.ocelectronicrecycling.com" },
-          { "@type": "ListItem", position: 2, name: "Service Areas", item: "https://www.ocelectronicrecycling.com/service-areas" },
-          { "@type": "ListItem", position: 3, name: `E-Waste Recycling in ${city.name}`, item: pageUrl },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${pageUrl}#faq`,
-        mainEntity: faqs.map((f) => ({
-          "@type": "Question",
-          name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
-        })),
-      },
-    ],
-  };
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
-
-// ─── Accepted Items List ───────────────────────────────────────────────────────
-const acceptedItems = [
-  { icon: "💻", label: "Laptops & Desktops" },
-  { icon: "🖥️", label: "Monitors & Displays" },
-  { icon: "📱", label: "Phones & Tablets" },
-  { icon: "🖨️", label: "Printers & Copiers" },
-  { icon: "📺", label: "TVs (all types)" },
-  { icon: "🖥️", label: "Servers & Networking" },
-  { icon: "🔋", label: "Batteries & UPS" },
-  { icon: "⌨️", label: "Peripherals & Cables" },
-  { icon: "📷", label: "Cameras & AV Equipment" },
-  { icon: "🎮", label: "Game Consoles" },
-  { icon: "📠", label: "Office Electronics" },
-  { icon: "💾", label: "Hard Drives & Storage" },
-];
-
-// ─── Process Steps ─────────────────────────────────────────────────────────────
-const processSteps = [
-  {
-    number: "01",
-    title: "Schedule Pickup",
-    description:
-      "Call or fill out our form. We'll confirm a pickup time that works for you — same week availability for most locations.",
-  },
-  {
-    number: "02",
-    title: "We Come to You",
-    description:
-      "Our team arrives at your location, loads all electronics, and provides a pickup manifest listing every item collected.",
-  },
-  {
-    number: "03",
-    title: "Data Destruction",
-    description:
-      "All storage devices are wiped or shredded following NIST 800-88 standards. You receive a certificate of destruction.",
-  },
-  {
-    number: "04",
-    title: "Responsible Recycling",
-    description:
-      "Electronics are processed by vetted recycling facilities in compliance with California e-waste regulations, with materials diverted from landfill through documented downstream processing. You receive a recycling certificate.",
-  },
-];
-
-// ─── FAQ Data (shared + optional city-specific) ────────────────────────────────
-function getFAQs(city: NonNullable<ReturnType<typeof getCityBySlug>>) {
-  const base = [
-    {
-      q: `Is e-waste recycling free in ${city.name}?`,
-      a: `Business pickup is free for qualifying volumes in ${city.name}. Residential pickup is available — contact us for details based on your item count and location.`,
-    },
-    {
-      q: "What electronics do you accept?",
-      a: "We accept computers, laptops, monitors, TVs, phones, tablets, printers, servers, networking equipment, batteries, and most other electronics. Call us if you're unsure about a specific item.",
-    },
-    {
-      q: "How do you handle data security?",
-      a: "All storage media is processed following NIST 800-88 guidelines — either overwritten with verified sanitization software or physically shredded. You receive a certificate of data destruction for every job.",
-    },
-    {
-      q: `Do you serve businesses in ${city.name}?`,
-      a: `Yes — we provide IT Asset Disposition (ITAD), server decommissioning, and bulk electronics recycling for businesses of all sizes throughout ${city.name}. Free pickup for qualifying volumes.`,
-    },
-    {
-      q: "Are you compliant with California regulations?",
-      a: "Yes. We operate in compliance with California e-waste regulations, including the Electronic Waste Recycling Act. All materials are processed through vetted downstream vendors.",
-    },
-  ];
-  if (city.faqExtra) {
-    base.splice(2, 0, city.faqExtra);
   }
-  return base;
 }
 
-// ─── Page Component ────────────────────────────────────────────────────────────
+/** FAQ shared by every city, plus the optional city-specific question. */
+function faqsFor(city: CityData): Faq[] {
+  const n = city.name
+  const base: Faq[] = [
+    {
+      q: `Is business electronics pickup available in ${n}?`,
+      a: `${n} is within our Orange County service area. Business pickup may be available for requests with at least ${PICKUP_MINIMUM} qualifying major electronic items. We confirm acceptance, any fees and pickup timing before anything is scheduled.`,
+    },
+    {
+      q: `Does it cost anything to recycle electronics in ${n}?`,
+      a: `Most accepted qualifying electronics can be recycled without a recycling fee. Televisions carry a $${TV_FEE} recycling fee per unit, and requests below the ${PICKUP_MINIMUM}-item minimum may require a pickup fee. All charges are confirmed with you first.`,
+    },
+    {
+      q: 'Is data destruction included with recycling?',
+      a: 'No. Data destruction is a selected service and is not automatically included. If your equipment holds business data, choose data sanitization or physical destruction when you request pickup, and a Certificate of Data Destruction can be issued for the media processed.',
+    },
+    {
+      q: `Do you have a branch or drop-off location in ${n}?`,
+      a: `We serve ${n} as a service area and travel to your site, so this page does not represent a branch location. Contact us if you would like to ask about drop-off options.`,
+    },
+  ]
+  if (city.faq) base.splice(1, 0, city.faq)
+  return base
+}
+
 export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
-  const { city: citySlug } = await params;
-  const city = getCityBySlug(citySlug);
-  if (!city) notFound();
+  const { city: slug } = await params
+  const city = getCityBySlug(slug)
+  if (!city) notFound()
 
-  const faqs = getFAQs(city);
+  const path = pathFor(city)
+  const faqs = faqsFor(city)
+  const nearby = city.nearby.map(getCityBySlug).filter((c) => c !== undefined)
+  const crumbs: Crumb[] = [
+    { name: 'Home', path: '/' },
+    { name: 'Service Areas', path: '/service-areas' },
+    { name: city.name, path },
+  ]
 
-  // Nearby cities for internal linking (pick 5 random others)
-  const nearbyCities = cities
-    .filter((c) => c.slug !== city.slug)
-    .slice(0, 5);
+  // Every sentence containing the city name is a complete string.
+  const n = city.name
+  const placeKind = city.kind === 'community' ? 'community' : 'city'
+  const t = {
+    eyebrow: `Service area · ${city.region}, Orange County`,
+    lede: `Pickup, recycling and selected data destruction for businesses and organizations in ${n}. ${n} is part of our ${SERVICE_AREA} coverage — a service area, not a branch location.`,
+    localTitle: `Business technology in ${n}`,
+    scenariosTitle: `Common equipment scenarios in ${n}`,
+    servicesTitle: `Services available to ${n} businesses`,
+    eligibilityTitle: `Pickup eligibility for ${n}`,
+    eligibilityBody: `${POLICY.minimum} ${POLICY.fees} ${POLICY.confirm}`,
+    acceptedTitle: `What we can collect in ${n}`,
+    dataTitle: 'Data destruction options',
+    processTitle: `How pickup works in ${n}`,
+    faqTitle: `Questions from ${n} businesses`,
+    nearbyTitle: `Service areas near ${n}`,
+    ctaTitle: `Request a business pickup in ${n}`,
+    ctaBody: `Tell us what you have at your ${n} location. We confirm eligibility, any fees and timing before anything is scheduled.`,
+    residents: `Home offices and households in this ${placeKind} can contact us to ask about options; the same confirmation process applies.`,
+  }
 
   return (
     <>
-      <CitySchema city={city} faqs={faqs} />
+      <JsonLd
+        data={graph(
+          serviceNode({
+            path,
+            name: `Electronics recycling and business pickup in ${n}`,
+            serviceType: 'Electronics recycling, IT asset disposition and data destruction',
+            description: city.metaDescription,
+            // Service area only — deliberately no LocalBusiness address for a city page.
+            areaServed: {
+              '@type': city.kind === 'community' ? 'Place' : 'City',
+              name: `${n}, California`,
+              containedInPlace: { '@type': 'AdministrativeArea', name: 'Orange County, California' },
+            },
+          }),
+          breadcrumbNode(path, crumbs),
+          faqNode(path, faqs),
+        )}
+      />
 
-      {/* ── Hero ── */}
-      <section className="city-hero">
-        <div className="city-hero__eyebrow">
-          <span className="badge">Orange County, CA</span>
-          <span className="badge badge--outline">Free Business Pickup</span>
-        </div>
-        <h1 className="city-hero__title">
-          E-Waste Recycling in{" "}
-          <span className="city-hero__city-name">{city.name}</span>
-        </h1>
-        <p className="city-hero__subtitle">{city.tagline}</p>
-        <p className="city-hero__description">{city.description}</p>
-
-        <div className="city-hero__stats">
-          <div className="stat-pill">
-            <span className="stat-pill__value">{city.heroStat}</span>
-            <span className="stat-pill__label">{city.heroStatLabel}</span>
+      {/* Hero */}
+      <section className="ct-hero ct-hero--page ct-gridlines">
+        <div className="ct-wrap">
+          <Breadcrumbs crumbs={crumbs} />
+          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 860 }}>
+            <span className="ct-eyebrow">{t.eyebrow}</span>
+            <h1 className="ct-h1">{h1For(city)}</h1>
+            <p className="ct-lede">{t.lede}</p>
+            <div className="ct-hero__actions">
+              <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="city_hero">
+                Request a Business Pickup
+              </Link>
+              <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="city_hero">
+                <Icon name="phone" size={18} /> {PHONE_DISPLAY}
+              </a>
+            </div>
           </div>
-          <div className="stat-pill">
-            <span className="stat-pill__value">NIST</span>
-            <span className="stat-pill__label">800-88 Data Destruction</span>
-          </div>
-          <div className="stat-pill">
-            <span className="stat-pill__value">CA</span>
-            <span className="stat-pill__label">E-Waste Regulations</span>
-          </div>
-        </div>
-
-        <div className="city-hero__cta">
-          <a href="tel:+19492873056" className="btn btn--primary btn--lg">
-            📞 (949) 287-3056
-          </a>
-          <Link href="/contact" className="btn btn--outline btn--lg">
-            Schedule Pickup →
-          </Link>
+          <ul className="ct-facts ct-hero__facts" aria-label="Pickup eligibility summary">
+            {ELIGIBILITY_FACTS.map((f) => (
+              <li key={f.label}>
+                <span className="ct-facts__value">{f.value}<small>{f.label}</small></span>
+                <span className="ct-facts__detail">{f.detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* ── Local Context ── */}
-      <section className="city-local">
-        <div className="city-local__inner">
-          <div className="city-local__badge">📍 Serving {city.name}</div>
-          <p className="city-local__text">{city.localDetail}</p>
-          <p className="city-local__landmark">
-            Near <strong>{city.nearbyLandmark}</strong> and throughout{" "}
-            {city.name}
+      {/* Local context */}
+      <section className="ct-section" aria-labelledby="local-title">
+        <div className="ct-wrap ct-split ct-split--wide-left">
+          <div className="ct-stack">
+            <span className="ct-eyebrow">Local context</span>
+            <h2 className="ct-h2" id="local-title">{t.localTitle}</h2>
+            <p className="ct-body">{city.intro}</p>
+            <p className="ct-body">{city.context}</p>
+          </div>
+          <div className="ct-panel">
+            <h3 className="ct-h3">{t.scenariosTitle}</h3>
+            <ul className="ct-checks" style={{ marginTop: 16, color: 'var(--ct-text-2)' }}>
+              {city.scenarios.map((s) => <li key={s}>{s}</li>)}
+            </ul>
+            <p className="ct-small" style={{ marginTop: 16 }}>
+              Typical situations for this area — not a list of past projects. {t.residents}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="ct-section ct-section--mineral" aria-labelledby="services-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">Service summary</span>
+            <h2 className="ct-h2" id="services-title">{t.servicesTitle}</h2>
+          </div>
+          <div className="ct-paths" style={{ background: '#fff' }}>
+            <div className="ct-path">
+              <span className="ct-path__icon"><Icon name="truck" size={22} /></span>
+              <h3 className="ct-h3"><Link href="/business-pickup">Business pickup</Link></h3>
+              <p>Collection from your site for requests that meet the {PICKUP_MINIMUM}-item minimum, once scope and timing are confirmed.</p>
+              <span className="ct-path__go" aria-hidden="true">Check eligibility <Icon name="arrow" size={18} /></span>
+            </div>
+            <div className="ct-path ct-path--secure">
+              <span className="ct-path__icon"><Icon name="lock" size={22} /></span>
+              <h3 className="ct-h3"><Link href="/services/data-destruction">Data destruction</Link></h3>
+              <p>Sanitization with reference to NIST SP 800-88 guidelines, or physical destruction, when you select a data service.</p>
+              <span className="ct-path__go" aria-hidden="true">Data destruction details <Icon name="arrow" size={18} /></span>
+            </div>
+            <div className="ct-path ct-path--ink">
+              <span className="ct-path__icon"><Icon name="layers" size={22} /></span>
+              <h3 className="ct-h3"><Link href="/services/itad">IT asset disposition</Link></h3>
+              <p>Inventory, value recovery and documented disposition for larger refreshes and decommissions.</p>
+              <span className="ct-path__go" aria-hidden="true">ITAD details <Icon name="arrow" size={18} /></span>
+            </div>
+          </div>
+          <p className="ct-small" style={{ marginTop: 18 }}>
+            Looking for general recycling information? See{' '}
+            <Link className="ct-inline-link" href="/services/recycling">how electronics recycling works</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── Services ── */}
-      <section className="city-services">
-        <div className="section-label">Our Services in {city.name}</div>
-        <h2 className="section-title">
-          Complete Electronics Recycling & ITAD
-        </h2>
-        <div className="services-grid">
-          <div className="service-card service-card--green">
-            <div className="service-card__icon">♻️</div>
-            <h3>E-Waste Recycling</h3>
-            <p>
-              Drop-off or scheduled pickup for all electronics. Computers, TVs,
-              phones, printers — we take it all.
-            </p>
-            <Link href="/services/recycling" className="service-card__link">
-              Learn more →
-            </Link>
-          </div>
-          <div className="service-card service-card--blue">
-            <div className="service-card__icon">🔒</div>
-            <h3>Secure Data Destruction</h3>
-            <p>
-              Data wiping and physical destruction following NIST 800-88
-              guidelines for hard drives and storage media. Certificate provided.
-            </p>
-            <Link href="/services/data-destruction" className="service-card__link">
-              Learn more →
-            </Link>
-          </div>
-          <div className="service-card service-card--dark">
-            <div className="service-card__icon">🏢</div>
-            <h3>IT Asset Disposition</h3>
-            <p>
-              Full ITAD services for {city.name}&apos;s{" "}
-              {city.businessFocus}. Pickups, manifests, and documented
-              downstream processing.
-            </p>
-            <Link href="/services/itad" className="service-card__link">
-              Learn more →
-            </Link>
-          </div>
-          <div className="service-card service-card--dark">
-            <div className="service-card__icon">🖥️</div>
-            <h3>Server Decommissioning</h3>
-            <p>
-              End-to-end server room and data center teardown with full chain of
-              custody documentation.
-            </p>
-            <Link href="/services" className="service-card__link">
-              Learn more →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Accepted Items ── */}
-      <section className="city-items">
-        <div className="section-label">What We Accept</div>
-        <h2 className="section-title">
-          We Recycle All Electronics in {city.name}
-        </h2>
-        <div className="items-grid">
-          {acceptedItems.map((item) => (
-            <div key={item.label} className="item-chip">
-              <span className="item-chip__icon">{item.icon}</span>
-              <span className="item-chip__label">{item.label}</span>
+      {/* Eligibility + accepted items */}
+      <section className="ct-section" aria-labelledby="accepted-title">
+        <div className="ct-wrap">
+          <div className="ct-head ct-head--split">
+            <div>
+              <span className="ct-eyebrow ct-eyebrow--warm">{t.eligibilityTitle}</span>
+              <h2 className="ct-h2" id="accepted-title">{t.acceptedTitle}</h2>
             </div>
-          ))}
-        </div>
-        <p className="items-note">
-          Don&apos;t see your item?{" "}
-          <a href="tel:+19492873056">Call us at (949) 287-3056</a> — we likely
-          accept it.
-        </p>
-      </section>
-
-      {/* ── Process ── */}
-      <section className="city-process">
-        <div className="section-label">How It Works</div>
-        <h2 className="section-title">Simple 4-Step Process</h2>
-        <div className="process-grid">
-          {processSteps.map((step) => (
-            <div key={step.number} className="process-step">
-              <div className="process-step__number">{step.number}</div>
-              <h3 className="process-step__title">{step.title}</h3>
-              <p className="process-step__desc">{step.description}</p>
+            <p className="ct-lede">{t.eligibilityBody}</p>
+          </div>
+          <div className="ct-triage">
+            <div className="ct-triage__col ct-triage__col--major">
+              <div className="ct-triage__head">
+                <span className="ct-triage__tag"><Icon name="check" size={14} /> Counts toward the minimum</span>
+                <h3 className="ct-h3">Qualifying major equipment</h3>
+              </div>
+              <div className="ct-triage__body">
+                <ul className="ct-checks">{QUALIFYING_ITEMS.map((i) => <li key={i}>{i}</li>)}</ul>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Why Choose Us ── */}
-      <section className="city-why">
-        <div className="section-label">Why OC Electronic Recycling</div>
-        <h2 className="section-title">
-          {city.name}&apos;s Trusted E-Waste Partner
-        </h2>
-        <div className="why-grid">
-          {[
-            {
-              icon: "🛡️",
-              title: "Data Security First",
-              desc: "Every storage device is destroyed or wiped to NIST 800-88 standards. You receive a certificate of destruction.",
-            },
-            {
-              icon: "✅",
-              title: "California E-Waste Regulations",
-              desc: "We operate under California's Electronic Waste Recycling Act — a documented process that helps reduce your data-security and compliance risk.",
-            },
-            {
-              icon: "🚛",
-              title: "Free Business Pickup",
-              desc: "We come to your office, warehouse, or facility in " + city.name + " — no fees for qualifying business volumes.",
-            },
-            {
-              icon: "📄",
-              title: "Full Documentation",
-              desc: "Every job includes a pickup manifest, data destruction certificate, and recycling certificate for your records.",
-            },
-            {
-              icon: "🌱",
-              title: "Landfill Diversion",
-              desc: "Materials we collect are routed to vetted, responsible recycling facilities and diverted from landfill through documented downstream processing.",
-            },
-            {
-              icon: "📞",
-              title: "Local OC Team",
-              desc: "We're based in Orange County and know " + city.name + " well. Fast response, real people, no call centers.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="why-card">
-              <div className="why-card__icon">{item.icon}</div>
-              <h3 className="why-card__title">{item.title}</h3>
-              <p className="why-card__desc">{item.desc}</p>
+            <div className="ct-triage__col ct-triage__col--courtesy">
+              <div className="ct-triage__head">
+                <span className="ct-triage__tag"><Icon name="plus" size={14} /> Does not count</span>
+                <h3 className="ct-h3">Courtesy add-on items</h3>
+              </div>
+              <div className="ct-triage__body">
+                <ul className="ct-checks ct-checks--plus">{COURTESY_ITEMS.map((i) => <li key={i}>{i}</li>)}</ul>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section className="city-faq">
-        <div className="section-label">FAQ</div>
-        <h2 className="section-title">
-          E-Waste Recycling Questions for {city.name}
-        </h2>
-        <div className="faq-list">
-          {faqs.map((faq, i) => (
-            <details key={i} className="faq-item">
-              <summary className="faq-item__question">{faq.q}</summary>
-              <p className="faq-item__answer">{faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Internal Links ── */}
-      <section className="city-nearby">
-        <p className="city-nearby__label">Also Serving Nearby Cities</p>
-        <div className="city-nearby__links">
-          {nearbyCities.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/e-waste-recycling/${c.slug}`}
-              className="city-nearby__link"
-            >
-              {c.name}
+            <div className="ct-triage__col ct-triage__col--confirm">
+              <div className="ct-triage__head">
+                <span className="ct-triage__tag"><Icon name="alert" size={14} /> Confirmed individually</span>
+                <h3 className="ct-h3">Ask first</h3>
+              </div>
+              <div className="ct-triage__body">
+                <ul className="ct-checks ct-checks--ask">{CONFIRM_ITEMS.slice(0, 6).map((i) => <li key={i}>{i}</li>)}</ul>
+              </div>
+            </div>
+          </div>
+          <p style={{ marginTop: 22 }}>
+            <Link href="/business-pickup#estimator" className="ct-link">
+              Estimate your eligibility <Icon name="arrow" size={18} />
             </Link>
-          ))}
-          <Link href="/service-areas" className="city-nearby__link city-nearby__link--all">
-            View All 34 Cities →
-          </Link>
+          </p>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="city-cta">
-        <h2 className="city-cta__title">
-          Ready to Recycle Electronics in {city.name}?
-        </h2>
-        <p className="city-cta__sub">
-          Call us or schedule a pickup online. Same-week availability for most
-          {city.name} locations.
-        </p>
-        <div className="city-cta__buttons">
-          <a href="tel:+19492873056" className="btn btn--primary btn--xl">
-            Call (949) 287-3056
-          </a>
-          <Link href="/contact" className="btn btn--ghost btn--xl">
-            Schedule Online →
-          </Link>
+      {/* Data destruction */}
+      <section className="ct-section ct-section--ink2" aria-labelledby="data-title">
+        <div className="ct-wrap ct-split ct-split--center">
+          <div className="ct-stack">
+            <span className="ct-eyebrow ct-eyebrow--secure">Data security</span>
+            <h2 className="ct-h2" id="data-title">{t.dataTitle}</h2>
+            <p className="ct-body">
+              {POLICY.data} Decide before pickup whether drives should be sanitized for reuse or physically destroyed,
+              and tell us which documentation your records require.
+            </p>
+            <Link href="/services/data-destruction" className="ct-link">
+              Compare sanitization and destruction <Icon name="arrow" size={18} />
+            </Link>
+          </div>
+          <ul className="ct-lanes">
+            <li>
+              <span className="ct-lanes__tag"><Icon name="drive" size={16} /> Sanitize</span>
+              <p><strong>Data sanitization</strong>Drives are overwritten with reference to NIST SP 800-88 guidelines so the hardware can be reused.</p>
+            </li>
+            <li>
+              <span className="ct-lanes__tag"><Icon name="lock" size={16} /> Destroy</span>
+              <p><strong>Physical destruction</strong>Media is physically destroyed when it should not, or cannot, be reused.</p>
+            </li>
+            <li>
+              <span className="ct-lanes__tag"><Icon name="doc" size={16} /> Document</span>
+              <p><strong>Certificate of Data Destruction</strong>Issued for the media processed when a data service is selected.</p>
+            </li>
+          </ul>
         </div>
-        <p className="city-cta__fine">
-          Serving all of {city.name} and Orange County •{" "}
-          <a href="mailto:info@ocelectronicrecycling.com">
-            info@ocelectronicrecycling.com
-          </a>
-        </p>
+      </section>
+
+      {/* Process */}
+      <section className="ct-section ct-section--mineral" aria-labelledby="process-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">Process</span>
+            <h2 className="ct-h2" id="process-title">{t.processTitle}</h2>
+          </div>
+          <ol className="ct-rail">
+            {PROCESS_STEPS.map((s) => (
+              <li key={s.title}>
+                <h3 className="ct-h3">{s.title}</h3>
+                <p>{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* FAQ + nearby */}
+      <section className="ct-section" aria-labelledby="faq-title">
+        <div className="ct-wrap ct-split ct-split--wide-left">
+          <div>
+            <div className="ct-head">
+              <span className="ct-eyebrow">FAQ</span>
+              <h2 className="ct-h2" id="faq-title">{t.faqTitle}</h2>
+            </div>
+            <FaqList faqs={faqs} />
+          </div>
+          <nav className="ct-citygroup" aria-labelledby="nearby-title">
+            <h3 id="nearby-title">{t.nearbyTitle}</h3>
+            <ul>
+              {nearby.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/e-waste-recycling/${c.slug}`}>{c.name} <Icon name="chevron" size={16} /></Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/service-areas">All service areas <Icon name="chevron" size={16} /></Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="ct-cta" aria-labelledby="cta-title">
+        <div className="ct-wrap ct-cta__grid">
+          <div className="ct-cta__copy">
+            <span className="ct-eyebrow">Next step</span>
+            <h2 className="ct-h2" id="cta-title">{t.ctaTitle}</h2>
+            <p className="ct-lede">{t.ctaBody}</p>
+          </div>
+          <div className="ct-cta__actions">
+            <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="city_final">
+              Request a Business Pickup
+            </Link>
+            <div className="ct-cta__phone">
+              <Icon name="phone" size={22} />
+              <div>
+                <a href={PHONE_HREF} data-cta-location="city_final">{PHONE_DISPLAY}</a>
+                <small>{HOURS}</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
-  );
+  )
 }

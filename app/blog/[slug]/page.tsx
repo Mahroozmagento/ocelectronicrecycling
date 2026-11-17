@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/posts/blog-data";
+import { PICKUP_MINIMUM, TV_FEE, PHONE_DISPLAY, PHONE_HREF } from "@/lib/site";
 
 export async function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
@@ -25,6 +26,7 @@ export async function generateMetadata({
       description: post.metaDescription,
       type: "article",
       publishedTime: post.publishDate,
+      modifiedTime: post.dateModified ?? post.publishDate,
       url: `https://www.ocelectronicrecycling.com/blog/${post.slug}`,
       images: [`https://images.unsplash.com/${post.unsplashId}?auto=format&fit=crop&w=1200&q=80`],
     },
@@ -55,9 +57,9 @@ function ArticleSchema({ post }: { post: (typeof blogPosts)[0] }) {
         headline: post.title,
         description: post.metaDescription,
         datePublished: post.publishDate,
-        // No separate modification is tracked, so dateModified mirrors the genuine
-        // publish date rather than being backdated or set to build time.
-        dateModified: post.publishDate,
+        // dateModified is set only when a post received a material editorial update;
+        // otherwise it mirrors the genuine publish date (never the build time).
+        dateModified: post.dateModified ?? post.publishDate,
         image,
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         url,
@@ -78,6 +80,10 @@ function ArticleSchema({ post }: { post: (typeof blogPosts)[0] }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 }
 
+function fmtDate(iso: string) {
+  return new Date(`${iso}T12:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
+
 function renderMarkdown(raw: string): string {
   const lines = raw.split("\n");
   const out: string[] = [];
@@ -90,7 +96,10 @@ function renderMarkdown(raw: string): string {
     line = line.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     line = line.replace(/\*(.+?)\*/g, "<em>$1</em>");
     line = line.replace(/`([^`]+)`/g, "<code>$1</code>");
-    line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text: string, href: string) =>
+      /^https?:\/\//.test(href)
+        ? `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`
+        : `<a href="${href}">${text}</a>`);
 
     // Headings
     if (line.startsWith("## ")) {
@@ -111,11 +120,24 @@ function renderMarkdown(raw: string): string {
       continue;
     }
 
-    // Table rows (skip — tables are rare, treat as paragraphs)
+    // Tables: consecutive "| a | b |" lines; the second line is the separator.
     if (line.startsWith("|")) {
       if (inUl) { out.push("</ul>"); inUl = false; }
-      // Simple: wrap entire table line in a div
-      out.push(`<p style="font-family:monospace;font-size:0.85em">${line}</p>`);
+      const rows: string[][] = [];
+      let j = i;
+      while (j < lines.length && lines[j].startsWith("|")) {
+        let cellLine = lines[j];
+        cellLine = cellLine.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+        rows.push(cellLine.replace(/^\||\|$/g, "").split("|").map((c) => c.trim()));
+        j++;
+      }
+      i = j - 1;
+      const body = rows.filter((r) => !r.every((c) => /^:?-{2,}:?$/.test(c)));
+      const [head, ...rest] = body;
+      out.push(
+        `<div class="blog-table"><table><thead><tr>${head.map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead>` +
+        `<tbody>${rest.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`,
+      );
       continue;
     }
 
@@ -165,12 +187,12 @@ export default async function BlogPostPage({
         />
         <div className="blog-post-hero__overlay" />
         <div className="blog-post-hero__content">
-          <nav className="blog-post-hero__breadcrumb">
+          <nav className="blog-post-hero__breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link>
             <span>/</span>
             <Link href="/blog">Blog</Link>
             <span>/</span>
-            <span>{post.category}</span>
+            <span aria-current="page">{post.title}</span>
           </nav>
           <div className="blog-post-hero__badge"
             style={{ background: c.bg, border: `1px solid ${c.border}`, color: c.dot }}>
@@ -179,8 +201,13 @@ export default async function BlogPostPage({
           </div>
           <h1 className="blog-post-hero__title">{post.title}</h1>
           <div className="blog-post-hero__meta">
+            <span>By OC Electronic Recycling</span>
+            <span className="blog-post-hero__divider">·</span>
             <span className="blog-post-hero__date">
-              {new Date(post.publishDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+              Published <time dateTime={post.publishDate}>{fmtDate(post.publishDate)}</time>
+              {post.dateModified && (
+                <> · Updated <time dateTime={post.dateModified}>{fmtDate(post.dateModified)}</time></>
+              )}
             </span>
             <span className="blog-post-hero__divider">·</span>
             <span className="blog-post-hero__read-time">{post.readTime}</span>
@@ -201,20 +228,20 @@ export default async function BlogPostPage({
 
             {/* CTA */}
             <div className="blog-post-cta" style={{ borderColor: c.dot }}>
-              <div className="blog-post-cta__icon">♻️</div>
               <div className="blog-post-cta__body">
-                <h3 className="blog-post-cta__title">Ready to Recycle Your Electronics in Orange County?</h3>
+                <h2 className="blog-post-cta__title">Retiring business electronics in Orange County?</h2>
                 <p className="blog-post-cta__text">
-                  OC Electronic Recycling provides free business pickup, secure data destruction,
-                  and same-week scheduling across all Orange County cities.
+                  Business pickup is available for requests with at least {PICKUP_MINIMUM} qualifying major items.
+                  Televisions carry a ${TV_FEE} fee per unit, data destruction is a selected service, and eligibility,
+                  fees and timing are confirmed before anything is scheduled.
                 </p>
                 <div className="blog-post-cta__actions">
-                  <Link href="/contact" className="blog-post-cta__btn blog-post-cta__btn--primary"
-                    style={{ background: c.dot, color: "#07080f" }}>
-                    Schedule Free Pickup
+                  <Link href="/business-pickup" className="blog-post-cta__btn blog-post-cta__btn--primary"
+                    style={{ background: c.dot, color: "#07080f" }} data-cta-location="blog_cta">
+                    Request a Business Pickup
                   </Link>
-                  <a href="tel:9492873056" className="blog-post-cta__btn blog-post-cta__btn--secondary">
-                    (949) 287-3056
+                  <a href={PHONE_HREF} className="blog-post-cta__btn blog-post-cta__btn--secondary" data-cta-location="blog_cta">
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -230,22 +257,22 @@ export default async function BlogPostPage({
             </div>
 
             <div className="blog-sidebar__contact">
-              <div className="blog-sidebar__contact-title">Free Pickup Available</div>
+              <div className="blog-sidebar__contact-title">Business pickup</div>
               <p className="blog-sidebar__contact-text">
-                Schedule your Orange County electronics pickup today. No minimum quantity for data destruction.
+                {PICKUP_MINIMUM}+ qualifying major items, ${TV_FEE} per television. Eligibility, fees and timing confirmed before scheduling.
               </p>
-              <a href="tel:9492873056" className="blog-sidebar__contact-phone">(949) 287-3056</a>
-              <Link href="/contact" className="blog-sidebar__contact-btn">Get a Free Quote</Link>
+              <a href={PHONE_HREF} className="blog-sidebar__contact-phone" data-cta-location="blog_sidebar">{PHONE_DISPLAY}</a>
+              <Link href="/business-pickup" className="blog-sidebar__contact-btn" data-cta-location="blog_sidebar">Check eligibility</Link>
             </div>
 
             <div className="blog-sidebar__services">
               <div className="blog-sidebar__services-title">Our Services</div>
               <ul className="blog-sidebar__services-list">
                 {[
-                  { href: "/services/data-destruction", label: "🔒 Secure Data Destruction" },
-                  { href: "/services/itad", label: "📦 IT Asset Disposition" },
-                  { href: "/services/recycling", label: "♻️ Electronics Recycling" },
-                  { href: "/contact", label: "🖥️ Business Pickup" },
+                  { href: "/services/data-destruction", label: "Secure Data Destruction" },
+                  { href: "/services/itad", label: "IT Asset Disposition" },
+                  { href: "/services/recycling", label: "Electronics Recycling" },
+                  { href: "/business-pickup", label: "Business Pickup" },
                 ].map((s) => (
                   <li key={s.href}><Link href={s.href}>{s.label}</Link></li>
                 ))}

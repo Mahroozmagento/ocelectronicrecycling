@@ -1,79 +1,84 @@
 // components/Footer.tsx
 import Link from 'next/link'
+import { BrandMark } from '@/components/Icon'
+import { getCityBySlug } from '@/lib/cities'
+import { HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, SERVICE_AREA } from '@/lib/site'
 
 const SERVICES = [
-  { label: 'Data Destruction',   href: '/services/data-destruction' },
-  { label: 'ITAD',               href: '/services/itad' },
-  { label: 'E-Waste Recycling',  href: '/services/recycling' },
-  { label: 'Business Pickup', href: '/contact' },
-  { label: 'Server Decommission', href: '/services/itad' },
+  { label: 'Business Pickup', href: '/business-pickup' },
+  { label: 'IT Asset Disposition (ITAD)', href: '/services/itad' },
+  { label: 'Data Destruction', href: '/services/data-destruction' },
+  { label: 'E-Waste Recycling', href: '/services/recycling' },
+  { label: 'All Services', href: '/services' },
 ]
 const COMPANY = [
-  { label: 'About Us',     href: '/about' },
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Resources',    href: '/resources' },
-  { label: 'Blog',         href: '/blog' },
-  { label: 'Contact',      href: '/contact' },
+  { label: 'Resources', href: '/resources' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
-const LEGAL = [
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms of Service', href: '/terms-of-service' },
-]
+const AREA_SLUGS = ['irvine', 'anaheim', 'santa-ana', 'costa-mesa', 'newport-beach']
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const areas = AREA_SLUGS.map(getCityBySlug).filter((c) => c !== undefined)
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <div className="footer-logo">
-              <div className="logo-icon" style={{width:28,height:28,fontSize:'.85rem'}}>♻</div>
-              OC Electronic Recycling
-            </div>
-            <p className="footer-desc">
-              Orange County&apos;s e-waste recycling and ITAD partner.
-              Responsible disposal, secure data destruction, and full documentation.
+    <footer className="ct-footer">
+      <div className="ct-wrap">
+        <div className="ct-footer__grid">
+          <div className="ct-footer__brand">
+            <Link href="/" className="ct-logo" aria-label="OC Electronic Recycling — home">
+              <BrandMark size={32} />
+              <b>OC Electronic<span>&nbsp;Recycling</span></b>
+            </Link>
+            <p>
+              Business electronics pickup, data destruction and IT asset disposition across {SERVICE_AREA}.
             </p>
-            <div className="footer-phone">
-              <a href="tel:9492873056">☎ (949) 287-3056</a>
-            </div>
+            <a href={PHONE_HREF} className="ct-footer__phone" data-cta-location="footer">{PHONE_DISPLAY}</a>
+            <p>{HOURS}</p>
           </div>
 
-          <div className="footer-col">
-            <h4>Services</h4>
+          <nav aria-label="Services">
+            <h2>Services</h2>
             <ul>
               {SERVICES.map(({ label, href }) => (
-                <li key={`svc-${label}`}><Link href={href}>{label}</Link></li>
+                <li key={href}><Link href={href}>{label}</Link></li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className="footer-col">
-            <h4>Company</h4>
+          <nav aria-label="Company">
+            <h2>Company</h2>
             <ul>
               {COMPANY.map(({ label, href }) => (
-                <li key={`co-${href}`}><Link href={href}>{label}</Link></li>
+                <li key={href}><Link href={href}>{label}</Link></li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className="footer-col">
-            <h4>Legal</h4>
+          <nav aria-label="Service areas">
+            <h2>Service areas</h2>
             <ul>
-              {LEGAL.map(({ label, href }) => (
-                <li key={`legal-${label}`}><Link href={href}>{label}</Link></li>
+              {areas.map((c) => (
+                <li key={c.slug}><Link href={`/e-waste-recycling/${c.slug}`}>{c.name}</Link></li>
               ))}
+              <li><Link href="/service-areas">All service areas</Link></li>
             </ul>
-          </div>
+          </nav>
         </div>
 
-        <div className="footer-bottom">
-          <p>© {year} OC Electronic Recycling. All rights reserved. Orange County, CA.</p>
-          <div className="footer-credits">
-            <span style={{color:'#445566',fontSize:'.78rem'}}>Designed &amp; Built by</span>
-            <a href="https://nirowebix.com" target="_blank" rel="noopener noreferrer">NiroWebix.com</a>
-            <a href="https://nextechoc.com"  target="_blank" rel="noopener noreferrer">NexTechOC.com</a>
+        <div className="ct-footer__base">
+          <p>© {year} OC Electronic Recycling. {POLICY.confirm}</p>
+          <div className="ct-footer__legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-of-service">Terms of Service</Link>
+            <span>
+              Site by{' '}
+              <a href="https://nirowebix.com" target="_blank" rel="noopener noreferrer">NiroWebix</a>
+              {' · '}
+              <a href="https://nextechoc.com" target="_blank" rel="noopener noreferrer">NexTechOC</a>
+            </span>
           </div>
         </div>
       </div>

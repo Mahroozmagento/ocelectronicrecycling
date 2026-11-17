@@ -1,110 +1,149 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { cities } from "@/lib/cities";
+// app/service-areas/page.tsx — hub for every service-area page.
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import CoverageMap from '@/components/CoverageMap'
+import Icon from '@/components/Icon'
+import JsonLd from '@/components/JsonLd'
+import { REGIONS, cities, citiesByRegion } from '@/lib/cities'
+import { breadcrumbNode, graph, type Crumb } from '@/lib/schema'
+import {
+  DEFAULT_OG_IMAGE, ELIGIBILITY_FACTS, HOURS, PHONE_DISPLAY, PHONE_HREF, POLICY, SERVICE_AREA, SITE_URL,
+} from '@/lib/site'
+
+const PATH = '/service-areas'
+const TITLE = 'E-Waste Recycling Service Areas'
+const DESCRIPTION = `Service areas for business electronics pickup, recycling and data destruction across ${SERVICE_AREA}. Find your city and check pickup eligibility.`
 
 export const metadata: Metadata = {
-  title: "E-Waste Recycling Service Areas",
-  description:
-    "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
-  alternates: {
-    canonical: "https://www.ocelectronicrecycling.com/service-areas",
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: "E-Waste Recycling Service Areas",
-    description:
-      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
-    url: "https://www.ocelectronicrecycling.com/service-areas",
-    images: [{ url: "/image/hero-facility-oc-electronic-recycling.webp", width: 1200, height: 630 }],
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
+    url: `${SITE_URL}${PATH}`,
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "E-Waste Recycling Service Areas",
-    description:
-      "OC Electronic Recycling serves all 34 cities in Orange County, CA. Free business pickup, secure data destruction, and responsible electronics disposal.",
-    images: ["/image/hero-facility-oc-electronic-recycling.webp"],
+    card: 'summary_large_image',
+    title: `${TITLE} | OC Electronic Recycling`,
+    description: DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
   },
-};
+}
 
-// Sort cities alphabetically for the hub page
-const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name));
+const CRUMBS: Crumb[] = [
+  { name: 'Home', path: '/' },
+  { name: 'Service Areas', path: PATH },
+]
+
+const REGION_NOTES: Record<string, string> = {
+  'North County': 'From the Los Angeles County line through Fullerton, Anaheim and Brea.',
+  'Central County': 'The county seat, Irvine, and the South Coast Metro office district.',
+  'South County': 'Master-planned cities, business parks and foothill communities.',
+  Coast: 'Coastal cities from Huntington Beach to San Clemente.',
+}
 
 export default function ServiceAreasPage() {
   return (
-    <div className="areas-page">
-      {/* Hero */}
-      <section className="areas-hero">
-        <div className="section-label">Service Coverage</div>
-        <h1 className="areas-hero__title">
-          Serving All of <span className="text-accent">Orange County</span>
-        </h1>
-        <p className="areas-hero__sub">
-          OC Electronic Recycling provides e-waste recycling, ITAD,
-          and data destruction throughout all 34 cities in Orange County,
-          California. Free business pickup. Same-week scheduling.
-        </p>
-        <div className="areas-hero__cta">
-          <a href="tel:+19492873056" className="btn btn--primary btn--lg">
-            📞 (949) 287-3056
-          </a>
-          <Link href="/contact" className="btn btn--outline btn--lg">
-            Schedule Pickup →
-          </Link>
+    <>
+      <JsonLd data={graph(breadcrumbNode(PATH, CRUMBS))} />
+
+      <section className="ct-hero ct-hero--page ct-gridlines">
+        <div className="ct-wrap">
+          <Breadcrumbs crumbs={CRUMBS} />
+          <div className="ct-hero__grid ct-hero__grid--areas" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
+            <span className="ct-eyebrow">Service coverage</span>
+            <h1 className="ct-h1">Service areas across Orange County and South Los Angeles</h1>
+            <p className="ct-lede">
+              We travel to businesses throughout {SERVICE_AREA}. The pages below describe {cities.length} Orange County
+              service areas — they are not branch locations. Coverage for your address is confirmed when we review your request.
+            </p>
+            <div className="ct-hero__actions">
+              <Link href="/business-pickup" className="ct-btn ct-btn--primary ct-btn--lg" data-cta-location="areas_hero">
+                Request a Business Pickup
+              </Link>
+              <a href={PHONE_HREF} className="ct-btn ct-btn--ghost ct-btn--lg" data-cta-location="areas_hero">
+                <Icon name="phone" size={18} /> {PHONE_DISPLAY}
+              </a>
+            </div>
+          </div>
+
+          {/* Coverage visual: the map is decorative; the facts beside it are text. */}
+          <div className="ct-cov ct-in">
+            <CoverageMap />
+            <div className="ct-cov__facts">
+              <ul aria-label="Coverage summary">
+                <li><strong>{cities.length}</strong> Orange County service areas</li>
+                <li className="ct-cov__fact--zone">Eligible South Los Angeles requests</li>
+              </ul>
+              <p><Icon name="info" size={14} /> Coverage confirmed after request review</p>
+            </div>
+          </div>
+          </div>
+          <ul className="ct-facts ct-hero__facts" aria-label="Pickup eligibility summary">
+            {ELIGIBILITY_FACTS.map((f) => (
+              <li key={f.label}>
+                <span className="ct-facts__value">{f.value}<small>{f.label}</small></span>
+                <span className="ct-facts__detail">{f.detail}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* City Grid */}
-      <section className="areas-grid-section">
-        <div className="section-label">All Cities We Serve</div>
-        <h2 className="section-title">34 Orange County Cities</h2>
-        <div className="areas-city-grid">
-          {sortedCities.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/e-waste-recycling/${city.slug}`}
-              className="city-tile"
-            >
-              <div className="city-tile__name">{city.name}</div>
-              <div className="city-tile__zip">{city.zip}</div>
-              <div className="city-tile__focus">{city.businessFocus.split(",")[0]}</div>
-              <div className="city-tile__arrow">→</div>
-            </Link>
-          ))}
+      <section className="ct-section" aria-labelledby="areas-title">
+        <div className="ct-wrap">
+          <div className="ct-head">
+            <span className="ct-eyebrow">Orange County</span>
+            <h2 className="ct-h2" id="areas-title">Find your service area</h2>
+            <p className="ct-lede">Each page covers local business context, pickup eligibility and nearby coverage.</p>
+          </div>
+          <div className="ct-citygroups" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+            {REGIONS.map((region) => (
+              <nav key={region} className="ct-citygroup" aria-label={`${region} service areas`}>
+                <h3>{region}</h3>
+                <p className="ct-small" style={{ padding: '10px 0 6px' }}>{REGION_NOTES[region]}</p>
+                <ul>
+                  {citiesByRegion(region).map((c) => (
+                    <li key={c.slug}>
+                      <Link href={`/e-waste-recycling/${c.slug}`}>{c.name} <Icon name="chevron" size={16} /></Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Coverage Map Note */}
-      <section className="areas-coverage">
-        <div className="areas-coverage__inner">
-          <h2>Full Orange County Coverage</h2>
-          <p>
-            From Anaheim in the north to San Clemente in the south, from the
-            coast at Laguna Beach and Newport Beach to the inland communities of
-            Yorba Linda and Placentia — OC Electronic Recycling covers all of
-            Orange County with the same reliable, responsible service.
-          </p>
-          <p>
-            Don&apos;t see your city? Call us at{" "}
-            <a href="tel:+19492873056">(949) 287-3056</a> — we likely service
-            your area.
-          </p>
+      <section className="ct-section ct-section--mineral" aria-labelledby="la-title">
+        <div className="ct-wrap ct-split">
+          <div className="ct-stack">
+            <span className="ct-eyebrow ct-eyebrow--warm">South Los Angeles</span>
+            <h2 className="ct-h2" id="la-title">Outside Orange County?</h2>
+            <p className="ct-body">
+              Our service area also includes South Los Angeles. We do not publish a city-by-city list for that area,
+              so send your address with your request — or call — and we will confirm whether we can serve your location.
+            </p>
+            <p className="ct-body">{POLICY.confirm}</p>
+          </div>
+          <div className="ct-panel">
+            <h3 className="ct-h3">Don&apos;t see your city?</h3>
+            <p className="ct-small" style={{ margin: '10px 0 18px' }}>
+              The list above is not exhaustive. Enter your ZIP code in the pickup request form for guidance, or talk to us directly.
+            </p>
+            <div className="ct-stack" style={{ gap: 12, justifyItems: 'stretch' }}>
+              <Link href="/business-pickup#request" className="ct-btn ct-btn--ink" data-cta-location="areas_panel">Start a pickup request</Link>
+              <a href={PHONE_HREF} className="ct-btn ct-btn--ghost" data-cta-location="areas_panel">
+                <Icon name="phone" size={18} /> {PHONE_DISPLAY} · {HOURS}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="city-cta">
-        <h2 className="city-cta__title">Ready to Schedule a Pickup?</h2>
-        <p className="city-cta__sub">
-          Free business pickup throughout Orange County. Same-week availability.
-        </p>
-        <div className="city-cta__buttons">
-          <a href="tel:+19492873056" className="btn btn--primary btn--xl">
-            Call (949) 287-3056
-          </a>
-          <Link href="/contact" className="btn btn--ghost btn--xl">
-            Contact Us Online →
-          </Link>
-        </div>
-      </section>
-    </div>
-  );
+    </>
+  )
 }
