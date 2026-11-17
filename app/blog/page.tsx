@@ -51,6 +51,11 @@ const colorMap = {
   },
 };
 
+// The blog index is the complete article archive, newest first.
+const postsNewestFirst = [...blogPosts].sort(
+  (a, b) => b.publishDate.localeCompare(a.publishDate) || a.title.localeCompare(b.title),
+);
+
 export default function BlogIndexPage() {
   return (
     <>
@@ -58,7 +63,7 @@ export default function BlogIndexPage() {
 
       <section className="blog-grid-section">
         <div className="blog-grid">
-          {blogPosts.map((post, i) => {
+          {postsNewestFirst.map((post, i) => {
             const c = colorMap[post.keywordColor];
             return (
               <AnimateIn key={post.slug} from="up" delay={(i % 4) * 0.05} duration={0.5}>

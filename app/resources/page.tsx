@@ -100,7 +100,8 @@ export default function ResourcesPage() {
             <h1 className="ct-h1">Guides for retiring business electronics</h1>
             <p className="ct-lede">
               Practical guides, a pickup preparation checklist and links to the official sources behind California&apos;s
-              disposal rules. General information only — not legal advice.
+              disposal rules. Explore curated guides by topic, or browse all articles in our{' '}
+              <Link href="/blog" className="ct-inline-link">Blog</Link>. General information only — not legal advice.
             </p>
             <p className="ct-small">Maintained by OC Electronic Recycling · Hub reviewed {REVIEWED}</p>
           </div>
