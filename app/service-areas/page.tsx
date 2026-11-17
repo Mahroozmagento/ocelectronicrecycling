@@ -2,6 +2,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumbs from '@/components/Breadcrumbs'
+import CoverageMap from '@/components/CoverageMap'
 import Icon from '@/components/Icon'
 import JsonLd from '@/components/JsonLd'
 import { REGIONS, cities, citiesByRegion } from '@/lib/cities'
@@ -52,7 +53,8 @@ export default function ServiceAreasPage() {
       <section className="ct-hero ct-hero--page ct-gridlines">
         <div className="ct-wrap">
           <Breadcrumbs crumbs={CRUMBS} />
-          <div className="ct-hero__copy ct-rise" style={{ marginTop: 22, maxWidth: 820 }}>
+          <div className="ct-hero__grid ct-hero__grid--areas" style={{ marginTop: 22 }}>
+          <div className="ct-hero__copy ct-rise">
             <span className="ct-eyebrow">Service coverage</span>
             <h1 className="ct-h1">Service areas across Orange County and South Los Angeles</h1>
             <p className="ct-lede">
@@ -67,6 +69,19 @@ export default function ServiceAreasPage() {
                 <Icon name="phone" size={18} /> {PHONE_DISPLAY}
               </a>
             </div>
+          </div>
+
+          {/* Coverage visual: the map is decorative; the facts beside it are text. */}
+          <div className="ct-cov ct-in">
+            <CoverageMap />
+            <div className="ct-cov__facts">
+              <ul aria-label="Coverage summary">
+                <li><strong>{cities.length}</strong> Orange County service areas</li>
+                <li className="ct-cov__fact--zone">Eligible South Los Angeles requests</li>
+              </ul>
+              <p><Icon name="info" size={14} /> Coverage confirmed after request review</p>
+            </div>
+          </div>
           </div>
           <ul className="ct-facts ct-hero__facts" aria-label="Pickup eligibility summary">
             {ELIGIBILITY_FACTS.map((f) => (

@@ -247,6 +247,14 @@ for (const file of sourceFiles) {
 }
 if (!/<span className="ct-since">\{`Since \$\{FOUNDING_YEAR\}`\}<\/span>/.test(read('app/page.tsx'))) fail('[founding] app/page.tsx: the "Since 2012" hero indicator is missing')
 
+// ── 11. Service-area coverage map stays in sync with the city pages ─────────
+{
+  const mapSrc = read('components/CoverageMap.tsx')
+  const citySlugs = [...read('lib/cities.ts').matchAll(/^\s+slug: '([a-z0-9-]+)'/gm)].map((m) => m[1])
+  for (const slug of citySlugs) if (!new RegExp(`'${slug}': \\[`).test(mapSrc)) fail(`[coverage] components/CoverageMap.tsx: no map node for service area "${slug}"`)
+  if (/\b(branch|office|headquarters|HQ|operating base)\b/i.test(mapSrc.replace(/\/\/.*$/gm, ''))) fail('[coverage] components/CoverageMap.tsx: map must not label a branch, office or base')
+}
+
 // ── Report ──────────────────────────────────────────────────────────────────
 if (errors.length) {
   console.error(`\n✗ SEO check failed with ${errors.length} issue(s):\n`)
